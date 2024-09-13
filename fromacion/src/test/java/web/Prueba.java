@@ -1,6 +1,6 @@
 package web;
 import java.io.IOException;
-
+//
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,15 +9,16 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+//
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
-
+//
 public class Prueba extends Main {
-
+    //
     @Test(description = "Prueba DemoQA Elements Text box")
     @Story("Elements")
     @Description("Rellenar textbox")
+    //
     public void TC001_Elements1() throws InterruptedException, IOException {
         testId = "TC001_Elements1";
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -66,7 +67,7 @@ public class Prueba extends Main {
             email.clear();
             Thread.sleep(500);
             email.sendKeys("EmailTest@Test.com");
-            Thread.sleep(5000);
+            Thread.sleep(500);
             WebElement current_address = driver.findElement(By.id("currentAddress"));
             current_address.sendKeys("CurrentAddressTest");
             Thread.sleep(500);
@@ -79,14 +80,11 @@ public class Prueba extends Main {
             String print_output = output_text.getText();
             System.out.println(print_output);
             //
-
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
         }
-
     }
-
-    
 }
+//

@@ -15,6 +15,7 @@ public class test {
         chromeOptions.addArguments("--disable-search-engine-choice-screen");
         chromeOptions.setAcceptInsecureCerts(true);
         chromeOptions.addArguments("--incognito");
+        ChromeOptions.addArguments("Zoom 80%");
         //
         WebDriver driver = new ChromeDriver(chromeOptions);
         //

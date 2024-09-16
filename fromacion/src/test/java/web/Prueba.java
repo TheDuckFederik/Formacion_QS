@@ -1,17 +1,16 @@
 package web;
-import java.io.IOException;
 //
+import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-// import org.openqa.selenium.chrome.ChromeOptions;
-// import org.testng.Assert;
 import org.testng.annotations.Test;
-// import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-// import org.openqa.selenium.chrome.ChromeDriver;
-//
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
+// import org.openqa.selenium.chrome.ChromeOptions;
+// import org.testng.Assert;
+// import org.openqa.selenium.WebDriver;
+// import org.openqa.selenium.chrome.ChromeDriver;
 //
 public class Prueba extends Main {
     //
@@ -258,7 +257,7 @@ public class Prueba extends Main {
             WebElement sub_menu = driver.findElement(By.id("item-2"));
             sub_menu.click();
             Thread.sleep(500);
-            //
+            // The code, for some reason just doesen't want to click the "yes" button. The xpath is good, but still.
             WebElement yes = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[2]"));
             yes.click();
             Thread.sleep(500);

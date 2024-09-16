@@ -352,7 +352,7 @@ public class Prueba extends Main {
             select_rows.sendKeys(Keys.ENTER);
             Thread.sleep(500);
             //
-            js.executeScript("window.scrollBy(0,-450)", "");
+            js.executeScript("window.scrollBy(0,-400)", "");
             Thread.sleep(500);
             //
             WebElement add = driver.findElement(By.xpath("//*[@id='addNewRecordButton']"));
@@ -459,6 +459,59 @@ public class Prueba extends Main {
             Thread.sleep(500);
             WebElement submit3 = driver.findElement(By.id("submit"));
             submit3.click();
+            Thread.sleep(500);
+            //
+            WebElement next = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[3]"));
+            next.click();
+            Thread.sleep(500);
+            //
+            WebElement previous = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[1]"));
+            previous.click();
+            Thread.sleep(500);
+            //
+            WebElement page = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[1]/div/input"));
+            page.clear();
+            Thread.sleep(50);
+            page.sendKeys("2");
+            Thread.sleep(50);
+            page.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            previous.click();
+            Thread.sleep(500);
+            //
+            WebElement edit = driver.findElement(By.xpath("//*[@id='edit-record-4']"));
+            edit.click();
+            Thread.sleep(500);
+            //
+            add.click();
+            Thread.sleep(500);
+            WebElement first_name4 = driver.findElement(By.xpath("//*[@id=\"firstName\"]"));
+            first_name4.clear();
+            // first_name.sendKeys("FirstNameTest1");
+            Thread.sleep(500);
+            // WebElement last_name1 = driver.findElement(By.id("lastName"));
+            // last_name1.clear();
+            // last_name1.sendKeys("LastNameTest1");
+            // Thread.sleep(500);
+            // WebElement email1 = driver.findElement(By.id("userEmail"));
+            // email1.clear();
+            // email1.sendKeys("EmailTest1@Test.com");
+            // Thread.sleep(500);
+            // WebElement age1 = driver.findElement(By.id("age"));
+            // age1.clear();
+            // age1.sendKeys("01");
+            // Thread.sleep(500);
+            // WebElement salary1 = driver.findElement(By.id("salary"));
+            // salary1.clear();
+            // salary1.sendKeys("0001");
+            // Thread.sleep(500);
+            // WebElement department1 = driver.findElement(By.id("department"));
+            // department1.clear();
+            // department1.sendKeys("DepartmentTest1");
+            // Thread.sleep(500);
+            // WebElement submit1 = driver.findElement(By.id("submit"));
+            submit.click();
             Thread.sleep(500);
             //
         } catch(Exception e){

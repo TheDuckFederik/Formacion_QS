@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-07-24T11:19:15 CEST" name="Casos de prova" finished-at="2024-07-24T11:19:52 CEST" duration-ms="37416">
+    <groups>
+    </groups>
+    <test started-at="2024-07-24T11:19:15 CEST" name="DemoQA" finished-at="2024-07-24T11:19:52 CEST" duration-ms="37416">
+      <class name="web.Prueba">
+        <test-method is-config="true" signature="setup_test()[pri:0, instance:web.Prueba@23ee75c5]" started-at="2024-07-24T11:19:15 CEST" name="setup_test" finished-at="2024-07-24T11:19:16 CEST" duration-ms="1917" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup_test -->
+        <test-method signature="TC001_Elements1()[pri:0, instance:web.Prueba@23ee75c5]" started-at="2024-07-24T11:19:17 CEST" name="TC001_Elements1" description="Prueba DemoQA Elements Text box" finished-at="2024-07-24T11:19:32 CEST" duration-ms="15759" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC001_Elements1 -->
+        <test-method is-config="true" signature="breakup_test()[pri:0, instance:web.Prueba@23ee75c5]" started-at="2024-07-24T11:19:32 CEST" name="breakup_test" finished-at="2024-07-24T11:19:33 CEST" duration-ms="221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- breakup_test -->
+        <test-method is-config="true" signature="setup_test()[pri:0, instance:web.Prueba@23ee75c5]" started-at="2024-07-24T11:19:33 CEST" name="setup_test" finished-at="2024-07-24T11:19:34 CEST" duration-ms="1219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup_test -->
+        <test-method signature="TC002_Elements2()[pri:0, instance:web.Prueba@23ee75c5]" started-at="2024-07-24T11:19:34 CEST" name="TC002_Elements2" description="Prueba DemoQA Elements Radio Buttons" finished-at="2024-07-24T11:19:52 CEST" duration-ms="17773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC002_Elements2 -->
+        <test-method is-config="true" signature="breakup_test()[pri:0, instance:web.Prueba@23ee75c5]" started-at="2024-07-24T11:19:52 CEST" name="breakup_test" finished-at="2024-07-24T11:19:52 CEST" duration-ms="260" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- breakup_test -->
+        <test-method is-config="true" signature="after_suite()[pri:0, instance:web.Prueba@23ee75c5]" started-at="2024-07-24T11:19:52 CEST" name="after_suite" finished-at="2024-07-24T11:19:52 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after_suite -->
+      </class> <!-- web.Prueba -->
+    </test> <!-- DemoQA -->
+  </suite> <!-- Casos de prova -->
+</testng-results>

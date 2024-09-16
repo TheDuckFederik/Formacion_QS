@@ -91,9 +91,9 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Elements Chack box")
+    @Test(description = "Prueba DemoQA Elements Check box")
     @Story("Elements")
-    @Description("Comprobar que todos los botones funcionan de forma correcta.")
+    @Description("Comprobar que todos los botones y desplegables funcionan de forma correcta.")
     //
     public void TC002_Elements2() throws InterruptedException, IOException {
         testId = "TC002_Elements2";
@@ -248,6 +248,33 @@ public class Prueba extends Main {
             Thread.sleep(500);
             home_arrow.click();
             Thread.sleep(500);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Elements Radio Button")
+    @Story("Elements")
+    @Description("Comprobar que todos los botones funcionan de forma correcta.")
+    //
+    public void TC003_Elements2() throws InterruptedException, IOException {
+        testId = "TC003_Elements3";
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("start-maximized");
+        chromeOptions.addArguments("--log-level=1");
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--disable-search-engine-choice-screen");
+        chromeOptions.setAcceptInsecureCerts(true);
+        chromeOptions.addArguments("--incognito");
+        //
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            
             //
         } catch(Exception e){
             e.printStackTrace();

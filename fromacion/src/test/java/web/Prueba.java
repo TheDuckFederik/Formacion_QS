@@ -3,12 +3,12 @@ import java.io.IOException;
 //
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.chrome.ChromeOptions;
+// import org.openqa.selenium.chrome.ChromeOptions;
 // import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.openqa.selenium.WebDriver;
+// import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+// import org.openqa.selenium.chrome.ChromeDriver;
 //
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -21,15 +21,6 @@ public class Prueba extends Main {
     //
     public void TC001_Elements1() throws InterruptedException, IOException {
         testId = "TC001_Elements1";
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized");
-        chromeOptions.addArguments("--log-level=1");
-        chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--disable-search-engine-choice-screen");
-        chromeOptions.setAcceptInsecureCerts(true);
-        chromeOptions.addArguments("--incognito");
-        //
-        WebDriver driver = new ChromeDriver(chromeOptions);
         //
         try{
             driver.get("https://demoqa.com");
@@ -97,15 +88,6 @@ public class Prueba extends Main {
     //
     public void TC002_Elements2() throws InterruptedException, IOException {
         testId = "TC002_Elements2";
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized");
-        chromeOptions.addArguments("--log-level=1");
-        chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--disable-search-engine-choice-screen");
-        chromeOptions.setAcceptInsecureCerts(true);
-        chromeOptions.addArguments("--incognito");
-        //
-        WebDriver driver = new ChromeDriver(chromeOptions);
         //
         try{
             driver.get("https://demoqa.com");
@@ -122,6 +104,11 @@ public class Prueba extends Main {
             Thread.sleep(500);
             WebElement minus = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/div/button[2]"));
             minus.click();
+            Thread.sleep(500);
+            //
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,600)", "");
+            Thread.sleep(500);
             //
             Thread.sleep(500);
             WebElement home_arrow = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/span/button"));
@@ -261,15 +248,6 @@ public class Prueba extends Main {
     //
     public void TC003_Elements3() throws InterruptedException, IOException {
         testId = "TC003_Elements3";
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized");
-        chromeOptions.addArguments("--log-level=1");
-        chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--disable-search-engine-choice-screen");
-        chromeOptions.setAcceptInsecureCerts(true);
-        chromeOptions.addArguments("--incognito");
-        //
-        WebDriver driver = new ChromeDriver(chromeOptions);
         //
         try{
             driver.get("https://demoqa.com");
@@ -281,7 +259,7 @@ public class Prueba extends Main {
             sub_menu.click();
             Thread.sleep(500);
             //
-            WebElement yes = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[2]"));
+            WebElement yes = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[2]"));
             yes.click();
             Thread.sleep(500);
             //

@@ -281,7 +281,17 @@ public class Prueba extends Main {
             sub_menu.click();
             Thread.sleep(500);
             //
-
+            WebElement yes = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[2]"));
+            yes.click();
+            Thread.sleep(500);
+            //
+            WebElement impressive = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]"));
+            impressive.click();
+            Thread.sleep(500);
+            //
+            WebElement no = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[4]"));
+            no.click();
+            Thread.sleep(500);
             //
         } catch(Exception e){
             e.printStackTrace();

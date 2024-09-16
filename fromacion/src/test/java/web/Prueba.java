@@ -355,7 +355,111 @@ public class Prueba extends Main {
             js.executeScript("window.scrollBy(0,-450)", "");
             Thread.sleep(500);
             //
-
+            WebElement add = driver.findElement(By.xpath("//*[@id='addNewRecordButton']"));
+            add.click();
+            Thread.sleep(500);
+            //
+            WebElement first_name = driver.findElement(By.id("firstName"));
+            first_name.sendKeys("FirstNameTest");
+            Thread.sleep(500);
+            WebElement last_name = driver.findElement(By.id("lastName"));
+            last_name.sendKeys("LastNameTest");
+            Thread.sleep(500);
+            //
+            WebElement email = driver.findElement(By.id("userEmail"));
+            email.sendKeys("EmailTest");
+            Thread.sleep(500);
+            //
+            WebElement age = driver.findElement(By.id("age"));
+            age.sendKeys("AgeTest");
+            Thread.sleep(500);
+            //
+            WebElement salary = driver.findElement(By.id("salary"));
+            salary.sendKeys("SalaryTest");
+            Thread.sleep(500);
+            //
+            WebElement department = driver.findElement(By.id("department"));
+            department.sendKeys("DepartmentTest");
+            Thread.sleep(500);
+            //
+            WebElement submit = driver.findElement(By.id("submit"));
+            submit.click();
+            Thread.sleep(500);
+            email.clear();
+            Thread.sleep(500);
+            email.sendKeys("EmailTest@");
+            Thread.sleep(500);
+            submit.click();
+            Thread.sleep(500);
+            email.clear();
+            Thread.sleep(500);
+            email.sendKeys("EmailTest@Test");
+            Thread.sleep(500);
+            submit.click();
+            Thread.sleep(500);
+            email.clear();
+            Thread.sleep(500);
+            email.sendKeys("EmailTest@Test.com");
+            Thread.sleep(500);
+            //
+            age.clear();
+            age.sendKeys("00");
+            Thread.sleep(500);
+            submit.click();
+            //
+            salary.clear();
+            salary.sendKeys("0000");
+            Thread.sleep(500);
+            submit.click();
+            Thread.sleep(500);
+            //
+            add.click();
+            Thread.sleep(500);
+            WebElement first_name2 = driver.findElement(By.id("firstName"));
+            first_name2.sendKeys("FirstNameTest2");
+            Thread.sleep(500);
+            WebElement last_name2 = driver.findElement(By.id("lastName"));
+            last_name2.sendKeys("LastNameTest2");
+            Thread.sleep(500);
+            WebElement email2 = driver.findElement(By.id("userEmail"));
+            email2.sendKeys("EmailTest2@Test.com");
+            Thread.sleep(500);
+            WebElement age2 = driver.findElement(By.id("age"));
+            age2.sendKeys("02");
+            Thread.sleep(500);
+            WebElement salary2 = driver.findElement(By.id("salary"));
+            salary2.sendKeys("0002");
+            Thread.sleep(500);
+            WebElement department2 = driver.findElement(By.id("department"));
+            department2.sendKeys("DepartmentTest2");
+            Thread.sleep(500);
+            WebElement submit2 = driver.findElement(By.id("submit"));
+            submit2.click();
+            Thread.sleep(500);
+            //
+            add.click();
+            Thread.sleep(500);
+            WebElement first_name3 = driver.findElement(By.id("firstName"));
+            first_name3.sendKeys("FirstNameTest3");
+            Thread.sleep(500);
+            WebElement last_name3 = driver.findElement(By.id("lastName"));
+            last_name3.sendKeys("LastNameTest3");
+            Thread.sleep(500);
+            WebElement email3 = driver.findElement(By.id("userEmail"));
+            email3.sendKeys("EmailTest3@Test.com");
+            Thread.sleep(500);
+            WebElement age3 = driver.findElement(By.id("age"));
+            age3.sendKeys("03");
+            Thread.sleep(500);
+            WebElement salary3 = driver.findElement(By.id("salary"));
+            salary3.sendKeys("0003");
+            Thread.sleep(500);
+            WebElement department3 = driver.findElement(By.id("department"));
+            department3.sendKeys("DepartmentTest3");
+            Thread.sleep(500);
+            WebElement submit3 = driver.findElement(By.id("submit"));
+            submit3.click();
+            Thread.sleep(500);
             //
         } catch(Exception e){
             e.printStackTrace();

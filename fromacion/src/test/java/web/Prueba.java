@@ -625,5 +625,30 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+    @Test(description = "Prueba DemoQA Elements Buttons")
+    @Story("Elements")
+    @Description("Comprobar que todos los botones funcionan con su input asignado.")
+    //
+    public void TC005_Elements5() throws InterruptedException, IOException {
+        testId = "TC005_Elements4";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.id("item-3"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
 }
 //

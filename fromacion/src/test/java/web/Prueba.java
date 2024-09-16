@@ -3,6 +3,7 @@ package web;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebElement;
 import io.qameta.allure.Description;
@@ -257,8 +258,8 @@ public class Prueba extends Main {
             WebElement sub_menu = driver.findElement(By.id("item-2"));
             sub_menu.click();
             Thread.sleep(500);
-            // The code, for some reason just doesen't want to click the "yes" button. The xpath is good, but still.
-            WebElement yes = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[2]"));
+            //
+            WebElement yes = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[2]/label"));
             yes.click();
             Thread.sleep(500);
             //
@@ -294,10 +295,67 @@ public class Prueba extends Main {
             Thread.sleep(500);
             //
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,350)", "");
+            js.executeScript("window.scrollBy(0,450)", "");
             Thread.sleep(500);
             //
-            
+            WebElement rows = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[2]/select"));
+            rows.click();
+            Thread.sleep(500);
+            //
+            WebElement select_rows = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[2]/select"));
+            select_rows.sendKeys(Keys.DOWN);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.DOWN);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.DOWN);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.DOWN);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            js.executeScript("window.scrollBy(0,5000)", "");
+            Thread.sleep(500);
+            //
+            rows.click();
+            Thread.sleep(500);
+            select_rows.sendKeys(Keys.UP);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            rows.click();
+            Thread.sleep(500);
+            select_rows.sendKeys(Keys.UP);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            rows.click();
+            Thread.sleep(500);
+            select_rows.sendKeys(Keys.UP);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            rows.click();
+            Thread.sleep(500);
+            select_rows.sendKeys(Keys.UP);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            rows.click();
+            Thread.sleep(500);
+            select_rows.sendKeys(Keys.UP);
+            Thread.sleep(50);
+            select_rows.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            js.executeScript("window.scrollBy(0,-450)", "");
+            Thread.sleep(500);
+            //
+
             //
         } catch(Exception e){
             e.printStackTrace();

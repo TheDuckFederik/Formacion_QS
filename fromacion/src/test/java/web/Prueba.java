@@ -40,12 +40,15 @@ public class Prueba extends Main {
             WebElement sub_menu = driver.findElement(By.id("item-0"));
             sub_menu.click();
             Thread.sleep(500);
+            //
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,350)", "");
             Thread.sleep(500);
+            //
             WebElement full_name = driver.findElement(By.id("userName"));
             full_name.sendKeys("FullNameTest");
             Thread.sleep(500);
+            //
             WebElement email = driver.findElement(By.id("userEmail"));
             email.sendKeys("EmailTest");
             Thread.sleep(500);
@@ -68,14 +71,16 @@ public class Prueba extends Main {
             Thread.sleep(500);
             email.sendKeys("EmailTest@Test.com");
             Thread.sleep(500);
+            //
             WebElement current_address = driver.findElement(By.id("currentAddress"));
             current_address.sendKeys("CurrentAddressTest");
             Thread.sleep(500);
+            //
             WebElement permanent_address = driver.findElement(By.id("permanentAddress"));
             permanent_address.sendKeys("PermanentAddressTest");
-            Thread.sleep(500);
             submit.click();
             Thread.sleep(500);
+            //
             WebElement output_text = driver.findElement(By.xpath("(//div[@class='border col-md-12 col-sm-12'])[1]"));
             String print_output = output_text.getText();
             System.out.println(print_output);
@@ -111,15 +116,42 @@ public class Prueba extends Main {
             WebElement sub_menu = driver.findElement(By.id("item-1"));
             sub_menu.click();
             Thread.sleep(500);
+            //
             WebElement plus = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/div/button[1]"));
             plus.click();
             Thread.sleep(500);
             WebElement minus = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/div/button[2]"));
             minus.click();
+            //
             Thread.sleep(500);
             WebElement home_arrow = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/span/button"));
             home_arrow.click();
             Thread.sleep(500);
+            //
+            WebElement desktop_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[1]/span/button"));
+            desktop_arrow.click();
+            Thread.sleep(500);
+            //
+            WebElement documents_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/span/button"));
+            documents_arrow.click();
+            Thread.sleep(500);
+            WebElement workSpace_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/span/button"));
+            workSpace_arrow.click();
+            Thread.sleep(500);
+            WebElement office_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/span/button"));
+            office_arrow.click();
+            Thread.sleep(500);
+            //
+            WebElement downloads_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/span/button"));
+            downloads_arrow.click();
+            Thread.sleep(500);
+            //
+            WebElement home_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/span/label/span[1]"));
+            home_check_box.click();
+            Thread.sleep(500);
+            home_check_box.click();
+            Thread.sleep(500);
+            //
             //
         } catch(Exception e){
             e.printStackTrace();

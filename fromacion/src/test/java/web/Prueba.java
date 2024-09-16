@@ -526,13 +526,13 @@ public class Prueba extends Main {
             Thread.sleep(500);
             //
             search_bar.clear();
-            search_bar.sendKeys("LastNameTest1");
+            search_bar.sendKeys("LastNameTest2");
             Thread.sleep(500);
             search.click();
             Thread.sleep(500);
             //
             search_bar.clear();
-            search_bar.sendKeys("EmailTest1@Test.com");
+            search_bar.sendKeys("EmailTest3@Test.com");
             Thread.sleep(500);
             search.click();
             Thread.sleep(500);
@@ -544,13 +544,13 @@ public class Prueba extends Main {
             Thread.sleep(500);
             //
             search_bar.clear();
-            search_bar.sendKeys("0001");
+            search_bar.sendKeys("0002");
             Thread.sleep(500);
             search.click();
             Thread.sleep(500);
             //
             search_bar.clear();
-            search_bar.sendKeys("DepartmentTest1");
+            search_bar.sendKeys("DepartmentTest3");
             Thread.sleep(500);
             search.click();
             Thread.sleep(500);
@@ -607,14 +607,16 @@ public class Prueba extends Main {
             sort6.click();
             Thread.sleep(500);
             //
-            next.click();
-            Thread.sleep(500);
-            WebElement delete1 = driver.findElement(By.xpath("//*[@id=\"delete-record-6\"]"));
+            WebElement delete1 = driver.findElement(By.id("delete-record-6"));
             delete1.click();
             Thread.sleep(500);
             //
-            WebElement delete2 = driver.findElement(By.xpath("//*[@id=\"delete-record-5\"]"));
+            WebElement delete2 = driver.findElement(By.id("delete-record-5"));
             delete2.click();
+            Thread.sleep(500);
+            //
+            WebElement delete3 = driver.findElement(By.id("delete-record-4"));
+            delete3.click();
             Thread.sleep(500);
             //
         } catch(Exception e){

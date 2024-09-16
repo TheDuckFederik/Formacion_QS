@@ -20,7 +20,7 @@ public class Main {
 
         WebDriver driver = new ChromeDriver(chromeOptions);
         try{
-
+           
             driver.get("https://www.wikipedia.es");
             Thread.sleep(2000);
             WebElement menu = driver.findElement(By.id("vector-main-menu-dropdown-checkbox"));
@@ -32,6 +32,7 @@ public class Main {
             String titulo = driver.getCurrentUrl();
 
             System.out.println(titulo);
+            
 
         } catch(Exception e){
             e.printStackTrace();

@@ -198,24 +198,110 @@ public class Main {
         //     driver.quit();
         // }
 
+        // try {
+        //     driver.get("https://demoqa.com");
+        //     Thread.sleep(500);
+        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
+        //     menu.click();
+        //     Thread.sleep(500);
+            
+        //     WebElement submenu = driver.findElement(By.id("item-2"));
+        //     submenu.click();
+        //     Thread.sleep(500);
+
+        //     WebElement yes = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/label[1]"));
+        //     yes.click();
+        //     Thread.sleep(500);
+
+        //     WebElement impresive = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/label[1]"));
+        //     impresive.click();
+        //     Thread.sleep(500);
+
+        // } catch(Exception e){
+        //     e.printStackTrace();
+        // } finally{
+        //     driver.quit();
+        // }
+
         try {
+
             driver.get("https://demoqa.com");
             Thread.sleep(500);
             WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
             menu.click();
             Thread.sleep(500);
             
-            WebElement submenu = driver.findElement(By.id("item-2"));
+            WebElement submenu = driver.findElement(By.id("item-3"));
             submenu.click();
             Thread.sleep(500);
 
-            WebElement yes = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/label[1]"));
-            yes.click();
+            WebElement addUser = driver.findElement(By.id("addNewRecordButton"));
+            addUser.click();
             Thread.sleep(500);
 
-            WebElement impresive = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/label[1]"));
-            impresive.click();
+            WebElement firstNameAdd = driver.findElement(By.id("firstName"));
+            firstNameAdd.sendKeys("Nombre");
             Thread.sleep(500);
+            
+            WebElement lastNameAdd = driver.findElement(By.id("lastName"));
+            lastNameAdd.sendKeys("Apellido");
+            Thread.sleep(500);
+            
+            WebElement emailAdd = driver.findElement(By.id("userEmail"));
+            emailAdd.sendKeys("emailErroneo");
+            Thread.sleep(500);
+
+            WebElement ageAdd = driver.findElement(By.id("age"));
+            ageAdd.sendKeys("asdf");
+            Thread.sleep(500);
+
+            WebElement salaryAdd = driver.findElement(By.id("salary"));
+            salaryAdd.sendKeys("aqwer");
+            Thread.sleep(500);
+
+            WebElement departmentAdd = driver.findElement(By.id("department"));
+            departmentAdd.sendKeys("poidf");
+            Thread.sleep(500);
+
+            WebElement submitAdd = driver.findElement(By.id("submit"));
+            submitAdd.click();
+            Thread.sleep(500);
+
+            emailAdd.clear();
+            emailAdd.sendKeys("Email@Correcto.com");
+            Thread.sleep(500);
+
+            submitAdd.click();
+            Thread.sleep(500);
+
+            ageAdd.clear();
+            ageAdd.sendKeys("23");
+            Thread.sleep(500);
+
+            salaryAdd.clear();
+            salaryAdd.sendKeys("1200");
+            Thread.sleep(500);
+
+            submitAdd.click();
+            Thread.sleep(500);
+
+            WebElement firstNameorder = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]"));
+            WebElement firstNameorder2 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]"));
+            firstNameorder.click();
+            Thread.sleep(2000);
+            firstNameorder2.click();
+            Thread.sleep(2000); 
+
+            WebElement editButton = driver.findElement(By.id("edit-record-1"));
+
+            editButton.click();
+            Thread.sleep(500);
+
+            WebElement 
+            submitAdd.click();
+            Thread.sleep(2000);
+
+
         } catch(Exception e){
             e.printStackTrace();
         } finally{

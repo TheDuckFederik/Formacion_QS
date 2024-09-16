@@ -259,7 +259,7 @@ public class Prueba extends Main {
     @Story("Elements")
     @Description("Comprobar que todos los botones funcionan de forma correcta.")
     //
-    public void TC003_Elements2() throws InterruptedException, IOException {
+    public void TC003_Elements3() throws InterruptedException, IOException {
         testId = "TC003_Elements3";
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
@@ -274,7 +274,14 @@ public class Prueba extends Main {
         try{
             driver.get("https://demoqa.com");
             //
-            
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.id("item-2"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+
             //
         } catch(Exception e){
             e.printStackTrace();

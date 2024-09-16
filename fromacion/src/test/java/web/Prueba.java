@@ -276,5 +276,34 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+    @Test(description = "Prueba DemoQA Elements Web Tables")
+    @Story("Elements")
+    @Description("Comprobar el formulario, la lista, el buscador y las paginas.")
+    //
+    public void TC004_Elements4() throws InterruptedException, IOException {
+        testId = "TC004_Elements4";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.id("item-3"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,350)", "");
+            Thread.sleep(500);
+            //
+            
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
 }
 //

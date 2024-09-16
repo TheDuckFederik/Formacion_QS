@@ -1,11 +1,13 @@
 package web;
 //
 import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.testng.annotations.Test;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 // import org.openqa.selenium.chrome.ChromeOptions;
@@ -477,7 +479,11 @@ public class Prueba extends Main {
             page.sendKeys(Keys.ENTER);
             Thread.sleep(500);
             //
-            previous.click();
+            page.sendKeys(Keys.BACK_SPACE);;
+            Thread.sleep(50);
+            page.sendKeys("1");
+            Thread.sleep(50);
+            page.sendKeys(Keys.ENTER);
             Thread.sleep(500);
             //
             WebElement edit = driver.findElement(By.xpath("//*[@id='edit-record-4']"));
@@ -512,7 +518,104 @@ public class Prueba extends Main {
             submit1.click();
             Thread.sleep(500);
             //
-            
+            WebElement search_bar = driver.findElement(By.xpath("//*[@id='searchBox']"));
+            search_bar.sendKeys("FirstNameTest1");
+            Thread.sleep(500);
+            WebElement search = driver.findElement(By.xpath("//*[@id=\"basic-addon2\"]"));
+            search.click();
+            Thread.sleep(500);
+            //
+            search_bar.clear();
+            search_bar.sendKeys("LastNameTest1");
+            Thread.sleep(500);
+            search.click();
+            Thread.sleep(500);
+            //
+            search_bar.clear();
+            search_bar.sendKeys("EmailTest1@Test.com");
+            Thread.sleep(500);
+            search.click();
+            Thread.sleep(500);
+            //
+            search_bar.clear();
+            search_bar.sendKeys("01");
+            Thread.sleep(500);
+            search.click();
+            Thread.sleep(500);
+            //
+            search_bar.clear();
+            search_bar.sendKeys("0001");
+            Thread.sleep(500);
+            search.click();
+            Thread.sleep(500);
+            //
+            search_bar.clear();
+            search_bar.sendKeys("DepartmentTest1");
+            Thread.sleep(500);
+            search.click();
+            Thread.sleep(500);
+            //
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            search_bar.sendKeys(Keys.BACK_SPACE);
+            //
+            WebElement sort1 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]"));
+            sort1.click();
+            Thread.sleep(500);
+            sort1.click();
+            Thread.sleep(500);
+            //
+            WebElement sort2 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]"));
+            sort2.click();
+            Thread.sleep(500);
+            sort2.click();
+            Thread.sleep(500);
+            //
+            WebElement sort3 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]"));
+            sort3.click();
+            Thread.sleep(500);
+            sort3.click();
+            Thread.sleep(500);
+            //
+            WebElement sort4 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]"));
+            sort4.click();
+            Thread.sleep(500);
+            sort4.click();
+            Thread.sleep(500);
+            //
+            WebElement sort5 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]"));
+            sort5.click();
+            Thread.sleep(500);
+            sort5.click();
+            Thread.sleep(500);
+            //
+            WebElement sort6 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]"));
+            sort6.click();
+            Thread.sleep(500);
+            sort6.click();
+            Thread.sleep(500);
+            //
+            next.click();
+            Thread.sleep(500);
+            WebElement delete1 = driver.findElement(By.xpath("//*[@id=\"delete-record-6\"]"));
+            delete1.click();
+            Thread.sleep(500);
+            //
+            WebElement delete2 = driver.findElement(By.xpath("//*[@id=\"delete-record-5\"]"));
+            delete2.click();
+            Thread.sleep(500);
             //
         } catch(Exception e){
             e.printStackTrace();

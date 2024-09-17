@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import io.qameta.allure.Description;
@@ -635,12 +636,25 @@ public class Prueba extends Main {
         try{
             driver.get("https://demoqa.com");
             //
+            Actions actions = new Actions(driver);
+            //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
             Thread.sleep(500);
-            WebElement sub_menu = driver.findElement(By.id("item-3"));
+            WebElement sub_menu = driver.findElement(By.id("item-4"));
             sub_menu.click();
             Thread.sleep(500);
+            WebElement double_click = driver.findElement(By.id("doubleClickBtn"));
+            actions.doubleClick(double_click).perform();
+            Thread.sleep(500);
+            //
+            WebElement right_click = driver.findElement(By.id("rightClickBtn"));
+            actions.contextClick(right_click).perform();
+            Thread.sleep(500);
+            //
+            WebElement single_click = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]"));
+            single_click.click();
+            Thread.sleep(2000);
             //
 
             //

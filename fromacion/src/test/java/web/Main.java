@@ -6,7 +6,8 @@ import org.testng.annotations.BeforeMethod;
 // import com.google.common.collect.ImmutableMap;
 
 import java.io.File;
-
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.TakesScreenshot;
@@ -15,6 +16,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+// import java.util.HashMap; 
+// import java.util.Map;
 
 public class Main {
 
@@ -48,6 +51,14 @@ public class Main {
     chromeOptions.addArguments("--disable-notifications");
     chromeOptions.addArguments("--disable-search-engine-choice-screen");
     chromeOptions.addArguments("--incognito");
+    //
+    String downloadRoute = "C:\\Users\\unai.ovejero.ext\\Downloads";
+    Map<String, Object> preference = new HashMap<>(); 
+    preference.put("profile.default_content_settings.popups", 0);
+    preference.put("download.default_directory", downloadRoute);
+    ChromeOptions options = new ChromeOptions();
+    options.setExperimentalOption("prefs", preference);
+    System.setProperty("webdriver.chrome.driver", "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\fromacion\\src\\test\\resources\\chromedriver.exe");
     //chromeOptions.addArguments("--headless");
     driver = new ChromeDriver(chromeOptions);
     wait = new WebDriverWait(driver, 45);

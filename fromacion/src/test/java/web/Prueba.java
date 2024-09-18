@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
-// import java.awt.Robot;
+// import io.appium.java_client.android.nativekey.KeyEvent;
 // import io.appium.java_client.android.nativekey.KeyEvent;
 // import org.openqa.selenium.chrome.ChromeOptions;
 // import org.testng.Assert;
@@ -683,6 +683,8 @@ public class Prueba extends Main {
             WebElement download = driver.findElement(By.xpath("(//a[normalize-space()='Download'])[1]"));
             download.click();
             Thread.sleep(5000);
+            //
+            // IDK, it's not the chrome options, not the robot, not the default path, NOTHING.
             //
         } catch(Exception e){
             e.printStackTrace();

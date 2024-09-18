@@ -656,8 +656,6 @@ public class Prueba extends Main {
             single_click.click();
             Thread.sleep(2000);
             //
-
-            //
         } catch(Exception e){
             e.printStackTrace();
         } finally{

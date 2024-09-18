@@ -1,16 +1,16 @@
 package web;
 //
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
+// import java.awt.Robot;
+// import io.appium.java_client.android.nativekey.KeyEvent;
 // import org.openqa.selenium.chrome.ChromeOptions;
 // import org.testng.Assert;
 // import org.openqa.selenium.WebDriver;
@@ -631,7 +631,7 @@ public class Prueba extends Main {
     @Description("Comprobar que todos los botones funcionan con su input asignado.")
     //
     public void TC005_Elements5() throws InterruptedException, IOException {
-        testId = "TC005_Elements4";
+        testId = "TC005_Elements5";
         //
         try{
             driver.get("https://demoqa.com");
@@ -644,6 +644,7 @@ public class Prueba extends Main {
             WebElement sub_menu = driver.findElement(By.id("item-4"));
             sub_menu.click();
             Thread.sleep(500);
+            //
             WebElement double_click = driver.findElement(By.xpath("//*[@id=\"doubleClickBtn\"]"));
             actions.doubleClick(double_click).perform();
             Thread.sleep(500);
@@ -655,6 +656,33 @@ public class Prueba extends Main {
             WebElement single_click = driver.findElement(By.xpath("(//button[normalize-space()='Click Me'])[1]"));
             single_click.click();
             Thread.sleep(2000);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Elements Upload & Download.")
+    @Story("Elements")
+    @Description("Comprobar que la descraga y la subida de archivos funciona correctamente.")
+    //
+    public void TC006_Elements6() throws InterruptedException, IOException {
+        testId = "TC006_Elements6";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.id("item-7"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            WebElement download = driver.findElement(By.xpath("(//a[normalize-space()='Download'])[1]"));
+            download.click();
+            Thread.sleep(5000);
             //
         } catch(Exception e){
             e.printStackTrace();

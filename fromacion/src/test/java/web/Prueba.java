@@ -18,12 +18,12 @@ import io.qameta.allure.Story;
 //
 public class Prueba extends Main {
     //
-    @Test(description = "Prueba DemoQA Elements Text box")
+    @Test(description = "Prueba DemoQA Elements Text Box")
     @Story("Elements")
     @Description("Rellenar textbox")
     //
-    public void TC001_Elements1() throws InterruptedException, IOException {
-        testId = "TC001_Elements1";
+    public void TC001_Text_Box() throws InterruptedException, IOException {
+        testId = "TC001_Text_Box";
         //
         try{
             driver.get("https://demoqa.com");
@@ -85,12 +85,12 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Elements Check box")
+    @Test(description = "Prueba DemoQA Elements Check Box")
     @Story("Elements")
     @Description("Comprobar que todos los botones y desplegables funcionan de forma correcta.")
     //
-    public void TC002_Elements2() throws InterruptedException, IOException {
-        testId = "TC002_Elements2";
+    public void TC002_Check_Box() throws InterruptedException, IOException {
+        testId = "TC002_Check_Box";
         //
         try{
             driver.get("https://demoqa.com");
@@ -249,8 +249,8 @@ public class Prueba extends Main {
     @Story("Elements")
     @Description("Comprobar que todos los botones funcionan de forma correcta.")
     //
-    public void TC003_Elements3() throws InterruptedException, IOException {
-        testId = "TC003_Elements3";
+    public void TC003_Radio_Button() throws InterruptedException, IOException {
+        testId = "TC003_Radio_Button";
         //
         try{
             driver.get("https://demoqa.com");
@@ -284,8 +284,8 @@ public class Prueba extends Main {
     @Story("Elements")
     @Description("Comprobar el formulario, la lista, el buscador y las paginas.")
     //
-    public void TC004_Elements4() throws InterruptedException, IOException {
-        testId = "TC004_Elements4";
+    public void TC004_Web_Tables() throws InterruptedException, IOException {
+        testId = "TC004_Web_Tables";
         //
         try{
             driver.get("https://demoqa.com");
@@ -630,8 +630,8 @@ public class Prueba extends Main {
     @Story("Elements")
     @Description("Comprobar que todos los botones funcionan con su input asignado.")
     //
-    public void TC005_Elements5() throws InterruptedException, IOException {
-        testId = "TC005_Elements5";
+    public void TC005_Buttons() throws InterruptedException, IOException {
+        testId = "TC005_Buttons";
         //
         try{
             driver.get("https://demoqa.com");
@@ -663,12 +663,12 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Elements Upload & Download.")
+    @Test(description = "Prueba DemoQA Elements Upload And Download.")
     @Story("Elements")
     @Description("Comprobar que la descraga y la subida de archivos funciona correctamente.")
     //
-    public void TC006_Elements6() throws InterruptedException, IOException {
-        testId = "TC006_Elements6";
+    public void TC006_Upload_And_Download() throws InterruptedException, IOException {
+        testId = "TC006_Upload_And_Download";
         //
         try{
             driver.get("https://demoqa.com");
@@ -685,6 +685,91 @@ public class Prueba extends Main {
             Thread.sleep(5000);
             //
             // IDK, it's not the chrome options, not the robot, not the default path, NOTHING.
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Elements Dynamic Properties.")
+    @Story("Elements")
+    @Description("Comprobar que los elementos canvian de forma dinamica.")
+    //
+    public void TC007_Dynamic_Properties() throws InterruptedException, IOException {
+        testId = "TC007_Dynamic_Properties";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.id("item-8"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Forms Practice Form.")
+    @Story("Forms")
+    @Description("Comprobar los diferentes campos en el formulario y sus difirentes formatos.")
+    //
+    public void TC008_Practice_Form() throws InterruptedException, IOException {
+        testId = "TC008_Practice_Form";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[2]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-0']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,150)", "");
+            Thread.sleep(500);
+            //
+            WebElement first_name = driver.findElement(By.id("firstName"));
+            first_name.sendKeys("FirstNameTest");
+            Thread.sleep(500);
+            WebElement last_name = driver.findElement(By.id("lastName"));
+            last_name.sendKeys("LastNameTest");
+            Thread.sleep(500);
+            //
+            WebElement email = driver.findElement(By.id("userEmail"));
+            email.sendKeys("EmailTest");
+            Thread.sleep(500);
+            //
+            WebElement submit = driver.findElement(By.id("submit"));
+            submit.click();
+            Thread.sleep(500);
+            //
+            email.clear();
+            email.sendKeys("EmailTest@Test");
+            Thread.sleep(500);
+            //
+            email.clear();
+            email.sendKeys("EmailTest@Test.com");
+            Thread.sleep(500);
+            //
+            WebElement male = driver.findElement(By.xpath("//label[normalize-space()='Male']"));
+            male.click();
+            Thread.sleep(500);
+            //
+            WebElement female = driver.findElement(By.xpath("//label[normalize-space()='Female']"));
+            female.click();
+            Thread.sleep(500);
+            //
+            WebElement other = driver.findElement(By.xpath("//label[normalize-space()='Other']"));
+            other.click();
+            Thread.sleep(2000);
             //
         } catch(Exception e){
             e.printStackTrace();

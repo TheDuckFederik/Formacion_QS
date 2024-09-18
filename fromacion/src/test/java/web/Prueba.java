@@ -644,7 +644,7 @@ public class Prueba extends Main {
             WebElement sub_menu = driver.findElement(By.id("item-4"));
             sub_menu.click();
             Thread.sleep(500);
-            WebElement double_click = driver.findElement(By.id("doubleClickBtn"));
+            WebElement double_click = driver.findElement(By.xpath("//*[@id=\"doubleClickBtn\"]"));
             actions.doubleClick(double_click).perform();
             Thread.sleep(500);
             //
@@ -652,7 +652,7 @@ public class Prueba extends Main {
             actions.contextClick(right_click).perform();
             Thread.sleep(500);
             //
-            WebElement single_click = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]"));
+            WebElement single_click = driver.findElement(By.xpath("(//button[normalize-space()='Click Me'])[1]"));
             single_click.click();
             Thread.sleep(2000);
             //

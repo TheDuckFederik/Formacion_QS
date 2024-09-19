@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -353,11 +354,11 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Elements Upload and Download")
+    @Test(description = "Prueba DemoQA Elements Dynamic Properties")
     @Story("Elements")
-    @Description("Probar Upload and Download")
-    public void TC006_Upload_and_Download() throws InterruptedException, IOException {
-        testId = "TC006_Upload_and_Download";
+    @Description("Probar Dynamic Properties")
+    public void TC007_Dynamic_Properties() throws InterruptedException, IOException {
+        testId = "TC007_Dynamic_Properties";
          try{
             driver.get("https://demoqa.com");          
 
@@ -365,17 +366,49 @@ public class Prueba extends Main {
             menu.click();
             Thread.sleep(500);
 
-            WebElement uploadanddownload = driver.findElement(By.xpath("//*[@id=\"item-7\"]"));
+            WebElement uploadanddownload = driver.findElement(By.xpath("//*[@id=\"item-8\"]"));
             uploadanddownload.click();
             Thread.sleep(500);
+             
+            WebElement colorChangeButton = driver.findElement(By.id("colorChange"));
 
-            driver.findElement(By.xpath("//*[@id=\"downloadButton\"]")).click();
+            String initialColor = colorChangeButton.getCssValue("color");
+            System.out.println("Color inicial: " + Color.fromString(initialColor).asHex());
+
             Thread.sleep(5000);
 
-            WebElement upload = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/form[1]/div[1]/input[1]"));
-            upload.sendKeys("C:\\Users\\ricard.ferrando.ext\\Downloads\\sampleFile.jpeg");
-            Thread.sleep(5000);
+            String changedColor = colorChangeButton.getCssValue("color");
+            System.out.println("Color después de 5 segundos: " + Color.fromString(changedColor).asHex());
 
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Elements Dynamic Properties")
+    @Story("Elements")
+    @Description("Probar Dynamic Properties")
+    public void TC007_Dynamic_Properties() throws InterruptedException, IOException {
+        testId = "TC007_Dynamic_Properties";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[2]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement uploadanddownload = driver.findElement(By.xpath("//*[@id=\"item-8\"]"));
+            uploadanddownload.click();
+            Thread.sleep(500);
+             
+
+
+
+
+
+
+            
         } catch(Exception e){
             e.printStackTrace();
         } finally{

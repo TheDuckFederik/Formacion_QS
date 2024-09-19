@@ -3,7 +3,12 @@ import java.io.IOException;
 //
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 // import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
+import java.util.concurrent.TimeUnit;
 //
 public class Prueba extends Main {
     //
@@ -302,50 +308,61 @@ public class Prueba extends Main {
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
             
-            WebElement text_box = driver.findElement(By.id("item-3"));
-            text_box.click();
-
-            // Añadimos un user
-            //Clicamos a ADD
-            WebElement B_Add = driver.findElement(By.id("addNewRecordButton"));
-            B_Add.click();
-            Thread.sleep(500);
-            // Rellenamos formulario
-            WebElement Add_FirstN = driver.findElement(By.id("firstName"));
-            Add_FirstN.sendKeys("FUser");
-
-            WebElement Add_LastN = driver.findElement(By.id("lastName"));
-            Add_LastN.sendKeys("LUser");
+            WebElement web_tables = driver.findElement(By.id("item-3"));
+            web_tables.click();
 
             
-            WebElement Add_Email = driver.findElement(By.id("userEmail"));
-            Add_Email.sendKeys("User");
-            Thread.sleep(500);
-            WebElement submit = driver.findElement(By.id("submit"));
-            submit.click();
-            Add_Email.clear();
             
-            Add_Email.sendKeys("User@");
-            submit.click();
-            Thread.sleep(500);
-            Add_Email.clear();
+            
+            for (int i=1;i<7;i++){
+                // Añadimos un user
+                //Clicamos a ADD
+                WebElement B_Add = driver.findElement(By.id("addNewRecordButton"));
+                B_Add.click();
+                Thread.sleep(500);
+                // Rellenamos formulario
 
-            Add_Email.sendKeys("User@gmail.com");
+                WebElement Add_FirstN = driver.findElement(By.id("firstName"));
+                Add_FirstN.sendKeys("FUser" + i);
+                Thread.sleep(500);
 
-            WebElement Add_Age = driver.findElement(By.id("age"));
-            Add_Age.sendKeys("20");
+                WebElement Add_LastN = driver.findElement(By.id("lastName"));
+                Add_LastN.sendKeys("LUser" + i);
+    
+                WebElement Add_Email = driver.findElement(By.id("userEmail"));
+                Add_Email.sendKeys("User" + i);
+                Thread.sleep(500);
+                WebElement submit = driver.findElement(By.id("submit"));
+                submit.click();
+                Add_Email.clear();
+                
+                Add_Email.sendKeys("User"+ i +"@");
+                submit.click();
+                Thread.sleep(500);
+                Add_Email.clear();
 
-            WebElement Add_Salary = driver.findElement(By.id("salary"));
-            Add_Salary.sendKeys("2000");
+                Add_Email.sendKeys("User"+ i +"@gmail.com");
 
-            WebElement Add_Department = driver.findElement(By.id("department"));
-            Add_Department.sendKeys("IA");
-            Thread.sleep(2000);
-            submit.click();
+                WebElement Add_Age = driver.findElement(By.id("age"));
+                Add_Age.sendKeys("2"+i);
+
+                WebElement Add_Salary = driver.findElement(By.id("salary"));
+                Add_Salary.sendKeys("2"+i+"00");
+
+                WebElement Add_Department = driver.findElement(By.id("department"));
+                Add_Department.sendKeys("department"+i);
+                Thread.sleep(500);
+                submit.click();
+            }
+            
+
+            
+
+            
             
             // Buscamos Last Name
             WebElement buscar = driver.findElement(By.id("searchBox"));
-            buscar.sendKeys("Cierra");
+            buscar.sendKeys("User");
             Thread.sleep(1000);
             buscar.clear();
             Thread.sleep(1000);
@@ -353,7 +370,7 @@ public class Prueba extends Main {
             
 
             // Editamos 
-            WebElement editar = driver.findElement(By.xpath("//*[@id='edit-record-1']"));
+            WebElement editar = driver.findElement(By.xpath("//*[@id='edit-record-4']"));
             editar.click();
             Thread.sleep(1000);
             
@@ -386,9 +403,212 @@ public class Prueba extends Main {
             Edit_Department.sendKeys("IA");
             WebElement E_Submit = driver.findElement(By.xpath("//*[@id='submit']"));
             E_Submit.click();
-            Thread.sleep(5000);
+            Thread.sleep(1000);
+
+            buscar.sendKeys("User");
+
+            WebElement borrar = driver.findElement(By.xpath("//*[@id='delete-record-5']"));
+            Thread.sleep(1000);
+            borrar.click();
+            Thread.sleep(2000);
+
+            // Ordenar
+            WebElement O_first_name = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]/div[1]"));
+            O_first_name.click();
+
+            O_first_name.click();
+
+            WebElement O_last_name = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]/div[1]"));
+            O_last_name.click();
+
+            O_last_name.click();
+
+            WebElement O_age = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]/div[1]"));
+            O_age.click();
+
+            O_age.click();
+
+            WebElement O_email = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]/div[1]"));
+            O_email.click();
+
+            O_email.click();
+
+            WebElement O_Salary = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]/div[1]"));
+            O_Salary.click();
+
+            O_Salary.click();
+
+            WebElement O_Department = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]/div[1]"));
+            O_Department.click();
+
+            O_Department.click();
+            Thread.sleep(1000);
+
+            WebElement filas = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[2]/select"));
+            Select select = new Select(filas);
+            select.selectByValue("5");
+            Thread.sleep(500);
+            select.selectByValue("10");
+            Thread.sleep(500);
+            select.selectByValue("20");
+            Thread.sleep(500);
+            select.selectByValue("25");
+            Thread.sleep(500);
+            select.selectByValue("50");
+            Thread.sleep(500);
+            select.selectByValue("100");
+            Thread.sleep(500);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+
+    @Test(description = "Prueba DemoQA Elements buttons")
+    @Story("Elements")
+    @Description("Rellenar Buttons")
+    //
+    public void TC005_Elements5() throws InterruptedException, IOException {
+        testId = "TC005_Elements5";
+        
+        //
+        try{
+            driver.get("https://demoqa.com");
+
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            menu.click();
+            
+            WebElement buttons = driver.findElement(By.id("item-4"));
+            buttons.click();
+
+            WebElement primer_boton = driver.findElement(By.id("doubleClickBtn"));
+
+            Actions actions = new Actions(driver);
+
+            actions.doubleClick(primer_boton).perform();
+            Thread.sleep(500);
+
+            WebElement segundo_boton = driver.findElement(By.id("rightClickBtn"));
+
+            actions.contextClick(segundo_boton).perform();
+            Thread.sleep(500);
+
+            WebElement tercer_boton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='mt-4'][2]/button")));
+
+            tercer_boton.click();
+            Thread.sleep(500);
+            
+            WebElement primer_text = driver.findElement(By.xpath("//*[@id='doubleClickMessage']"));
+            WebElement segundo_text = driver.findElement(By.id("rightClickMessage"));
+            WebElement tercer_texto = driver.findElement(By.id("dynamicClickMessage"));
+            String texto = primer_text.getText();
+            texto +=" "+"\n"+ segundo_text.getText();
+            texto +=" "+"\n"+tercer_texto.getText();
+            System.out.println("Texto: " + texto);
             
 
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Elements Upload and Download")
+    @Story("Elements")
+    @Description("Upload and Download")
+    //
+    public void TC006_Elements6() throws InterruptedException, IOException {
+        testId = "TC006_Elements6";
+        
+        //
+        try{
+            driver.get("https://demoqa.com");
+
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            menu.click();
+            
+            WebElement Upload_donwload = driver.findElement(By.id("item-7"));
+            Upload_donwload.click();
+            Thread.sleep(1000);
+
+            WebElement download_btn = driver.findElement(By.id("downloadButton"));
+            download_btn.click();
+            
+
+            WebElement subir_archivo = driver.findElement(By.id("uploadFile"));
+            // Escribimos la ruta de nuestro archivo
+            subir_archivo.sendKeys("C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png");
+            Thread.sleep(1000);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+
+    @Test(description = "Prueba DemoQA Elements Dynamic Properties")
+    @Story("Elements")
+    @Description("Dynamic Properties")
+    //
+    public void TC007_Elements7() throws InterruptedException, IOException {
+        testId = "TC007_Elements7";
+        
+        //
+        try{
+            driver.get("https://demoqa.com");
+
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            menu.click();
+            
+            WebElement Upload_donwload = driver.findElement(By.id("item-8"));
+            Upload_donwload.click();
+            Thread.sleep(1000);
+            
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            WebElement primer_boton = wait.until(ExpectedConditions.elementToBeClickable(By.id("enableAfter")));
+            primer_boton.click();
+
+
+            WebElement color_boton = driver.findElement(By.id("colorChange"));
+            Thread.sleep(500);
+            color_boton.click();
+            Thread.sleep(500);
+            String color = color_boton.getCssValue("color");
+            System.out.println("Este es el color : "+ color);
+           
+            WebElement boton_visible = driver.findElement(By.id("visibleAfter"));
+            boton_visible.click();
+            Thread.sleep(1000);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+
+    @Test(description = "Prueba DemoQA Elements Upload and Download")
+    @Story("Elements")
+    @Description("Upload and Download")
+    //
+    public void TC008_Elements8() throws InterruptedException, IOException {
+        testId = "TC008_Elements8";
+        
+        //
+        try{
+            driver.get("https://demoqa.com");
+
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[2]"));
+            menu.click();
+            
+            WebElement Upload_donwload = driver.findElement(By.id("item-0"));
+            Upload_donwload.click();
+            Thread.sleep(1000);
+            
+            
         } catch(Exception e){
             e.printStackTrace();
         } finally{

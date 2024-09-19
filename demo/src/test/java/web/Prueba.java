@@ -495,7 +495,7 @@ public class Prueba extends Main {
             actions.contextClick(segundo_boton).perform();
             Thread.sleep(500);
 
-            WebElement tercer_boton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='mt-4'][2]/button")));
+            WebElement tercer_boton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Click Me']")));
 
             tercer_boton.click();
             Thread.sleep(500);
@@ -599,15 +599,54 @@ public class Prueba extends Main {
         
         //
         try{
+            // Entramos a demoqa
             driver.get("https://demoqa.com");
-
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[2]"));
-            menu.click();
-            
-            WebElement Upload_donwload = driver.findElement(By.id("item-0"));
-            Upload_donwload.click();
+            // Entramos al Forms
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[2]")).click();
+            Thread.sleep(1000);
+            //Entramos al unico item
+            driver.findElement(By.xpath("//span[text()='Practice Form']")).click();
             Thread.sleep(1000);
             
+            //Introducimos el First Name
+            driver.findElement(By.id("firstName")).sendKeys("FUser");
+            driver.findElement(By.id("lastName")).sendKeys("LUser");
+            WebElement email =driver.findElement(By.id("userEmail"));
+            
+            WebElement submit = driver.findElement(By.id("submit"));
+
+            // Para hace scroll 
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView(true);", submit);
+            Thread.sleep(1000);
+
+            // verificar que el correo es erroneo
+            email.sendKeys("User");
+            js.executeScript("arguments[0].scrollIntoView(true);", submit);
+            submit.click();
+
+            Thread.sleep(1000);
+
+            email.clear();
+            email.sendKeys("User@");
+
+            Thread.sleep(1000);
+            js.executeScript("arguments[0].scrollIntoView(true);", submit);
+            submit.click();
+
+            Thread.sleep(1000);
+            email.clear();
+            js.executeScript("arguments[0].scrollIntoView(true);", submit);
+            email.sendKeys("User@gmail.com");
+            Thread.sleep(500);
+
+            // Elegimos el genero
+            driver.findElement(By.id("gender-radio-1")).click();
+            Thread.sleep(500);
+            driver.findElement(By.id("gender-radio-2")).click();
+            Thread.sleep(500);
+
+
             
         } catch(Exception e){
             e.printStackTrace();

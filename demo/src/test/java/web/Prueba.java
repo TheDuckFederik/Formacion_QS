@@ -1,5 +1,7 @@
 package web;
 import java.io.IOException;
+
+import org.openqa.selenium.Alert;
 //
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,6 +20,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import java.util.concurrent.TimeUnit;
+//
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 //
 public class Prueba extends Main {
     //
@@ -641,12 +647,238 @@ public class Prueba extends Main {
             Thread.sleep(500);
 
             // Elegimos el genero
-            driver.findElement(By.id("gender-radio-1")).click();
+            driver.findElement(By.xpath("//*[@id='genterWrapper']/div[2]/div[3]/label")).click();
             Thread.sleep(500);
-            driver.findElement(By.id("gender-radio-2")).click();
+            driver.findElement(By.xpath("//*[@id='genterWrapper']/div[2]/div[2]/label")).click();
             Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='genterWrapper']/div[2]/div[1]/label")).click();
+
+            // Escribimos el mobile
+            driver.findElement(By.id("userNumber")).sendKeys("1234567890");
+
+            // Fecha de nacimiento
+            WebElement fecha = driver.findElement(By.id("dateOfBirthInput"));
+            fecha.click();
+            Thread.sleep(1000);
+
+            // Elegir año
+            WebElement fecha_a = driver.findElement(By.xpath("//*[@id='dateOfBirth']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
+            Select select_a = new Select(fecha_a);
+            select_a.selectByValue("2004");
+            Thread.sleep(2000);
+            
+            // Elegimos el mes
+            WebElement fecha_m = driver.findElement(By.xpath("//*[@id='dateOfBirth']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            Select select_m = new Select(fecha_m);
+            select_m.selectByValue("6");
+            Thread.sleep(2000);
+            // Elegimos dia 
+            driver.findElement(By.xpath("//*[@id='dateOfBirth']/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[6]")).click();
+
+            // Escogeremos el Subject
+            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys("Math");
+            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys(Keys.RETURN);
+            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys("Accounting");
+            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys(Keys.RETURN);
+            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys("Arts");
+            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys(Keys.RETURN);
+            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys("Soci");
+            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys(Keys.RETURN);
+            Thread.sleep(2000);
+
+            // Le damos a los botones de los hobbies
+            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[1]/label")).click();
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[1]/label")).click();
+            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[2]/label")).click();
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[2]/label")).click();
+            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[3]/label")).click();
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[3]/label")).click();
+            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[1]/label")).click();
+
+            // selecionamos el archivo
+            WebElement subir_archivo = driver.findElement(By.id("uploadPicture"));
+            // Escribimos la ruta de nuestro archivo
+            subir_archivo.sendKeys("C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png");
+            Thread.sleep(1000);
+
+            // Current Addres
+            driver.findElement(By.id("currentAddress")).sendKeys("Current Address");
+            // State and City
+            js.executeScript("arguments[0].scrollIntoView(true);", submit);
+            driver.findElement(By.id("react-select-3-input")).sendKeys("NCR");
+            driver.findElement(By.id("react-select-3-input")).sendKeys(Keys.RETURN);
+            Thread.sleep(1000);
+            driver.findElement(By.id("react-select-4-input")).sendKeys("Noida");
+            driver.findElement(By.id("react-select-4-input")).sendKeys(Keys.RETURN);
+            Thread.sleep(1000);
+            submit.click();
+            Thread.sleep(1000);
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Elements Browser Windows")
+    @Story("Elements")
+    @Description("Browser Windows")
+    //
+    public void TC009_Elements9() throws InterruptedException, IOException {
+        testId = "TC009_Elements9";
+        
+        //
+        try {
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+    
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            Thread.sleep(1000);
+    
+            // Entramos al primer item (Browser Windows)
+            driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]")).click();
+            Thread.sleep(1000);
+    
+            // Guardamos el identificador de la ventana original
+            String originalWindow = driver.getWindowHandle();
+            
+            // Acción con el primer botón: Abrir nueva pestaña
+            WebElement botonNuevaPestaña = driver.findElement(By.id("tabButton"));
+            botonNuevaPestaña.click();
+            Thread.sleep(2000);
+    
+            // Obtener todos los identificadores de ventanas/pestañas
+            Set<String> allWindows = driver.getWindowHandles();
+            for (String windowHandle : allWindows) {
+                if (!windowHandle.equals(originalWindow)) {
+                    // Cambiamos a la nueva pestaña
+                    driver.switchTo().window(windowHandle);
+                    break;
+                }
+            }
+            // Cerramos la nueva pestaña
+            driver.close();
+            Thread.sleep(2000);
+    
+            // Volver a la ventana original
+            driver.switchTo().window(originalWindow);
+    
+            // Acción con el segundo botón: Abrir nueva ventana
+            WebElement botonNuevaVentana = driver.findElement(By.id("windowButton"));
+            botonNuevaVentana.click();
+            Thread.sleep(2000);
+    
+            // Obtener nuevamente todos los identificadores de ventanas
+            allWindows = driver.getWindowHandles();
+            for (String windowHandle : allWindows) {
+                if (!windowHandle.equals(originalWindow)) {
+                    // Cambiamos a la nueva ventana
+                    driver.switchTo().window(windowHandle);
+                    break;
+                }
+            }
+    
+            // Cerramos la nueva ventana
+            driver.close();
+            Thread.sleep(2000);
+    
+            // Volver a la ventana original
+            driver.switchTo().window(originalWindow);
+
+            WebElement botonNuevaVentana2 = driver.findElement(By.id("messageWindowButton"));
+            botonNuevaVentana2.click();
+            Thread.sleep(2000);
+    
+            // Obtener nuevamente todos los identificadores de ventanas
+            allWindows = driver.getWindowHandles();
+            for (String windowHandle : allWindows) {
+                if (!windowHandle.equals(originalWindow)) {
+                    // Cambiamos a la nueva ventana
+                    driver.switchTo().window(windowHandle);
+                    break;
+                }
+            }
+            
+            
+            // Cerramos la nueva ventana
+            driver.close();
+            Thread.sleep(2000);
+    
+            // Volver a la ventana original
+            driver.switchTo().window(originalWindow);
 
 
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Elements Alerts")
+    @Story("Elements")
+    @Description("Alerts")
+    //
+    public void TC010_Elements10() throws InterruptedException, IOException {
+        testId = "TC010_Elements10";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]")).click();
+            Thread.sleep(1000);
+
+            // Primer boton
+            driver.findElement(By.id("alertButton")).click();
+            Thread.sleep(500);
+            driver.switchTo().alert().accept();
+
+            // Segundo boton
+            driver.findElement(By.id("timerAlertButton")).click();
+            Thread.sleep(5000);
+            driver.switchTo().alert().accept();
+            Thread.sleep(500);
+
+            // Tercer boton
+            driver.findElement(By.id("confirmButton")).click();
+            Thread.sleep(1000);
+            driver.switchTo().alert().accept();
+            driver.findElement(By.id("confirmButton")).click();
+            Thread.sleep(1000);
+            driver.switchTo().alert().dismiss();
+            Thread.sleep(1000);
+            // Cuarto boton
+            // Le do al acceptar
+            
+            // Hacer clic en el botón que abre la alerta
+            driver.findElement(By.xpath("//*[@id='promtButton']")).click();
+            Thread.sleep(1000);
+
+            // Cambiar el foco a la alerta y enviar el texto
+            Alert promptAlert = driver.switchTo().alert();
+            promptAlert.sendKeys("Holaa");
+            
+            Thread.sleep(1000);
+            // Aceptar la alerta
+            driver.switchTo().alert().accept();
+
+            // Para la acción de cancelar
+            driver.findElement(By.xpath("//*[@id='promtButton']")).click();
+            Thread.sleep(1000);
+
+            // Cambiar el foco a la alerta nuevamente y enviar el texto
+            driver.switchTo().alert().sendKeys("Holaa");
+
+            // Cancelar la alerta
+            driver.switchTo().alert().dismiss();
+            Thread.sleep(1000);
             
         } catch(Exception e){
             e.printStackTrace();

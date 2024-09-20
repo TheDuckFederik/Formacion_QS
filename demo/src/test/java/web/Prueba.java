@@ -3,14 +3,17 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
+import net.bytebuddy.asm.Advice.Enter;
 
 
 public class Prueba extends Main {
@@ -53,6 +56,8 @@ public class Prueba extends Main {
             WebElement submit = driver.findElement(By.xpath("//*[@id='submit']"));
             submit.click();
             Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id='userEmail']")).clear();
 
             WebElement email2 = driver.findElement(By.xpath("//*[@id='userEmail']"));
             email2.sendKeys("ejemplo@ejemplo.com");
@@ -268,7 +273,7 @@ public class Prueba extends Main {
     }
     @Test(description = "Prueba DemoQA Elements Web Tables")
     @Story("Elements")
-    @Description("Rellenar Web Tables")
+    @Description("Probar Web Tables")
     public void TC004_WebTables() throws InterruptedException, IOException {
         testId = "TC004_WebTables";
          try{
@@ -282,7 +287,165 @@ public class Prueba extends Main {
             buttons.click();
             Thread.sleep(500);
 
-            //Muy difícil, ya lo haré
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);"); 
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[7]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[7]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"addNewRecordButton\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"age\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"salary\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"department\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).clear();
+            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("ejemplo@ejemplo.com");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"age\"]")).clear();
+            driver.findElement(By.xpath("//*[@id=\"age\"]")).sendKeys("44");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"salary\"]")).clear();
+            driver.findElement(By.xpath("//*[@id=\"salary\"]")).sendKeys("4444");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+            Thread.sleep(500);
+
+            WebElement rows = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
+            Select rowsSelect = new Select(rows);
+            rowsSelect.selectByVisibleText("100 rows");
+            Thread.sleep(500);
+
+            JavascriptExecutor js2 = (JavascriptExecutor) driver;
+            js2.executeScript("window.scrollBy(0, 1500);"); 
+
+            WebElement rows2 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
+            Select rowsSelect2 = new Select(rows2);
+            rowsSelect2.selectByVisibleText("50 rows");
+            Thread.sleep(500);
+
+            WebElement rows3 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
+            Select rowsSelect3 = new Select(rows3);
+            rowsSelect3.selectByVisibleText("25 rows");
+            Thread.sleep(500);
+
+            WebElement rows4 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
+            Select rowsSelect4 = new Select(rows4);
+            rowsSelect4.selectByVisibleText("20 rows");
+            Thread.sleep(500);
+
+            WebElement rows5 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
+            Select rowsSelect5 = new Select(rows5);
+            rowsSelect5.selectByVisibleText("10 rows");
+            Thread.sleep(500);
+
+            WebElement rows6 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
+            Select rowsSelect6 = new Select(rows6);
+            rowsSelect6.selectByVisibleText("5 rows");
+            Thread.sleep(500);
+
+                for(int i = 1; i < 3; i++) {
+                
+                driver.findElement(By.xpath("//*[@id=\"addNewRecordButton\"]")).click();
+                Thread.sleep(500);
+        
+                driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+                Thread.sleep(500);
+
+                driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys("ejemplo");
+                Thread.sleep(500);
+
+                driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys("ejemplo");
+                Thread.sleep(500);
+
+                driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("ejemplo@ejemplo.com");
+                Thread.sleep(500);
+
+                driver.findElement(By.xpath("//*[@id=\"age\"]")).sendKeys("44");
+                Thread.sleep(500);
+
+                driver.findElement(By.xpath("//*[@id=\"salary\"]")).sendKeys("4444");
+                Thread.sleep(500);
+
+                driver.findElement(By.xpath("//*[@id=\"department\"]")).sendKeys("ejemplo");
+                Thread.sleep(500);
+        
+                driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+                Thread.sleep(500);
+            }
+
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[3]/button")).click();
+        Thread.sleep(500);
+
+
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[1]/button")).click();
+        Thread.sleep(500);
+
+        driver.findElement(By.xpath("//*[@id=\"searchBox\"]")).sendKeys("ejemplo");
+        Thread.sleep(500);
 
         } catch(Exception e){
             e.printStackTrace();
@@ -386,29 +549,326 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Elements Dynamic Properties")
-    @Story("Elements")
-    @Description("Probar Dynamic Properties")
-    public void TC007_Dynamic_Properties() throws InterruptedException, IOException {
-        testId = "TC007_Dynamic_Properties";
+    @Test(description = "Prueba DemoQA Forms Practice Form")
+    @Story("Forms")
+    @Description("Rellenar Practice Form")
+    public void TC008_Practice_Form() throws InterruptedException, IOException {
+        testId = "TC008_Practice_Form";
          try{
             driver.get("https://demoqa.com");          
 
-            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[2]"));
+            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]"));
             menu.click();
             Thread.sleep(500);
 
-            WebElement uploadanddownload = driver.findElement(By.xpath("//*[@id=\"item-8\"]"));
-            uploadanddownload.click();
+            WebElement form = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/div/div/div[2]/div"));
+            form.click();
             Thread.sleep(500);
-             
-
-
-
-
-
-
             
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);");  
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"genterWrapper\"]/div[2]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"userNumber\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"dateOfBirthInput\"]")).click();
+            Thread.sleep(500);
+
+            WebElement mes = driver.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            Select mesSelect = new Select(mes);
+            mesSelect.selectByVisibleText("April");
+            Thread.sleep(2000);
+
+            WebElement año = driver.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
+            Select añoSelect = new Select(año);
+            añoSelect.selectByVisibleText("2005");
+            Thread.sleep(2000);
+
+            driver.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]")).click();
+            Thread.sleep(500);
+
+            WebElement subject = driver.findElement(By.xpath("//*[@id=\"subjectsInput\"]"));
+            subject.sendKeys("Maths");
+            subject.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"subjectsContainer\"]/div/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[2]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[3]")).click();
+            Thread.sleep(500);
+
+            WebElement upload = driver.findElement(By.id("uploadPicture"));
+            upload.sendKeys("C:\\Users\\ricard.ferrando.ext\\Downloads\\sampleFile.jpeg");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"currentAddress\"]")).sendKeys("ejemplo");
+            Thread.sleep(500);
+
+            WebElement state = driver.findElement(By.xpath("//*[@id=\"react-select-3-input\"]"));
+            state.sendKeys("NCR");
+            state.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+
+            WebElement city = driver.findElement(By.xpath("//*[@id=\"react-select-4-input\"]"));
+            city.sendKeys("Delhi");
+            city.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).clear();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("ejemplo@ejemplo.com");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"userNumber\"]")).clear();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"userNumber\"]")).sendKeys("4444444444");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+            Thread.sleep(5000);
+
+            System.out.println(driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/div")).getText());
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Browser Windows")
+    @Story("Alerts, Frame & Windows")
+    @Description("Probar Browser Windows")
+    public void TC009_Browser_Windows() throws InterruptedException, IOException {
+        testId = "TC009_Browser_Windows";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]"));
+            form.click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"tabButton\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"windowButton\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"messageWindowButton\"]")).click();
+            Thread.sleep(500);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Alerts")
+    @Story("Alerts, Frame & Windows")
+    @Description("Probar Alerts")
+    public void TC010_Alerts() throws InterruptedException, IOException {
+        testId = "TC010_Alerts";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]"));
+            form.click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"alertButton\"]")).click();
+            Thread.sleep(500);
+            driver.switchTo().alert().accept();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"timerAlertButton\"]")).click();
+            Thread.sleep(6000);
+            driver.switchTo().alert().accept();
+
+            driver.findElement(By.xpath("//*[@id=\"confirmButton\"]")).click();
+            Thread.sleep(500);
+            driver.switchTo().alert().dismiss();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"confirmButton\"]")).click();
+            Thread.sleep(500);
+            driver.switchTo().alert().accept();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"promtButton\"]")).click();
+            Thread.sleep(500);
+            driver.switchTo().alert().sendKeys("ejemplo");
+            driver.switchTo().alert().accept();
+            Thread.sleep(5000);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Frames")
+    @Story("Alerts, Frame & Windows")
+    @Description("Extraer Frames")
+    public void TC011_Frames() throws InterruptedException, IOException {
+        testId = "TC011_Frames";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]"));
+            form.click();
+            Thread.sleep(500);
+
+            // Extraer texto del primer iframe (iframe1)
+            driver.switchTo().frame("frame1"); // Cambiar al iframe de arriba
+            WebElement textoFrame1 = driver.findElement(By.id("sampleHeading")); // Localizar el elemento que contiene el texto
+            String textoArriba = textoFrame1.getText();
+            System.out.println("Texto del iframe de arriba: " + textoArriba);
+        
+            // Volver al contenido principal para cambiar de iframe
+            driver.switchTo().defaultContent();
+
+            // Extraer texto del segundo iframe (iframe2)
+            driver.switchTo().frame("frame2"); // Cambiar al iframe de abajo
+            WebElement textoFrame2 = driver.findElement(By.id("sampleHeading")); // Localizar el elemento que contiene el texto
+            String textoAbajo = textoFrame2.getText();
+            System.out.println("Texto del iframe de abajo: " + textoAbajo);
+
+            // Volver al contenido principal
+            driver.switchTo().defaultContent();
+        
+            // Comprobar si los textos son iguales
+            if (textoArriba.equals(textoAbajo)) {
+            System.out.println("Los textos de ambos iframes son iguales.");
+            }   else {
+            System.out.println("Los textos de los iframes son diferentes.");
+            }
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Nested Frames")
+    @Story("Alerts, Frame & Windows")
+    @Description("Extraer Nested Frames")
+    public void TC012_Nested_Frames() throws InterruptedException, IOException {
+        testId = "TC012_Nested_Frames";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]"));
+            form.click();
+            Thread.sleep(500);
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);");  
+            Thread.sleep(500);
+
+            // Cambiar al Parent Frame (iframe padre)
+            driver.switchTo().frame("frame1");
+        
+            // Extraer texto del Parent Frame
+            WebElement textoParentFrame = driver.findElement(By.tagName("body"));
+            String textoPadre = textoParentFrame.getText();
+            System.out.println("Texto del Parent Frame: " + textoPadre);
+
+            // Cambiar al Child Iframe
+            driver.switchTo().frame(0);
+        
+            // Extraer texto del Child Iframe
+            WebElement textoChildFrame = driver.findElement(By.tagName("p"));
+            String textoHijo = textoChildFrame.getText();
+            System.out.println("Texto del Child Iframe: " + textoHijo);
+
+            // Volver al contenido principal
+            driver.switchTo().defaultContent();
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Nested Frames")
+    @Story("Alerts, Frame & Windows")
+    @Description("Extraer Nested Frames")
+    public void TC013_Nested_Frames() throws InterruptedException, IOException {
+        testId = "TC012_Nested_Frames";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]"));
+            form.click();
+            Thread.sleep(500);
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);");  
+            Thread.sleep(500);
+
+            // Cambiar al Parent Frame (iframe padre)
+            driver.switchTo().frame("frame1");
+        
+            // Extraer texto del Parent Frame
+            WebElement textoParentFrame = driver.findElement(By.tagName("body"));
+            String textoPadre = textoParentFrame.getText();
+            System.out.println("Texto del Parent Frame: " + textoPadre);
+
+            // Cambiar al Child Iframe
+            driver.switchTo().frame(0);
+        
+            // Extraer texto del Child Iframe
+            WebElement textoChildFrame = driver.findElement(By.tagName("p"));
+            String textoHijo = textoChildFrame.getText();
+            System.out.println("Texto del Child Iframe: " + textoHijo);
+
+            // Volver al contenido principal
+            driver.switchTo().defaultContent();
+
         } catch(Exception e){
             e.printStackTrace();
         } finally{

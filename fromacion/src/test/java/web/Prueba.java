@@ -895,5 +895,99 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+    @Test(description = "Prueba DemoQA Alerts, Frames & Windows Browser Windows.")
+    @Story("Alerts, Frames & Windows")
+    @Description("Comprobar que la descraga y la subida de archivos funciona correctamente.")
+    //
+    public void TC009_Browser_Windows() throws InterruptedException, IOException {
+        testId = "TC009_Browser_Windows";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.id("item-0"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frames & Windows Alerts.")
+    @Story("Alerts")
+    @Description("Comprobar que la descraga y la subida de archivos funciona correctamente.")
+    //
+    public void TC010_Alerts() throws InterruptedException, IOException {
+        testId = "TC010_Alerts";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]/div/div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-1']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            WebElement alert1 = driver.findElement(By.id("alertButton"));
+            alert1.click();
+            Thread.sleep(500);
+            driver.switchTo().alert().accept();
+            Thread.sleep(500);
+            //
+            WebElement alert2 = driver.findElement(By.id("timerAlertButton"));
+            Thread.sleep(500);
+            alert2.click();
+            Thread.sleep(5000);
+            driver.switchTo().alert().accept();
+            Thread.sleep(500);
+            //
+            WebElement alert3 = driver.findElement(By.id("confirmButton"));
+            alert3.click();
+            Thread.sleep(500);
+            driver.switchTo().alert().accept();
+            Thread.sleep(500);
+            //
+            WebElement confirmResult = driver.findElement(By.id("confirmResult"));
+            String confirmOutput = confirmResult.getText();
+            System.out.println(confirmOutput);
+            Thread.sleep(500);
+            //
+            alert3.click();
+            Thread.sleep(500);
+            driver.switchTo().alert().dismiss();
+            Thread.sleep(500);
+            //
+            String confirmOutput2 = confirmResult.getText();
+            System.out.println(confirmOutput2);
+            Thread.sleep(500);
+            //
+            WebElement alert4 = driver.findElement(By.id("promtButton"));
+            alert4.click();
+            Thread.sleep(500);
+            driver.switchTo().alert().sendKeys("TextTest");
+            Thread.sleep(500);
+            driver.switchTo().alert().accept();
+            Thread.sleep(500);
+            //
+            WebElement promptResult = driver.findElement(By.id("promptResult"));
+            String promptOutput = promptResult.getText();
+            System.out.println(promptOutput);
+            Thread.sleep(500);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
 }
 //

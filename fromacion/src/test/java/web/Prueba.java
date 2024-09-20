@@ -896,7 +896,7 @@ public class Prueba extends Main {
     }
     @Test(description = "Prueba DemoQA Alerts, Frames & Windows Browser Windows.")
     @Story("Alerts, Frames & Windows")
-    @Description("Comprobar que la descraga y la subida de archivos funciona correctamente.")
+    @Description("Clicar los botones y comprobar su accion.")
     //
     public void TC009_Browser_Windows() throws InterruptedException, IOException {
         testId = "TC009_Browser_Windows";
@@ -940,7 +940,7 @@ public class Prueba extends Main {
     }
     @Test(description = "Prueba DemoQA Alerts, Frames & Windows Alerts.")
     @Story("Alerts")
-    @Description("Comprobar que la descraga y la subida de archivos funciona correctamente.")
+    @Description("Comprobar las diferentes alertas.")
     //
     public void TC010_Alerts() throws InterruptedException, IOException {
         testId = "TC010_Alerts";
@@ -1000,6 +1000,31 @@ public class Prueba extends Main {
             String promptOutput = promptResult.getText();
             System.out.println(promptOutput);
             Thread.sleep(500);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frames & Windows Frames.")
+    @Story("Alerts, Frames & Windows")
+    @Description("Comprobar que la descraga y la subida de archivos funciona correctamente.")
+    //
+    public void TC011_Frames() throws InterruptedException, IOException {
+        testId = "TC011_Frames";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-2']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            
             //
         } catch(Exception e){
             e.printStackTrace();

@@ -682,9 +682,16 @@ public class Prueba extends Main {
             //
             WebElement download = driver.findElement(By.xpath("(//a[normalize-space()='Download'])[1]"));
             download.click();
-            Thread.sleep(5000);
+            Thread.sleep(500);
             //
-            // IDK, it's not the chrome options, not the robot, not the default path, NOTHING.
+            WebElement upload = driver.findElement(By.id("uploadFile"));
+            upload.sendKeys("C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg");
+            Thread.sleep(500);
+            //
+            WebElement path = driver.findElement(By.id("uploadedFilePath"));
+            String filePath = path.getText();
+            System.out.println(filePath);
+            Thread.sleep(500);
             //
         } catch(Exception e){
             e.printStackTrace();
@@ -708,6 +715,28 @@ public class Prueba extends Main {
             WebElement sub_menu = driver.findElement(By.id("item-8"));
             sub_menu.click();
             Thread.sleep(500);
+            //
+            WebElement enableAfter = driver.findElement(By.id("enableAfter"));
+            enableAfter.click();
+            Thread.sleep(500);
+            WebElement colorChange = driver.findElement(By.id("colorChange"));
+            colorChange.click();
+            WebElement getColor = driver.findElement(By.id("colorChange"));
+            String color = colorChange.getCssValue("color");
+            Thread.sleep(5000);
+            //
+            enableAfter.click();
+            Thread.sleep(500);
+            colorChange.click();
+            Thread.sleep(500);
+            getColor.getCssValue("color");
+            System.out.println("El color es: " + color);
+            Thread.sleep(500);
+            WebElement visibleAfter = driver.findElement(By.id("visibleAfter"));
+            visibleAfter.click();
+            Thread.sleep(500);
+            //
+
             //
         } catch(Exception e){
             e.printStackTrace();

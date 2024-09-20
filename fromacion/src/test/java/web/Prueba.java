@@ -1,14 +1,13 @@
 package web;
 //
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-
+import java.util.ArrayList;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 // import io.appium.java_client.android.nativekey.KeyEvent;
@@ -905,14 +904,33 @@ public class Prueba extends Main {
         try{
             driver.get("https://demoqa.com");
             //
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]"));
+            WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
             menu.click();
             Thread.sleep(500);
-            WebElement sub_menu = driver.findElement(By.id("item-0"));
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-0']"));
             sub_menu.click();
             Thread.sleep(500);
             //
-            
+            WebElement newTab = driver.findElement(By.id("tabButton"));
+            newTab.click();
+            Thread.sleep(500);
+            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+            driver.switchTo().window(tabs.get(0));
+            Thread.sleep(500);
+            //
+            WebElement newWindow = driver.findElement(By.id("windowButton"));
+            newWindow.click();
+            Thread.sleep(500);
+            String currentWindow = driver.getWindowHandle();
+            driver.switchTo().window(currentWindow);
+            Thread.sleep(500);
+            //
+            WebElement newAlert = driver.findElement(By.id("messageWindowButton"));
+            newAlert.click();
+            Thread.sleep(500);
+            String currentWindow2 = driver.getWindowHandle();
+            driver.switchTo().window(currentWindow2);
+            Thread.sleep(2000);
             //
         } catch(Exception e){
             e.printStackTrace();

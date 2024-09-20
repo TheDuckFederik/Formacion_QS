@@ -556,21 +556,16 @@ public class Prueba extends Main {
             search.click();
             Thread.sleep(500);
             //
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
-            search_bar.sendKeys(Keys.BACK_SPACE);
+            int n = 15;
+            while (true) {
+                search_bar.sendKeys(Keys.BACK_SPACE);
+                Thread.sleep(5);
+                n--;
+                if (n == 0) {
+                    Thread.sleep(500);
+                    break;
+                }
+            }
             //
             WebElement sort1 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]"));
             sort1.click();
@@ -736,8 +731,6 @@ public class Prueba extends Main {
             visibleAfter.click();
             Thread.sleep(500);
             //
-
-            //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
@@ -762,7 +755,7 @@ public class Prueba extends Main {
             Thread.sleep(500);
             //
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,150)", "");
+            js.executeScript("window.scrollBy(0,350)", "");
             Thread.sleep(500);
             //
             WebElement first_name = driver.findElement(By.id("firstName"));
@@ -798,7 +791,33 @@ public class Prueba extends Main {
             //
             WebElement other = driver.findElement(By.xpath("//label[normalize-space()='Other']"));
             other.click();
-            Thread.sleep(2000);
+            Thread.sleep(500);
+            //
+            WebElement birthDate = driver.findElement(By.id("dateOfBirthInput"));
+            //
+            // birthDate.clear();
+            // Thread.sleep(500);
+            //
+            int n = 10;
+            while (true) {
+                birthDate.sendKeys(Keys.BACK_SPACE);
+                Thread.sleep(5);
+                n--;
+                if (n == 0) {
+                    Thread.sleep(500);
+                    break;
+                }
+            }
+            //
+            birthDate.sendKeys(" Jan 2000");
+            Thread.sleep(500);
+            //
+            birthDate.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            WebElement mobile = driver.findElement(By.id("userNumber"));
+            mobile.sendKeys("123456789");
+            Thread.sleep(500);
             //
         } catch(Exception e){
             e.printStackTrace();

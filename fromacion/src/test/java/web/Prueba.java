@@ -1,12 +1,14 @@
 package web;
 //
 import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
+
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 // import io.appium.java_client.android.nativekey.KeyEvent;
@@ -755,7 +757,7 @@ public class Prueba extends Main {
             Thread.sleep(500);
             //
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,350)", "");
+            js.executeScript("window.scrollBy(0,300)", "");
             Thread.sleep(500);
             //
             WebElement first_name = driver.findElement(By.id("firstName"));
@@ -767,6 +769,9 @@ public class Prueba extends Main {
             //
             WebElement email = driver.findElement(By.id("userEmail"));
             email.sendKeys("EmailTest");
+            Thread.sleep(500);
+            //
+            js.executeScript("window.scrollBy(0,50)", "");
             Thread.sleep(500);
             //
             WebElement submit = driver.findElement(By.id("submit"));
@@ -818,6 +823,71 @@ public class Prueba extends Main {
             WebElement mobile = driver.findElement(By.id("userNumber"));
             mobile.sendKeys("123456789");
             Thread.sleep(500);
+            //
+            submit.click();
+            Thread.sleep(500);
+            //
+            mobile.clear();
+            Thread.sleep(50);
+            mobile.sendKeys("1234567890");
+            Thread.sleep(500);
+            //
+            WebElement subject = driver.findElement(By.id("subjectsInput"));
+            subject.click();
+            Thread.sleep(500);
+            subject.sendKeys("Computer");
+            Thread.sleep(50);
+            subject.sendKeys(Keys.TAB);
+            Thread.sleep(500);
+            //
+            WebElement hobby1 = driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]"));
+            hobby1.click();
+            Thread.sleep(500);
+            //
+            WebElement hobby2 = driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[2]"));
+            hobby2.click();
+            Thread.sleep(500);
+            //
+            WebElement hobby3 = driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[3]"));
+            hobby3.click();
+            Thread.sleep(500);
+            //
+            hobby1.click();
+            Thread.sleep(50);
+            hobby2.click();
+            Thread.sleep(50);
+            hobby3.click();
+            Thread.sleep(50);
+            hobby3.click();
+            Thread.sleep(500);
+            //
+            WebElement upload = driver.findElement(By.id("uploadPicture"));
+            upload.sendKeys("C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg");
+            Thread.sleep(500);
+            //
+            WebElement currentAdress = driver.findElement(By.id("currentAddress"));
+            currentAdress.sendKeys("CurrentAddressTest");
+            Thread.sleep(500);
+            //
+            WebElement state = driver.findElement(By.xpath("//*[@id='state']/div/div[2]/div"));
+            state.click();
+            Thread.sleep(500);
+            WebElement stateSelect = driver.findElement(By.id("react-select-3-input"));
+            stateSelect.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            //
+            WebElement city = driver.findElement(By.xpath("//*[@id=\"city\"]/div/div[2]/div"));
+            city.click();
+            Thread.sleep(500);
+            WebElement citySelect = driver.findElement(By.id("react-select-4-input"));
+            citySelect.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+            submit.click();
+            //
+            WebElement result = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/div/table/tbody"));
+            String output = result.getText();
+            System.out.println(output);
+            Thread.sleep(2000);
             //
         } catch(Exception e){
             e.printStackTrace();

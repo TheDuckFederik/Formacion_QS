@@ -596,12 +596,12 @@ public class Prueba extends Main {
         }
     }
 
-    @Test(description = "Prueba DemoQA Elements Upload and Download")
-    @Story("Elements")
-    @Description("Upload and Download")
+    @Test(description = "Prueba DemoQA Forms Practice Form")
+    @Story("Forms")
+    @Description("Practice Form")
     //
-    public void TC008_Elements8() throws InterruptedException, IOException {
-        testId = "TC008_Elements8";
+    public void TC008_Forms8() throws InterruptedException, IOException {
+        testId = "TC008_Forms8";
         
         //
         try{
@@ -722,12 +722,12 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Elements Browser Windows")
-    @Story("Elements")
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Browser Windows")
+    @Story("Alerts, Frame & Windows")
     @Description("Browser Windows")
     //
-    public void TC009_Elements9() throws InterruptedException, IOException {
-        testId = "TC009_Elements9";
+    public void TC009_Alerts_Frame_Windows9() throws InterruptedException, IOException {
+        testId = "TC009_Alerts_Frame_&_Windows9";
         
         //
         try {
@@ -817,12 +817,12 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Elements Alerts")
-    @Story("Elements")
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Alerts")
+    @Story("Alerts, Frame & Windows")
     @Description("Alerts")
     //
-    public void TC010_Elements10() throws InterruptedException, IOException {
-        testId = "TC010_Elements10";
+    public void TC010_Alerts_Frame_Windows10() throws InterruptedException, IOException {
+        testId = "TC010_Alerts,_Frame_&_Windows10";
         
         //
         try{
@@ -832,7 +832,7 @@ public class Prueba extends Main {
             driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
             Thread.sleep(1000);
             //Entramos al item
-            driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]")).click();
+            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Alerts']")).click();
             Thread.sleep(1000);
 
             // Primer boton
@@ -886,5 +886,243 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Frames")
+    @Story("Alerts, Frame & Windows")
+    @Description("Frames")
+    //
+    public void TC011_Alerts_Frame_Windows11() throws InterruptedException, IOException {
+        testId = "TC011_Alerts_Frame_&_Windows11";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Frames']")).click();
+            Thread.sleep(1000);
+            // Entrar al primer Frame y coger el texto.
+            driver.switchTo().frame(driver.findElements(By.tagName("iframe")).get(0));
+
+            WebElement h1Element = driver.findElement(By.tagName("h1"));
+            
+            String h1Text = h1Element.getText();
+            System.out.println("El texto del h1 es: " + h1Text);
+
+            driver.switchTo().defaultContent();
+             // Entrar al primer Frame y coger el texto.
+             driver.switchTo().frame(driver.findElement(By.id("frame2")));
+
+            // Buscar el h1 dentro del segundo iframe y obtener su texto
+            WebElement h1Element2 = driver.findElement(By.tagName("h1"));
+            String h1Text2 = h1Element2.getText();
+            System.out.println("El texto del h1 en el segundo iframe es: " + h1Text2);
+
+            // Volver al contenido principal
+            driver.switchTo().defaultContent();
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Nested Frames")
+    @Story("Alerts, Frame & Windows")
+    @Description("Nested Frames")
+    //
+    public void TC012_Alerts_Frame_Windows12() throws InterruptedException, IOException {
+        testId = "TC012_Alerts_Frame_&_Windows12";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Nested Frames']")).click();
+            Thread.sleep(1000);
+            // Entrar al primer Frame y coger el texto.
+            driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
+
+            WebElement p_elemento = driver.findElement(By.tagName("p"));
+            String p_text = p_elemento.getText();
+            System.out.println("El texto del párrafo es: " + p_text);
+            driver.switchTo().defaultContent();
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Modal Dialogs")
+    @Story("Alerts, Frame & Windows")
+    @Description("Modal Dialogs")
+    //
+    public void TC013_Alerts_Frame_Windows13() throws InterruptedException, IOException {
+        testId = "TC013_Alerts_Frame_&_Windows13";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Modal Dialogs']")).click();
+            Thread.sleep(1000);
+            // Entrar al primer boton y coger el texto.
+            driver.findElement(By.id("showSmallModal")).click();
+            Thread.sleep(1000);
+            WebElement Primer_texto = driver.findElement(By.xpath("//div[text()='This is a small modal. It has very less content']"));
+            String texto1 = Primer_texto.getText();
+            System.out.println("Small modal: "+ texto1);
+            // Cerrar alerta
+            driver.findElement(By.id("closeSmallModal")).click();
+            // Entramos al segundo boton y cogemos el texto
+            driver.findElement(By.id("showLargeModal")).click();
+            Thread.sleep(1000);
+            WebElement Segund_texto = driver.findElement(By.xpath("//div[@class='modal-body']/p"));
+            String texto2 = Segund_texto.getText();
+            System.out.println("Large modal : "+ texto2);
+            // Cerrar alerta
+            driver.findElement(By.id("closeLargeModal")).click();
+            
+            
+            Thread.sleep(1000);
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Data Picker")
+    @Story("Alerts, Frame & Windows")
+    @Description("Data Picker")
+    //
+    public void TC014_Alerts_Frame_Windows14() throws InterruptedException, IOException {
+        testId = "TC014_Alerts_Frame_&_Windows14";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Date Picker']")).click();
+            Thread.sleep(1000);
+            // 
+            driver.findElement(By.id("datePickerMonthYearInput")).click();
+            // Elegir año
+            WebElement fecha_a = driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']"));
+            Select select_a = new Select(fecha_a);
+            select_a.selectByValue("2004");
+            Thread.sleep(500);
+            
+            // Elegimos el mes
+            WebElement fecha_m = driver.findElement(By.xpath("//*[@id='datePickerMonthYear']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            Select select_m = new Select(fecha_m);
+            select_m.selectByValue("6");
+            Thread.sleep(500);
+            // Elegimos dia 
+            driver.findElement(By.xpath("//*[@id='datePickerMonthYear']/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[6]")).click();
+
+            // Segundo Date
+            driver.findElement(By.id("dateAndTimePickerInput")).click();
+            // Desplegamos el año
+            WebElement desplegable_2_a = driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div/span[2]"));
+            desplegable_2_a.click();
+            for (int i = 0; i < 15; i++) {
+                driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[13]")).click();
+            }
+            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[12]")).click();
+            Thread.sleep(500);
+            // Escogemos el año
+
+            // Elegimos el mes
+            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div/span[1]")).click();
+            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/div[4]")).click();
+            Thread.sleep(500);
+            // Elegimos dia 
+            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]")).click();
+            // Elegimos la hora 
+            
+            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[3]/div[2]/div/ul/li[17]")).click();
+            
+            Thread.sleep(2000);
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Slider")
+    @Story("Widgets")
+    @Description("Slider")
+    //
+    public void TC015_Widgets15() throws InterruptedException, IOException {
+        testId = "TC015_Widgets15";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Slider']")).click();
+            Thread.sleep(1000);
+            // Clicamos el slider
+            WebElement slider = driver.findElement(By.xpath("//*[@id='sliderContainer']/div[1]/span/input"));
+            slider.click();
+            // Movemos a la izquierda
+            for (int i = 0; i < 50; i++) {
+                slider.sendKeys(Keys.ARROW_LEFT);
+            }
+            //Movemos a la derecha
+            for (int i = 0; i < 100; i++) {
+                slider.sendKeys(Keys.ARROW_RIGHT);
+            }
+            
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Slider")
+    @Story("Widgets")
+    @Description("Slider")
+    //
+    public void TC016_Widgets16() throws InterruptedException, IOException {
+        testId = "TC016_Widgets16";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Progress Bar']")).click();
+            Thread.sleep(1000);
+            
+            
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+
 }
 //

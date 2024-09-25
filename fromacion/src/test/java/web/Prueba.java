@@ -1128,8 +1128,8 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Alerts, Frames & Windows Date Picker.")
-    @Story("Alerts, Frames & Windows")
+    @Test(description = "Prueba DemoQA Widgets Date Picker.")
+    @Story("Widgets")
     @Description("Comprobar la funcionalidad de los campos y los formatos.")
     //
     public void TC014_Date_Picker() throws InterruptedException, IOException {
@@ -1219,6 +1219,54 @@ public class Prueba extends Main {
             selectTimeDateTimeUp.click();
             //
             Thread.sleep(5000);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Slider.")
+    @Story("Widgets")
+    @Description("Comprobar los dos formatos del valor.")
+    //
+    public void TC015_Slider() throws InterruptedException, IOException {
+        testId = "TC015_Slider";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-3']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            WebElement slider = driver.findElement(By.xpath("//*[@id=\"sliderContainer\"]/div[1]/span/input"));
+            int n = 75;
+            while (true) {
+                slider.sendKeys(Keys.RIGHT);
+                n--;
+                if (n == 0) {
+                    Thread.sleep(50);
+                    break;
+                }
+            }
+            String value1 = driver.findElement(By.id("sliderValue")).getAttribute("value");
+            System.out.println("The value of the slieder is: " + value1);
+            //
+            n = 100;
+            while (true) {
+                slider.sendKeys(Keys.LEFT);
+                n--;
+                if (n == 0) {
+                    Thread.sleep(50);
+                    break;
+                }
+            }
+            String value2 = driver.findElement(By.id("sliderValue")).getAttribute("value");
+            System.out.println("The value of the slieder is: " + value2);
             //
         } catch(Exception e){
             e.printStackTrace();

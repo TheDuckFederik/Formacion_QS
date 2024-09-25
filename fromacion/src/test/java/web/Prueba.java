@@ -1024,7 +1024,19 @@ public class Prueba extends Main {
             sub_menu.click();
             Thread.sleep(500);
             //
-            
+            driver.switchTo().frame(driver.findElements(By.id("frame1")).get(0));
+            WebElement text1 = driver.findElement(By.id("sampleHeading"));
+            String output1 = text1.getText();
+            Thread.sleep(500);
+            //
+            driver.switchTo().defaultContent();
+            driver.switchTo().frame(driver.findElements(By.id("frame2")).get(0));
+            WebElement text2 = driver.findElement(By.tagName("h1"));
+            String output2 = text2.getText();
+            Thread.sleep(500);
+            //
+            System.out.println("Texto iFrame 1: " + output1);
+            System.out.println("Texto iFrame 2: " + output2);
             //
         } catch(Exception e){
             e.printStackTrace();

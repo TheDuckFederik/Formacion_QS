@@ -1,13 +1,15 @@
 package web;
 //
 import java.io.IOException;
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-import java.util.ArrayList;
+
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 // import io.appium.java_client.android.nativekey.KeyEvent;
@@ -1180,6 +1182,42 @@ public class Prueba extends Main {
             WebElement selectDateDay = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[7]"));
             selectDateDay.click();
             Thread.sleep(50);
+            //
+            WebElement selectTimeDate = driver.findElement(By.id("dateAndTimePickerInput"));
+            selectTimeDate.click();
+            //
+            WebElement selectTimeDateYear = driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div/span[1]"));
+            selectTimeDateYear.click();
+            WebElement selectTimeDateYearDown = driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[13]"));
+            n = 19;
+            while (true) {
+                selectTimeDateYearDown.click();
+                n--;
+                if (n == 0) {
+                    Thread.sleep(50);
+                    break;
+                }
+            }
+            Thread.sleep(50);
+            //
+            WebElement selectTimeDateYearSelection = driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[12]"));
+            selectTimeDateYearSelection.click();
+            Thread.sleep(50);
+            //
+            WebElement selectTimeDateMonth = driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div/span[1]"));
+            selectTimeDateMonth.click();
+            Thread.sleep(50);
+            WebElement selectTimeDateMonthSelection = driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]"));
+            selectTimeDateMonthSelection.click();
+            Thread.sleep(50);
+            //
+            WebElement selectTimeDateDaySelection = driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[7]"));
+            selectTimeDateDaySelection.click();
+            Thread.sleep(50);
+            //
+            WebElement selectTimeDateTimeUp = driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[3]/div[2]/div/ul/li[1]"));
+            selectTimeDateTimeUp.click();
+            //
             Thread.sleep(5000);
             //
         } catch(Exception e){

@@ -1274,5 +1274,56 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+    @Test(description = "Prueba DemoQA Widgets Progress Bar.")
+    @Story("Widgets")
+    @Description("Comprobar la funcionalidad del boton y la barra.")
+    //
+    public void TC016_Progress_Bar() throws InterruptedException, IOException {
+        testId = "TC016_Progress_Bar";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-4']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            WebElement startStop = driver.findElement(By.id("startStopButton"));
+            startStop.click();
+            Thread.sleep(1000);
+            startStop.click();
+            Thread.sleep(500);
+            //
+            String value1 = driver.findElement(By.xpath("//*[@id='progressBar']/div")).getText();
+            System.out.println("The progress is: " + value1);
+            Thread.sleep(50);
+            //
+            startStop.click();
+            Thread.sleep(10000);
+            //
+            String value2 = driver.findElement(By.xpath("//*[@id='progressBar']/div")).getText();
+            System.out.println("The progress is: " + value2);
+            Thread.sleep(500);
+            //
+            WebElement reset = driver.findElement(By.id("resetButton"));
+            reset.click();
+            Thread.sleep(50);
+            startStop = driver.findElement(By.id("startStopButton"));
+            startStop.click();
+            startStop.click();
+            //
+            String value3 = driver.findElement(By.xpath("//*[@id='progressBar']/div")).getText();
+            System.out.println("The progress is: " + value3);
+            Thread.sleep(500);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
 }
 //

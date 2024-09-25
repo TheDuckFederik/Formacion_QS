@@ -1126,5 +1126,46 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+    @Test(description = "Prueba DemoQA Alerts, Frames & Windows Date Picker.")
+    @Story("Alerts, Frames & Windows")
+    @Description("Comprobar la funcionalidad de los campos y los formatos.")
+    //
+    public void TC014_Date_Picker() throws InterruptedException, IOException {
+        testId = "TC014_Date_Picker";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-2']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            WebElement selectDate = driver.findElement(By.id("datePickerMonthYearInput"));
+            selectDate.click();
+            Thread.sleep(50);
+            //
+            WebElement selectDateYear = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
+            selectDateYear.click();
+            Thread.sleep(50);
+            int n = 24;
+            while (true) {
+                selectDateYear.sendKeys(Keys.UP);
+                n--;
+                if (n == 0) {
+                    Thread.sleep(500);
+                    break;
+                }
+            }
+            Thread.sleep(5000);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
 }
 //

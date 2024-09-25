@@ -1325,5 +1325,47 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+    @Test(description = "Prueba DemoQA Widgets Menu.")
+    @Story("Widgets")
+    @Description("Comprobar la funcionalidad del boton y la barra.")
+    //
+    public void TC017_Menu() throws InterruptedException, IOException {
+        testId = "TC017_Menu";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,350)", "");
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-7']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            WebElement menuItem1 = driver.findElement(By.xpath("//*[@id=\"nav\"]/li[1]/a"));
+            menuItem1.click();
+            Thread.sleep(500);
+            //
+            WebElement menuItem2 = driver.findElement(By.xpath("//*[@id='nav']/li[2]/a"));
+            menuItem2.click();
+            Thread.sleep(500);
+            //
+            WebElement SubSubList = driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/a"));
+            SubSubList.click();
+            Thread.sleep(500);
+            //
+            WebElement SubSubItem1 = driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/ul/li[1]/a"));
+            SubSubItem1.click();
+            Thread.sleep(500);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
 }
 //

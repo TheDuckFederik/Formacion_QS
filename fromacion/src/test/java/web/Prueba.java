@@ -1080,5 +1080,51 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+    @Test(description = "Prueba DemoQA Alerts, Frames & Windows Modal Dialogs.")
+    @Story("Alerts, Frames & Windows")
+    @Description("Comprobar la funcionalidad de los botones..")
+    //
+    public void TC013_Modal_Dialogs() throws InterruptedException, IOException {
+        testId = "TC013_Modal_Dialogs";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-4']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            WebElement smallModalClick = driver.findElement(By.id("showSmallModal"));
+            smallModalClick.click();
+            Thread.sleep(500);
+            WebElement smallModal = driver.findElement(By.xpath("(//div[@class='modal-body'])[1]"));
+            String output1 = smallModal.getText();
+            Thread.sleep(500);
+            WebElement smallModalClose = driver.findElement(By.id("closeSmallModal"));
+            smallModalClose.click();
+            Thread.sleep(500);
+            //
+            WebElement largeModalClick = driver.findElement(By.id("showLargeModal"));
+            largeModalClick.click();
+            Thread.sleep(500);
+            WebElement largeModal = driver.findElement(By.xpath("(//p[contains(text(),\"Lorem Ipsum is simply dummy text of the printing a\")])[1]"));
+            String output2 = largeModal.getText();
+            Thread.sleep(500);
+            WebElement largeModalClose = driver.findElement(By.id("closeLargeModal"));
+            largeModalClose.click();
+            Thread.sleep(500);
+            //
+            System.out.println("Small modal's text: " + output1);
+            System.out.println("Large modal's text: " + output2);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
 }
 //

@@ -939,7 +939,7 @@ public class Prueba extends Main {
         }
     }
     @Test(description = "Prueba DemoQA Alerts, Frames & Windows Alerts.")
-    @Story("Alerts")
+    @Story("Alerts, Frames & Windows")
     @Description("Comprobar las diferentes alertas.")
     //
     public void TC010_Alerts() throws InterruptedException, IOException {
@@ -1009,7 +1009,7 @@ public class Prueba extends Main {
     }
     @Test(description = "Prueba DemoQA Alerts, Frames & Windows Frames.")
     @Story("Alerts, Frames & Windows")
-    @Description("Comprobar que la descraga y la subida de archivos funciona correctamente.")
+    @Description("Extraer el texto de los 'Iframes'.")
     //
     public void TC011_Frames() throws InterruptedException, IOException {
         testId = "TC011_Frames";
@@ -1038,6 +1038,42 @@ public class Prueba extends Main {
             System.out.println("Texto iFrame 1: " + output1);
             System.out.println("Texto iFrame 2: " + output2);
             //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Alerts, Frames & Windows Nested Frames.")
+    @Story("Alerts, Frames & Windows")
+    @Description("Extraer el texto de los 'Nested Iframes'.")
+    //
+    public void TC012_Nested_Frames() throws InterruptedException, IOException {
+        testId = "TC012_Nested_Frames";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-3']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            driver.switchTo().frame(driver.findElements(By.id("frame1")).get(0));
+            WebElement text1 = driver.findElement(By.xpath("/html/body"));
+            String output1 = text1.getText();
+            Thread.sleep(500);
+            //
+            driver.switchTo().frame(driver.findElements(By.xpath("/html/body/iframe")).get(0));
+                WebElement text2 = driver.findElement(By.xpath("/html/body/p"));
+                String output2 = text2.getText();
+                Thread.sleep(500);
+            //
+            System.out.println("The parent frame's text is: " + output1);
+            System.out.println("The child frame's text is: " + output2);
+		    //
         } catch(Exception e){
             e.printStackTrace();
         } finally{

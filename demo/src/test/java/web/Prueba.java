@@ -946,12 +946,15 @@ public class Prueba extends Main {
             driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Nested Frames']")).click();
             Thread.sleep(1000);
             // Entrar al primer Frame y coger el texto.
-            driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
-
-            WebElement p_elemento = driver.findElement(By.tagName("p"));
-            String p_text = p_elemento.getText();
-            System.out.println("El texto del párrafo es: " + p_text);
+            driver.switchTo().frame(driver.findElement(By.id("frame1")));
+            WebElement primer = driver.findElement(By.xpath("//body"));
+            System.out.println("Texto padre: " +primer.getText());
+            // Entrar al segundo frame y coger el texto.
+            driver.switchTo().frame(driver.findElements(By.xpath("/html/body/iframe")).get(0)); 
+            WebElement segundo = driver.findElement(By.xpath("/html/body/p"));
+            System.out.println("Texto hijo: " +segundo.getText());
             driver.switchTo().defaultContent();
+            
 
         } catch(Exception e){
             e.printStackTrace();
@@ -1113,16 +1116,104 @@ public class Prueba extends Main {
             driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
             Thread.sleep(1000);
             //Entramos al item
-            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Progress Bar']")).click();
+            WebElement entrar = driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Progress Bar']"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView(true);", entrar);
+            entrar.click();
             Thread.sleep(1000);
-            
-            
+            // Le damos click 
+            driver.findElement(By.id("startStopButton")).click();
+            // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            Thread.sleep(5000);
+            driver.findElement(By.id("startStopButton")).click();
+            Thread.sleep(990);
+            driver.findElement(By.id("startStopButton")).click();
+            Thread.sleep(6000);
+            driver.findElement(By.id("resetButton")).click();
+            Thread.sleep(4000);
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
         }
     }
-
+    @Test(description = "Prueba DemoQA Widgets Menu")
+    @Story("Widgets")
+    @Description("Menu")
+    //
+    public void TC017_Widgets17() throws InterruptedException, IOException {
+        testId = "TC017_Widgets17";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            WebElement entrar = driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Menu']"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView(true);", entrar);
+            entrar.click();
+            Thread.sleep(1000);
+            // Le damos click Main 1
+            driver.findElement(By.xpath("//*[@id='nav']/li[1]/a")).click();
+            Thread.sleep(1000);
+            // Le damos click Main 3
+            driver.findElement(By.xpath("//*[@id='nav']/li[3]/a")).click();
+            Thread.sleep(1000);
+            // Le damos click Main 2
+            driver.findElement(By.xpath("//*[@id='nav']/li[2]/a")).click();
+            Thread.sleep(1000);
+            // Le damos click sub item
+            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[1]/a")).click();
+            Thread.sleep(1000);
+            // Le damos click sub item
+            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[2]/a")).click();
+            Thread.sleep(1000);
+            // Le damos click Sub sub list
+            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/a")).click();
+            Thread.sleep(1000);
+            // Le damos click Sub sub list 1
+            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/ul/li[1]/a")).click();
+            Thread.sleep(1000);
+            // Le damos click Sub sub list 2
+            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/ul/li[2]/a")).click();
+            Thread.sleep(1000);
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Select Menu")
+    @Story("Widgets")
+    @Description("Select Menu")
+    //
+    public void TC018_Widgets18() throws InterruptedException, IOException {
+        testId = "TC018_Widgets18";
+        
+        //
+        try{
+            // Entramos a demoqa
+            driver.get("https://demoqa.com");
+            // Entramos al Alerts, Frames & Windows
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            Thread.sleep(1000);
+            //Entramos al item
+            WebElement entrar = driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Select Menu']"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView(true);", entrar);
+            entrar.click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//div[contains(text(),'Select Option')]")).sendKeys("Group 1, Option 1");
+            Thread.sleep(1000);
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
 }
 //

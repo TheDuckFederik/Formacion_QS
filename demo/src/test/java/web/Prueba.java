@@ -28,18 +28,18 @@ public class Prueba extends Main {
 
             WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[2]"));
             menu.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement textbox = driver.findElement(By.xpath("//*[@id=\"item-0\"]"));
             textbox.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0, 444);");  
 
             WebElement fullname = driver.findElement(By.xpath("//*[@id='userName']"));
             fullname.sendKeys("ejemplo");
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement email = driver.findElement(By.xpath("//*[@id='userEmail']"));
             email.sendKeys("ejemplo");
@@ -605,6 +605,14 @@ public class Prueba extends Main {
             subject.sendKeys(Keys.ENTER);
             Thread.sleep(500);
 
+            WebElement subject2 = driver.findElement(By.xpath("//*[@id=\"subjectsInput\"]"));
+            subject2.sendKeys("Arts");
+            subject2.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"subjectsContainer\"]/div/div[2]/div")).click();
+            Thread.sleep(500);
+
             driver.findElement(By.xpath("//*[@id=\"subjectsContainer\"]/div/div[1]")).click();
             Thread.sleep(500);
 
@@ -830,11 +838,11 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Nested Frames")
+    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Modal_Dialogs")
     @Story("Alerts, Frame & Windows")
-    @Description("Extraer Nested Frames")
-    public void TC013_Nested_Frames() throws InterruptedException, IOException {
-        testId = "TC012_Nested_Frames";
+    @Description("Extraer Modal Dialogs")
+    public void TC013_Modal_Dialogs() throws InterruptedException, IOException {
+        testId = "TC013_Modal_Dialogs";
          try{
             driver.get("https://demoqa.com");          
 
@@ -842,32 +850,259 @@ public class Prueba extends Main {
             menu.click();
             Thread.sleep(500);
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]"));
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]"));
             form.click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"showSmallModal\"]")).click();
+            Thread.sleep(500);
+
+            WebElement textosmall = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]"));
+            String smallm = textosmall.getText();
+            System.out.println("Texto del Small Modal: " + smallm);
+
+            driver.findElement(By.xpath("//*[@id=\"closeSmallModal\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"showLargeModal\"]")).click();
+            Thread.sleep(500);
+
+            WebElement textolarge = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]"));
+            String largem = textolarge.getText();
+            System.out.println("Texto del Large Modal: " + largem);
+
+            driver.findElement(By.xpath("//*[@id=\"closeLargeModal\"]")).click();
+            Thread.sleep(500);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Date_Picker")
+    @Story("Widgets")
+    @Description("Probar Date_Picker")
+    public void TC014_Date_Picker() throws InterruptedException, IOException {
+        testId = "TC014_Date_Picker";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[3]"));
+            form.click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"datePickerMonthYearInput\"]")).click();
+            Thread.sleep(500);
+
+            WebElement mes = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            Select mesSelect = new Select(mes);
+            mesSelect.selectByVisibleText("April");
+            Thread.sleep(500);
+
+            WebElement año = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
+            Select añoSelect = new Select(año);
+            añoSelect.selectByVisibleText("2005");
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]")).click();
+            Thread.sleep(500);
+
+
+            driver.findElement(By.xpath("//*[@id=\"dateAndTimePickerInput\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/div[4]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[11]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[7]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[3]/div[2]/div/ul/li[40]")).click();
+            Thread.sleep(500);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Slider")
+    @Story("Widgets")
+    @Description("Probar Slider")
+    public void TC015_Slider() throws InterruptedException, IOException {
+        testId = "TC015_Slider";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[4]"));
+            form.click();
+            Thread.sleep(500);
+
+            WebElement slider = driver.findElement(By.xpath("//*[@id='sliderContainer']/div[1]/span/input"));
+
+            for(int i = 1; i < 25; i++) {
+                
+                slider.sendKeys(Keys.ARROW_LEFT);
+
+            }
+
+            for(int i = 1; i < 100; i++) {
+                
+                slider.sendKeys(Keys.ARROW_RIGHT);
+
+            }
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Progress Bar")
+    @Story("Widgets")
+    @Description("Probar Progress Bar")
+    public void TC016_Progress_Bar() throws InterruptedException, IOException {
+        testId = "TC016_Progress_Bar";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]"));
+            menu.click();
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[5]"));
+            form.click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"startStopButton\"]")).click();
+            Thread.sleep(5000);
+
+            driver.findElement(By.xpath("//*[@id=\"startStopButton\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"startStopButton\"]")).click();
+            Thread.sleep(6000);
+
+            driver.findElement(By.xpath("//*[@id=\"resetButton\"]")).click();
+            Thread.sleep(500);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Menu")
+    @Story("Widgets")
+    @Description("Probar Menu")
+    public void TC017_Menu() throws InterruptedException, IOException {
+        testId = "TC017_Menu";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]"));
+            menu.click();
             Thread.sleep(500);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0, 444);");  
             Thread.sleep(500);
 
-            // Cambiar al Parent Frame (iframe padre)
-            driver.switchTo().frame("frame1");
-        
-            // Extraer texto del Parent Frame
-            WebElement textoParentFrame = driver.findElement(By.tagName("body"));
-            String textoPadre = textoParentFrame.getText();
-            System.out.println("Texto del Parent Frame: " + textoPadre);
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[8]"));
+            form.click();
+            Thread.sleep(500);
 
-            // Cambiar al Child Iframe
-            driver.switchTo().frame(0);
-        
-            // Extraer texto del Child Iframe
-            WebElement textoChildFrame = driver.findElement(By.tagName("p"));
-            String textoHijo = textoChildFrame.getText();
-            System.out.println("Texto del Child Iframe: " + textoHijo);
+            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[1]/a")).click();
+            Thread.sleep(500);
 
-            // Volver al contenido principal
-            driver.switchTo().defaultContent();
+            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[3]/a")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/a")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[3]/a")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[3]/ul/li[1]/a")).click();
+            Thread.sleep(500);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Select Menu")
+    @Story("Widgets")
+    @Description("Probar Select Menu")
+    public void TC018_Select_Menu() throws InterruptedException, IOException {
+        testId = "TC018_Select_Menu";
+         try{
+            driver.get("https://demoqa.com");          
+
+            WebElement menu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]"));
+            menu.click();
+            Thread.sleep(500);
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);");  
+            Thread.sleep(500);
+
+            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[9]"));
+            form.click();
+            Thread.sleep(500);
+
+            JavascriptExecutor js2 = (JavascriptExecutor) driver;
+            js2.executeScript("window.scrollBy(0, 444);");  
+            Thread.sleep(500);
+
+            driver.findElement(By.id("react-select-2-input")).sendKeys("Group 1, option 1"+ Keys.ENTER);
+            Thread.sleep(1000);
+
+            driver.findElement(By.id("react-select-3-input")).sendKeys("Mr."+ Keys.ENTER);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath("//*[@id=\"oldSelectMenu\"]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"oldSelectMenu\"]/option[3]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"oldSelectMenu\"]/option[3]")).click();
+            Thread.sleep(500);
+
+            WebElement multiSelect = driver.findElement(By.id("react-select-4-input"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", multiSelect);
+            multiSelect.sendKeys("Green"+ Keys.ENTER);
+            Thread.sleep(500);
+
+            multiSelect.sendKeys("Blue"+ Keys.ENTER);
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[2]/div[1]")).click();
+            Thread.sleep(500);
+
+            driver.findElement(By.xpath("//*[@id=\"cars\"]/option[3]")).click();
+            Thread.sleep(500);
 
         } catch(Exception e){
             e.printStackTrace();

@@ -1155,10 +1155,31 @@ public class Prueba extends Main {
                 selectDateYear.sendKeys(Keys.UP);
                 n--;
                 if (n == 0) {
-                    Thread.sleep(500);
+                    Thread.sleep(50);
                     break;
                 }
             }
+            selectDateYear.sendKeys(Keys.RETURN);
+            Thread.sleep(50);
+            //
+            WebElement selectDateMonth = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            selectDateMonth.click();
+            Thread.sleep(50);
+            n = 8;
+            while (true) {
+                selectDateMonth.sendKeys(Keys.UP);
+                n--;
+                if (n == 0) {
+                    Thread.sleep(50);
+                    break;
+                }
+            }
+            selectDateMonth.sendKeys(Keys.RETURN);
+            Thread.sleep(50);
+            //
+            WebElement selectDateDay = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[7]"));
+            selectDateDay.click();
+            Thread.sleep(50);
             Thread.sleep(5000);
             //
         } catch(Exception e){

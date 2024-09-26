@@ -524,7 +524,7 @@ public class Main {
 
         //     WebElement submidEdit = driver.findElement(By.id("submit"));
         //     submidEdit.click();
-        //     Thread.sleep(1000);
+        //     Thread.sleep(500);
         //     System.out.println("Hacemos click en submit"+"\n");
 
         //     //Hacemos clic a la cruz del formulario
@@ -569,7 +569,7 @@ public class Main {
 
         //     submidEdit = driver.findElement(By.id("submit"));
         //     submidEdit.click();
-        //     Thread.sleep(1000);
+        //     Thread.sleep(500);
         //     System.out.println("Le damos al boton de submit"+"\n");
 
         //     //Modificamos el Email
@@ -734,28 +734,28 @@ public class Main {
 
         //     System.out.println("se han creado los usuarios"+"\n");
 
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
 
         //     //Acotamos a 5 lineas
 
         //     WebElement rows = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
         //     Select rowsSelect = new Select(rows);
         //     rowsSelect.selectByVisibleText("5 rows");
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se acotaros las lineas"+"\n");
 
         //     //Pasamos a la pagina siguiente
 
         //     WebElement next = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[3]/button[1]"));
         //     next.click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("Pasamos a la pagina siguiente"+"\n");
 
         //     //Pasamos a la pagina anterior
 
         //     WebElement previous = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/button[1]"));
         //     previous.click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("Pasamos a la pagina anterior"+"\n");
 
         //     //Pasamos a la siguiente pagina a traves de escrivir el numero de la pagina que queremos en el quadro de texto
@@ -764,16 +764,16 @@ public class Main {
         //     section.clear();
         //     section.sendKeys("2");
         //     section.sendKeys(Keys.ENTER);
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("Pasamos a la siguiente pagina a traves de escrivir el numero de la pagina que queremos en el quadro de texto"+"\n");
 
         //     //Filtramos un Nombre en la barra de busqueda
 
         //     WebElement searchBox = driver.findElement(By.id("searchBox"));
         //     searchBox.sendKeys("Kierra");
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     searchBox.clear();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("Filtramos un Nombre en la barra de busqueda"+"\n");
 
         // } catch(Exception e){
@@ -801,21 +801,21 @@ public class Main {
 
         //     WebElement doubleClick = driver.findElement(By.id("doubleClickBtn"));
         //     act.doubleClick(doubleClick).perform();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se ha hecho doble click al Doube click" + "\n");
 
         //     //Hacemos click derecho en el boton de Right click
 
         //     WebElement rightClick = driver.findElement(By.id("rightClickBtn"));
         //     act.contextClick(rightClick).perform();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se ha hecho click al Right click" + "\n");
 
         //     //Hacemos click en el boton de Click Me
 
         //     WebElement click = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/button[1]"));
         //     click.click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se ha hecho click al Click Me" + "\n");
 
             
@@ -839,7 +839,7 @@ public class Main {
                 
         //         WebElement submenu = driver.findElement(By.id("item-7"));
         //         submenu.click();
-        //         Thread.sleep(3000);
+        //         Thread.sleep(500);
 
         //         //Hacemos click en el boton de download
 
@@ -851,7 +851,7 @@ public class Main {
 
         //         WebElement uploadFile = driver.findElement(By.id("uploadFile"));
         //         uploadFile.sendKeys("C:\\Users\\ramon.fernandez-roig\\Downloads\\sampleFile.jpeg");
-        //         Thread.sleep(5000);
+        //         Thread.sleep(500);
         //         System.out.println("se ha cargado el archivo" + "\n");
 
         // } catch(Exception e){
@@ -900,14 +900,14 @@ public class Main {
 
         //         WebElement enableAfter = driver.findElement(By.id("enableAfter"));
         //         enableAfter.click();
-        //         Thread.sleep(2000);
+        //         Thread.sleep(500);
         //         System.out.println("se ha hecho click enable after" + "\n");
 
         //         //Hacemos click en el boton de visible after 5 seconds
 
         //         WebElement visibleAfter = driver.findElement(By.id("visibleAfter"));
         //         visibleAfter.click();
-        //         Thread.sleep(2000);
+        //         Thread.sleep(500);
         //         System.out.println("se ha hecho click visible after" + "\n");
 
         // } catch(Exception e){
@@ -923,7 +923,7 @@ public class Main {
         //         Thread.sleep(500);
         //         WebElement menu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/*[name()='svg'][1]"));
         //         menu.click();
-        //         Thread.sleep(2000);
+        //         Thread.sleep(500);
                 
         //         WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/span[1]"));
         //         submenu.click();
@@ -935,7 +935,7 @@ public class Main {
         //         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitForm);
         //         Thread.sleep(500); 
         //         submitForm.click();
-        //         Thread.sleep(2000);
+        //         Thread.sleep(500);
         //         System.out.println("se ha hecho click en submit" + "\n");
 
         //         //Rellenamos el campo firstName
@@ -985,7 +985,7 @@ public class Main {
 
         //         WebElement mobileForm = driver.findElement(By.id("userNumber"));
         //         mobileForm.sendKeys("gshdretsgd");
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("se ha rellenado Mobile con 10 letras" + "\n");
 
 
@@ -993,28 +993,28 @@ public class Main {
 
         //         mobileForm.clear();
         //         mobileForm.sendKeys("12345");
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Rellenamos el campo mobile con 5 numeros" + "\n");
 
 
         //         //Hacemos click al boton de submit
 
         //         submitForm.click();
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha hecho click al boton de submit" + "\n");
 
         //         //Rellenamos el campo Mobile con 10 numeros
 
         //         mobileForm.clear();
         //         mobileForm.sendKeys("1234567890");
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha hecho click al boton de submit" + "\n");
 
         //         //Hacer click en date of birth
 
         //         WebElement dateOfBirth = driver.findElement(By.id("dateOfBirthInput"));
         //         dateOfBirth.click();
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha hecho click a date of birth" + "\n");
                 
         //         //Hacer click en los meses Y seleccionar Enero
@@ -1022,7 +1022,7 @@ public class Main {
         //         WebElement monthForm = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[5]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/select[1]"));
         //         Select monthSelect = new Select(monthForm);
         //         monthSelect.selectByVisibleText("January");
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("se ha seleccionado january" + "\n");
 
         //         //Hacer click en los años Y seleccionar 2004
@@ -1030,14 +1030,14 @@ public class Main {
         //         WebElement yearForm = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[5]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/select[1]"));
         //         Select yearSelect = new Select(yearForm);
         //         yearSelect.selectByVisibleText("2004");
-        //         Thread.sleep(1000);    
+        //         Thread.sleep(500);    
         //         System.out.println("Se ha seleccionado 2004" + "\n");
                 
         //         //Hacer click en 16
 
         //         WebElement dayForm = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[5]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[6]"));
         //         dayForm.click();
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha seleccionado el dia 16" + "\n");
 
         //         //Rellenar el campo Subjects
@@ -1045,14 +1045,14 @@ public class Main {
         //         WebElement subjectsForm = driver.findElement(By.id("subjectsInput"));
         //         subjectsForm.sendKeys("English");
         //         subjectsForm.sendKeys(Keys.ENTER);
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha rellenado el campo subjects una vez" + "\n");
 
         //         //Rellenar el campo subjects
 
         //         subjectsForm.sendKeys("Math");
         //         subjectsForm.sendKeys(Keys.ENTER);
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha rellenado el campo subjects dos vezes" + "\n");
 
         //         //Hacer click en Sports, Reading y Music
@@ -1062,25 +1062,25 @@ public class Main {
         //         WebElement music = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[7]/div[2]/div[3]/label[1]"));
 
         //         sports.click();
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         reading.click();
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         music.click();
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha seleccionado sports, reading y music" + "\n");
 
         //         //Subir un archivo
 
         //         WebElement uploadFile = driver.findElement(By.id("uploadPicture"));
         //         uploadFile.sendKeys("C:\\Users\\ramon.fernandez-roig\\Downloads\\sampleFile.jpeg");
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha subido el archivo" + "\n");
 
         //         //Rellenar el campo current address
 
         //         WebElement currentAddressForm = driver.findElement(By.id("currentAddress"));
         //         currentAddressForm.sendKeys("Carrer Hola");
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha rellenado current address" + "\n");
 
         //         //Seleccionar un estado y ciudad
@@ -1088,19 +1088,19 @@ public class Main {
         //         WebElement stateForm = driver.findElement(By.id("react-select-3-input"));
         //         stateForm.sendKeys("NCR");
         //         stateForm.sendKeys(Keys.ENTER);
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha implementado el estado" + "\n");
 
         //         WebElement cityForm = driver.findElement(By.id("react-select-4-input"));
         //         cityForm.sendKeys("Delhi");
         //         cityForm.sendKeys(Keys.ENTER);
-        //         Thread.sleep(1000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha implementado la ciudad" + "\n");
         //         //hacer click al boton de submit
 
         //         submitForm.click();
 
-        //         Thread.sleep(2000);
+        //         Thread.sleep(500);
         //         System.out.println("Se ha hecho click en submit" + "\n");
 
         //         //Obtener los resultados
@@ -1120,7 +1120,7 @@ public class Main {
         //     Thread.sleep(500);
         //     WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
         //     menu.click();
-        //     Thread.sleep(2000);       
+        //     Thread.sleep(500);       
         //     WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]"));
         //     submenu.click();
         //     Thread.sleep(500);
@@ -1134,50 +1134,50 @@ public class Main {
 
         //     ArrayList<String> pestañas = new ArrayList<>(driver.getWindowHandles());
         //     driver.switchTo().window(pestañas.get(1));
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
 
         //     //Cerramos la pestaña
 
         //     driver.close();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se ha cerrado la pestaña" + "\n");
 
         //     //Cambiamos a la pestaña original y hacemos clic al boton de New Window
 
         //     driver.switchTo().window(pestañas.get(0));
         //     driver.findElement(By.id("windowButton")).click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se ha abierto la ventana" + "\n");
 
         //     //Guardamos en un array las ventanas disponibles y nos cambiamos a la ventana nueva
 
         //     ArrayList<String> ventanas = new ArrayList<>(driver.getWindowHandles());
         //     driver.switchTo().window(ventanas.get(1));
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
 
         //     //Cerramos la ventana
 
         //     driver.close();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se ha cerrado la ventana" + "\n");
 
         //     //Cambiamos a la ventana original y hacemos clic al boton de New Window Message
 
         //     driver.switchTo().window(ventanas.get(0));
         //     driver.findElement(By.id("messageWindowButton")).click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se ha abierto la ventana de mensage" + "\n");
 
         //     //Guardamos en un array las ventanas disponibles y nos cambiamos a la ventana nueva
 
         //     ventanas = new ArrayList<>(driver.getWindowHandles());
         //     driver.switchTo().window(ventanas.get(1));
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
 
         //     //Cerramos la ventana
 
         //     driver.close();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se ha cerrado la ventana de mensage" + "\n");
 
         // } catch(Exception e){
@@ -1194,7 +1194,7 @@ public class Main {
         //     Thread.sleep(500);
         //     WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
         //     menu.click();
-        //     Thread.sleep(2000);       
+        //     Thread.sleep(500);       
         //     WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]"));
         //     submenu.click();
         //     Thread.sleep(500);
@@ -1202,14 +1202,14 @@ public class Main {
         //     //Hacemos click en el boton para ver una alert
 
         //     driver.findElement(By.id("alertButton")).click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se abre el alert" + "\n");
 
         //     //Cambiamos al alert y acceptamos el alert
 
         //     driver.switchTo().alert();
         //     driver.switchTo().alert().accept();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se acepta el alert" + "\n");
 
         //     //Hacemos click al segundo boton y esperamos 5 segundos
@@ -1222,48 +1222,48 @@ public class Main {
 
         //     driver.switchTo().alert();
         //     driver.switchTo().alert().accept();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se acepta el alert" + "\n");
 
         //     //Hacemos click al tercer boton
 
         //     driver.findElement(By.id("confirmButton")).click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se abre el alert de acept y cancel" + "\n");
 
         //     //Cambiamos al alert que saldrá y acceptamos
 
         //     driver.switchTo().alert();
         //     driver.switchTo().alert().accept();
-        //     Thread.sleep(2000);  
+        //     Thread.sleep(500);  
         //     System.out.println("se acepta el alert" + "\n");
 
         //     //Hacemos click al tercer boton
 
         //     driver.findElement(By.id("confirmButton")).click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se abre el alert de acept y cancel" + "\n");
 
         //     //Cambiamos al alert que saldrá y cancelamos
 
         //     driver.switchTo().alert();
         //     driver.switchTo().alert().dismiss();
-        //     Thread.sleep(2000);     
+        //     Thread.sleep(500);     
         //     System.out.println("se cancela el alert" + "\n");
 
         //     //Hacemos click al cuarto boton
 
         //     driver.findElement(By.id("promtButton")).click();
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     System.out.println("se abre el alert de texto" + "\n");
             
         //     //Cambiamos al alert que saldrá y escrivimos la Prueba y aceptamos
 
         //     driver.switchTo().alert();
         //     driver.switchTo().alert().sendKeys("hola");
-        //     Thread.sleep(2000);
+        //     Thread.sleep(500);
         //     driver.switchTo().alert().accept();
-        //     Thread.sleep(2000);  
+        //     Thread.sleep(500);  
         //     System.out.println("se ha escrito el texto y se ha aceptado el alert" + "\n");
 
         // } catch(Exception e){
@@ -1280,7 +1280,7 @@ public class Main {
         //     Thread.sleep(500);
         //     WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
         //     menu.click();
-        //     Thread.sleep(2000);       
+        //     Thread.sleep(500);       
         //     WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]"));
         //     submenu.click();
         //     Thread.sleep(500);
@@ -1321,7 +1321,7 @@ public class Main {
         //     Thread.sleep(500);
         //     WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
         //     menu.click();
-        //     Thread.sleep(2000);       
+        //     Thread.sleep(500);       
         //     WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]"));
         //     submenu.click();
         //     Thread.sleep(500);
@@ -1360,7 +1360,7 @@ public class Main {
           //   Thread.sleep(500);
           //   WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]"));
           //   menu.click();
-          //   Thread.sleep(2000);       
+          //   Thread.sleep(500);       
           //   WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]"));
           //   submenu.click();
           //   Thread.sleep(500);
@@ -1368,7 +1368,7 @@ public class Main {
           //   // Hacer click al botón de Small Modla
 
           //       driver.findElement(By.id("showSmallModal")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("Se ha hecho click al boton de Small Modal" + "\n");
 
           //   // Extraemos el texto
@@ -1379,13 +1379,13 @@ public class Main {
           //   // Hacer click al botón de Close
 
           //       driver.findElement(By.id("closeSmallModal")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("Se ha hecho click al boton de close de Small Modal" + "\n");
 
           //   // Hacer click al botón de Large modal
 
           //       driver.findElement(By.id("showLargeModal")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("Se ha hecho click al boton de Large Modal" + "\n");
 
           //   // Extraemos el texto
@@ -1407,7 +1407,7 @@ public class Main {
           //   Thread.sleep(500);
           //   WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]"));
           //   menu.click();
-          //   Thread.sleep(2000);       
+          //   Thread.sleep(500);       
           //   WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[3]/span[1]"));
           //   submenu.click();
           //   Thread.sleep(500);
@@ -1425,7 +1425,7 @@ public class Main {
           //   WebElement month = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
           //     Select monthSelect = new Select(month);
           //     monthSelect.selectByVisibleText("January");
-          //     Thread.sleep(1000);
+          //     Thread.sleep(500);
           //     System.out.println("se selecciona January" + "\n");
 
 
@@ -1435,24 +1435,24 @@ public class Main {
           //   WebElement year = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
           //     Select yearSelect = new Select(year);
           //     yearSelect.selectByVisibleText("2004");
-          //     Thread.sleep(2000);
+          //     Thread.sleep(500);
           //     System.out.println("se selecciona 2004" + "\n");
 
 
           //   // Hacer click en el dia 16
 
           //       driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[6]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona 16" + "\n");
 
 
           //   // escrivir una fecha incorrecta con letras
           //       date.sendKeys(Keys.CONTROL+"a");
           //       date.sendKeys(Keys.DELETE);
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       date.sendKeys("fgdsajhk");
           //       date.sendKeys(Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se ha escrito una fecha incorrecta" + "\n");
 
                 
@@ -1460,10 +1460,10 @@ public class Main {
 
           //       date.sendKeys(Keys.CONTROL+"a");
           //       date.sendKeys(Keys.DELETE);
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       date.sendKeys("43526/43627/20019");
           //       date.sendKeys(Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se ha escrito una fecha incorrecta con numeros" + "\n");
 
 
@@ -1471,10 +1471,10 @@ public class Main {
 
           //       date.sendKeys(Keys.CONTROL+"a");
           //       date.sendKeys(Keys.DELETE);
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       date.sendKeys("12/1/2004");
           //       date.sendKeys(Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se ha escrito una fecha correcta" + "\n");
 
 
@@ -1494,7 +1494,7 @@ public class Main {
           //   // Hacer click en el mes January
 
           //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]")).click();
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona January" + "\n");
 
 
@@ -1505,49 +1505,49 @@ public class Main {
           //   // Hacer click en el año 2021
 
           //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[10]")).click();
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona 2021" + "\n");
 
           //   // Hacer click en el dia 16
 
           //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[7]")).click();
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona 16" + "\n");
 
           //   // Hacer click en la hora 9:15
 
           //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[3]/div[2]/div/ul/li[45]")).click();
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona 9:15" + "\n");
 
           //   // escrivir una fecha incorrecta con letras
 
           //       dateAndTime.sendKeys(Keys.CONTROL+"a");
           //       dateAndTime.sendKeys(Keys.DELETE);
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       dateAndTime.sendKeys("fdgsjhk");
           //       dateAndTime.sendKeys(Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se escrive una fecha incorrecta con letras" + "\n");
 
           //   // escrivir una fecha incorrecta con numeros
 
           //       dateAndTime.sendKeys(Keys.CONTROL+"a");
           //       dateAndTime.sendKeys(Keys.DELETE);
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       dateAndTime.sendKeys("September 342, 432432 106:54 AM");
           //       dateAndTime.sendKeys(Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se escrive una fecha incorrecta con numeros" + "\n");
 
           //   // escrivir una fecha y hora correcta
 
           //       dateAndTime.sendKeys(Keys.CONTROL+"a");
           //       dateAndTime.sendKeys(Keys.DELETE);
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       dateAndTime.sendKeys("jANUARY 16, 2004 12:54 AM");
           //       dateAndTime.sendKeys(Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se escrive una fecha correcta" + "\n");
 
           // } catch(Exception e){
@@ -1565,7 +1565,7 @@ public class Main {
           //   Thread.sleep(500);
           //   WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]"));
           //   menu.click();
-          //   Thread.sleep(2000);       
+          //   Thread.sleep(500);       
           //   WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[4]"));
           //   submenu.click();
           //   Thread.sleep(500);
@@ -1596,7 +1596,7 @@ public class Main {
           //   Thread.sleep(500);
           //   WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]"));
           //   menu.click();
-          //   Thread.sleep(2000);       
+          //   Thread.sleep(500);       
           //   WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[5]"));
           //   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submenu);
           //   Thread.sleep(500); 
@@ -1607,12 +1607,12 @@ public class Main {
 
           //       WebElement button = driver.findElement(By.id("startStopButton"));
           //       button.click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al boton para empecar la progress bar" + "\n");
           //   // Hacer click en el botón Stop
 
           //       button.click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       button.click();
           //       System.out.println("se para a mitad la progress bar y se vuelve a iniciar" + "\n");
 
@@ -1630,7 +1630,7 @@ public class Main {
 
           //       Thread.sleep(11000);
           //       driver.findElement(By.id("resetButton")).click();
-          //       Thread.sleep(2000);
+          //       Thread.sleep(500);
           //       System.out.println("se reinicia la progress bar" + "\n");
 
 
@@ -1648,65 +1648,65 @@ public class Main {
           //   Thread.sleep(500);
           //   WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]"));
           //   menu.click();
-          //   Thread.sleep(2000);       
+          //   Thread.sleep(500);       
           //   WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[8]/span[1]"));
           //   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submenu);
           //   Thread.sleep(500); 
           //   submenu.click();
-          //   Thread.sleep(1000);
+          //   Thread.sleep(500);
 
 
           //   // hacer click en Main Item 1
           //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[1]/a[1]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al main item 1" + "\n");
           //   // hacer click en Main Item 2
 
           //       WebElement subMenu2 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/a[1]"));
           //       subMenu2.click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al main item 2" + "\n");
 
           //   // hacer click en Main Item 3
 
           //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[3]/a[1]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al main item 3" + "\n");
 
           //   // Pasar por encima del main item 2
 
           //       subMenu2.click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al main item 2" + "\n");
 
           //   // Hacer click en sub item
             
           //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al subItem" + "\n");
 
           //   // Hacer click en sub Item
 
           //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/ul[1]/li[2]/a[1]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al subItem" + "\n");
 
           //   // Pasar por encima del SUB SUB List
 
           //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/ul[1]/li[3]/a[1]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al SUB SUB list" + "\n");
 
           //   // Hacer click en sub sub Item 1
 
           //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al SUB SUB item1" + "\n");
 
           //   // Hacer click en sub sub Item 2
 
           //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/ul[1]/li[3]/ul[1]/li[2]/a[1]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se hace click al SUB SUB item2" + "\n");
 
           // } catch(Exception e){
@@ -1721,27 +1721,29 @@ public class Main {
 
           //   driver.get("https://demoqa.com");
           //   Thread.sleep(500);
+
           //   WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]"));
           //   menu.click();
-          //   Thread.sleep(2000);       
+          //   Thread.sleep(500);    
+
           //   WebElement submenu = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[9]"));
           //   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submenu);
           //   Thread.sleep(500); 
           //   submenu.click();
-          //   Thread.sleep(1000);
-
+          //   Thread.sleep(500);
+          
           //   // Hacer click en el menu de select value
           //   // Hacer click en Group1, option 1 
 
           //       driver.findElement(By.id("react-select-2-input")).sendKeys("Group 1, option 1"+ Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona Group1, option 1" + "\n");
                 
           //   // Hacer click en el menu de Select One
           //   // Hacer click en Dr.
 
           //       driver.findElement(By.id("react-select-3-input")).sendKeys("Dr."+ Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona Dr." + "\n");
 
           //   // Hacer click en el menu de old Style Select Menu
@@ -1750,7 +1752,7 @@ public class Main {
           //         WebElement select = driver.findElement(By.id("oldSelectMenu"));
           //         Select selectStyle = new Select(select);
           //         selectStyle.selectByVisibleText("Green");
-          //         Thread.sleep(1000);
+          //         Thread.sleep(500);
           //         System.out.println("se selecciona Green" + "\n");
 
           //   // Hacer click en el menu de Multiselect drop down
@@ -1759,19 +1761,19 @@ public class Main {
           //       WebElement multiSelect = driver.findElement(By.id("react-select-4-input"));
           //       ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", multiSelect);
           //         multiSelect.sendKeys("Green"+ Keys.ENTER);
-          //         Thread.sleep(1000);
+          //         Thread.sleep(500);
           //         System.out.println("se selecciona Green" + "\n");
 
           //   // Hacer click en Blue
 
           //       multiSelect.sendKeys("Blue"+ Keys.ENTER);
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona Blue" + "\n");
 
           //   // Hacer click en la cruz del Blue
 
           //       driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[1]/div[2]/div/div[2]")).click();
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se desselecciona Green" + "\n");
 
           //   // Hacer click en Volvo de Standard multi select
@@ -1779,14 +1781,14 @@ public class Main {
           //       WebElement cars = driver.findElement(By.id("cars"));
           //       Select volvoSelect = new Select(cars);
           //       volvoSelect.selectByVisibleText("Volvo");
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona Volvo" + "\n");
 
           //   // hacer ctrl click en Saab
 
           //       Select saabSelect = new Select(cars);
           //       saabSelect.selectByVisibleText("Saab");
-          //       Thread.sleep(1000);
+          //       Thread.sleep(500);
           //       System.out.println("se selecciona Saab" + "\n");
 
           // }  catch(Exception e){

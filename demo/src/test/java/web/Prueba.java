@@ -21,8 +21,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import java.util.concurrent.TimeUnit;
 //
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 //
 public class Prueba extends Main {
@@ -38,36 +36,47 @@ public class Prueba extends Main {
         try{
             driver.get("https://demoqa.com");
 
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
-            menu.click();
-            
-            WebElement text_box = driver.findElement(By.id("item-0"));
-            text_box.click();
+            System.out.println("Entramos a la pagina demoqa.com");
 
-            WebElement input_name = driver.findElement(By.id("userName"));
-            input_name.sendKeys("User");
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            System.out.println("Entramos en Elementos");
+            driver.findElement(By.id("item-0")).click();
+            System.out.println("Entramos en el Text Box");
+            driver.findElement(By.id("userName")).sendKeys("User");
+            System.out.println("Escribimos en Full Name ");
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);"); 
 
             WebElement input_email = driver.findElement(By.id("userEmail"));
             input_email.sendKeys("User");
+            System.out.println("Escribimos en email de forma incorrecta");
 
             WebElement B_submit = driver.findElement(By.id("submit"));
             B_submit.click();
-            Thread.sleep(1000);
+            System.out.println("Le damos al submit");
+            
+            Thread.sleep(500);
             input_email.clear();
 
             input_email.sendKeys("User@");
+            System.out.println("Escribimos en email de forma incorrecta");
+
             B_submit.click();
-            Thread.sleep(1000);
+            System.out.println("Le damos al submit");
+
+            Thread.sleep(500);
             input_email.clear();
 
             input_email.sendKeys("User@gmail.com");
-            WebElement input_current = driver.findElement(By.id("currentAddress"));
-            input_current.sendKeys("Current Address");
+            System.out.println("Escribimos en email de forma correcta");
 
-            WebElement input_permanent  = driver.findElement(By.id("permanentAddress"));
-            input_permanent.sendKeys("Permanent Address");
-            B_submit.click();   
-            Thread.sleep(1000);
+            driver.findElement(By.id("currentAddress")).sendKeys("Current Address");
+            System.out.println("Escribimos en el current Address");
+            driver.findElement(By.id("permanentAddress")).sendKeys("Permanent Address");
+            System.out.println("Escribimos en el Permanent Addres");
+            B_submit.click();
+            System.out.println("Le damos al submit");   
+            Thread.sleep(500);
 
             // Recoger el texto
             WebElement elemento = driver.findElement(By.xpath("//div[@class='border col-md-12 col-sm-12']"));
@@ -91,152 +100,171 @@ public class Prueba extends Main {
         //
         try{
             driver.get("https://demoqa.com");
+            System.out.println("Entramos a la pagina demoqa.com");
 
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
-            menu.click();
-            
-            WebElement check_box = driver.findElement(By.id("item-1"));
-            check_box.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            System.out.println("Entramos a Elementos");
+            driver.findElement(By.id("item-1")).click();
+            System.out.println("Entramos en el Check Box");
+            Thread.sleep(100);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);"); 
             //Desplegar todo
-            WebElement Home = driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed']//button"));
-            Home.click();
-            
-            WebElement Desktop = driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button"));
-            Desktop.click();
-            
-            WebElement Documents = driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button"));
-            Documents.click();
+            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed']//button")).click();
+            System.out.println("Desplegamos el Home");
 
-            WebElement Downloads = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/span/button"));
-            Downloads.click();
-            
-            WebElement WorkSpace = driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button"));
-            WorkSpace.click();
+            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button")).click();
+            System.out.println("Desplegamos el Desktop");
 
-            WebElement Office = driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button"));
-            Office.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button")).click();
+            System.out.println("Desplegamos el Documents");
+
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/span/button")).click();
+            System.out.println("Desplegamos Downloads");
+
+            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button")).click();
+            System.out.println("Desplegamos WorkSapce");
+
+            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button")).click();
+            System.out.println("Desplegamos Office");
+            Thread.sleep(100);
 
             // Clicamos al check
             // Clicamos el Home 
-            WebElement Chome = driver.findElement(By.xpath("//*[@id='tree-node']//span//span[1]"));
-            Chome.click();
-            Thread.sleep(1000);
-            Chome.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']//span//span[1]")).click();
+            System.out.println("Clicamos el Check Home");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']//span//span[1]")).click();
+            System.out.println("Clicamos el Check Home");
+            Thread.sleep(100);
 
             // Clicamos el Desktop
-            WebElement Cdesktop = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/span/label/span[1]"));
-            Cdesktop.click();
-            Thread.sleep(500);
-            Cdesktop.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/span/label/span[1]")).click();
+            Thread.sleep(100);
+            System.out.println("Clicamos el Check Desktop");
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Desktop");
+            Thread.sleep(100);
 
             // Clicamos el Documents
-            WebElement CDocumts = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/span/label/span[1]"));
-            CDocumts.click();
-            Thread.sleep(500);
-            CDocumts.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Documents");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Documents");
+            Thread.sleep(100);
 
             // Clicamos el Downloads 
-            WebElement Cdownloads = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/span/label/span[1]"));
-            Cdownloads.click();
-            Thread.sleep(500);
-            Cdownloads.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Downloads");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Downloads");
+            Thread.sleep(100);
 
             // Clicamos el WorkSpace 
-            WebElement Cworkspace = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/span/label/span[1]"));
-            Cworkspace.click();
-            Thread.sleep(500);
-            Cworkspace.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check WorkSpace");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check WorkSpace");
+            Thread.sleep(100);
             
             // Clicamos el Office
-            WebElement Coffice = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/span/label/span[1]"));
-            Coffice.click();
-            Thread.sleep(500);
-            Coffice.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Office");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Office");
+            Thread.sleep(100);
 
             // Clicamos en Notes 
-            WebElement Cnotes = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[1]/span/label/span[1]"));
-            Cnotes.click();
-            Thread.sleep(500);
-            Cnotes.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Office");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Office");
+            Thread.sleep(100);
 
             // Clicamos en Command 
-            WebElement Ccommand = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]"));
-            Ccommand.click();
-            Thread.sleep(500);
-            Ccommand.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Command");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Command");
+            Thread.sleep(100);
 
             // Clicamos en React
-            WebElement Creact = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]"));
-            Creact.click();
-            Thread.sleep(500);
-            Creact.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check React");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check React");
+            Thread.sleep(100);
 
             // Clicamos en Angular
-            WebElement Cangular = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]"));
-            Cangular.click();
-            Thread.sleep(500);
-            Cangular.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Angular");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Angular");
+            Thread.sleep(100);
 
             // Clicmaos en Veu
-            WebElement Cveu = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]"));
-            Cveu.click();
-            Thread.sleep(500);
-            Cveu.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Veu");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Veu");
+            Thread.sleep(100);
 
             // Clicamos en Public
-            WebElement Cpublic = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[1]/span/label/span[1]"));
-            Cpublic.click();
-            Thread.sleep(500);
-            Cpublic.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Public");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Public");
+            Thread.sleep(100);
 
             // Clicamos en Private
-            WebElement Cprivate = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[2]/span/label/span[1]"));
-            Cprivate.click();
-            Thread.sleep(500);
-            Cprivate.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Private");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Private");
+            Thread.sleep(100);
 
             // Clicamos en Classified
-            WebElement Cclassified = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[3]/span/label/span[1]"));
-            Cclassified.click();
-            Thread.sleep(500);
-            Cclassified.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[3]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Classified");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[3]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Classified");
+            Thread.sleep(100);
 
             // Clicamos en General
-            WebElement Cgeneral = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[1]"));
-            Cgeneral.click();
-            Thread.sleep(500);
-            Cgeneral.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check General");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check General");
+            Thread.sleep(100);
 
             // Clicamos en Word File.doc
-            WebElement Cword = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[1]/span/label/span[1]"));
-            Cword.click();
-            Thread.sleep(500);
-            Cword.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Word File.doc");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[1]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Word File.doc");
+            Thread.sleep(100);
 
             // Clicamos en Excel File.doc
-            WebElement Cexcel = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[2]/span/label/span[1]"));
-            Cexcel.click();
-            Thread.sleep(500);
-            Cexcel.click();
-            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Excel File.doc");
+            Thread.sleep(100);
+            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[2]/span/label/span[1]")).click();
+            System.out.println("Clicamos el Check Excel File.doc");
+            Thread.sleep(100);
 
         } catch(Exception e){
             e.printStackTrace();
@@ -254,28 +282,29 @@ public class Prueba extends Main {
         //
         try{
             driver.get("https://demoqa.com");
+            System.out.println("Entramos a demoqa.com");
 
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
-            menu.click();
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            System.out.println("Entramos a Elementos");
             Thread.sleep(500);
             
-            WebElement radio_button = driver.findElement(By.id("item-2"));
-            radio_button.click();
+            driver.findElement(By.id("item-2")).click();
+            System.out.println("Entramos en Radio Button");
             Thread.sleep(500);
 
             // Clicamos el Radio del Yes
-            WebElement R_yes = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[2]/label"));
-            R_yes.click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[2]/label")).click();
+            System.out.println("Clicamos al Radio Del Yes");
+            Thread.sleep(500);
 
             // Recogemos texto
             WebElement elemento = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/p/span"));
             String primer_texto = elemento.getText();
             System.out.println("Recogida de texto: " + primer_texto);
 
-            // Clicamos el Radio del Yes
-            WebElement R_impressive = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/label"));
-            R_impressive.click();
+            // Clicamos el Radio del Impressive
+            driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/label")).click();
+            System.out.println("Hacemos click al Impressive");
             Thread.sleep(1000);
 
             // Recogemos texto
@@ -283,15 +312,15 @@ public class Prueba extends Main {
             String segundo_texto = elemento2.getText();
             System.out.println("Recogida de texto: " + segundo_texto);
 
-            // Clicamos el Radio del Yes
-            WebElement R_no = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[4]/label"));
-            R_no.click();
+            // Clicamos el Radio del No
+            driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[4]/label")).click();
+            System.out.println("Hacemos click al No");
             Thread.sleep(1000);
 
             // Recogemos texto
             WebElement elemento3 = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/p/span"));
             String tercero_texto = elemento3.getText();
-            System.out.println("Recogida de texto: " + tercero_texto);
+            System.out.println("Recogida de texto erroneo: " + tercero_texto);
             
 
         } catch(Exception e){
@@ -310,17 +339,16 @@ public class Prueba extends Main {
         //
         try{
             driver.get("https://demoqa.com");
+            System.out.println("Entramos a la pagina demoqa.com");
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            System.out.println("Entramos a Elementos");
+            driver.findElement(By.id("item-3")).click();
+            System.out.println("Entramos a Web Tables");
 
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
-            menu.click();
-            
-            WebElement web_tables = driver.findElement(By.id("item-3"));
-            web_tables.click();
-
             
             
-            
-            for (int i=1;i<7;i++){
+            System.out.println("Creara 3 Usuarios");
+            for (int i=1;i<=3;i++){
                 // Añadimos un user
                 //Clicamos a ADD
                 WebElement B_Add = driver.findElement(By.id("addNewRecordButton"));
@@ -360,111 +388,118 @@ public class Prueba extends Main {
                 Thread.sleep(500);
                 submit.click();
             }
-            
-
-            
-
-            
-            
+            /* 
             // Buscamos Last Name
             WebElement buscar = driver.findElement(By.id("searchBox"));
             buscar.sendKeys("User");
             Thread.sleep(1000);
-            buscar.clear();
+            for (int i = 0; i < 4; i++) {
+                buscar.sendKeys(Keys.BACK_SPACE);
+            }
             Thread.sleep(1000);
+            */
+            // Ordenar
+            WebElement O_first_name = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]/div[1]"));
+            O_first_name.click();
+            System.out.println("Clicaremos el First Name para ordenar ");
+            O_first_name.click();
+            System.out.println("Clicaremos el First Name para ordenar ");
+
+            WebElement O_last_name = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]/div[1]"));
+            O_last_name.click();
+            System.out.println("Clicaremos el Last Name para ordenar ");
+            O_last_name.click();
+            System.out.println("Clicaremos el Last Name para ordenar ");
+
+            WebElement O_age = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]/div[1]"));
+            O_age.click();
+            System.out.println("Clicaremos el Age para ordenar ");
+            O_age.click();
+            System.out.println("Clicaremos el Age para ordenar ");
+
+            WebElement O_email = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]/div[1]"));
+            O_email.click();
+            System.out.println("Clicaremos el Email para ordenar ");
+            O_email.click();
+            System.out.println("Clicaremos el Email para ordenar ");
+            
+            WebElement O_Salary = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]/div[1]"));
+            O_Salary.click();
+            System.out.println("Clicaremos el Salario para ordenar ");
+            O_Salary.click();
+            System.out.println("Clicaremos el Salario para ordenar ");
+            
+            WebElement O_Department = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]/div[1]"));
+            O_Department.click();
+            System.out.println("Clicaremos el Departamento para ordenar ");
+            O_Department.click();
+            System.out.println("Clicaremos el Departamento para ordenar ");
 
             
+            WebElement filas = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[2]/select"));
+            Select select = new Select(filas);
+            select.selectByValue("5");
+            System.out.println("Ponemos 5 rows");
+            Thread.sleep(300);
+            select.selectByValue("10");
+            System.out.println("Ponemos 10 rows");
+            Thread.sleep(300);
+            select.selectByValue("20");
+            System.out.println("Ponemos 20 rows");
+            Thread.sleep(300);
+            select.selectByValue("25");
+            System.out.println("Ponemos 25 rows");
+            Thread.sleep(300);
+            select.selectByValue("50");
+            System.out.println("Ponemos 50 rows");
+            Thread.sleep(300);
+            select.selectByValue("100");
+            System.out.println("Ponemos 100 rows");
+            Thread.sleep(300);
+
 
             // Editamos 
-            WebElement editar = driver.findElement(By.xpath("//*[@id='edit-record-4']"));
-            editar.click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id='edit-record-4']")).click();
+            System.out.println("Clicamos el editar");
             
-            WebElement Edit_FirstN = driver.findElement(By.xpath("//*[@id='firstName']"));
-            Edit_FirstN.clear();
+            driver.findElement(By.xpath("//*[@id='firstName']")).clear();
+            System.out.println("Editamos el First Name");
+            
+            driver.findElement(By.xpath("//*[@id='firstName']")).sendKeys("Usuario1");
             Thread.sleep(1000);
 
-            Edit_FirstN.sendKeys("Kevin");
-            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id='lastName']")).clear();
+            System.out.println("Editamos el Last Name ");
+            driver.findElement(By.xpath("//*[@id='lastName']")).sendKeys("Lusuario1");
 
-            WebElement Edit_LastN = driver.findElement(By.xpath("//*[@id='lastName']"));
-            Edit_LastN.clear();
-            Edit_LastN.sendKeys("Riese");
-
-            WebElement Edit_Email = driver.findElement(By.xpath("//*[@id='userEmail']"));
-            Edit_Email.clear();
-            Edit_Email.sendKeys("Kevin@gmail.com");
+            driver.findElement(By.xpath("//*[@id='userEmail']")).clear();
+            System.out.println("Editamos el Email");
+            driver.findElement(By.xpath("//*[@id='userEmail']")).sendKeys("usuario@gmail.com");
             Thread.sleep(500);
 
-            WebElement Edit_Age = driver.findElement(By.xpath("//*[@id='age']"));
-            Edit_Age.clear();
-            Edit_Age.sendKeys("20");
+            driver.findElement(By.xpath("//*[@id='age']")).clear();
+            System.out.println("Editamos el año");
+            driver.findElement(By.xpath("//*[@id='age']")).sendKeys("22");
 
-            WebElement Edit_Salary = driver.findElement(By.xpath("//*[@id='salary']"));
-            Edit_Salary.clear();
-            Edit_Salary.sendKeys("2000");
+            driver.findElement(By.xpath("//*[@id='salary']")).clear();
+            System.out.println("Editamos el salario");
+            driver.findElement(By.xpath("//*[@id='salary']")).sendKeys("520");
 
-            WebElement Edit_Department = driver.findElement(By.xpath("//*[@id='department']"));
-            Edit_Department.clear();
-            Edit_Department.sendKeys("IA");
+            driver.findElement(By.xpath("//*[@id='department']")).clear();
+            System.out.println("Editamos el departamento");
+            driver.findElement(By.xpath("//*[@id='department']")).sendKeys("Depart");
+            
+            System.out.println("Le damos a submit");
             WebElement E_Submit = driver.findElement(By.xpath("//*[@id='submit']"));
             E_Submit.click();
             Thread.sleep(1000);
 
-            buscar.sendKeys("User");
-
-            WebElement borrar = driver.findElement(By.xpath("//*[@id='delete-record-5']"));
-            Thread.sleep(1000);
-            borrar.click();
-            Thread.sleep(2000);
-
-            // Ordenar
-            WebElement O_first_name = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]/div[1]"));
-            O_first_name.click();
-
-            O_first_name.click();
-
-            WebElement O_last_name = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]/div[1]"));
-            O_last_name.click();
-
-            O_last_name.click();
-
-            WebElement O_age = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]/div[1]"));
-            O_age.click();
-
-            O_age.click();
-
-            WebElement O_email = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]/div[1]"));
-            O_email.click();
-
-            O_email.click();
-
-            WebElement O_Salary = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]/div[1]"));
-            O_Salary.click();
-
-            O_Salary.click();
-
-            WebElement O_Department = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]/div[1]"));
-            O_Department.click();
-
-            O_Department.click();
+            //buscar.sendKeys("User");
+            System.out.println("Borramos usuario");
+            driver.findElement(By.xpath("//*[@id='delete-record-5']")).click();
             Thread.sleep(1000);
 
-            WebElement filas = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[2]/select"));
-            Select select = new Select(filas);
-            select.selectByValue("5");
-            Thread.sleep(500);
-            select.selectByValue("10");
-            Thread.sleep(500);
-            select.selectByValue("20");
-            Thread.sleep(500);
-            select.selectByValue("25");
-            Thread.sleep(500);
-            select.selectByValue("50");
-            Thread.sleep(500);
-            select.selectByValue("100");
-            Thread.sleep(500);
-
+            
         } catch(Exception e){
             e.printStackTrace();
         } finally{
@@ -482,28 +517,28 @@ public class Prueba extends Main {
         //
         try{
             driver.get("https://demoqa.com");
+            System.out.println("Entramos a la pagina de demoqa.com");
 
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
-            menu.click();
-            
-            WebElement buttons = driver.findElement(By.id("item-4"));
-            buttons.click();
+            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            System.out.println("Entramos en Elements");
+
+            driver.findElement(By.id("item-4")).click();
+            System.out.println("Vamos al apartado Buttons");
 
             WebElement primer_boton = driver.findElement(By.id("doubleClickBtn"));
-
             Actions actions = new Actions(driver);
-
             actions.doubleClick(primer_boton).perform();
+            System.out.println("Le damos doble click al primer boton");
             Thread.sleep(500);
 
             WebElement segundo_boton = driver.findElement(By.id("rightClickBtn"));
-
             actions.contextClick(segundo_boton).perform();
+            System.out.println("Le damos click derecho al segundo boton");
             Thread.sleep(500);
 
             WebElement tercer_boton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Click Me']")));
-
             tercer_boton.click();
+            System.out.println("Le damos click al boton dinamico");
             Thread.sleep(500);
             
             WebElement primer_text = driver.findElement(By.xpath("//*[@id='doubleClickMessage']"));
@@ -512,7 +547,7 @@ public class Prueba extends Main {
             String texto = primer_text.getText();
             texto +=" "+"\n"+ segundo_text.getText();
             texto +=" "+"\n"+tercer_texto.getText();
-            System.out.println("Texto: " + texto);
+            System.out.println("Texto de los tres botones: " + texto);
             
 
         } catch(Exception e){
@@ -1206,8 +1241,56 @@ public class Prueba extends Main {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", entrar);
             entrar.click();
+            // Introducios texto en el primer campo 
+            Thread.sleep(500);
+            driver.findElement(By.id("react-select-2-input")).sendKeys("Group 1, option 1"+ Keys.ENTER);
+            Thread.sleep(500);
+            driver.findElement(By.id("react-select-2-input")).sendKeys("Group 1, option 2"+ Keys.ENTER);
+            Thread.sleep(500);
+
+            // Introducimos texto en el segundo campo
+            driver.findElement(By.id("react-select-3-input")).sendKeys("Mr."+ Keys.ENTER);
+            Thread.sleep(500);
+            driver.findElement(By.id("react-select-3-input")).sendKeys("Mrs."+ Keys.ENTER);
+
+            // Elegimos color 
+            driver.findElement(By.xpath("//*[@id='oldSelectMenu']/option[2]")).click();
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id='oldSelectMenu']/option[3]")).click();
+            Thread.sleep(500);
+
+            // Seleccion multiple
+            WebElement seleccionMultiple = driver.findElement(By.id("react-select-4-input"));
+            js.executeScript("arguments[0].scrollIntoView(true);", seleccionMultiple);
+            seleccionMultiple.sendKeys("Blue"+ Keys.ENTER);
+            seleccionMultiple.sendKeys("Black"+ Keys.ENTER);
+            seleccionMultiple.sendKeys("Green"+ Keys.ENTER);
+            seleccionMultiple.sendKeys("Red"+ Keys.ENTER);
+            Thread.sleep(500);
+            // Le damos a la cruz 
+            driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[2]/div[1]")).click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//div[contains(text(),'Select Option')]")).sendKeys("Group 1, Option 1");
+
+            // Le damos al Standar multi select 
+            Actions actions = new Actions(driver);
+
+            WebElement multiSelectVolvo = driver.findElement(By.xpath("//*[@id='cars']/option[1]"));
+            WebElement multiSelectAudi = driver.findElement(By.xpath("//*[@id='cars']/option[4]"));
+            // Accion con el control
+            actions.keyDown(Keys.CONTROL)
+            .click(multiSelectVolvo)
+            .click(multiSelectAudi)
+            .keyUp(Keys.CONTROL)
+            .build()
+            .perform();
+            Thread.sleep(1000);
+            // Accion con el shift
+            actions.keyDown(Keys.SHIFT)
+            .click(multiSelectVolvo)
+            .click(multiSelectAudi)
+            .keyUp(Keys.SHIFT)
+            .build()
+            .perform();
             Thread.sleep(1000);
         } catch(Exception e){
             e.printStackTrace();

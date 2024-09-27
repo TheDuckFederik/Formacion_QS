@@ -9,7 +9,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 // import io.appium.java_client.android.nativekey.KeyEvent;
@@ -1360,6 +1359,124 @@ public class Prueba extends Main {
             WebElement SubSubItem1 = driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/ul/li[1]/a"));
             SubSubItem1.click();
             Thread.sleep(500);
+            //
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
+    }
+    @Test(description = "Prueba DemoQA Widgets Menu.")
+    @Story("Widgets")
+    @Description("Comprobar la funcionalidad del boton y la barra.")
+    //
+    public void TC018_Menu() throws InterruptedException, IOException {
+        testId = "TC018_Menu";
+        //
+        try{
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
+            menu.click();
+            Thread.sleep(500);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,350)", "");
+            Thread.sleep(500);
+            WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-8']"));
+            sub_menu.click();
+            Thread.sleep(500);
+            //
+            WebElement value = driver.findElement(By.xpath("//*[@id='withOptGroup']/div/div[1]"));
+            value.click();
+            Thread.sleep(50);
+            //
+            js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,350)", "");
+            //
+            value = driver.findElement(By.xpath("//*[@id=\"react-select-2-input\"]"));
+            value.sendKeys("root");
+            value.sendKeys(Keys.ENTER);
+            Thread.sleep(50);
+            //
+            WebElement one = driver.findElement(By.xpath("//*[@id=\"selectOne\"]/div/div[1]"));
+            one.click();
+            Thread.sleep(50);
+            //
+            one = driver.findElement(By.xpath("//*[@id=\"react-select-3-input\"]"));
+            one.sendKeys("Prof");
+            one.sendKeys(Keys.ENTER);
+            Thread.sleep(50);
+            //
+            WebElement color = driver.findElement(By.id("oldSelectMenu"));
+            color.click();
+            Thread.sleep(50);
+            //
+            color.sendKeys("P");
+            color.sendKeys(Keys.ENTER);
+            Thread.sleep(50);
+            //
+            WebElement multiSelect = driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[1]"));
+            multiSelect.click();
+            Thread.sleep(50);
+            //
+            multiSelect = driver.findElement(By.xpath("//*[@id=\"react-select-4-input\"]"));
+            multiSelect.sendKeys("Green");
+            multiSelect.sendKeys(Keys.ENTER);
+            Thread.sleep(50);
+            //
+            multiSelect.sendKeys("Blue");
+            multiSelect.sendKeys(Keys.ENTER);
+            Thread.sleep(50);
+            //
+            multiSelect.sendKeys("Black");
+            multiSelect.sendKeys(Keys.ENTER);
+            Thread.sleep(50);
+            //
+            multiSelect.sendKeys("Red");
+            multiSelect.sendKeys(Keys.ENTER);
+            Thread.sleep(50);
+            //
+            WebElement redClose = driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[1]/div[4]/div/div[2]"));
+            redClose.click();
+            Thread.sleep(50);
+            WebElement blackClose = driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[1]/div[3]/div/div[2]"));
+            blackClose.click();
+            Thread.sleep(50);  
+            WebElement blueClose = driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[1]/div[2]/div/div[2]"));
+            blueClose.click();
+            Thread.sleep(50);
+            WebElement greenClose = driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[1]/div[1]/div/div[2]"));
+            greenClose.click();
+            Thread.sleep(50);
+            //
+            multiSelect.sendKeys("Black");
+            multiSelect.sendKeys(Keys.ENTER);
+            Thread.sleep(50);
+            WebElement closeAll = driver.findElement(By.xpath("//*[@id='selectMenuContainer']/div[7]/div/div/div/div[2]/div[1]"));
+            closeAll.click();
+            //
+            // WebElement volvo = driver.findElement(By.xpath("//*[@id='cars']/option[1]"));
+            // WebElement saab = driver.findElement(By.xpath("//*[@id='cars']/option[2]"));
+            // WebElement opel = driver.findElement(By.xpath("//*[@id='cars']/option[3]"));
+            WebElement audi = driver.findElement(By.xpath("//*[@id='cars']/option[4]"));
+            // volvo.click();
+            // Thread.sleep(500);
+            // saab.click();
+            // Thread.sleep(500); 
+            // opel.click();
+            // Thread.sleep(500); 
+            audi.click();
+            Thread.sleep(500);
+            //
+
+            // Actions actions = new Actions(driver);
+            // actions.keyDown(Keys.CONTROL)
+            //        .click(volvo)
+            //        .keyUp(Keys.CONTROL)
+            //        .build()
+            //        .perform();
+            //
+            Thread.sleep(5000);
             //
         } catch(Exception e){
             e.printStackTrace();

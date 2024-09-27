@@ -1455,26 +1455,92 @@ public class Prueba extends Main {
             WebElement closeAll = driver.findElement(By.xpath("//*[@id='selectMenuContainer']/div[7]/div/div/div/div[2]/div[1]"));
             closeAll.click();
             //
-            // WebElement volvo = driver.findElement(By.xpath("//*[@id='cars']/option[1]"));
-            // WebElement saab = driver.findElement(By.xpath("//*[@id='cars']/option[2]"));
-            // WebElement opel = driver.findElement(By.xpath("//*[@id='cars']/option[3]"));
+            WebElement volvo = driver.findElement(By.xpath("//*[@id='cars']/option[1]"));
+            WebElement saab = driver.findElement(By.xpath("//*[@id='cars']/option[2]"));
+            WebElement opel = driver.findElement(By.xpath("//*[@id='cars']/option[3]"));
             WebElement audi = driver.findElement(By.xpath("//*[@id='cars']/option[4]"));
-            // volvo.click();
-            // Thread.sleep(500);
-            // saab.click();
-            // Thread.sleep(500); 
-            // opel.click();
-            // Thread.sleep(500); 
+            volvo.click();
+            Thread.sleep(500);
+            volvo.click();
+            Thread.sleep(50);
+            saab.click();
+            Thread.sleep(500);
+            saab.click();
+            Thread.sleep(50);
+            opel.click();
+            Thread.sleep(500);
+            opel.click();
+            Thread.sleep(50);
+            audi.click();
+            Thread.sleep(500);
+            audi.click();
+            Thread.sleep(50);
+            //  
+            Actions actions = new Actions(driver);
+            actions.keyDown(Keys.SHIFT)
+                   .click(volvo)
+                   .keyUp(Keys.SHIFT)
+                   .build()
+                   .perform();
+            Thread.sleep(500);
+            //
+            actions.keyDown(Keys.SHIFT)
+                   .click(opel)
+                   .keyUp(Keys.SHIFT)
+                   .build()
+                   .perform();
+            Thread.sleep(500);
+            //
+            actions.keyDown(Keys.SHIFT)
+                   .click(saab)
+                   .keyUp(Keys.SHIFT)
+                   .build()
+                   .perform();
+            Thread.sleep(500);
+            //
+            actions.keyDown(Keys.SHIFT)
+                   .click(audi)
+                   .keyUp(Keys.SHIFT)
+                   .build()
+                   .perform();
+            Thread.sleep(500);
+            //
+            volvo.click();
+            Thread.sleep(500);
+            saab.click();
+            Thread.sleep(500);
+            opel.click();
+            Thread.sleep(500);
             audi.click();
             Thread.sleep(500);
             //
-
-            // Actions actions = new Actions(driver);
-            // actions.keyDown(Keys.CONTROL)
-            //        .click(volvo)
-            //        .keyUp(Keys.CONTROL)
-            //        .build()
-            //        .perform();
+            actions.keyDown(Keys.CONTROL)
+                   .click(volvo)
+                   .keyUp(Keys.CONTROL)
+                   .build()
+                   .perform();
+            Thread.sleep(500);
+            //
+            actions.keyDown(Keys.CONTROL)
+                   .click(opel)
+                   .keyUp(Keys.CONTROL)
+                   .build()
+                   .perform();
+            Thread.sleep(500);
+            //
+            actions.keyDown(Keys.SHIFT)
+                   .click(saab)
+                   .keyUp(Keys.SHIFT)
+                   .build()
+                   .perform();
+            Thread.sleep(500);
+            //
+            actions.keyDown(Keys.SHIFT)
+                   .click(audi)
+                   .keyUp(Keys.SHIFT)
+                   .build()
+                   .perform();
+            Thread.sleep(500);
             //
             Thread.sleep(5000);
             //

@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testData>
+    <url>
+        <demoqa>https://demoqa.com</demoqa>
+    </url>
+    <!--  -->
+    <menuItems>
+        <elements>(//div[@class='avatar mx-auto white'])[1]</elements>
+    </menuItems>
+    <!--  -->
+    <submenuItems>
+        <firstSubelement>//div[@class='element-list collapse show']//li[@id='item-0']</firstSubelement>
+    </submenuItems>
+    <!--  -->
     <TC_001>
-        <fullName_TC_001>FullNameTest</fullName_TC_001>
-        <email1_TC_001>EmailTest</email1_TC_001>
-		<email2_TC_001>EmailTest@</email2_TC_001>
-		<email3_TC_001>EmailTest@Test</email3_TC_001>
-		<email4_TC_001>EmailTest@Test.com</email4_TC_001>
-        <currentAddress_TC_001>CurrentAddressTest</currentAddress_TC_001>
-        <permanentAddress_TC_001>PermanentAddressTest</permanentAddress_TC_001>
+        <fullNameID_TC_001>userName</fullNameID_TC_001>
+        <emailID_TC_001>userEmail</emailID_TC_001>
+        <currentAddressID_TC_001>currentAddress</currentAddressID_TC_001>
+        <permanentAddressID_TC_001>permanentAddress</permanentAddressID_TC_001>
+        <!--  -->
+        <fullNameText_TC_001>FullNameTest</fullNameText_TC_001> 
+        <emailText1_TC_001>EmailTest</emailText1_TC_001>
+        <emailText2_TC_001>EmailTest@</emailText2_TC_001>
+        <emailText3_TC_001>EmailTest@Test</emailText3_TC_001>
+        <emailText4_TC_001>EmailTest@Test.com</emailText4_TC_001>
+        <currentAddressText_TC_001>CurrentAddressTest</currentAddressText_TC_001>
+        <permanentAddressText_TC_001>PermanentAddressTest</permanentAddressText_TC_001>
+        <!--  -->
+        <outputTextXpath_TC_001>(//div[@class='border col-md-12 col-sm-12'])[1]</outputTextXpath_TC_001>
     </TC_001>
+    <!--  -->
+    <TC_002>
+
+    </TC_002>
+    <!--  -->
     <TC_008>
 		<firstName_TC_008>FristNameTest</firstName_TC_008>
 		<lastName_TC_008>LastNameTest</lastName_TC_008>

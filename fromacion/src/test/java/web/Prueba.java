@@ -94,20 +94,31 @@ public class Prueba extends Main {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             //
-            String fullNameBox = getTagValue("fullName_TC_001", doc);
-            String emailBox1 = getTagValue("email1_TC_001", doc);
-            String emailBox2 = getTagValue("email2_TC_001", doc);
-            String emailBox3 = getTagValue("email3_TC_001", doc);
-            String emailBox4 = getTagValue("email4_TC_001", doc);
-            String currentAddressBox = getTagValue("currentAddress_TC_001", doc);
-            String permanentAddressBox = getTagValue("permanentAddress_TC_001", doc);
+            String url = getTagValue("demoqa", doc);
+            String elementsXpath = getTagValue("elements", doc);
+            String textBoxXpath = getTagValue("firstSubelement", doc);
             //
-            driver.get("https://demoqa.com");
+            String fullNameId = getTagValue("", doc);
+            String emailId = getTagValue("", doc);
+            String currentAddressId = getTagValue("", doc);
+            String permanentAddressId = getTagValue("", doc);
             //
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            String fullNameBox = getTagValue("fullNameText_TC_001", doc);
+            String emailBox1 = getTagValue("emailText1_TC_001", doc);
+            String emailBox2 = getTagValue("emailText2_TC_001", doc);
+            String emailBox3 = getTagValue("emailText3_TC_001", doc);
+            String emailBox4 = getTagValue("emailText4_TC_001", doc);
+            String currentAddressBox = getTagValue("currentAddressText_TC_001", doc);
+            String permanentAddressBox = getTagValue("permanentAddressText_TC_001", doc);
+            //
+            String outputTextXpath = getTagValue("", doc);
+            //
+            driver.get(url);
+            //
+            WebElement menu = driver.findElement(By.xpath(elementsXpath));
             menu.click();
             Thread.sleep(50);
-            WebElement sub_menu = driver.findElement(By.id("item-0"));
+            WebElement sub_menu = driver.findElement(By.xpath(textBoxXpath));
             sub_menu.click();
             Thread.sleep(50);
             //
@@ -118,7 +129,7 @@ public class Prueba extends Main {
             WebElement full_name = driver.findElement(By.id("userName"));
             full_name.sendKeys(fullNameBox);
             //
-            WebElement email = driver.findElement(By.id("userEmail"));
+            WebElement email = driver.findElement(By.id(permanentAddressId)));
             email.sendKeys(emailBox1);
             WebElement submit = driver.findElement(By.id("submit"));
             submit.click();

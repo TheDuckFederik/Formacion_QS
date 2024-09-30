@@ -2,7 +2,6 @@ package web;
 //
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -11,15 +10,75 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
-// import io.appium.java_client.android.nativekey.KeyEvent;
-// import io.appium.java_client.android.nativekey.KeyEvent;
-// import org.openqa.selenium.chrome.ChromeOptions;
-// import org.testng.Assert;
-// import org.openqa.selenium.WebDriver;
-// import org.openqa.selenium.chrome.ChromeDriver;
+import java.io.File;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
 //
 public class Prueba extends Main {
+    @Test(description = "Prueba DemoQA Elements Text Box")
+    @Story("Elements")
+    @Description("Rellenar textbox")
     //
+    public void XML_Test() throws InterruptedException, IOException {
+        testId = "XML_Test";
+        try {
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
+            String fullNameBox = getTagValue("fullName_TC_001", doc);
+            String emailBox = getTagValue("email_TC_001", doc);
+            String currentAddressBox = getTagValue("currentAddress_TC_001", doc);
+            String permanentAddressBox = getTagValue("permanentAddres_TC_001", doc); // fixed typo
+            //
+            driver.get("https://demoqa.com");
+            //
+            WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='avatar mx-auto white'])[1]")));
+            menu.click();
+            //
+            WebElement subMenu = wait.until(ExpectedConditions.elementToBeClickable(By.id("item-0")));
+            subMenu.click();
+            //
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,350)", "");
+            Thread.sleep(500);
+            //
+            WebElement full_name = driver.findElement(By.id("userName"));
+            full_name.sendKeys(fullNameBox);
+            Thread.sleep(50);
+            //
+            WebElement email = driver.findElement(By.id("userEmail"));
+            email.sendKeys(emailBox);
+            Thread.sleep(50);
+            //
+            WebElement current_address = driver.findElement(By.id("currentAddress"));
+            current_address.sendKeys(currentAddressBox);
+            Thread.sleep(50);
+            //
+            WebElement permanent_address = driver.findElement(By.id("permanentAddress"));
+            permanent_address.sendKeys(permanentAddressBox);
+            Thread.sleep(50);
+            //
+            WebElement submit = driver.findElement(By.id("submit"));
+            submit.click();
+            //
+            WebElement output_text = driver.findElement(By.xpath("(//div[@class='border col-md-12 col-sm-12'])[1]"));
+            String print_output = output_text.getText();
+            System.out.println(print_output);
+            //
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
+    }
     @Test(description = "Prueba DemoQA Elements Text Box")
     @Story("Elements")
     @Description("Rellenar textbox")
@@ -1550,5 +1609,15 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+
+    private String getTagValue(String tag, Document doc) {
+        NodeList nodeList = doc.getElementsByTagName(tag);
+        if (nodeList != null && nodeList.getLength() > 0) {
+            Node node = nodeList.item(0);
+            return node.getTextContent();
+        }
+        return null;
+    }
 }
+
 //

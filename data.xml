@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testData>
+    <TC_001>
+        <fullName_TC_001>FullNameTest</fullName_TC_001>
+        <email1_TC_001>EmailTest</email1_TC_001>
+		<email2_TC_001>EmailTest@</email2_TC_001>
+		<email3_TC_001>EmailTest@Test</email3_TC_001>
+		<email4_TC_001>EmailTest@Test.com</email4_TC_001>
+        <currentAddress_TC_001>CurrentAddressTest</currentAddress_TC_001>
+        <permanentAddres_TC_001>PermanentAddressTest</permanentAddres_TC_001>
+    </TC_001>
+    <TC_008>
+		<firstName_TC_008>FristNameTest</firstName_TC_008>
+		<lastName_TC_008>LastNameTest</lastName_TC_008>
+		<email1_TC_008>EmailTest</email1_TC_008>
+		<email2_TC_008>EmailTest@</email2_TC_008>
+		<email3_TC_008>EmailTest@Test</email3_TC_008>
+		<email4_TC_008>EmailTest@Test.com</email4_TC_008>
+		<age1_TC_008>AgeTest</age1_TC_008>
+		<age2_TC_008>01</age2_TC_008>
+		<salary1_TC_008>SalaryTest</salary1_TC_008>
+		<salary2_TC_008>0000000001</salary2_TC_008>
+		<department_TC_008>DepartmentTest</department_TC_008>
+    </TC_008>
+</testData>

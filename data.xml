@@ -7,7 +7,7 @@
 		<email3_TC_001>EmailTest@Test</email3_TC_001>
 		<email4_TC_001>EmailTest@Test.com</email4_TC_001>
         <currentAddress_TC_001>CurrentAddressTest</currentAddress_TC_001>
-        <permanentAddres_TC_001>PermanentAddressTest</permanentAddres_TC_001>
+        <permanentAddress_TC_001>PermanentAddressTest</permanentAddress_TC_001>
     </TC_001>
     <TC_008>
 		<firstName_TC_008>FristNameTest</firstName_TC_008>

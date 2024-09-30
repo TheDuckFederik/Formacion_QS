@@ -34,9 +34,9 @@ public class Prueba extends Main {
             doc.getDocumentElement().normalize();
             //
             String fullNameBox = getTagValue("fullName_TC_001", doc);
-            String emailBox = getTagValue("email_TC_001", doc);
+            String emailBox = getTagValue("email4_TC_001", doc);
             String currentAddressBox = getTagValue("currentAddress_TC_001", doc);
-            String permanentAddressBox = getTagValue("permanentAddres_TC_001", doc); // fixed typo
+            String permanentAddressBox = getTagValue("permanentAddress_TC_001", doc);
             //
             driver.get("https://demoqa.com");
             //
@@ -87,54 +87,55 @@ public class Prueba extends Main {
         testId = "TC001_Text_Box";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
+            String fullNameBox = getTagValue("fullName_TC_001", doc);
+            String emailBox1 = getTagValue("email1_TC_001", doc);
+            String emailBox2 = getTagValue("email2_TC_001", doc);
+            String emailBox3 = getTagValue("email3_TC_001", doc);
+            String emailBox4 = getTagValue("email4_TC_001", doc);
+            String currentAddressBox = getTagValue("currentAddress_TC_001", doc);
+            String permanentAddressBox = getTagValue("permanentAddress_TC_001", doc);
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
-            Thread.sleep(500);
+            Thread.sleep(50);
             WebElement sub_menu = driver.findElement(By.id("item-0"));
             sub_menu.click();
-            Thread.sleep(500);
+            Thread.sleep(50);
             //
+            Thread.sleep(100);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,350)", "");
-            Thread.sleep(500);
             //
             WebElement full_name = driver.findElement(By.id("userName"));
-            full_name.sendKeys("FullNameTest");
-            Thread.sleep(500);
+            full_name.sendKeys(fullNameBox);
             //
             WebElement email = driver.findElement(By.id("userEmail"));
-            email.sendKeys("EmailTest");
-            Thread.sleep(500);
+            email.sendKeys(emailBox1);
             WebElement submit = driver.findElement(By.id("submit"));
             submit.click();
-            Thread.sleep(500);
             email.clear();
-            Thread.sleep(500);
-            email.sendKeys("EmailTest@");
-            Thread.sleep(500);
+            email.sendKeys(emailBox2);
             submit.click();
-            Thread.sleep(500);
             email.clear();
-            Thread.sleep(500);
-            email.sendKeys("EmailTest@Test");
-            Thread.sleep(500);
-            submit.click();
-            Thread.sleep(500);
+            email.sendKeys(emailBox3);
             email.clear();
-            Thread.sleep(500);
-            email.sendKeys("EmailTest@Test.com");
-            Thread.sleep(500);
+            email.sendKeys(emailBox4);
             //
             WebElement current_address = driver.findElement(By.id("currentAddress"));
-            current_address.sendKeys("CurrentAddressTest");
-            Thread.sleep(500);
+            current_address.sendKeys(currentAddressBox);
             //
             WebElement permanent_address = driver.findElement(By.id("permanentAddress"));
-            permanent_address.sendKeys("PermanentAddressTest");
+            permanent_address.sendKeys(permanentAddressBox);
             submit.click();
-            Thread.sleep(500);
             //
             WebElement output_text = driver.findElement(By.xpath("(//div[@class='border col-md-12 col-sm-12'])[1]"));
             String print_output = output_text.getText();
@@ -154,6 +155,13 @@ public class Prueba extends Main {
         testId = "TC002_Check_Box";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
@@ -314,6 +322,13 @@ public class Prueba extends Main {
         testId = "TC003_Radio_Button";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
@@ -349,6 +364,13 @@ public class Prueba extends Main {
         testId = "TC004_Web_Tables";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
@@ -690,6 +712,13 @@ public class Prueba extends Main {
         testId = "TC005_Buttons";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             Actions actions = new Actions(driver);
@@ -727,6 +756,13 @@ public class Prueba extends Main {
         testId = "TC006_Upload_And_Download";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
@@ -763,6 +799,13 @@ public class Prueba extends Main {
         testId = "TC007_Dynamic_Properties";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
@@ -806,6 +849,13 @@ public class Prueba extends Main {
         testId = "TC008_Practice_Form";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[2]"));
@@ -962,6 +1012,13 @@ public class Prueba extends Main {
         testId = "TC009_Browser_Windows";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
@@ -1006,6 +1063,13 @@ public class Prueba extends Main {
         testId = "TC010_Alerts";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]/div/div[2]"));
@@ -1075,6 +1139,13 @@ public class Prueba extends Main {
         testId = "TC011_Frames";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
@@ -1112,6 +1183,13 @@ public class Prueba extends Main {
         testId = "TC012_Nested_Frames";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
@@ -1148,6 +1226,13 @@ public class Prueba extends Main {
         testId = "TC013_Modal_Dialogs";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
@@ -1194,6 +1279,13 @@ public class Prueba extends Main {
         testId = "TC014_Date_Picker";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
@@ -1292,6 +1384,13 @@ public class Prueba extends Main {
         testId = "TC015_Slider";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
@@ -1340,6 +1439,13 @@ public class Prueba extends Main {
         testId = "TC016_Progress_Bar";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
@@ -1391,6 +1497,13 @@ public class Prueba extends Main {
         testId = "TC017_Menu";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
@@ -1433,6 +1546,13 @@ public class Prueba extends Main {
         testId = "TC018_Menu";
         //
         try{
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            //
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));

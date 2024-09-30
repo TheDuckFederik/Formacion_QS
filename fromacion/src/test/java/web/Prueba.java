@@ -98,10 +98,11 @@ public class Prueba extends Main {
             String elementsXpath = getTagValue("elements", doc);
             String textBoxXpath = getTagValue("firstSubelement", doc);
             //
-            String fullNameId = getTagValue("", doc);
-            String emailId = getTagValue("", doc);
-            String currentAddressId = getTagValue("", doc);
-            String permanentAddressId = getTagValue("", doc);
+            String fullNameId = getTagValue("fullNameID_TC_001", doc);
+            String emailId = getTagValue("emailID_TC_001", doc);
+            String currentAddressId = getTagValue("currentAddressID_TC_001", doc);
+            String permanentAddressId = getTagValue("permanentAddressID_TC_001", doc);
+            String submitId = getTagValue("submitID_TC_001", doc);
             //
             String fullNameBox = getTagValue("fullNameText_TC_001", doc);
             String emailBox1 = getTagValue("emailText1_TC_001", doc);
@@ -111,7 +112,7 @@ public class Prueba extends Main {
             String currentAddressBox = getTagValue("currentAddressText_TC_001", doc);
             String permanentAddressBox = getTagValue("permanentAddressText_TC_001", doc);
             //
-            String outputTextXpath = getTagValue("", doc);
+            String outputTextXpath = getTagValue("outputTextXpath_TC_001", doc);
             //
             driver.get(url);
             //
@@ -126,12 +127,12 @@ public class Prueba extends Main {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,350)", "");
             //
-            WebElement full_name = driver.findElement(By.id("userName"));
+            WebElement full_name = driver.findElement(By.id(fullNameId));
             full_name.sendKeys(fullNameBox);
             //
-            WebElement email = driver.findElement(By.id(permanentAddressId)));
+            WebElement email = driver.findElement(By.id(emailId));
             email.sendKeys(emailBox1);
-            WebElement submit = driver.findElement(By.id("submit"));
+            WebElement submit = driver.findElement(By.id(submitId));
             submit.click();
             email.clear();
             email.sendKeys(emailBox2);
@@ -141,14 +142,14 @@ public class Prueba extends Main {
             email.clear();
             email.sendKeys(emailBox4);
             //
-            WebElement current_address = driver.findElement(By.id("currentAddress"));
+            WebElement current_address = driver.findElement(By.id(currentAddressId));
             current_address.sendKeys(currentAddressBox);
             //
-            WebElement permanent_address = driver.findElement(By.id("permanentAddress"));
+            WebElement permanent_address = driver.findElement(By.id(permanentAddressId));
             permanent_address.sendKeys(permanentAddressBox);
             submit.click();
             //
-            WebElement output_text = driver.findElement(By.xpath("(//div[@class='border col-md-12 col-sm-12'])[1]"));
+            WebElement output_text = driver.findElement(By.xpath(outputTextXpath));
             String print_output = output_text.getText();
             System.out.println(print_output);
             //

@@ -118,12 +118,9 @@ public class Prueba extends Main {
             //
             WebElement menu = driver.findElement(By.xpath(elementsXpath));
             menu.click();
-            Thread.sleep(50);
             WebElement sub_menu = driver.findElement(By.xpath(textBoxXpath));
             sub_menu.click();
-            Thread.sleep(50);
             //
-            Thread.sleep(100);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,350)", "");
             //

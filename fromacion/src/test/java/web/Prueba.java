@@ -187,153 +187,111 @@ public class Prueba extends Main {
             String workSpaceArrowPath = getTagValue("workSpaceArrowXpath", doc);
             String officeArrowPath = getTagValue("officeArrowXpath", doc);
             //
-            String downloadArrowPath = getTagValue("//*[@id=\\\"tree-node\\\"]/ol/li/ol/li[3]/span/button", doc);
+            String downloadArrowPath = getTagValue("downloadArrowXpath", doc);
+            //
+            String homeBoxPath = getTagValue("homeArrowXpath", doc);
+            //
+            String desktopBoxPath = getTagValue("desktopArrowXpath", doc);
+            //
+            String documentBoxPath = getTagValue("documentsBoxXpath", doc);
+            String workSpaceBoxPath = getTagValue("workSpaceBoxXpath", doc);
+            String officeBoxPath = getTagValue("officeBoxXpath", doc);
+            //
+            String downloadBoxPath = getTagValue("downloadBoxXpath", doc);
             //
             driver.get(url);
-            //
+            //  
             WebElement menu = driver.findElement(By.xpath(elementsXpath));
             menu.click();
-            Thread.sleep(500);
             WebElement sub_menu = driver.findElement(By.xpath(checkBoxXpath));
             sub_menu.click();
-            Thread.sleep(500);
             //
             WebElement plus = driver.findElement(By.xpath(plusPath));
             plus.click();
-            Thread.sleep(500);
             WebElement minus = driver.findElement(By.xpath(minusPath));
             minus.click();
-            Thread.sleep(500);
             //
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,600)", "");
-            Thread.sleep(500);
             //
-            Thread.sleep(500);
             WebElement home_arrow = driver.findElement(By.xpath(homeArrowPath));
             home_arrow.click();
-            Thread.sleep(500);
             //
             WebElement desktop_arrow = driver.findElement(By.xpath(desktopArrowPath));
-            desktop_arrow.click();
-            Thread.sleep(500);
+            desktop_arrow.click(); 
             //
             WebElement documents_arrow = driver.findElement(By.xpath(documentArrowPath));
             documents_arrow.click();
-            Thread.sleep(500);
             WebElement workSpace_arrow = driver.findElement(By.xpath(workSpaceArrowPath));
             workSpace_arrow.click();
-            Thread.sleep(500);
             WebElement office_arrow = driver.findElement(By.xpath(officeArrowPath));
             office_arrow.click();
-            Thread.sleep(500);
             //
             WebElement downloads_arrow = driver.findElement(By.xpath(downloadArrowPath));
             downloads_arrow.click();
-            Thread.sleep(500);
             //
-            WebElement home_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/span/label/span[1]"));
+            WebElement home_check_box = driver.findElement(By.xpath(homeBoxPath));
             home_check_box.click();
-            Thread.sleep(500);
             home_check_box.click();
-            Thread.sleep(500);
             //
-            WebElement desktop_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[1]/span/label/span[1]"));
+            WebElement desktop_check_box = driver.findElement(By.xpath(desktopBoxPath));
             desktop_check_box.click();
-            Thread.sleep(500);
             desktop_check_box.click();
-            Thread.sleep(500);
             WebElement notes_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[1]/ol/li[1]/span/label/span[1]"));
             notes_check_box.click();
-            Thread.sleep(500);
             notes_check_box.click();
-            Thread.sleep(500);
             WebElement commands_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]"));
             commands_check_box.click();
-            Thread.sleep(500);
             commands_check_box.click();
-            Thread.sleep(500);
             //
-            WebElement documents_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/span/label/span[1]"));
+            WebElement documents_check_box = driver.findElement(By.xpath(documentBoxPath));
             documents_check_box.click();
-            Thread.sleep(500);
             documents_check_box.click();
-            Thread.sleep(500);
-            WebElement workSpace_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/span/label/span[1]"));
+            WebElement workSpace_check_box = driver.findElement(By.xpath(workSpaceBoxPath));
             workSpace_check_box.click();
-            Thread.sleep(500);
             workSpace_check_box.click();
-            Thread.sleep(500);
             WebElement react_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]"));
             react_check_box.click();
-            Thread.sleep(500);
             react_check_box.click();
-            Thread.sleep(500);
             WebElement angular_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]"));
             angular_check_box.click();
-            Thread.sleep(500);
             angular_check_box.click();
-            Thread.sleep(500);
             WebElement veu_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]"));
             veu_check_box.click();
-            Thread.sleep(500);
             veu_check_box.click();
-            Thread.sleep(500);
             //
-            WebElement office_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/span/label/span[1]"));
+            WebElement office_check_box = driver.findElement(By.xpath(officeBoxPath));
             office_check_box.click();
-            Thread.sleep(500);
             office_check_box.click();
-            Thread.sleep(500);
             WebElement public_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[1]/span/label/span[1]"));
             public_check_box.click();
-            Thread.sleep(500);
             public_check_box.click();
-            Thread.sleep(500);
             WebElement private_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[2]/span/label/span[1]"));
             private_check_box.click();
-            Thread.sleep(500);
             private_check_box.click();
-            Thread.sleep(500);
             WebElement classified_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[3]/span/label/span[1]"));
             classified_check_box.click();
-            Thread.sleep(500);
             classified_check_box.click();
-            Thread.sleep(500);
             WebElement general_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[1]"));
             general_check_box.click();
-            Thread.sleep(500);
             general_check_box.click();
-            Thread.sleep(500);
             //
-            WebElement downloads_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/span/label/span[1]"));
+            WebElement downloads_check_box = driver.findElement(By.xpath(downloadBoxPath));
             downloads_check_box.click();
-            Thread.sleep(500);
             downloads_check_box.click();
-            Thread.sleep(500);
             WebElement wordFile_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/ol/li[1]/span/label/span[1]"));
             wordFile_check_box.click();
-            Thread.sleep(500);
             wordFile_check_box.click();
-            Thread.sleep(500);
             WebElement excelFile_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/ol/li[2]/span/label/span[1]"));
             excelFile_check_box.click();
-            Thread.sleep(500);
             excelFile_check_box.click();
-            Thread.sleep(500);
             //
             downloads_arrow.click();
-            Thread.sleep(500);
             office_arrow.click();
-            Thread.sleep(500);
             workSpace_arrow.click();
-            Thread.sleep(500);
             documents_arrow.click();
-            Thread.sleep(500);
             desktop_arrow.click();
-            Thread.sleep(500);
             home_arrow.click();
-            Thread.sleep(500);
             //
         } catch(Exception e){
             e.printStackTrace();

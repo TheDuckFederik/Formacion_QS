@@ -32,18 +32,29 @@
     </TC_001>
     <!--  -->
     <TC_002>
-        <plusXpath_TC_002>//*[@id=\"tree-node\"]/div/button[1]</plusXpath_TC_002>
-        <minusXpath_TC_002>//*[@id=\"tree-node\"]/div/button[2]</minusXpath_TC_002>
+        <plusXpath_TC_002>//*[@id="tree-node"]/div/button[1]</plusXpath_TC_002>
+        <minusXpath_TC_002>//*[@id="tree-node"]/div/button[2]</minusXpath_TC_002>
         <!--  -->
         <homeArrowXpath>//*[@id='tree-node']/ol/li/span/button</homeArrowXpath>
         <!--  -->
-        <desktopArrowXpath>//*[@id=\\\"tree-node\\\"]/ol/li/ol/li[1]/span/button</desktopArrowXpath>
+        <desktopArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/span/button</desktopArrowXpath>
         <!--  -->
-        <documentsArrowXpath>//*[@id=\\\"tree-node\\\"]/ol/li/ol/li[2]/span/button</documentsArrowXpath>
-        <workSpaceArrowXpath>//*[@id=\"tree-node\"]/ol/li/ol/li[1]/span/button</workSpaceArrowXpath>
-        <officeArrowXpath>//*[@id=\\\"tree-node\\\"]/ol/li/ol/li[2]/ol/li[2]/span/button</officeArrowXpath>
+        <documentsArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</documentsArrowXpath>
+        <workSpaceArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/button</workSpaceArrowXpath>
+        <officeArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/button</officeArrowXpath>
         <!--  -->
-        <downloadArrowXpath>//*[@id=\"tree-node\"]/ol/li/ol/li[1]/span/button</downloadArrowXpath>
+        <downloadArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</downloadArrowXpath>
+        <!--  -->
+        <homeBoxXpath>//*[@id="tree-node"]/ol/li/span/label/span[1]</homeBoxXpath>
+        <!--  -->
+        <desktopBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/span/label/span[1]</desktopBoxXpath>
+        <!--  -->
+        <documentsBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</documentsBoxXpath>
+        <workSpaceBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/button</workSpaceBoxXpath>
+        <officeBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/button</officeBoxXpath>
+        <!--  -->
+        <downloadBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</downloadBoxXpath>
+        <!--  -->
     </TC_002>
     <!--  -->
     <TC_008>

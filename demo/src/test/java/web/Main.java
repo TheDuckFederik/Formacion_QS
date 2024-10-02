@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.FileInputStream;
 
 public class Main {
 
@@ -38,6 +39,8 @@ public class Main {
 
   @BeforeMethod
   public void setup_test() throws Exception {
+    FileInputStream input = new FileInputStream("src/test/resources/Properties.properties");
+    propiedades.load(input);
     System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
     ChromeOptions chromeOptions = new ChromeOptions();
     chromeOptions.addArguments("start-maximized");

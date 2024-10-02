@@ -96,7 +96,7 @@ public class Prueba extends Main {
             //
             String url = getTagValue("demoqa", doc);
             String elementsXpath = getTagValue("elements", doc);
-            String textBoxXpath = getTagValue("firstSubelement", doc);
+            String textBoxXpath = getTagValue("firstSubElement", doc);
             //
             String fullNameId = getTagValue("fullNameID_TC_001", doc);
             String emailId = getTagValue("emailID_TC_001", doc);
@@ -121,6 +121,7 @@ public class Prueba extends Main {
             WebElement sub_menu = driver.findElement(By.xpath(textBoxXpath));
             sub_menu.click();
             //
+            Thread.sleep(500);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,350)", "");
             //
@@ -171,19 +172,36 @@ public class Prueba extends Main {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             //
-            driver.get("https://demoqa.com");
+            String url = getTagValue("demoqa", doc);
+            String elementsXpath = getTagValue("elements", doc);
+            String checkBoxXpath = getTagValue("secondSubElement", doc);
             //
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            String plusPath = getTagValue("plusXpath_TC_002", doc);
+            String minusPath = getTagValue("minusXpath_TC_002", doc);
+            //
+            String homeArrowPath = getTagValue("homeArrowXpath", doc);
+            //
+            String desktopArrowPath = getTagValue("desktopArrowXpath", doc);
+            //
+            String documentArrowPath = getTagValue("documentsArrowXpath", doc);
+            String workSpaceArrowPath = getTagValue("workSpaceArrowXpath", doc);
+            String officeArrowPath = getTagValue("officeArrowXpath", doc);
+            //
+            String downloadArrowPath = getTagValue("//*[@id=\\\"tree-node\\\"]/ol/li/ol/li[3]/span/button", doc);
+            //
+            driver.get(url);
+            //
+            WebElement menu = driver.findElement(By.xpath(elementsXpath));
             menu.click();
             Thread.sleep(500);
-            WebElement sub_menu = driver.findElement(By.id("item-1"));
+            WebElement sub_menu = driver.findElement(By.xpath(checkBoxXpath));
             sub_menu.click();
             Thread.sleep(500);
             //
-            WebElement plus = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/div/button[1]"));
+            WebElement plus = driver.findElement(By.xpath(plusPath));
             plus.click();
             Thread.sleep(500);
-            WebElement minus = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/div/button[2]"));
+            WebElement minus = driver.findElement(By.xpath(minusPath));
             minus.click();
             Thread.sleep(500);
             //
@@ -192,25 +210,25 @@ public class Prueba extends Main {
             Thread.sleep(500);
             //
             Thread.sleep(500);
-            WebElement home_arrow = driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/span/button"));
+            WebElement home_arrow = driver.findElement(By.xpath(homeArrowPath));
             home_arrow.click();
             Thread.sleep(500);
             //
-            WebElement desktop_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[1]/span/button"));
+            WebElement desktop_arrow = driver.findElement(By.xpath(desktopArrowPath));
             desktop_arrow.click();
             Thread.sleep(500);
             //
-            WebElement documents_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/span/button"));
+            WebElement documents_arrow = driver.findElement(By.xpath(documentArrowPath));
             documents_arrow.click();
             Thread.sleep(500);
-            WebElement workSpace_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/span/button"));
+            WebElement workSpace_arrow = driver.findElement(By.xpath(workSpaceArrowPath));
             workSpace_arrow.click();
             Thread.sleep(500);
-            WebElement office_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/span/button"));
+            WebElement office_arrow = driver.findElement(By.xpath(officeArrowPath));
             office_arrow.click();
             Thread.sleep(500);
             //
-            WebElement downloads_arrow = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/span/button"));
+            WebElement downloads_arrow = driver.findElement(By.xpath(downloadArrowPath));
             downloads_arrow.click();
             Thread.sleep(500);
             //

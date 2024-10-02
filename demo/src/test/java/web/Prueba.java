@@ -548,37 +548,38 @@ public class Prueba extends Main {
     public void TC005_Buttons() throws InterruptedException, IOException {
         testId = "TC005_Buttons";
          try{
+
             driver.get("https://demoqa.com");
-            System.out.println("Se abre la página DemoQA" + "\n");          
+            System.out.println("Se abre la página DemoQA" + "\n");
 
             WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
             menu.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Elements" + "\n");
-
-            WebElement buttons = driver.findElement(By.xpath("//*[@id=\"item-4\"]"));
+        
+            WebElement buttons = driver.findElement(By.xpath(propiedades.getProperty("elements.buttons")));
             buttons.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Buttons" + "\n");
-
+        
             Actions action = new Actions(driver);
-
-            WebElement doble1 = driver.findElement(By.xpath("//*[@id='doubleClickBtn']"));
+        
+            WebElement doble1 = driver.findElement(By.xpath(propiedades.getProperty("buttons.doble")));
             action.moveToElement(doble1).doubleClick().perform();
             Thread.sleep(100);
-
-            WebElement derecha = driver.findElement(By.xpath("//*[@id=\"rightClickBtn\"]"));
+        
+            WebElement derecha = driver.findElement(By.xpath(propiedades.getProperty("buttons.right")));
             action.moveToElement(derecha).contextClick().perform();
             Thread.sleep(100);
-
-            driver.findElement(By.xpath("//button[text()='Click Me']")).click();
+        
+            driver.findElement(By.xpath(propiedades.getProperty("buttons.click"))).click();
             Thread.sleep(100);
-
-            System.out.println(driver.findElement(By.xpath("//*[@id=\"doubleClickMessage\"]")).getText());
+        
+            System.out.println(driver.findElement(By.xpath(propiedades.getProperty("buttons.clickm"))).getText());
             
-            System.out.println(driver.findElement(By.xpath("//*[@id=\"rightClickMessage\"]")).getText());
+            System.out.println(driver.findElement(By.xpath(propiedades.getProperty("buttons.rightm"))).getText());
             
-            System.out.println(driver.findElement(By.xpath("//*[@id=\"dynamicClickMessage\"]")).getText());
+            System.out.println(driver.findElement(By.xpath(propiedades.getProperty("buttons.doblem"))).getText());
 
         } catch(Exception e){
             e.printStackTrace();
@@ -600,21 +601,21 @@ public class Prueba extends Main {
             Thread.sleep(100);
             System.out.println("Se abre el apartado Elements" + "\n");
 
-            WebElement uploadanddownload = driver.findElement(By.xpath("//*[@id=\"item-7\"]"));
+            WebElement uploadanddownload = driver.findElement(By.xpath(propiedades.getProperty("elements.upload")));
             uploadanddownload.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Upload and Download" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"downloadButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("upload.download"))).click();
             Thread.sleep(1000);
             System.out.println("Se descarga el archivo sampleFile.jpeg" + "\n");
 
-            WebElement upload = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/form[1]/div[1]/input[1]"));
+            WebElement upload = driver.findElement(By.xpath(propiedades.getProperty("upload.archivo")));
             upload.sendKeys("C:\\Users\\ricard.ferrando.ext\\Downloads\\sampleFile.jpeg");
             Thread.sleep(100);
             System.out.println("Se sube el archivo" + "\n");
 
-            System.out.println(driver.findElement(By.xpath("//*[@id=\"uploadedFilePath\"]")).getText());
+            System.out.println(driver.findElement(By.xpath(propiedades.getProperty("upload.subido"))).getText());
 
         } catch(Exception e){
             e.printStackTrace();
@@ -636,7 +637,7 @@ public class Prueba extends Main {
             Thread.sleep(100);
             System.out.println("Se abre el apartado Elements" + "\n");
 
-            WebElement dynamic = driver.findElement(By.xpath("//*[@id=\"item-8\"]"));
+            WebElement dynamic = driver.findElement(By.xpath(propiedades.getProperty("elements.properties")));
             dynamic.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Dynamic Properties" + "\n");

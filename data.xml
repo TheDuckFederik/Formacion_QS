@@ -48,9 +48,16 @@
         <homeBoxXpath>//*[@id="tree-node"]/ol/li/span/label/span[1]</homeBoxXpath>
         <!--  -->
         <desktopBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/span/label/span[1]</desktopBoxXpath>
+        <notesBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</notesBoxXpath>
+        <commandsBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]</commandsBoxXpath>
         <!--  -->
         <documentsBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</documentsBoxXpath>
+        <!--  -->
         <workSpaceBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/button</workSpaceBoxXpath>
+        <reactBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]</reactBoxXpath>
+        <angularBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]</angularBoxXpath>
+        <veuBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]</veuBoxXpath>
+        <!--  -->
         <officeBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/button</officeBoxXpath>
         <!--  -->
         <downloadBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</downloadBoxXpath>

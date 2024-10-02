@@ -13,12 +13,15 @@ import io.qameta.allure.Story;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+// import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 //
 public class Prueba extends Main {
+    //
+    public int action = 0;
+    //
     @Test(description = "Prueba DemoQA Elements Text Box")
     @Story("Elements")
     @Description("Rellenar textbox")
@@ -26,6 +29,8 @@ public class Prueba extends Main {
     public void XML_Test() throws InterruptedException, IOException {
         testId = "XML_Test";
         try {
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -33,18 +38,21 @@ public class Prueba extends Main {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             //
-            String fullNameBox = getTagValue("fullName_TC_001", doc);
-            String emailBox = getTagValue("email4_TC_001", doc);
-            String currentAddressBox = getTagValue("currentAddress_TC_001", doc);
-            String permanentAddressBox = getTagValue("permanentAddress_TC_001", doc);
+            String fullNameBox = getTagValue("fullNameText_TC_001", doc);
+            String emailBox = getTagValue("emailText4_TC_001", doc);
+            String currentAddressBox = getTagValue("currentAddressText_TC_001", doc);
+            String permanentAddressBox = getTagValue("permanentAddressText_TC_001", doc);
             //
             driver.get("https://demoqa.com");
+            action = 1;
             //
-            WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='avatar mx-auto white'])[1]")));
+            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
+            action = 2;
             //
-            WebElement subMenu = wait.until(ExpectedConditions.elementToBeClickable(By.id("item-0")));
+            WebElement subMenu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-0']"));
             subMenu.click();
+            action = 3;
             //
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,350)", "");
@@ -53,30 +61,39 @@ public class Prueba extends Main {
             WebElement full_name = driver.findElement(By.id("userName"));
             full_name.sendKeys(fullNameBox);
             Thread.sleep(50);
+            action = 4;
             //
             WebElement email = driver.findElement(By.id("userEmail"));
             email.sendKeys(emailBox);
             Thread.sleep(50);
+            action = 5;
             //
             WebElement current_address = driver.findElement(By.id("currentAddress"));
             current_address.sendKeys(currentAddressBox);
             Thread.sleep(50);
+            action = 6;
             //
             WebElement permanent_address = driver.findElement(By.id("permanentAddress"));
             permanent_address.sendKeys(permanentAddressBox);
             Thread.sleep(50);
+            action = 7;
             //
             WebElement submit = driver.findElement(By.id("submit"));
             submit.click();
+            action = 8;
             //
             WebElement output_text = driver.findElement(By.xpath("(//div[@class='border col-md-12 col-sm-12'])[1]"));
             String print_output = output_text.getText();
             System.out.println(print_output);
+            action = 9;
             //
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             driver.quit();
+            //
+            System.out.println("|---TC_001 stopped after performing action " + action + " of 9---|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Elements Text Box")
@@ -194,7 +211,14 @@ public class Prueba extends Main {
             String desktopBoxPath = getTagValue("desktopArrowXpath", doc);
             //
             String documentBoxPath = getTagValue("documentsBoxXpath", doc);
+            String notesBoxPath = getTagValue("notesBoxXpath", doc);
+            String commandsBoxPath = getTagValue("commandsBoxXpath", doc);
+            //
             String workSpaceBoxPath = getTagValue("workSpaceBoxXpath", doc);
+            String reactBoxPath = getTagValue("reactBoxXpath", doc);
+            String angularBoxPath = getTagValue("angularBoxXpath", doc);
+            String veuBoxPath = getTagValue("veuBoxXpath", doc);
+            //
             String officeBoxPath = getTagValue("officeBoxXpath", doc);
             //
             String downloadBoxPath = getTagValue("downloadBoxXpath", doc);
@@ -237,26 +261,27 @@ public class Prueba extends Main {
             WebElement desktop_check_box = driver.findElement(By.xpath(desktopBoxPath));
             desktop_check_box.click();
             desktop_check_box.click();
-            WebElement notes_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[1]/ol/li[1]/span/label/span[1]"));
+            WebElement notes_check_box = driver.findElement(By.xpath(notesBoxPath));
             notes_check_box.click();
             notes_check_box.click();
-            WebElement commands_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]"));
+            WebElement commands_check_box = driver.findElement(By.xpath(commandsBoxPath));
             commands_check_box.click();
             commands_check_box.click();
             //
             WebElement documents_check_box = driver.findElement(By.xpath(documentBoxPath));
             documents_check_box.click();
             documents_check_box.click();
+            //
             WebElement workSpace_check_box = driver.findElement(By.xpath(workSpaceBoxPath));
             workSpace_check_box.click();
             workSpace_check_box.click();
-            WebElement react_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]"));
+            WebElement react_check_box = driver.findElement(By.xpath(reactBoxPath));
             react_check_box.click();
             react_check_box.click();
-            WebElement angular_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]"));
+            WebElement angular_check_box = driver.findElement(By.xpath(angularBoxPath));
             angular_check_box.click();
             angular_check_box.click();
-            WebElement veu_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]"));
+            WebElement veu_check_box = driver.findElement(By.xpath(veuBoxPath));
             veu_check_box.click();
             veu_check_box.click();
             //

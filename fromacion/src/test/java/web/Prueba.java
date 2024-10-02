@@ -29,8 +29,6 @@ public class Prueba extends Main {
     public void XML_Test() throws InterruptedException, IOException {
         testId = "XML_Test";
         try {
-            action = 0;
-            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -92,7 +90,7 @@ public class Prueba extends Main {
         } finally {
             driver.quit();
             //
-            System.out.println("|---TC_001 stopped after performing action " + action + " of 9---|");
+            System.out.println("|--- XML_Test stopped after performing action " + action + " of 9 ---|");
             //
         }
     }
@@ -132,46 +130,66 @@ public class Prueba extends Main {
             String outputTextXpath = getTagValue("outputTextXpath_TC_001", doc);
             //
             driver.get(url);
+            action = 1;
             //
             WebElement menu = driver.findElement(By.xpath(elementsXpath));
             menu.click();
+            action = 2;
             WebElement sub_menu = driver.findElement(By.xpath(textBoxXpath));
             sub_menu.click();
+            action = 3;
             //
             Thread.sleep(500);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,350)", "");
+            action = 4;
             //
             WebElement full_name = driver.findElement(By.id(fullNameId));
             full_name.sendKeys(fullNameBox);
+            action = 5;
             //
             WebElement email = driver.findElement(By.id(emailId));
             email.sendKeys(emailBox1);
+            action = 6;
             WebElement submit = driver.findElement(By.id(submitId));
             submit.click();
+            action = 7;
             email.clear();
             email.sendKeys(emailBox2);
+            action = 8;
             submit.click();
+            action = 9;
             email.clear();
             email.sendKeys(emailBox3);
+            action = 10;
+            submit.click();
+            action = 11;
             email.clear();
             email.sendKeys(emailBox4);
+            action = 12;
             //
             WebElement current_address = driver.findElement(By.id(currentAddressId));
             current_address.sendKeys(currentAddressBox);
+            action = 13;
             //
             WebElement permanent_address = driver.findElement(By.id(permanentAddressId));
             permanent_address.sendKeys(permanentAddressBox);
+            action = 14;
             submit.click();
+            action = 15;
             //
             WebElement output_text = driver.findElement(By.xpath(outputTextXpath));
             String print_output = output_text.getText();
             System.out.println(print_output);
+            action = 16;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
+            //
+            System.out.println("|--- TC_001 stopped after performing action " + action + " of 16 ---|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Elements Check Box")

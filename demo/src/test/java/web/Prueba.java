@@ -6,16 +6,12 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 // import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 //
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -23,8 +19,10 @@ import java.util.concurrent.TimeUnit;
 //
 import java.util.Set;
 //
+
 public class Prueba extends Main {
     //
+
     @Test(description = "Prueba DemoQA Elements Text box")
     @Story("Elements")
     @Description("Rellenar textbox")
@@ -34,16 +32,19 @@ public class Prueba extends Main {
         
         //
         try{
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
 
             System.out.println("Entramos a la pagina demoqa.com");
 
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("elementos"))).click();
             System.out.println("Entramos en Elementos");
+
             driver.findElement(By.id("item-0")).click();
             System.out.println("Entramos en el Text Box");
+
             driver.findElement(By.id("userName")).sendKeys("User");
             System.out.println("Escribimos en Full Name ");
+
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0, 444);"); 
 
@@ -79,7 +80,7 @@ public class Prueba extends Main {
             Thread.sleep(500);
 
             // Recoger el texto
-            WebElement elemento = driver.findElement(By.xpath("//div[@class='border col-md-12 col-sm-12']"));
+            WebElement elemento = driver.findElement(By.xpath(config.getProperty("RecogerDatos")));
             String texto = elemento.getText();
             System.out.println("Recogida de texto: " + texto);
 
@@ -99,170 +100,173 @@ public class Prueba extends Main {
         
         //
         try{
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             System.out.println("Entramos a la pagina demoqa.com");
 
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("elementos"))).click();
             System.out.println("Entramos a Elementos");
+
             driver.findElement(By.id("item-1")).click();
             System.out.println("Entramos en el Check Box");
+
             Thread.sleep(100);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0, 444);"); 
             //Desplegar todo
-            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed']//button")).click();
+            driver.findElement(By.xpath(config.getProperty("DespHome"))).click();
             System.out.println("Desplegamos el Home");
-
-            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button")).click();
+            
+            driver.findElement(By.xpath(config.getProperty("DespDeskDocsWorkOffi"))).click();
             System.out.println("Desplegamos el Desktop");
 
-            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button")).click();
+            driver.findElement(By.xpath(config.getProperty("DespDeskDocsWorkOffi"))).click();
             System.out.println("Desplegamos el Documents");
 
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/span/button")).click();
+            driver.findElement(By.xpath(config.getProperty("DespDown"))).click();
             System.out.println("Desplegamos Downloads");
 
-            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button")).click();
+            driver.findElement(By.xpath(config.getProperty("DespDeskDocsWorkOffi"))).click();
             System.out.println("Desplegamos WorkSapce");
 
-            driver.findElement(By.xpath("//li[@class='rct-node rct-node-parent rct-node-collapsed'][1]//button")).click();
+            driver.findElement(By.xpath(config.getProperty("DespDeskDocsWorkOffi"))).click();
             System.out.println("Desplegamos Office");
             Thread.sleep(100);
 
             // Clicamos al check
+            js.executeScript("window.scrollBy(0, 444);"); 
             // Clicamos el Home 
-            driver.findElement(By.xpath("//*[@id='tree-node']//span//span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxHome"))).click();
             System.out.println("Clicamos el Check Home");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']//span//span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxHome"))).click();
             System.out.println("Clicamos el Check Home");
             Thread.sleep(100);
 
             // Clicamos el Desktop
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxDesk"))).click();
             Thread.sleep(100);
             System.out.println("Clicamos el Check Desktop");
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxDesk"))).click();
             System.out.println("Clicamos el Check Desktop");
             Thread.sleep(100);
 
             // Clicamos el Documents
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxDocs"))).click();
             System.out.println("Clicamos el Check Documents");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxDocs"))).click();
             System.out.println("Clicamos el Check Documents");
             Thread.sleep(100);
 
             // Clicamos el Downloads 
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxDown"))).click();
             System.out.println("Clicamos el Check Downloads");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxDown"))).click();
             System.out.println("Clicamos el Check Downloads");
             Thread.sleep(100);
 
             // Clicamos el WorkSpace 
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxWork"))).click();
             System.out.println("Clicamos el Check WorkSpace");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxWork"))).click();
             System.out.println("Clicamos el Check WorkSpace");
             Thread.sleep(100);
             
             // Clicamos el Office
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxOffi"))).click();
             System.out.println("Clicamos el Check Office");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxOffi"))).click();
             System.out.println("Clicamos el Check Office");
             Thread.sleep(100);
 
             // Clicamos en Notes 
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxNote"))).click();
             System.out.println("Clicamos el Check Office");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxNote"))).click();
             System.out.println("Clicamos el Check Office");
             Thread.sleep(100);
 
             // Clicamos en Command 
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxComm"))).click();
             System.out.println("Clicamos el Check Command");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxComm"))).click();
             System.out.println("Clicamos el Check Command");
             Thread.sleep(100);
 
             // Clicamos en React
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxReac"))).click();
             System.out.println("Clicamos el Check React");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxReac"))).click();
             System.out.println("Clicamos el Check React");
             Thread.sleep(100);
 
             // Clicamos en Angular
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxAngl"))).click();
             System.out.println("Clicamos el Check Angular");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxAngl"))).click();
             System.out.println("Clicamos el Check Angular");
             Thread.sleep(100);
 
             // Clicmaos en Veu
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxVeu"))).click();
             System.out.println("Clicamos el Check Veu");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxVeu"))).click();
             System.out.println("Clicamos el Check Veu");
             Thread.sleep(100);
 
             // Clicamos en Public
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxPub"))).click();
             System.out.println("Clicamos el Check Public");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxPub"))).click();
             System.out.println("Clicamos el Check Public");
             Thread.sleep(100);
 
             // Clicamos en Private
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxPri"))).click();
             System.out.println("Clicamos el Check Private");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxPri"))).click();
             System.out.println("Clicamos el Check Private");
             Thread.sleep(100);
 
             // Clicamos en Classified
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[3]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxCla"))).click();
             System.out.println("Clicamos el Check Classified");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[3]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxCla"))).click();
             System.out.println("Clicamos el Check Classified");
             Thread.sleep(100);
 
             // Clicamos en General
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxGen"))).click();
             System.out.println("Clicamos el Check General");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxGen"))).click();
             System.out.println("Clicamos el Check General");
             Thread.sleep(100);
 
             // Clicamos en Word File.doc
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxWor"))).click();
             System.out.println("Clicamos el Check Word File.doc");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[1]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxWor"))).click();
             System.out.println("Clicamos el Check Word File.doc");
             Thread.sleep(100);
 
             // Clicamos en Excel File.doc
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxExc"))).click();
             System.out.println("Clicamos el Check Excel File.doc");
             Thread.sleep(100);
-            driver.findElement(By.xpath("//*[@id='tree-node']/ol/li/ol/li[3]/ol/li[2]/span/label/span[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("BoxExc"))).click();
             System.out.println("Clicamos el Check Excel File.doc");
             Thread.sleep(100);
 
@@ -281,10 +285,10 @@ public class Prueba extends Main {
         
         //
         try{
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             System.out.println("Entramos a demoqa.com");
 
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("elementos"))).click();
             System.out.println("Entramos a Elementos");
             Thread.sleep(500);
             
@@ -293,32 +297,32 @@ public class Prueba extends Main {
             Thread.sleep(500);
 
             // Clicamos el Radio del Yes
-            driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[2]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("ClikYes"))).click();
             System.out.println("Clicamos al Radio Del Yes");
             Thread.sleep(500);
 
             // Recogemos texto
-            WebElement elemento = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/p/span"));
+            WebElement elemento = driver.findElement(By.xpath(config.getProperty("RecogerTexto")));
             String primer_texto = elemento.getText();
             System.out.println("Recogida de texto: " + primer_texto);
 
             // Clicamos el Radio del Impressive
-            driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("ClikImpres"))).click();
             System.out.println("Hacemos click al Impressive");
             Thread.sleep(1000);
 
             // Recogemos texto
-            WebElement elemento2 = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/p/span"));
+            WebElement elemento2 = driver.findElement(By.xpath(config.getProperty("RecogerTexto")));
             String segundo_texto = elemento2.getText();
             System.out.println("Recogida de texto: " + segundo_texto);
 
             // Clicamos el Radio del No
-            driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[4]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("ClikNo"))).click();
             System.out.println("Hacemos click al No");
             Thread.sleep(1000);
 
             // Recogemos texto
-            WebElement elemento3 = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/p/span"));
+            WebElement elemento3 = driver.findElement(By.xpath(config.getProperty("RecogerTexto")));
             String tercero_texto = elemento3.getText();
             System.out.println("Recogida de texto erroneo: " + tercero_texto);
             
@@ -338,9 +342,9 @@ public class Prueba extends Main {
         
         //
         try{
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             System.out.println("Entramos a la pagina demoqa.com");
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("elementos"))).click();
             System.out.println("Entramos a Elementos");
             driver.findElement(By.id("item-3")).click();
             System.out.println("Entramos a Web Tables");
@@ -399,44 +403,44 @@ public class Prueba extends Main {
             Thread.sleep(1000);
             */
             // Ordenar
-            WebElement O_first_name = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]/div[1]"));
+            WebElement O_first_name = driver.findElement(By.xpath(config.getProperty("OrdFir")));
             O_first_name.click();
             System.out.println("Clicaremos el First Name para ordenar ");
             O_first_name.click();
             System.out.println("Clicaremos el First Name para ordenar ");
 
-            WebElement O_last_name = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]/div[1]"));
+            WebElement O_last_name = driver.findElement(By.xpath(config.getProperty("OrdLas")));
             O_last_name.click();
             System.out.println("Clicaremos el Last Name para ordenar ");
             O_last_name.click();
             System.out.println("Clicaremos el Last Name para ordenar ");
 
-            WebElement O_age = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]/div[1]"));
+            WebElement O_age = driver.findElement(By.xpath(config.getProperty("OrdAge")));
             O_age.click();
             System.out.println("Clicaremos el Age para ordenar ");
             O_age.click();
             System.out.println("Clicaremos el Age para ordenar ");
 
-            WebElement O_email = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]/div[1]"));
+            WebElement O_email = driver.findElement(By.xpath(config.getProperty("OrdEma")));
             O_email.click();
             System.out.println("Clicaremos el Email para ordenar ");
             O_email.click();
             System.out.println("Clicaremos el Email para ordenar ");
             
-            WebElement O_Salary = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]/div[1]"));
+            WebElement O_Salary = driver.findElement(By.xpath(config.getProperty("Ordsal")));
             O_Salary.click();
             System.out.println("Clicaremos el Salario para ordenar ");
             O_Salary.click();
             System.out.println("Clicaremos el Salario para ordenar ");
             
-            WebElement O_Department = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]/div[1]"));
+            WebElement O_Department = driver.findElement(By.xpath(config.getProperty("OrdDep")));
             O_Department.click();
             System.out.println("Clicaremos el Departamento para ordenar ");
             O_Department.click();
             System.out.println("Clicaremos el Departamento para ordenar ");
 
             
-            WebElement filas = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[2]/select"));
+            WebElement filas = driver.findElement(By.xpath(config.getProperty("Filas")));
             Select select = new Select(filas);
             select.selectByValue("5");
             System.out.println("Ponemos 5 rows");
@@ -459,44 +463,44 @@ public class Prueba extends Main {
 
 
             // Editamos 
-            driver.findElement(By.xpath("//*[@id='edit-record-4']")).click();
+            driver.findElement(By.xpath(config.getProperty("edit"))).click();
             System.out.println("Clicamos el editar");
             
-            driver.findElement(By.xpath("//*[@id='firstName']")).clear();
+            driver.findElement(By.xpath(config.getProperty("edFirst"))).clear();
             System.out.println("Editamos el First Name");
             
-            driver.findElement(By.xpath("//*[@id='firstName']")).sendKeys("Usuario1");
+            driver.findElement(By.xpath(config.getProperty("edLast"))).sendKeys("Usuario1");
             Thread.sleep(1000);
 
-            driver.findElement(By.xpath("//*[@id='lastName']")).clear();
+            driver.findElement(By.xpath(config.getProperty("edLast"))).clear();
             System.out.println("Editamos el Last Name ");
-            driver.findElement(By.xpath("//*[@id='lastName']")).sendKeys("Lusuario1");
+            driver.findElement(By.xpath(config.getProperty("edLast"))).sendKeys("Lusuario1");
 
-            driver.findElement(By.xpath("//*[@id='userEmail']")).clear();
+            driver.findElement(By.xpath(config.getProperty("edEmail"))).clear();
             System.out.println("Editamos el Email");
-            driver.findElement(By.xpath("//*[@id='userEmail']")).sendKeys("usuario@gmail.com");
+            driver.findElement(By.xpath(config.getProperty("edEmail"))).sendKeys("usuario@gmail.com");
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id='age']")).clear();
+            driver.findElement(By.xpath(config.getProperty("edAge"))).clear();
             System.out.println("Editamos el año");
-            driver.findElement(By.xpath("//*[@id='age']")).sendKeys("22");
+            driver.findElement(By.xpath(config.getProperty("edAge"))).sendKeys("22");
 
-            driver.findElement(By.xpath("//*[@id='salary']")).clear();
+            driver.findElement(By.xpath(config.getProperty("edSalary"))).clear();
             System.out.println("Editamos el salario");
-            driver.findElement(By.xpath("//*[@id='salary']")).sendKeys("520");
+            driver.findElement(By.xpath(config.getProperty("edSalary"))).sendKeys("520");
 
-            driver.findElement(By.xpath("//*[@id='department']")).clear();
+            driver.findElement(By.xpath(config.getProperty("edDep"))).clear();
             System.out.println("Editamos el departamento");
-            driver.findElement(By.xpath("//*[@id='department']")).sendKeys("Depart");
+            driver.findElement(By.xpath(config.getProperty("edDep"))).sendKeys("Depart");
             
             System.out.println("Le damos a submit");
-            WebElement E_Submit = driver.findElement(By.xpath("//*[@id='submit']"));
+            WebElement E_Submit = driver.findElement(By.xpath(config.getProperty("submit")));
             E_Submit.click();
             Thread.sleep(1000);
 
             //buscar.sendKeys("User");
             System.out.println("Borramos usuario");
-            driver.findElement(By.xpath("//*[@id='delete-record-5']")).click();
+            driver.findElement(By.xpath(config.getProperty("BorrarUser"))).click();
             Thread.sleep(1000);
 
             
@@ -516,10 +520,10 @@ public class Prueba extends Main {
         
         //
         try{
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             System.out.println("Entramos a la pagina de demoqa.com");
 
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("elementos"))).click();
             System.out.println("Entramos en Elements");
 
             driver.findElement(By.id("item-4")).click();
@@ -536,12 +540,12 @@ public class Prueba extends Main {
             System.out.println("Le damos click derecho al segundo boton");
             Thread.sleep(500);
 
-            WebElement tercer_boton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Click Me']")));
+            WebElement tercer_boton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(config.getProperty("ClickMe"))));
             tercer_boton.click();
             System.out.println("Le damos click al boton dinamico");
             Thread.sleep(500);
             
-            WebElement primer_text = driver.findElement(By.xpath("//*[@id='doubleClickMessage']"));
+            WebElement primer_text = driver.findElement(By.xpath(config.getProperty("TextDobleClic")));
             WebElement segundo_text = driver.findElement(By.id("rightClickMessage"));
             WebElement tercer_texto = driver.findElement(By.id("dynamicClickMessage"));
             String texto = primer_text.getText();
@@ -565,9 +569,9 @@ public class Prueba extends Main {
         
         //
         try{
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
 
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            WebElement menu = driver.findElement(By.xpath(config.getProperty("elementos")));
             menu.click();
             
             WebElement Upload_donwload = driver.findElement(By.id("item-7"));
@@ -599,9 +603,9 @@ public class Prueba extends Main {
         
         //
         try{
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
 
-            WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
+            WebElement menu = driver.findElement(By.xpath(config.getProperty("elementos")));
             menu.click();
             
             WebElement Upload_donwload = driver.findElement(By.id("item-8"));
@@ -641,12 +645,12 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Forms
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[2]")).click();
+            driver.findElement(By.xpath(config.getProperty("forms"))).click();
             Thread.sleep(1000);
             //Entramos al unico item
-            driver.findElement(By.xpath("//span[text()='Practice Form']")).click();
+            driver.findElement(By.xpath(config.getProperty("PracticeForm"))).click();
             Thread.sleep(1000);
             
             //Introducimos el First Name
@@ -682,11 +686,14 @@ public class Prueba extends Main {
             Thread.sleep(500);
 
             // Elegimos el genero
-            driver.findElement(By.xpath("//*[@id='genterWrapper']/div[2]/div[3]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("RadOth"))).click();
+            System.out.println("Clicamos al Other");
             Thread.sleep(500);
-            driver.findElement(By.xpath("//*[@id='genterWrapper']/div[2]/div[2]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("RadFam"))).click();
+            System.out.println("Clicamos al Female");
             Thread.sleep(500);
-            driver.findElement(By.xpath("//*[@id='genterWrapper']/div[2]/div[1]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("RadMal"))).click();
+            System.out.println("Clicamos al Male");
 
             // Escribimos el mobile
             driver.findElement(By.id("userNumber")).sendKeys("1234567890");
@@ -697,41 +704,48 @@ public class Prueba extends Main {
             Thread.sleep(1000);
 
             // Elegir año
-            WebElement fecha_a = driver.findElement(By.xpath("//*[@id='dateOfBirth']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
+            WebElement fecha_a = driver.findElement(By.xpath(config.getProperty("EscoAnyo")));
             Select select_a = new Select(fecha_a);
             select_a.selectByValue("2004");
             Thread.sleep(2000);
             
             // Elegimos el mes
-            WebElement fecha_m = driver.findElement(By.xpath("//*[@id='dateOfBirth']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            WebElement fecha_m = driver.findElement(By.xpath(config.getProperty("EscoMes")));
             Select select_m = new Select(fecha_m);
             select_m.selectByValue("6");
             Thread.sleep(2000);
             // Elegimos dia 
-            driver.findElement(By.xpath("//*[@id='dateOfBirth']/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[6]")).click();
+            driver.findElement(By.xpath(config.getProperty("EscoDia"))).click();
 
             // Escogeremos el Subject
-            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys("Math");
-            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys(Keys.RETURN);
-            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys("Accounting");
-            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys(Keys.RETURN);
-            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys("Arts");
-            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys(Keys.RETURN);
-            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys("Soci");
-            driver.findElement(By.xpath("//*[@id='subjectsInput']")).sendKeys(Keys.RETURN);
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys("Math");
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Keys.RETURN);
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys("Accounting");
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Keys.RETURN);
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys("Arts");
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Keys.RETURN);
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys("Soci");
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Keys.RETURN);
             Thread.sleep(2000);
 
             // Le damos a los botones de los hobbies
-            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[1]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("Sport"))).click();
+            System.out.println("Escogemos Sport");
             Thread.sleep(500);
-            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[1]/label")).click();
-            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[2]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("Sport"))).click();
+            System.out.println("Quitamos Sport");
+            driver.findElement(By.xpath(config.getProperty("Reading"))).click();
+            System.out.println("Escogemos Reading");
             Thread.sleep(500);
-            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[2]/label")).click();
-            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[3]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("Reading"))).click();
+            System.out.println("Quitamos Reading ");
+            driver.findElement(By.xpath(config.getProperty("Music"))).click();
+            System.out.println("Escogemos Music ");
             Thread.sleep(500);
-            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[3]/label")).click();
-            driver.findElement(By.xpath("//*[@id='hobbiesWrapper']/div[2]/div[1]/label")).click();
+            driver.findElement(By.xpath(config.getProperty("Music"))).click();
+            System.out.println("Quitamos Music ");
+            driver.findElement(By.xpath(config.getProperty("Sport"))).click();
+            System.out.println("Escogemos Sport ");
 
             // selecionamos el archivo
             WebElement subir_archivo = driver.findElement(By.id("uploadPicture"));
@@ -767,14 +781,14 @@ public class Prueba extends Main {
         //
         try {
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
     
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            driver.findElement(By.xpath(config.getProperty("Alerts"))).click();
             Thread.sleep(1000);
     
             // Entramos al primer item (Browser Windows)
-            driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("Browser_windows"))).click();
             Thread.sleep(1000);
     
             // Guardamos el identificador de la ventana original
@@ -862,12 +876,12 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            driver.findElement(By.xpath(config.getProperty("Alerts"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Alerts']")).click();
+            driver.findElement(By.xpath(config.getProperty("ItemAlerts"))).click();
             Thread.sleep(1000);
 
             // Primer boton
@@ -893,7 +907,7 @@ public class Prueba extends Main {
             // Le do al acceptar
             
             // Hacer clic en el botón que abre la alerta
-            driver.findElement(By.xpath("//*[@id='promtButton']")).click();
+            driver.findElement(By.xpath(config.getProperty("PromBoton"))).click();
             Thread.sleep(1000);
 
             // Cambiar el foco a la alerta y enviar el texto
@@ -905,7 +919,7 @@ public class Prueba extends Main {
             driver.switchTo().alert().accept();
 
             // Para la acción de cancelar
-            driver.findElement(By.xpath("//*[@id='promtButton']")).click();
+            driver.findElement(By.xpath(config.getProperty("PromBoton"))).click();
             Thread.sleep(1000);
 
             // Cambiar el foco a la alerta nuevamente y enviar el texto
@@ -931,13 +945,15 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            driver.findElement(By.xpath(config.getProperty("Alerts"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Frames']")).click();
+            driver.findElement(By.xpath(config.getProperty("Frames"))).click();
             Thread.sleep(1000);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);"); 
             // Entrar al primer Frame y coger el texto.
             driver.switchTo().frame(driver.findElements(By.tagName("iframe")).get(0));
 
@@ -959,6 +975,7 @@ public class Prueba extends Main {
             driver.switchTo().defaultContent();
         } catch(Exception e){
             e.printStackTrace();
+            System.out.println(e.getMessage());
         } finally{
             driver.quit();
         }
@@ -973,20 +990,20 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            driver.findElement(By.xpath(config.getProperty("Alerts"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Nested Frames']")).click();
+            driver.findElement(By.xpath(config.getProperty("Nasted_Frames"))).click();
             Thread.sleep(1000);
             // Entrar al primer Frame y coger el texto.
             driver.switchTo().frame(driver.findElement(By.id("frame1")));
-            WebElement primer = driver.findElement(By.xpath("//body"));
+            WebElement primer = driver.findElement(By.xpath(config.getProperty("Nasted_Body")));
             System.out.println("Texto padre: " +primer.getText());
             // Entrar al segundo frame y coger el texto.
-            driver.switchTo().frame(driver.findElements(By.xpath("/html/body/iframe")).get(0)); 
-            WebElement segundo = driver.findElement(By.xpath("/html/body/p"));
+            driver.switchTo().frame(driver.findElements(By.xpath(config.getProperty("segundo_Frame"))).get(0)); 
+            WebElement segundo = driver.findElement(By.xpath(config.getProperty("Nasted_p")));
             System.out.println("Texto hijo: " +segundo.getText());
             driver.switchTo().defaultContent();
             
@@ -1007,17 +1024,17 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[3]")).click();
+            driver.findElement(By.xpath(config.getProperty("Alerts"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Modal Dialogs']")).click();
+            driver.findElement(By.xpath(config.getProperty("ModalDia"))).click();
             Thread.sleep(1000);
             // Entrar al primer boton y coger el texto.
             driver.findElement(By.id("showSmallModal")).click();
             Thread.sleep(1000);
-            WebElement Primer_texto = driver.findElement(By.xpath("//div[text()='This is a small modal. It has very less content']"));
+            WebElement Primer_texto = driver.findElement(By.xpath(config.getProperty("PrimerTextoModal")));
             String texto1 = Primer_texto.getText();
             System.out.println("Small modal: "+ texto1);
             // Cerrar alerta
@@ -1025,7 +1042,7 @@ public class Prueba extends Main {
             // Entramos al segundo boton y cogemos el texto
             driver.findElement(By.id("showLargeModal")).click();
             Thread.sleep(1000);
-            WebElement Segund_texto = driver.findElement(By.xpath("//div[@class='modal-body']/p"));
+            WebElement Segund_texto = driver.findElement(By.xpath(config.getProperty("SegundoTextoModal")));
             String texto2 = Segund_texto.getText();
             System.out.println("Large modal : "+ texto2);
             // Cerrar alerta
@@ -1039,60 +1056,64 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-    @Test(description = "Prueba DemoQA Alerts, Frame & Windows Data Picker")
-    @Story("Alerts, Frame & Windows")
+    @Test(description = "Prueba DemoQA Widgets Data Picker")
+    @Story("Widgets")
     @Description("Data Picker")
     //
     public void TC014_Alerts_Frame_Windows14() throws InterruptedException, IOException {
-        testId = "TC014_Alerts_Frame_&_Windows14";
+        testId = "TC014_Widgets_14";
         
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            driver.findElement(By.xpath(config.getProperty("Widgets"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Date Picker']")).click();
+            driver.findElement(By.xpath(config.getProperty("DataPicker"))).click();
             Thread.sleep(1000);
             // 
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);"); 
+            //
             driver.findElement(By.id("datePickerMonthYearInput")).click();
             // Elegir año
-            WebElement fecha_a = driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']"));
+            WebElement fecha_a = driver.findElement(By.xpath(config.getProperty("FechaAnyo")));
             Select select_a = new Select(fecha_a);
             select_a.selectByValue("2004");
             Thread.sleep(500);
             
             // Elegimos el mes
-            WebElement fecha_m = driver.findElement(By.xpath("//*[@id='datePickerMonthYear']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            WebElement fecha_m = driver.findElement(By.xpath(config.getProperty("FechaMes")));
             Select select_m = new Select(fecha_m);
             select_m.selectByValue("6");
             Thread.sleep(500);
             // Elegimos dia 
-            driver.findElement(By.xpath("//*[@id='datePickerMonthYear']/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[6]")).click();
+            driver.findElement(By.xpath(config.getProperty("FechaDia"))).click();
 
             // Segundo Date
             driver.findElement(By.id("dateAndTimePickerInput")).click();
             // Desplegamos el año
-            WebElement desplegable_2_a = driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div/span[2]"));
+            WebElement desplegable_2_a = driver.findElement(By.xpath(config.getProperty("DesplegableData1")));
             desplegable_2_a.click();
             for (int i = 0; i < 15; i++) {
-                driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[13]")).click();
+                driver.findElement(By.xpath(config.getProperty("FlechaAbajo"))).click();
             }
-            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[12]")).click();
-            Thread.sleep(500);
             // Escogemos el año
+            driver.findElement(By.xpath(config.getProperty("ElegirAnyo"))).click();
+            Thread.sleep(500);
+            
 
             // Elegimos el mes
-            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div/span[1]")).click();
-            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/div[4]")).click();
+            driver.findElement(By.xpath(config.getProperty("DesplegarMes"))).click();
+            driver.findElement(By.xpath(config.getProperty("ElegirMes"))).click();
             Thread.sleep(500);
             // Elegimos dia 
-            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("ElegirDia"))).click();
             // Elegimos la hora 
             
-            driver.findElement(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[3]/div[2]/div/ul/li[17]")).click();
+            driver.findElement(By.xpath(config.getProperty("ElegirHora"))).click();
             
             Thread.sleep(2000);
         } catch(Exception e){
@@ -1111,15 +1132,15 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
-            // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            driver.get(config.getProperty("urlPrincipal"));
+            // Entramos al Widgets
+            driver.findElement(By.xpath(config.getProperty("Widgets"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Slider']")).click();
+            driver.findElement(By.xpath(config.getProperty("Slider"))).click();
             Thread.sleep(1000);
             // Clicamos el slider
-            WebElement slider = driver.findElement(By.xpath("//*[@id='sliderContainer']/div[1]/span/input"));
+            WebElement slider = driver.findElement(By.xpath(config.getProperty("SliderBar")));
             slider.click();
             // Movemos a la izquierda
             for (int i = 0; i < 50; i++) {
@@ -1146,12 +1167,12 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            driver.findElement(By.xpath(config.getProperty("Widgets"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            WebElement entrar = driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Progress Bar']"));
+            WebElement entrar = driver.findElement(By.xpath(config.getProperty("ProgressBar")));
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", entrar);
             entrar.click();
@@ -1182,40 +1203,41 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            driver.findElement(By.xpath(config.getProperty("Widgets"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            WebElement entrar = driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Menu']"));
+            WebElement entrar = driver.findElement(By.xpath(config.getProperty("Menu")));
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", entrar);
             entrar.click();
-            Thread.sleep(1000);
+            Thread.sleep(500);
             // Le damos click Main 1
-            driver.findElement(By.xpath("//*[@id='nav']/li[1]/a")).click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath(config.getProperty("Item1Menu"))).click();
+            Thread.sleep(500);
             // Le damos click Main 3
-            driver.findElement(By.xpath("//*[@id='nav']/li[3]/a")).click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath(config.getProperty("Item3Menu"))).click();
+            Thread.sleep(500);
             // Le damos click Main 2
-            driver.findElement(By.xpath("//*[@id='nav']/li[2]/a")).click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath(config.getProperty("Item2Menu"))).click();
+            Thread.sleep(500);
             // Le damos click sub item
-            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[1]/a")).click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath(config.getProperty("Subitem1"))).click();
+            Thread.sleep(500);
             // Le damos click sub item
-            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[2]/a")).click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath(config.getProperty("SubItem2"))).click();
+            Thread.sleep(500);
             // Le damos click Sub sub list
-            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/a")).click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath(config.getProperty("SubSubItem"))).click();
+            Thread.sleep(500);
             // Le damos click Sub sub list 1
-            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/ul/li[1]/a")).click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath(config.getProperty("SubSubItem1"))).click();
+            Thread.sleep(500);
             // Le damos click Sub sub list 2
-            driver.findElement(By.xpath("//*[@id='nav']/li[2]/ul/li[3]/ul/li[2]/a")).click();
-            Thread.sleep(1000);
+            driver.findElement(By.xpath(config.getProperty("SubSubItem2"))).click();
+            Thread.sleep(500);
+
         } catch(Exception e){
             e.printStackTrace();
         } finally{
@@ -1232,12 +1254,12 @@ public class Prueba extends Main {
         //
         try{
             // Entramos a demoqa
-            driver.get("https://demoqa.com");
+            driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Alerts, Frames & Windows
-            driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[4]")).click();
+            driver.findElement(By.xpath(config.getProperty("Widgets"))).click();
             Thread.sleep(1000);
             //Entramos al item
-            WebElement entrar = driver.findElement(By.xpath("//div[@class='element-list collapse show']//span[text()='Select Menu']"));
+            WebElement entrar = driver.findElement(By.xpath(config.getProperty("SelectMenu")));
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", entrar);
             entrar.click();
@@ -1254,9 +1276,9 @@ public class Prueba extends Main {
             driver.findElement(By.id("react-select-3-input")).sendKeys("Mrs."+ Keys.ENTER);
 
             // Elegimos color 
-            driver.findElement(By.xpath("//*[@id='oldSelectMenu']/option[2]")).click();
+            driver.findElement(By.xpath(config.getProperty("PrimerColor"))).click();
             Thread.sleep(500);
-            driver.findElement(By.xpath("//*[@id='oldSelectMenu']/option[3]")).click();
+            driver.findElement(By.xpath(config.getProperty("SegundoColor"))).click();
             Thread.sleep(500);
 
             // Seleccion multiple
@@ -1268,7 +1290,7 @@ public class Prueba extends Main {
             seleccionMultiple.sendKeys("Red"+ Keys.ENTER);
             Thread.sleep(500);
             // Le damos a la cruz 
-            driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[2]/div[1]")).click();
+            driver.findElement(By.xpath(config.getProperty("Cruz"))).click();
             Thread.sleep(1000);
 
             // Le damos al Standar multi select 

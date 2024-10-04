@@ -29,6 +29,9 @@ public class Prueba extends Main {
     public void XML_Test() throws InterruptedException, IOException {
         testId = "XML_Test";
         try {
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -55,42 +58,43 @@ public class Prueba extends Main {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,350)", "");
             Thread.sleep(500);
+            action = 4;
             //
             WebElement full_name = driver.findElement(By.id("userName"));
             full_name.sendKeys(fullNameBox);
             Thread.sleep(50);
-            action = 4;
+            action = 5;
             //
             WebElement email = driver.findElement(By.id("userEmail"));
             email.sendKeys(emailBox);
             Thread.sleep(50);
-            action = 5;
+            action = 6;
             //
             WebElement current_address = driver.findElement(By.id("currentAddress"));
             current_address.sendKeys(currentAddressBox);
             Thread.sleep(50);
-            action = 6;
+            action = 7;
             //
             WebElement permanent_address = driver.findElement(By.id("permanentAddress"));
             permanent_address.sendKeys(permanentAddressBox);
             Thread.sleep(50);
-            action = 7;
+            action = 8;
             //
             WebElement submit = driver.findElement(By.id("submit"));
             submit.click();
-            action = 8;
+            action = 9;
             //
             WebElement output_text = driver.findElement(By.xpath("(//div[@class='border col-md-12 col-sm-12'])[1]"));
             String print_output = output_text.getText();
             System.out.println(print_output);
-            action = 9;
+            action = 10;
             //
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             driver.quit();
             //
-            System.out.println("|--- XML_Test stopped after performing action " + action + " of 9 ---|");
+            System.out.println("|--- XML_Test stopped after performing action " + action + " of 10 ---|");
             //
         }
     }
@@ -102,6 +106,9 @@ public class Prueba extends Main {
         testId = "TC001_Text_Box";
         //
         try{
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -200,6 +207,9 @@ public class Prueba extends Main {
         testId = "TC002_Check_Box";
         //
         try{
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -242,104 +252,165 @@ public class Prueba extends Main {
             String downloadBoxPath = getTagValue("downloadBoxXpath", doc);
             //
             driver.get(url);
+            action = 1;
             //  
             WebElement menu = driver.findElement(By.xpath(elementsXpath));
             menu.click();
+            action = 2;
             WebElement sub_menu = driver.findElement(By.xpath(checkBoxXpath));
             sub_menu.click();
+            action = 3;
             //
             WebElement plus = driver.findElement(By.xpath(plusPath));
             plus.click();
+            action = 4;
             WebElement minus = driver.findElement(By.xpath(minusPath));
             minus.click();
+            action = 5;
             //
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,600)", "");
+            action = 6;
             //
             WebElement home_arrow = driver.findElement(By.xpath(homeArrowPath));
             home_arrow.click();
+            action = 7;
             //
             WebElement desktop_arrow = driver.findElement(By.xpath(desktopArrowPath));
-            desktop_arrow.click(); 
+            desktop_arrow.click();
+            action = 8;
             //
             WebElement documents_arrow = driver.findElement(By.xpath(documentArrowPath));
             documents_arrow.click();
+            action = 9;
             WebElement workSpace_arrow = driver.findElement(By.xpath(workSpaceArrowPath));
             workSpace_arrow.click();
+            action = 10;
             WebElement office_arrow = driver.findElement(By.xpath(officeArrowPath));
             office_arrow.click();
+            action = 11;
             //
             WebElement downloads_arrow = driver.findElement(By.xpath(downloadArrowPath));
             downloads_arrow.click();
+            action = 12;
             //
             WebElement home_check_box = driver.findElement(By.xpath(homeBoxPath));
             home_check_box.click();
+            action = 13;
             home_check_box.click();
+            action = 14;
             //
             WebElement desktop_check_box = driver.findElement(By.xpath(desktopBoxPath));
             desktop_check_box.click();
+            action = 15;
             desktop_check_box.click();
+            action = 16;
             WebElement notes_check_box = driver.findElement(By.xpath(notesBoxPath));
             notes_check_box.click();
+            action = 17;
             notes_check_box.click();
+            action = 18;
             WebElement commands_check_box = driver.findElement(By.xpath(commandsBoxPath));
             commands_check_box.click();
+            action = 19;
             commands_check_box.click();
+            action = 20;
             //
             WebElement documents_check_box = driver.findElement(By.xpath(documentBoxPath));
             documents_check_box.click();
+            action = 21;
             documents_check_box.click();
+            action = 22;
             //
             WebElement workSpace_check_box = driver.findElement(By.xpath(workSpaceBoxPath));
             workSpace_check_box.click();
+            action = 23;
             workSpace_check_box.click();
+            action = 24;
             WebElement react_check_box = driver.findElement(By.xpath(reactBoxPath));
             react_check_box.click();
+            action = 25;
             react_check_box.click();
+            action = 26;
             WebElement angular_check_box = driver.findElement(By.xpath(angularBoxPath));
             angular_check_box.click();
+            action = 27;
             angular_check_box.click();
+            action = 28;
             WebElement veu_check_box = driver.findElement(By.xpath(veuBoxPath));
             veu_check_box.click();
+            action = 29;
             veu_check_box.click();
+            action = 30;
             //
             WebElement office_check_box = driver.findElement(By.xpath(officeBoxPath));
             office_check_box.click();
+            action = 31;
             office_check_box.click();
+            action = 32;
             WebElement public_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[1]/span/label/span[1]"));
             public_check_box.click();
+            action = 33;
             public_check_box.click();
+            action = 34;
             WebElement private_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[2]/span/label/span[1]"));
             private_check_box.click();
+            action = 35;
             private_check_box.click();
+            action = 36;
             WebElement classified_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[3]/span/label/span[1]"));
             classified_check_box.click();
+            action = 37;
             classified_check_box.click();
+            action = 38;
             WebElement general_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[1]"));
             general_check_box.click();
+            action = 39;
             general_check_box.click();
+            action = 40;
             //
             WebElement downloads_check_box = driver.findElement(By.xpath(downloadBoxPath));
             downloads_check_box.click();
+            action = 41;
             downloads_check_box.click();
+            action = 42;
             WebElement wordFile_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/ol/li[1]/span/label/span[1]"));
             wordFile_check_box.click();
+            action = 43;
             wordFile_check_box.click();
+            action = 44;
             WebElement excelFile_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/ol/li[2]/span/label/span[1]"));
             excelFile_check_box.click();
+            action = 45;
             excelFile_check_box.click();
+            action = 46;
             //
+            downloads_arrow = driver.findElement(By.xpath(downloadArrowPath));
             downloads_arrow.click();
+            action = 47;
+            office_arrow = driver.findElement(By.xpath(officeArrowPath));
             office_arrow.click();
+            action = 48;
+            workSpace_arrow = driver.findElement(By.xpath(workSpaceArrowPath));
             workSpace_arrow.click();
+            action = 49;
+            documents_arrow = driver.findElement(By.xpath(documentArrowPath));
             documents_arrow.click();
+            action = 50;
+            desktop_arrow = driver.findElement(By.xpath(desktopArrowPath));
             desktop_arrow.click();
+            action = 51;
+            home_arrow = driver.findElement(By.xpath(homeArrowPath));
             home_arrow.click();
+            action = 52;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
+            //
+            System.out.println("|--- TC_002 stopped after performing action " + action + " of 52 ---|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Elements Radio Button")
@@ -350,6 +421,9 @@ public class Prueba extends Main {
         testId = "TC003_Radio_Button";
         //
         try{
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -358,30 +432,34 @@ public class Prueba extends Main {
             doc.getDocumentElement().normalize();
             //
             driver.get("https://demoqa.com");
+            action = 1;
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
-            Thread.sleep(500);
+            action = 2;
             WebElement sub_menu = driver.findElement(By.id("item-2"));
             sub_menu.click();
-            Thread.sleep(500);
+            action = 3;
             //
             WebElement yes = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[2]/label"));
             yes.click();
-            Thread.sleep(500);
+            action = 4;
             //
             WebElement impressive = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]"));
             impressive.click();
-            Thread.sleep(500);
+            action = 5;
             //
             WebElement no = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[4]"));
             no.click();
-            Thread.sleep(500);
+            action = 6;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
+            //
+            System.out.println("|--- TC_003 stopped after performing action " + action + " of 6 ---|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Elements Web Tables")
@@ -392,6 +470,9 @@ public class Prueba extends Main {
         testId = "TC004_Web_Tables";
         //
         try{
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -399,255 +480,275 @@ public class Prueba extends Main {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             //
+            String firstNameBox = getTagValue("firstNameText_TC_004", doc);
+            String firstNameBox1 = getTagValue("firstNameText1_TC_004", doc);
+            String firstNameBox2 = getTagValue("firstNameText2_TC_004", doc);
+            String firstNameBox3 = getTagValue("firstNameText3_TC_004", doc);
+            //
+            String lastNameBox = getTagValue("lastNameText_TC_004", doc);
+            String lastNameBox1 = getTagValue("lastNameText1_TC_004", doc);
+            String lastNameBox2 = getTagValue("lastNameText2_TC_004", doc);
+            String lastNameBox3 = getTagValue("lastNameText3_TC_004", doc);
+            //
+            String emailBox01 = getTagValue("emailText01_TC_004", doc);
+            String emailBox02 = getTagValue("emailText02_TC_004", doc);
+            String emailBox03 = getTagValue("emailText03_TC_004", doc);
+            String emailBox04 = getTagValue("emailText04_TC_004", doc);
+            //
+            String emailBox1 = getTagValue("emailText1_TC_004", doc);
+            String emailBox2 = getTagValue("emailText2_TC_004", doc);
+            String emailBox3 = getTagValue("emailText3_TC_004", doc);
+            //
+            
+            //
             driver.get("https://demoqa.com");
+            action = 1;
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
-            Thread.sleep(500);
+            action = 2;
             WebElement sub_menu = driver.findElement(By.id("item-3"));
             sub_menu.click();
-            Thread.sleep(500);
+            action = 3;
             //
+            Thread.sleep(500);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,450)", "");
-            Thread.sleep(500);
+            action = 4;
             //
             WebElement rows = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[2]/select"));
             rows.click();
-            Thread.sleep(500);
+            action = 5;
             //
             WebElement select_rows = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[2]/select"));
             select_rows.sendKeys(Keys.DOWN);
-            Thread.sleep(50);
+            action = 6;
             select_rows.sendKeys(Keys.DOWN);
-            Thread.sleep(50);
+            action = 7;
             select_rows.sendKeys(Keys.DOWN);
-            Thread.sleep(50);
+            action = 8;
             select_rows.sendKeys(Keys.DOWN);
-            Thread.sleep(50);
+            action = 9;
             select_rows.sendKeys(Keys.ENTER);
+            action = 10;
+            //\
             Thread.sleep(500);
-            //
             js.executeScript("window.scrollBy(0,5000)", "");
-            Thread.sleep(500);
+            action = 11;
             //
             rows.click();
-            Thread.sleep(500);
+            action = 12;
             select_rows.sendKeys(Keys.UP);
-            Thread.sleep(50);
+            action = 13;
             select_rows.sendKeys(Keys.ENTER);
-            Thread.sleep(500);
+            action = 14;
             //
             rows.click();
-            Thread.sleep(500);
+            action = 15;
             select_rows.sendKeys(Keys.UP);
-            Thread.sleep(50);
+            action = 16;
             select_rows.sendKeys(Keys.ENTER);
-            Thread.sleep(500);
+            action = 17;
             //
             rows.click();
-            Thread.sleep(500);
+            action = 18;
             select_rows.sendKeys(Keys.UP);
-            Thread.sleep(50);
+            action = 19;
             select_rows.sendKeys(Keys.ENTER);
-            Thread.sleep(500);
+            action = 20;
             //
             rows.click();
-            Thread.sleep(500);
+            action = 21;
             select_rows.sendKeys(Keys.UP);
-            Thread.sleep(50);
+            action = 22;
             select_rows.sendKeys(Keys.ENTER);
-            Thread.sleep(500);
+            action = 23;
             //
             rows.click();
-            Thread.sleep(500);
+            action = 24;
             select_rows.sendKeys(Keys.UP);
-            Thread.sleep(50);
+            action = 25;
             select_rows.sendKeys(Keys.ENTER);
-            Thread.sleep(500);
+            action = 26;
             //
             js.executeScript("window.scrollBy(0,-400)", "");
-            Thread.sleep(500);
+            action = 27;
             //
             WebElement add = driver.findElement(By.xpath("//*[@id='addNewRecordButton']"));
             add.click();
-            Thread.sleep(500);
+            action = 28;
             //
             WebElement first_name = driver.findElement(By.id("firstName"));
-            first_name.sendKeys("FirstNameTest");
-            Thread.sleep(500);
+            first_name.sendKeys(firstNameBox);
+            action = 29;
             WebElement last_name = driver.findElement(By.id("lastName"));
-            last_name.sendKeys("LastNameTest");
-            Thread.sleep(500);
+            last_name.sendKeys(lastNameBox);
+            action = 30;
             //
             WebElement email = driver.findElement(By.id("userEmail"));
-            email.sendKeys("EmailTest");
-            Thread.sleep(500);
+            email.sendKeys(emailBox01);
+            action = 31;
             //
             WebElement age = driver.findElement(By.id("age"));
             age.sendKeys("AgeTest");
-            Thread.sleep(500);
+            action = 32;
             //
             WebElement salary = driver.findElement(By.id("salary"));
             salary.sendKeys("SalaryTest");
-            Thread.sleep(500);
+            action = 33;
             //
             WebElement department = driver.findElement(By.id("department"));
             department.sendKeys("DepartmentTest");
-            Thread.sleep(500);
+            action = 34;
             //
             WebElement submit = driver.findElement(By.id("submit"));
             submit.click();
-            Thread.sleep(500);
+            action = 35;
             email.clear();
-            Thread.sleep(500);
-            email.sendKeys("EmailTest@");
-            Thread.sleep(500);
+            email.sendKeys(emailBox02);
+            action = 36;
             submit.click();
-            Thread.sleep(500);
+            action = 37;
             email.clear();
-            Thread.sleep(500);
-            email.sendKeys("EmailTest@Test");
-            Thread.sleep(500);
+            email.sendKeys(emailBox03);
+            action = 38;
             submit.click();
-            Thread.sleep(500);
+            action = 39;
             email.clear();
-            Thread.sleep(500);
-            email.sendKeys("EmailTest@Test.com");
-            Thread.sleep(500);
+            email.sendKeys(emailBox04);
+            action = 40;
             //
             age.clear();
             age.sendKeys("00");
-            Thread.sleep(500);
+            action = 41;
             submit.click();
             //
             salary.clear();
             salary.sendKeys("0000");
-            Thread.sleep(500);
+            action = 42;
             submit.click();
-            Thread.sleep(500);
+            action = 43;
             //
             add.click();
-            Thread.sleep(500);
+            action = 44;
             WebElement first_name2 = driver.findElement(By.id("firstName"));
-            first_name2.sendKeys("FirstNameTest2");
-            Thread.sleep(500);
+            first_name2.sendKeys(firstNameBox2);
+            action = 45;
             WebElement last_name2 = driver.findElement(By.id("lastName"));
-            last_name2.sendKeys("LastNameTest2");
-            Thread.sleep(500);
+            last_name2.sendKeys(lastNameBox2);
+            action = 46;
             WebElement email2 = driver.findElement(By.id("userEmail"));
-            email2.sendKeys("EmailTest2@Test.com");
-            Thread.sleep(500);
+            email2.sendKeys(emailBox2);
+            action = 47;
             WebElement age2 = driver.findElement(By.id("age"));
             age2.sendKeys("02");
-            Thread.sleep(500);
+            action = 48;
             WebElement salary2 = driver.findElement(By.id("salary"));
             salary2.sendKeys("0002");
-            Thread.sleep(500);
+            action = 49;
             WebElement department2 = driver.findElement(By.id("department"));
             department2.sendKeys("DepartmentTest2");
-            Thread.sleep(500);
+            action = 50;
             WebElement submit2 = driver.findElement(By.id("submit"));
             submit2.click();
-            Thread.sleep(500);
+            action = 51;
             //
             add.click();
-            Thread.sleep(500);
+            action = 52;
             WebElement first_name3 = driver.findElement(By.id("firstName"));
-            first_name3.sendKeys("FirstNameTest3");
-            Thread.sleep(500);
+            first_name3.sendKeys(firstNameBox3);
+            action = 53;
             WebElement last_name3 = driver.findElement(By.id("lastName"));
-            last_name3.sendKeys("LastNameTest3");
-            Thread.sleep(500);
+            last_name3.sendKeys(lastNameBox3);
+            action = 54;
             WebElement email3 = driver.findElement(By.id("userEmail"));
-            email3.sendKeys("EmailTest3@Test.com");
-            Thread.sleep(500);
+            email3.sendKeys(emailBox3);
+            action = 55;
             WebElement age3 = driver.findElement(By.id("age"));
             age3.sendKeys("03");
-            Thread.sleep(500);
+            action = 56;
             WebElement salary3 = driver.findElement(By.id("salary"));
             salary3.sendKeys("0003");
-            Thread.sleep(500);
+            action = 57;
             WebElement department3 = driver.findElement(By.id("department"));
             department3.sendKeys("DepartmentTest3");
-            Thread.sleep(500);
+            action = 58;
             WebElement submit3 = driver.findElement(By.id("submit"));
             submit3.click();
-            Thread.sleep(500);
+            action = 59;
             //
             WebElement next = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[3]"));
             next.click();
-            Thread.sleep(500);
+            action = 60;
             //
             WebElement previous = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[1]"));
             previous.click();
-            Thread.sleep(500);
+            action = 61;
             //
             WebElement page = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/span[1]/div/input"));
             page.clear();
-            Thread.sleep(50);
             page.sendKeys("2");
-            Thread.sleep(50);
+            action = 62;
             page.sendKeys(Keys.ENTER);
-            Thread.sleep(500);
+            action = 63;
             //
             page.sendKeys(Keys.BACK_SPACE);;
-            Thread.sleep(50);
+            action = 64;
             page.sendKeys("1");
-            Thread.sleep(50);
+            action = 65;
             page.sendKeys(Keys.ENTER);
-            Thread.sleep(500);
+            action = 66;
             //
             WebElement edit = driver.findElement(By.xpath("//*[@id='edit-record-4']"));
             edit.click();
-            Thread.sleep(500);
+            action = 67;
             //
             WebElement first_name1 = driver.findElement(By.id("firstName"));
             first_name1.clear();
-            first_name1.sendKeys("FirstNameTest1");
-            Thread.sleep(500);
+            first_name1.sendKeys(firstNameBox1);
+            action = 68;
             WebElement last_name1 = driver.findElement(By.id("lastName"));
             last_name1.clear();
-            last_name1.sendKeys("LastNameTest1");
-            Thread.sleep(500);
+            last_name1.sendKeys(lastNameBox1);
+            action = 69;
             WebElement email1 = driver.findElement(By.id("userEmail"));
             email1.clear();
-            email1.sendKeys("EmailTest1@Test.com");
-            Thread.sleep(500);
+            email1.sendKeys(emailBox1);
+            action = 70;
             WebElement age1 = driver.findElement(By.id("age"));
             age1.clear();
             age1.sendKeys("01");
-            Thread.sleep(500);
+            action = 71;
             WebElement salary1 = driver.findElement(By.id("salary"));
             salary1.clear();
             salary1.sendKeys("0001");
-            Thread.sleep(500);
+            action = 72;
             WebElement department1 = driver.findElement(By.id("department"));
             department1.clear();
             department1.sendKeys("DepartmentTest1");
-            Thread.sleep(500);
+            action = 73;
             WebElement submit1 = driver.findElement(By.id("submit"));
             submit1.click();
-            Thread.sleep(500);
+            action = 74;
             //
             WebElement search_bar = driver.findElement(By.xpath("//*[@id='searchBox']"));
             search_bar.sendKeys("FirstNameTest1");
-            Thread.sleep(500);
+            action = 75;
             WebElement search = driver.findElement(By.xpath("//*[@id=\"basic-addon2\"]"));
             search.click();
-            Thread.sleep(500);
+            action = 76;
             //
             search_bar.clear();
             search_bar.sendKeys("LastNameTest2");
-            Thread.sleep(500);
+            action = 77;
             search.click();
-            Thread.sleep(500);
+            action = 78;
             //
             search_bar.clear();
             search_bar.sendKeys("EmailTest3@Test.com");
-            Thread.sleep(500);
+            action = 79;
             search.click();
-            Thread.sleep(500);
+            action = 80;
             //
             search_bar.clear();
             search_bar.sendKeys("01");
@@ -730,6 +831,9 @@ public class Prueba extends Main {
             e.printStackTrace();
         } finally{
             driver.quit();
+            //
+            System.out.println("|--- TC_004 stopped after performing action " + action + " of 6 ---|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Elements Buttons")
@@ -1767,5 +1871,4 @@ public class Prueba extends Main {
         return null;
     }
 }
-
 //

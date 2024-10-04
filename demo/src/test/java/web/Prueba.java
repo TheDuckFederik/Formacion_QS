@@ -953,7 +953,7 @@ public class Prueba extends Main {
             driver.findElement(By.xpath(config.getProperty("Frames"))).click();
             Thread.sleep(1000);
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0, 444);"); 
+            js.executeScript("window.scrollBy(0, 500);"); 
             // Entrar al primer Frame y coger el texto.
             driver.switchTo().frame(driver.findElements(By.tagName("iframe")).get(0));
 
@@ -975,7 +975,6 @@ public class Prueba extends Main {
             driver.switchTo().defaultContent();
         } catch(Exception e){
             e.printStackTrace();
-            System.out.println(e.getMessage());
         } finally{
             driver.quit();
         }
@@ -1060,7 +1059,7 @@ public class Prueba extends Main {
     @Story("Widgets")
     @Description("Data Picker")
     //
-    public void TC014_Alerts_Frame_Windows14() throws InterruptedException, IOException {
+    public void TC014_Widgets14() throws InterruptedException, IOException {
         testId = "TC014_Widgets_14";
         
         //
@@ -1157,9 +1156,10 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
+
     @Test(description = "Prueba DemoQA Widgets Slider")
     @Story("Widgets")
-    @Description("Slider")
+    @Description("Progres Bar")
     //
     public void TC016_Widgets16() throws InterruptedException, IOException {
         testId = "TC016_Widgets16";

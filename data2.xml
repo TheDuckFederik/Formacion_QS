@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testData>
+    <url>
+        <demoqa>https://demoqa.com</demoqa>
+    </url>
+    <!--  -->
+    <menuItems>
+        <elements>(//div[@class='avatar mx-auto white'])[1]</elements>
+    </menuItems>
+    <!--  -->
+    <submenuItems>
+        <firstSubElement>//div[@class='element-list collapse show']//li[@id='item-0']</firstSubElement>
+        <secondSubElement>//div[@class='element-list collapse show']//li[@id='item-1']</secondSubElement>
+    </submenuItems>
+    <!--  -->
+    <TC_001>
+        <fullNameID_TC_001>userName</fullNameID_TC_001>
+        <emailID_TC_001>userEmail</emailID_TC_001>
+        <currentAddressID_TC_001>currentAddress</currentAddressID_TC_001>
+        <permanentAddressID_TC_001>permanentAddress</permanentAddressID_TC_001>
+        <submitID_TC_001>submit</submitID_TC_001>
+        <!--  -->
+        <fullNameText_TC_001>FullNameTest</fullNameText_TC_001> 
+        <emailText1_TC_001>EmailTest</emailText1_TC_001>
+        <emailText2_TC_001>EmailTest@</emailText2_TC_001>
+        <emailText3_TC_001>EmailTest@Test</emailText3_TC_001>
+        <emailText4_TC_001>EmailTest@Test.com</emailText4_TC_001>
+        <currentAddressText_TC_001>CurrentAddressTest</currentAddressText_TC_001>
+        <permanentAddressText_TC_001>PermanentAddressTest</permanentAddressText_TC_001>
+        <!--  -->
+        <outputTextXpath_TC_001>(//div[@class='border col-md-12 col-sm-12'])[1]</outputTextXpath_TC_001>
+    </TC_001>
+    <!--  -->
+    <TC_002>
+        <plusXpath_TC_002>//*[@id="tree-node"]/div/button[1]</plusXpath_TC_002>
+        <minusXpath_TC_002>//*[@id="tree-node"]/div/button[2]</minusXpath_TC_002>
+        <!--  -->
+        <homeArrowXpath>//*[@id='tree-node']/ol/li/span/button</homeArrowXpath>
+        <!--  -->
+        <desktopArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/span/button</desktopArrowXpath>
+        <!--  -->
+        <documentsArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</documentsArrowXpath>
+        <workSpaceArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/button</workSpaceArrowXpath>
+        <officeArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/button</officeArrowXpath>
+        <!--  -->
+        <downloadArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</downloadArrowXpath>
+        <!--  -->
+        <homeBoxXpath>//*[@id="tree-node"]/ol/li/span/label/span[1]</homeBoxXpath>
+        <!--  -->
+        <desktopBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/span/label/span[1]</desktopBoxXpath>
+        <notesBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</notesBoxXpath>
+        <commandsBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]</commandsBoxXpath>
+        <!--  -->
+        <documentsBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</documentsBoxXpath>
+        <!--  -->
+        <workSpaceBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/button</workSpaceBoxXpath>
+        <reactBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]</reactBoxXpath>
+        <angularBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]</angularBoxXpath>
+        <veuBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]</veuBoxXpath>
+        <!--  -->
+        <officeBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/button</officeBoxXpath>
+        <!--  -->
+        <downloadBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</downloadBoxXpath>
+        <!--  -->
+    </TC_002>
+    <!--  -->
+    <TC_004>
+        <firstNameText_TC_004>FirstNameTest</firstNameText_TC_004>
+        <firstNameText1_TC_004>FirstNameTest1</firstNameText1_TC_004>
+        <firstNameText2_TC_004>FirstNameTest2</firstNameText2_TC_004>
+        <firstNameText3_TC_004>FirstNameTest3</firstNameText3_TC_004>
+        <!--  -->
+        <lastNameText_TC_004>LastNameTest</lastNameText_TC_004>
+        <lastNameText1_TC_004>LastNameTest1</lastNameText1_TC_004>
+        <lastNameText2_TC_004>LastNameTest2</lastNameText2_TC_004>
+        <lastNameText3_TC_004>LastNameTest3</lastNameText3_TC_004>
+        <!--  -->
+        <emailText01_TC_004>EmailTest</emailText01_TC_004>
+        <emailText02_TC_004>EmailTest</emailText02_TC_004>
+        <emailText03_TC_004>EmailTest</emailText03_TC_004>
+        <emailText04_TC_004>EmailTest</emailText04_TC_004>
+        <!--  -->
+        <emailText1_TC_004>EmailTest1</emailText1_TC_004>
+        <emailText2_TC_004>EmailTest2</emailText2_TC_004>
+        <emailText3_TC_004>EmailTest3</emailText3_TC_004>
+    </TC_004>
+    <!--  -->
+    <TC_008>
+		<firstName_TC_008>FristNameTest</firstName_TC_008>
+		<lastName_TC_008>LastNameTest</lastName_TC_008>
+		<email1_TC_008>EmailTest</email1_TC_008>
+		<email2_TC_008>EmailTest@</email2_TC_008>
+		<email3_TC_008>EmailTest@Test</email3_TC_008>
+		<email4_TC_008>EmailTest@Test.com</email4_TC_008>
+		<age1_TC_008>AgeTest</age1_TC_008>
+		<age2_TC_008>01</age2_TC_008>
+		<salary1_TC_008>SalaryTest</salary1_TC_008>
+		<salary2_TC_008>0000000001</salary2_TC_008>
+		<department_TC_008>DepartmentTest</department_TC_008>
+    </TC_008>
+</testData>

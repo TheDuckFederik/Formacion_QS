@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testData>
+    <TC_001>
+        <fullNameText_TC_001>FullNameTest</fullNameText_TC_001>
+        <emailText_TC_001>EmailTest@Test.com</emailText_TC_001>
+        <currentAddressText_TC_001>CurrentAddressTest</currentAddressText_TC_001>
+        <permanentAddressText_TC_001>PermanentAddressTest</permanentAddressText_TC_001>
+    </TC_001>
+</testData>

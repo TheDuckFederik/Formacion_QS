@@ -32,7 +32,7 @@ public class Prueba extends Main {
             //
             action = 0;
             //
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\dataExample.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -40,7 +40,7 @@ public class Prueba extends Main {
             doc.getDocumentElement().normalize();
             //
             String fullNameBox = getTagValue("fullNameText_TC_001", doc);
-            String emailBox = getTagValue("emailText4_TC_001", doc);
+            String emailBox = getTagValue("emailText_TC_001", doc);
             String currentAddressBox = getTagValue("currentAddressText_TC_001", doc);
             String permanentAddressBox = getTagValue("permanentAddressText_TC_001", doc);
             //
@@ -499,7 +499,7 @@ public class Prueba extends Main {
             String emailBox2 = getTagValue("emailText2_TC_004", doc);
             String emailBox3 = getTagValue("emailText3_TC_004", doc);
             //
-            
+
             //
             driver.get("https://demoqa.com");
             action = 1;

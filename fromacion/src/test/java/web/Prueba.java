@@ -29,6 +29,10 @@ public class Prueba extends Main {
         testId = "XML_Test";
         try {
             //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------ Beginning XML_Test -----------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
             action = 0;
             //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\dataExample.xml");
@@ -93,7 +97,9 @@ public class Prueba extends Main {
         } finally {
             driver.quit();
             //
-            System.out.println("|--- XML_Test stopped after performing action " + action + " of 10 ---|");
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|-------- XML_Test stopped after performing action " + action + " of 10 --------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
         }
     }
@@ -105,6 +111,10 @@ public class Prueba extends Main {
         testId = "TC001_Text_Box";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_001 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
             action = 0;
             //
@@ -146,13 +156,17 @@ public class Prueba extends Main {
             action = 3;
             //
             Thread.sleep(500);
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,350)", "");
-            action = 4;
+            // JavascriptExecutor js = (JavascriptExecutor) driver;
+            // js.executeScript("window.scrollBy(0,350)", "");
+            // action = 4;
             //
             WebElement full_name = driver.findElement(By.id(fullNameId));
             full_name.sendKeys(fullNameBox);
             action = 5;
+            //
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,350)", "");
+            action = 4;
             //
             WebElement email = driver.findElement(By.id(emailId));
             email.sendKeys(emailBox1);
@@ -194,7 +208,9 @@ public class Prueba extends Main {
         } finally{
             driver.quit();
             //
-            System.out.println("|--- TC_001 stopped after performing action " + action + " of 16 ---|");
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|--------- TC_001 stopped after performing action " + action + " of 16 ---------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
         }
     }
@@ -206,6 +222,10 @@ public class Prueba extends Main {
         testId = "TC002_Check_Box";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_002 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
             action = 0;
             //
@@ -408,7 +428,9 @@ public class Prueba extends Main {
         } finally{
             driver.quit();
             //
-            System.out.println("|--- TC_002 stopped after performing action " + action + " of 52 ---|");
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|--------- TC_002 stopped after performing action " + action + " of 52 ---------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
         }
     }
@@ -420,6 +442,10 @@ public class Prueba extends Main {
         testId = "TC003_Radio_Button";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_003 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
             action = 0;
             //
@@ -444,20 +470,33 @@ public class Prueba extends Main {
             yes.click();
             action = 4;
             //
+            WebElement button = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/p"));
+            String selectedButton = button.getText();
+            System.out.println("You have selected " + selectedButton);
+            action = 5;
+            //
             WebElement impressive = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]"));
             impressive.click();
-            action = 5;
+            action = 6;
+            selectedButton = button.getText();
+            System.out.println("You have selected " + selectedButton);
+            action = 7;
             //
             WebElement no = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[4]"));
             no.click();
-            action = 6;
+            action = 8;
+            selectedButton = button.getText();
+            System.out.println("You have selected " + selectedButton);
+            action = 9;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
             //
-            System.out.println("|--- TC_003 stopped after performing action " + action + " of 6 ---|");
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_003 stopped after performing action " + action + " of 9 ----------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
         }
     }
@@ -469,6 +508,10 @@ public class Prueba extends Main {
         testId = "TC004_Web_Tables";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_004 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
             action = 0;
             //
@@ -763,21 +806,21 @@ public class Prueba extends Main {
             //
             search_bar.clear();
             search_bar.sendKeys("01");
-            Thread.sleep(500);
+            action = 81;
             search.click();
-            Thread.sleep(500);
+            action = 82;
             //
             search_bar.clear();
             search_bar.sendKeys("0002");
-            Thread.sleep(500);
+            action = 83;
             search.click();
-            Thread.sleep(500);
+            action = 84;
             //
             search_bar.clear();
             search_bar.sendKeys("DepartmentTest3");
-            Thread.sleep(500);
+            action = 85;
             search.click();
-            Thread.sleep(500);
+            action = 86;
             //
             int n = 15;
             while (true) {
@@ -785,65 +828,67 @@ public class Prueba extends Main {
                 Thread.sleep(5);
                 n--;
                 if (n == 0) {
-                    Thread.sleep(500);
+                    action += 1;
                     break;
                 }
             }
             //
             WebElement sort1 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]"));
             sort1.click();
-            Thread.sleep(500);
+            action = 102;
             sort1.click();
-            Thread.sleep(500);
+            action = 103;
             //
             WebElement sort2 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]"));
             sort2.click();
-            Thread.sleep(500);
+            action = 104;
             sort2.click();
-            Thread.sleep(500);
+            action = 105;
             //
             WebElement sort3 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]"));
             sort3.click();
-            Thread.sleep(500);
+            action = 106;
             sort3.click();
-            Thread.sleep(500);
+            action = 107;
             //
             WebElement sort4 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]"));
             sort4.click();
-            Thread.sleep(500);
+            action = 109;
             sort4.click();
-            Thread.sleep(500);
+            action = 110;
             //
             WebElement sort5 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]"));
             sort5.click();
-            Thread.sleep(500);
+            action = 111;
             sort5.click();
-            Thread.sleep(500);
+            action = 112;
             //
             WebElement sort6 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]"));
             sort6.click();
-            Thread.sleep(500);
+            action = 113;
             sort6.click();
-            Thread.sleep(500);
+            action = 114;
             //
             WebElement delete1 = driver.findElement(By.id("delete-record-6"));
             delete1.click();
-            Thread.sleep(500);
+            action = 115;
             //
             WebElement delete2 = driver.findElement(By.id("delete-record-5"));
             delete2.click();
-            Thread.sleep(500);
+            action = 116;
             //
             WebElement delete3 = driver.findElement(By.id("delete-record-4"));
             delete3.click();
-            Thread.sleep(500);
+            action = 117;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
             //
-            System.out.println("|--- TC_004 stopped after performing action " + action + " of 6 ---|");
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|-------- TC_004 stopped after performing action " + action + " of 117 --------|");
+            System.out.println("|-------------------------------------------------------------------|");
             //
         }
     }

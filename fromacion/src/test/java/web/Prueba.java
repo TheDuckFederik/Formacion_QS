@@ -13,7 +13,6 @@ import io.qameta.allure.Story;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-// import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
@@ -499,7 +498,19 @@ public class Prueba extends Main {
             String emailBox2 = getTagValue("emailText2_TC_004", doc);
             String emailBox3 = getTagValue("emailText3_TC_004", doc);
             //
-
+            String ageBox01 = getTagValue("ageText01_TC_004", doc);
+            String ageBox02 = getTagValue("ageText02_TC_004", doc);
+            //
+            String ageBox1 = getTagValue("ageText1_TC_004", doc);
+            String ageBox2 = getTagValue("ageText2_TC_004", doc);
+            String ageBox3 = getTagValue("ageText3_TC_004", doc);
+            //
+            String salaryBox01 = getTagValue("salaryText01_TC_004", doc);
+            String salaryBox02 = getTagValue("salaryText02_TC_004", doc);
+            //
+            String salaryBox1 = getTagValue("salaryText1_TC_004", doc);
+            String salaryBox2 = getTagValue("salaryText2_TC_004", doc);
+            String salaryBox3 = getTagValue("salaryText3_TC_004", doc);
             //
             driver.get("https://demoqa.com");
             action = 1;
@@ -590,11 +601,11 @@ public class Prueba extends Main {
             action = 31;
             //
             WebElement age = driver.findElement(By.id("age"));
-            age.sendKeys("AgeTest");
+            age.sendKeys(ageBox01);
             action = 32;
             //
             WebElement salary = driver.findElement(By.id("salary"));
-            salary.sendKeys("SalaryTest");
+            salary.sendKeys(salaryBox01);
             action = 33;
             //
             WebElement department = driver.findElement(By.id("department"));
@@ -619,12 +630,12 @@ public class Prueba extends Main {
             action = 40;
             //
             age.clear();
-            age.sendKeys("00");
+            age.sendKeys(ageBox02);
             action = 41;
             submit.click();
             //
             salary.clear();
-            salary.sendKeys("0000");
+            salary.sendKeys(salaryBox02);
             action = 42;
             submit.click();
             action = 43;
@@ -641,10 +652,10 @@ public class Prueba extends Main {
             email2.sendKeys(emailBox2);
             action = 47;
             WebElement age2 = driver.findElement(By.id("age"));
-            age2.sendKeys("02");
+            age2.sendKeys(ageBox2);
             action = 48;
             WebElement salary2 = driver.findElement(By.id("salary"));
-            salary2.sendKeys("0002");
+            salary2.sendKeys(salaryBox2);
             action = 49;
             WebElement department2 = driver.findElement(By.id("department"));
             department2.sendKeys("DepartmentTest2");
@@ -665,10 +676,10 @@ public class Prueba extends Main {
             email3.sendKeys(emailBox3);
             action = 55;
             WebElement age3 = driver.findElement(By.id("age"));
-            age3.sendKeys("03");
+            age3.sendKeys(ageBox3);
             action = 56;
             WebElement salary3 = driver.findElement(By.id("salary"));
-            salary3.sendKeys("0003");
+            salary3.sendKeys(salaryBox3);
             action = 57;
             WebElement department3 = driver.findElement(By.id("department"));
             department3.sendKeys("DepartmentTest3");
@@ -717,11 +728,11 @@ public class Prueba extends Main {
             action = 70;
             WebElement age1 = driver.findElement(By.id("age"));
             age1.clear();
-            age1.sendKeys("01");
+            age1.sendKeys(ageBox1);
             action = 71;
             WebElement salary1 = driver.findElement(By.id("salary"));
             salary1.clear();
-            salary1.sendKeys("0001");
+            salary1.sendKeys(salaryBox1);
             action = 72;
             WebElement department1 = driver.findElement(By.id("department"));
             department1.clear();

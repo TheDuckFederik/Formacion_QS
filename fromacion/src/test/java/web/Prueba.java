@@ -900,6 +900,13 @@ public class Prueba extends Main {
         testId = "TC005_Buttons";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_005 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -908,32 +915,51 @@ public class Prueba extends Main {
             doc.getDocumentElement().normalize();
             //
             driver.get("https://demoqa.com");
+            action = 1;
             //
             Actions actions = new Actions(driver);
+            action = 2;
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
-            Thread.sleep(500);
+            action = 3;
             WebElement sub_menu = driver.findElement(By.id("item-4"));
             sub_menu.click();
-            Thread.sleep(500);
+            action = 4;
             //
             WebElement double_click = driver.findElement(By.xpath("//*[@id=\"doubleClickBtn\"]"));
             actions.doubleClick(double_click).perform();
-            Thread.sleep(500);
+            action = 5;
+            WebElement click = driver.findElement(By.id("doubleClickMessage"));
+            String performedClick = click.getText();
+            System.out.println("You have performed a " + performedClick);
+            action = 6;
             //
             WebElement right_click = driver.findElement(By.id("rightClickBtn"));
             actions.contextClick(right_click).perform();
-            Thread.sleep(500);
+            action = 7;
+            click = driver.findElement(By.id("rightClickMessage"));
+            performedClick = click.getText();
+            System.out.println("You have performed a " + performedClick);
+            action = 8;
             //
             WebElement single_click = driver.findElement(By.xpath("(//button[normalize-space()='Click Me'])[1]"));
             single_click.click();
-            Thread.sleep(2000);
+            action = 9;
+            click = driver.findElement(By.id("dynamicClickMessage"));
+            performedClick = click.getText();
+            System.out.println("You have performed a " + performedClick);
+            action = 10;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|--------- TC_005 stopped after performing action " + action + " of 10 ---------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Elements Upload And Download.")
@@ -944,6 +970,13 @@ public class Prueba extends Main {
         testId = "TC006_Upload_And_Download";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_006 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -955,28 +988,34 @@ public class Prueba extends Main {
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
-            Thread.sleep(500);
+            action = 1;
             WebElement sub_menu = driver.findElement(By.id("item-7"));
             sub_menu.click();
-            Thread.sleep(500);
+            action = 2;
             //
             WebElement download = driver.findElement(By.xpath("(//a[normalize-space()='Download'])[1]"));
             download.click();
-            Thread.sleep(500);
+            action = 3;
             //
             WebElement upload = driver.findElement(By.id("uploadFile"));
             upload.sendKeys("C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg");
-            Thread.sleep(500);
+            action = 4;
             //
             WebElement path = driver.findElement(By.id("uploadedFilePath"));
             String filePath = path.getText();
             System.out.println(filePath);
-            Thread.sleep(500);
+            action = 5;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_006 stopped after performing action " + action + " of 5 ----------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
+
         }
     }
     @Test(description = "Prueba DemoQA Elements Dynamic Properties.")
@@ -987,6 +1026,13 @@ public class Prueba extends Main {
         testId = "TC007_Dynamic_Properties";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_007 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -998,35 +1044,42 @@ public class Prueba extends Main {
             //
             WebElement menu = driver.findElement(By.xpath("(//div[@class='avatar mx-auto white'])[1]"));
             menu.click();
-            Thread.sleep(500);
+            action = 1;
             WebElement sub_menu = driver.findElement(By.id("item-8"));
             sub_menu.click();
-            Thread.sleep(500);
+            action = 2;
             //
             WebElement enableAfter = driver.findElement(By.id("enableAfter"));
             enableAfter.click();
-            Thread.sleep(500);
+            action = 3;
             WebElement colorChange = driver.findElement(By.id("colorChange"));
             colorChange.click();
             WebElement getColor = driver.findElement(By.id("colorChange"));
             String color = colorChange.getCssValue("color");
-            Thread.sleep(5000);
+            action = 4;
             //
             enableAfter.click();
-            Thread.sleep(500);
+            action = 5;
             colorChange.click();
-            Thread.sleep(500);
+            action = 6;
             getColor.getCssValue("color");
             System.out.println("El color es: " + color);
-            Thread.sleep(500);
+            action = 7;
+            Thread.sleep(5000);
             WebElement visibleAfter = driver.findElement(By.id("visibleAfter"));
             visibleAfter.click();
-            Thread.sleep(500);
+            action = 8;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
+            driver.quit();
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_007 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Forms Practice Form.")

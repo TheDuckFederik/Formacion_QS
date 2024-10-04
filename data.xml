@@ -92,25 +92,38 @@
         <ageText3_TC_004>03</ageText3_TC_004>
         <!--  -->
         <salaryText01_TC_004>salaryTest</salaryText01_TC_004>
-        <salaryText02_TC_004>0000</salaryText02_TC_004>
+        <salaryText02_TC_004>0000</salaryText02_TC_004>  
         <!--  -->
         <salaryText1_TC_004>0001</salaryText1_TC_004>
         <salaryText2_TC_004>0002</salaryText2_TC_004>
         <salaryText3_TC_004>0003</salaryText3_TC_004>
-        
+        <!--  -->
+        <departmentText_TC_004>departmentTest</departmentText_TC_004>
+        <departmentText1_TC_004>departmentTest1</departmentText1_TC_004>
+        <departmentText2_TC_004>departmentTest2</departmentText2_TC_004>
+        <departmentText3_TC_004>departmentTest3</departmentText3_TC_004>
+        <!--  -->
     </TC_004>
     <!--  -->
     <TC_008>
-		<firstName_TC_008>FristNameTest</firstName_TC_008>
-		<lastName_TC_008>LastNameTest</lastName_TC_008>
-		<email1_TC_008>EmailTest</email1_TC_008>
-		<email2_TC_008>EmailTest@</email2_TC_008>
-		<email3_TC_008>EmailTest@Test</email3_TC_008>
-		<email4_TC_008>EmailTest@Test.com</email4_TC_008>
-		<age1_TC_008>AgeTest</age1_TC_008>
-		<age2_TC_008>01</age2_TC_008>
-		<salary1_TC_008>SalaryTest</salary1_TC_008>
-		<salary2_TC_008>0000000001</salary2_TC_008>
-		<department_TC_008>DepartmentTest</department_TC_008>
+		<firstNameText_TC_008>FristNameTest</firstNameText_TC_008>
+        <!--  -->
+		<lastNameText_TC_008>LastNameTest</lastNameText_TC_008>
+        <!--  -->
+		<emailText1_TC_008>EmailTest</emailText1_TC_008>
+		<emailText2_TC_008>EmailTest@Test</emailText2_TC_008>
+		<emailText3_TC_008>EmailTest@Test.com</emailText3_TC_008>
+        <!--  -->
+        <dateOfBirthText_TC_008> Jan 2000</dateOfBirthText_TC_008>
+        <!--  -->
+        <numberText1_TC_008>123456789</numberText1_TC_008>
+        <numberText2_TC_008>1234567890</numberText2_TC_008>
+        <!--  -->
+        <subjectText_TC_008>Computer</subjectText_TC_008>
+        <!--  -->
+        <picPath_TC_008>C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg</picPath_TC_008>
+        <!--  -->
+        <currentAddressText_TC_008>CurrentAddressTest</currentAddressText_TC_008>
+        <!--  -->
     </TC_008>
 </testData>

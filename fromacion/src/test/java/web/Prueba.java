@@ -1278,7 +1278,7 @@ public class Prueba extends Main {
     @Story("Alerts, Frames & Windows")
     @Description("Clicar los botones y comprobar su accion.")
     //
-    public void TC009_Browser_Windows() throws InterruptedException, IOException {
+    public void TC009_Browser_Windows() throws InterruptedException, IOException {  
         testId = "TC009_Browser_Windows";
         //
         try{

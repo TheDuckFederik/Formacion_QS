@@ -126,4 +126,8 @@
         <currentAddressText_TC_008>CurrentAddressTest</currentAddressText_TC_008>
         <!--  -->
     </TC_008>
+    <!--  -->
+    <TC_010>
+        <alertText_TC_010>TextTest</alertText_TC_010>
+    </TC_010>
 </testData>

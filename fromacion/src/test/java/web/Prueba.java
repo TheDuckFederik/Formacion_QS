@@ -14,8 +14,8 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
+// import org.w3c.dom.NodeList;
+// import org.w3c.dom.Node;
 //
 public class Prueba extends Main {
     //
@@ -117,17 +117,10 @@ public class Prueba extends Main {
             //
             action = 0;
             //
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\dataExample.xml");
-            //
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
-            //
-            String fullNameBox = getTagValue("fullNameText_TC_001", doc);
-            String emailBox = getTagValue("emailText_TC_001", doc);
-            String currentAddressBox = getTagValue("currentAddressText_TC_001", doc);
-            String permanentAddressBox = getTagValue("permanentAddressText_TC_001", doc);
+            String fullNameBox = getCsvValue("fullNameText_CSV");
+            String emailBox = getCsvValue("emailText_CSV");
+            String currentAddressBox = getCsvValue("currentAddressText_CSV");
+            String permanentAddressBox = getCsvValue("permanentAddressText_CSV");
             //
             driver.get("https://demoqa.com");
             action = 1;
@@ -2097,13 +2090,13 @@ public class Prueba extends Main {
         }
     }
 
-    private String getTagValue(String tag, Document doc) {
-        NodeList nodeList = doc.getElementsByTagName(tag);
-        if (nodeList != null && nodeList.getLength() > 0) {
-            Node node = nodeList.item(0);
-            return node.getTextContent();
-        }
-        return null;
-    }
+    // private String getTagValue(String tag, Document doc) {
+    //     NodeList nodeList = doc.getElementsByTagName(tag);
+    //     if (nodeList != null && nodeList.getLength() > 0) {
+    //         Node node = nodeList.item(0);
+    //         return node.getTextContent();
+    //     }
+    //     return null;
+    // }
 }
 //

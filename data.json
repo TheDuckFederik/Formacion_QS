@@ -1,94 +1,64 @@
 {
-    "testData": {
-        "url": {
-            "demoqa": "https://demoqa.com"
-        },
-        "menuItems": {
-            "elements": "(//div[@class='avatar mx-auto white'])[1]"
-        },
-        "submenuItems": {
-            "firstSubElement": "//div[@class='element-list collapse show']//li[@id='item-0']",
-            "secondSubElement": "//div[@class='element-list collapse show']//li[@id='item-1']"
-        },
-        "TC_001": {
-            "fullNameID_TC_001": "userName",
-            "emailID_TC_001": "userEmail",
-            "currentAddressID_TC_001": "currentAddress",
-            "permanentAddressID_TC_001": "permanentAddress",
-            "submitID_TC_001": "submit",
-            "fullNameText_TC_001": "FullNameTest",
-            "emailText1_TC_001": "EmailTest",
-            "emailText2_TC_001": "EmailTest@",
-            "emailText3_TC_001": "EmailTest@Test",
-            "emailText4_TC_001": "EmailTest@Test.com",
-            "currentAddressText_TC_001": "CurrentAddressTest",
-            "permanentAddressText_TC_001": "PermanentAddressTest",
-            "outputTextXpath_TC_001": "(//div[@class='border col-md-12 col-sm-12'])[1]"
-        },
-        "TC_002": {
-            "plusXpath_TC_002": "//*[@id=\"tree-node\"]/div/button[1]",
-            "minusXpath_TC_002": "//*[@id=\"tree-node\"]/div/button[2]",
-            "homeArrowXpath": "//*[@id='tree-node']/ol/li/span/button",
-            "desktopArrowXpath": "//*[@id='tree-node']/ol/li/ol/li[1]/span/button",
-            "documentsArrowXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/span/button",
-            "workSpaceArrowXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/span/button",
-            "officeArrowXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/span/button",
-            "downloadArrowXpath": "//*[@id='tree-node']/ol/li/ol/li[3]/span/button",
-            "homeBoxXpath": "//*[@id='tree-node']/ol/li/span/label/span[1]",
-            "desktopBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[1]/span/label/span[1]",
-            "notesBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/span/button",
-            "commandsBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]",
-            "documentsBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/span/button",
-            "workSpaceBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/span/button",
-            "reactBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]",
-            "angularBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]",
-            "veuBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]",
-            "officeBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/span/button",
-            "downloadBoxXpath": "//*[@id='tree-node']/ol/li/ol/li[3]/span/button"
-        },
-        "TC_004": {
-            "firstNameText_TC_004": "FirstNameTest",
-            "firstNameText1_TC_004": "FirstNameTest1",
-            "firstNameText2_TC_004": "FirstNameTest2",
-            "firstNameText3_TC_004": "FirstNameTest3",
-            "lastNameText_TC_004": "LastNameTest",
-            "lastNameText1_TC_004": "LastNameTest1",
-            "lastNameText2_TC_004": "LastNameTest2",
-            "lastNameText3_TC_004": "LastNameTest3",
-            "emailText01_TC_004": "EmailTest",
-            "emailText02_TC_004": "EmailTest@",
-            "emailText03_TC_004": "EmailTest@Test",
-            "emailText04_TC_004": "EmailTest@Test.com",
-            "emailText1_TC_004": "EmailTest1@Test.com",
-            "emailText2_TC_004": "EmailTest2@Test.com",
-            "emailText3_TC_004": "EmailTest3@Test.com",
-            "ageText01_TC_004": "ageTest",
-            "ageText02_TC_004": "00",
-            "ageText1_TC_004": "01",
-            "ageText2_TC_004": "02",
-            "ageText3_TC_004": "03",
-            "salaryText01_TC_004": "salaryTest",
-            "salaryText02_TC_004": "0000",
-            "salaryText1_TC_004": "0001",
-            "salaryText2_TC_004": "0002",
-            "salaryText3_TC_004": "0003",
-            "departmentText_TC_004": "departmentTest",
-            "departmentText1_TC_004": "departmentTest1",
-            "departmentText2_TC_004": "departmentTest2",
-            "departmentText3_TC_004": "departmentTest3"
-        },
-        "TC_008": {
-            "firstNameText_TC_008": "FristNameTest",
-            "lastNameText_TC_008": "LastNameTest",
-            "emailText1_TC_008": "EmailTest",
-            "emailText2_TC_008": "EmailTest@Test",
-            "emailText3_TC_008": "EmailTest@Test.com",
-            "dateOfBirthText_TC_008": "Jan 2000",
-            "numberText1_TC_008": "123456789",
-            "numberText2_TC_008": "1234567890",
-            "subjectText_TC_008": "Computer",
-            "picPath_TC_008": "C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg",
-            "currentAddressText_TC_008": "CurrentAddressTest"
-        }
-    }
-}
+    "data": [
+      {
+        "fullNameText_CSV": "FullNameTest",
+        "emailText_CSV": "EmailTest@Test.com",
+        "currentAddressText_CSV": "CurrentAddressTest",
+        "permanentAddressText_CSV": "PermanentAddressTest"
+      },
+      {
+        "emailText4_TC_001": "EmailTest@Test.com",
+        "fullNameText_TC_001": "FullNameTest",
+        "currentAddressText_TC_001": "CurrentAddressTest",
+        "permanentAddressText_TC_001": "PermanentAddressTest"
+      },
+      {
+        "firstNameText_TC_004": "FirstNameTest",
+        "firstNameText1_TC_004": "FirstNameTest1",
+        "firstNameText2_TC_004": "FirstNameTest2",
+        "firstNameText3_TC_004": "FirstNameTest3",
+        "lastNameText_TC_004": "LastNameTest",
+        "lastNameText1_TC_004": "LastNameTest1",
+        "lastNameText2_TC_004": "LastNameTest2",
+        "lastNameText3_TC_004": "LastNameTest3",
+        "emailText01_TC_004": "EmailTest",
+        "emailText02_TC_004": "EmailTest@",
+        "emailText03_TC_004": "EmailTest@Test",
+        "emailText04_TC_004": "EmailTest@Test.com",
+        "emailText1_TC_004": "EmailTest1@Test.com",
+        "emailText2_TC_004": "EmailTest2@Test.com",
+        "emailText3_TC_004": "EmailTest3@Test.com",
+        "ageText01_TC_004": "ageTest",
+        "ageText02_TC_004": "00",
+        "ageText1_TC_004": "01",
+        "ageText2_TC_004": "02",
+        "ageText3_TC_004": "03",
+        "salaryText01_TC_004": "salaryTest",
+        "salaryText02_TC_004": "0000",
+        "salaryText1_TC_004": "0001",
+        "salaryText2_TC_004": "0002",
+        "salaryText3_TC_004": "0003",
+        "departmentText_TC_004": "departmentTest",
+        "departmentText1_TC_004": "departmentTest1",
+        "departmentText2_TC_004": "departmentTest2",
+        "departmentText3_TC_004": "departmentTest3"
+      },
+      {
+        "firstNameText_TC_008": "FristNameTest",
+        "lastNameText_TC_008": "LastNameTest",
+        "emailText1_TC_008": "EmailTest",
+        "emailText2_TC_008": "EmailTest@Test",
+        "emailText3_TC_008": "EmailTest@Test.com",
+        "dateOfBirthText_TC_008": "Jan 2000",
+        "numberText1_TC_008": "123456789",
+        "numberText2_TC_008": "1234567890",
+        "subjectText_TC_008": "Computer",
+        "picPath_TC_008": "C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg",
+        "currentAddressText_TC_008": "CurrentAddressTest"
+      },
+      {
+        "alertText_TC_010": "TestText"
+      }
+    ]
+  }
+  

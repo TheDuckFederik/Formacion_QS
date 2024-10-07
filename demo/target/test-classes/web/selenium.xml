@@ -1,0 +1,28 @@
+<Elements>
+    <TC_001>
+        <fullNameText_TC_001>User</fullNameText_TC_001>
+        <EmailincorrectoText_TC_001>User</EmailincorrectoText_TC_001>
+        <Emailincorrecto2Text_TC_001>User@</Emailincorrecto2Text_TC_001>
+        <EmailCorrectoText_TC_001>User@gmail.com</EmailCorrectoText_TC_001>
+        <CurrentAddressText_TC_001>Current Addres</CurrentAddressText_TC_001>
+        <PermanentAddressText_TC_001>Permanent Address</PermanentAddressText_TC_001>
+    </TC_001>
+    <TC_004>
+        <UserFullName_Web_Tables_TC_004>FUser</UserFullName_Web_Tables_TC_004>
+        <UserLastName_Web_Tables_TC_004>LUser</UserLastName_Web_Tables_TC_004>
+        <UserEmailIncorrecto_Web_Tables_TC_004>User</UserEmailIncorrecto_Web_Tables_TC_004>
+        <UserEmailIncorrecto2_Web_Tables_TC_004>User@</UserEmailIncorrecto2_Web_Tables_TC_004>
+        <UserEmailCorrecto_Web_Tables_TC_004>User@gmail.com</UserEmailCorrecto_Web_Tables_TC_004>
+        <UserAge_Web_Tables_TC_004>20</UserAge_Web_Tables_TC_004>
+        <UserSalary_Web_Tables_TC_004>2000</UserSalary_Web_Tables_TC_004>
+        <UserDepartament_Web_Tables_TC_004>Departament</UserDepartament_Web_Tables_TC_004>
+        <EditarFirstName_Web_Tables_TC_004>Usuario</EditarFirstName_Web_Tables_TC_004>
+        <EditarLastName_Web_Tables_TC_004>LUsuario</EditarLastName_Web_Tables_TC_004>
+        <EditarEmail_Web_Tables_TC_004>Usuario@gmail.com</EditarEmail_Web_Tables_TC_004>
+        <EditarAge_Web_Tables_TC_004>22</EditarAge_Web_Tables_TC_004>
+        <EditarSalary_Web_Tables_TC_004>520</EditarSalary_Web_Tables_TC_004>
+        <EditarDepart_Web_Tables_TC_004>IA</EditarDepart_Web_Tables_TC_004>
+
+    </TC_004>
+
+</Elements>

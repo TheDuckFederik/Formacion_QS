@@ -32,6 +32,7 @@ public class Prueba extends Main {
         
         //
         try{
+
             driver.get(config.getProperty("urlPrincipal"));
 
             System.out.println("Entramos a la pagina demoqa.com");
@@ -42,14 +43,14 @@ public class Prueba extends Main {
             driver.findElement(By.id("item-0")).click();
             System.out.println("Entramos en el Text Box");
 
-            driver.findElement(By.id("userName")).sendKeys("User");
+            driver.findElement(By.id("userName")).sendKeys(Main.getTagValue("fullNameText_TC_001", Main.doc));
             System.out.println("Escribimos en Full Name ");
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0, 444);"); 
 
             WebElement input_email = driver.findElement(By.id("userEmail"));
-            input_email.sendKeys("User");
+            input_email.sendKeys(Main.getTagValue("EmailincorrectoText_TC_001", Main.doc));
             System.out.println("Escribimos en email de forma incorrecta");
 
             WebElement B_submit = driver.findElement(By.id("submit"));
@@ -59,7 +60,7 @@ public class Prueba extends Main {
             Thread.sleep(500);
             input_email.clear();
 
-            input_email.sendKeys("User@");
+            input_email.sendKeys(Main.getTagValue("Emailincorrecto2Text_TC_001", Main.doc));
             System.out.println("Escribimos en email de forma incorrecta");
 
             B_submit.click();
@@ -68,12 +69,12 @@ public class Prueba extends Main {
             Thread.sleep(500);
             input_email.clear();
 
-            input_email.sendKeys("User@gmail.com");
+            input_email.sendKeys(Main.getTagValue("EmailCorrectoText_TC_001", Main.doc));
             System.out.println("Escribimos en email de forma correcta");
 
-            driver.findElement(By.id("currentAddress")).sendKeys("Current Address");
+            driver.findElement(By.id("currentAddress")).sendKeys(Main.getTagValue("CurrentAddressText_TC_001", Main.doc));
             System.out.println("Escribimos en el current Address");
-            driver.findElement(By.id("permanentAddress")).sendKeys("Permanent Address");
+            driver.findElement(By.id("permanentAddress")).sendKeys(Main.getTagValue("PermanentAddressText_TC_001", Main.doc));
             System.out.println("Escribimos en el Permanent Addres");
             B_submit.click();
             System.out.println("Le damos al submit");   
@@ -361,34 +362,34 @@ public class Prueba extends Main {
                 // Rellenamos formulario
 
                 WebElement Add_FirstN = driver.findElement(By.id("firstName"));
-                Add_FirstN.sendKeys("FUser" + i);
+                Add_FirstN.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
                 Thread.sleep(500);
 
                 WebElement Add_LastN = driver.findElement(By.id("lastName"));
-                Add_LastN.sendKeys("LUser" + i);
+                Add_LastN.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
     
                 WebElement Add_Email = driver.findElement(By.id("userEmail"));
-                Add_Email.sendKeys("User" + i);
+                Add_Email.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
                 Thread.sleep(500);
                 WebElement submit = driver.findElement(By.id("submit"));
                 submit.click();
                 Add_Email.clear();
                 
-                Add_Email.sendKeys("User"+ i +"@");
+                Add_Email.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
                 submit.click();
                 Thread.sleep(500);
                 Add_Email.clear();
 
-                Add_Email.sendKeys("User"+ i +"@gmail.com");
+                Add_Email.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
 
                 WebElement Add_Age = driver.findElement(By.id("age"));
-                Add_Age.sendKeys("2"+i);
+                Add_Age.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc));
 
                 WebElement Add_Salary = driver.findElement(By.id("salary"));
-                Add_Salary.sendKeys("2"+i+"00");
+                Add_Salary.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc));
 
                 WebElement Add_Department = driver.findElement(By.id("department"));
-                Add_Department.sendKeys("department"+i);
+                Add_Department.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc));
                 Thread.sleep(500);
                 submit.click();
             }

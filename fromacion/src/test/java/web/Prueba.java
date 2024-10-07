@@ -261,13 +261,6 @@ public class Prueba extends Main {
             //
             action = 0;
             //
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
-            //
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
-            //
             String url = getTagValue("demoqa", doc);
             String elementsXpath = getTagValue("elements", doc);
             String textBoxXpath = getTagValue("firstSubElement", doc);
@@ -1869,13 +1862,6 @@ public class Prueba extends Main {
         testId = "TC016_Progress_Bar";
         //
         try{
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
-            //
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
-            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
@@ -1927,13 +1913,6 @@ public class Prueba extends Main {
         testId = "TC017_Menu";
         //
         try{
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
-            //
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
-            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));
@@ -1976,13 +1955,6 @@ public class Prueba extends Main {
         testId = "TC018_Menu";
         //
         try{
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
-            //
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
-            //
             driver.get("https://demoqa.com");
             //
             WebElement menu = driver.findElement(By.xpath("//div[4]//div[1]//div[2]"));

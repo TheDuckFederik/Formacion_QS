@@ -23,6 +23,9 @@ public class Main {
     //
     @BeforeMethod
     public void setup_test() {
+        // XML goes here
+        //
+        //CSV goes here
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");

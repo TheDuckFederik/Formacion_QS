@@ -12,3 +12,6 @@ firstNameText_TC_008, lastNameText_TC_008, emailText1_TC_008, emailText2_TC_008,
 FristNameTest, LastNameTest, EmailTest, EmailTest@Test, EmailTest@Test.com, Jan 2000, 123456789, 1234567890, Computer, C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg, CurrentAddressTest
 #
 #TC_010
+alertText_TC_010
+TestText
+#

@@ -1,5 +1,6 @@
 package web;
 
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -18,6 +19,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,16 +32,18 @@ public class Main {
     protected File srcFile;
     protected File destFile;
     protected static String paso;
-    
-    // XML and CSV
+
+    // XML, CSV, and JSON
     static Document doc;
     static Map<String, String> csvData = new HashMap<>();
+    static JSONObject jsonData;
 
     @BeforeMethod
     public void setup_test() {
-        String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml";
-        String csvFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.csv";
-        
+        String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\dataExample.xml";
+        String csvFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\dataExample.csv";
+        String jsonFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\dataExample.json";
+
         // XML Reading
         try {
             File inputFile = new File(xmlFilePath);
@@ -59,8 +64,18 @@ public class Main {
                     csvData.put(values[0].trim(), values[1].trim());
                 }
             }
+            // Debug: Print loaded CSV data
+            System.out.println("CSV Data Loaded: " + csvData);
         } catch (IOException e) {
             e.printStackTrace(); // Handle exceptions for CSV
+        }
+
+        // JSON Reading
+        try {
+            String jsonString = new String(Files.readAllBytes(Paths.get(jsonFilePath)));
+            jsonData = new JSONObject(jsonString);
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle exceptions for JSON
         }
 
         // WebDriver Setup
@@ -98,8 +113,14 @@ public class Main {
         }
         return null; // Return null if the node does not exist
     }
+
     // Method to get the value from CSV data
     public static String getCsvValue(String key) {
         return csvData.get(key);
+    }
+
+    // Method to get the value from JSON data
+    public static String getJsonValue(String key) {
+        return jsonData.optString(key, null); // Returns null if the key does not exist
     }
 }

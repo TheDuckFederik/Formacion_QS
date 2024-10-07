@@ -1,5 +1,5 @@
 package web;
-//
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -8,28 +8,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.io.File;
-import java.util.Properties;
-//
-// import org.testng.annotations.AfterMethod;
-// import org.testng.annotations.AfterSuite;
-// import org.testng.annotations.BeforeMethod;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-// import org.openqa.selenium.TakesScreenshot;
-// import org.openqa.selenium.WebDriver;
-// import org.openqa.selenium.chrome.ChromeDriver;
-// import org.openqa.selenium.chrome.ChromeOptions;
-// import org.openqa.selenium.support.ui.Wait;
-// import org.openqa.selenium.support.ui.WebDriverWait;
-// import java.io.File;
-// import java.io.FileInputStream;
-// import java.io.InputStream;
-// import java.util.Properties;
-//
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
     public static String testId;
     protected WebDriver driver;
@@ -37,21 +28,42 @@ public class Main {
     protected TakesScreenshot scrshot;
     protected File srcFile;
     protected File destFile;
-    protected Properties propiedades = new Properties();
-    public static String paso;
-    // XML
+    protected static String paso;
+    
+    // XML and CSV
     static Document doc;
-    //
+    static Map<String, String> csvData = new HashMap<>();
+
     @BeforeMethod
     public void setup_test() {
-        String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\dataExample.xml";
-        File inputFile = new File(xmlFilePath);
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        doc = dBuilder.parse(inputFile);
-        doc.getDocumentElement().normalize();
-        //
-        //CSV goes here
+        String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml";
+        String csvFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.csv";
+        
+        // XML Reading
+        try {
+            File inputFile = new File(xmlFilePath);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions for XML
+        }
+
+        // CSV Reading
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                if (values.length >= 2) {
+                    csvData.put(values[0].trim(), values[1].trim());
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle exceptions for CSV
+        }
+
+        // WebDriver Setup
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
@@ -62,33 +74,32 @@ public class Main {
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 45);
     }
-    //
+
     @AfterMethod
     public void breakup_test() {
         if (driver != null) {
             driver.quit();
         }
     }
-    //
+
     @AfterSuite
-        public void after_suite() throws Exception {
-            // Procesos finales, si es necesario
-            // ProcessBuilder procesoBuilder = new ProcessBuilder("./script.bat");
-            // Process proceso = procesoBuilder.start();
-            // proceso.waitFor();
-        }
-     
-        // Método para obtener el valor de una etiqueta específica en el documento XML
-        public static String getTagValue(String tag, Document doc) {
-            // Buscar todas las ocurrencias del tag
-            NodeList nodeList = doc.getElementsByTagName(tag);
-            Node node = nodeList.item(0); // Obtener el primer nodo de la lista
-           
-            // Verificar si el nodo no es nulo y es un elemento
-            if (node != null && node.getNodeType() == Node.ELEMENT_NODE) {
-                return node.getTextContent(); // Devolver el contenido del nodo
-            }
-            return null; // Devolver null si el nodo no existe
-        }
+    public void after_suite() throws Exception {
+        // Final processes, if necessary
     }
 
+    // Method to get the value of a specific tag in the XML document
+    public static String getTagValue(String tag, Document doc) {
+        NodeList nodeList = doc.getElementsByTagName(tag);
+        Node node = nodeList.item(0); // Get the first node
+
+        // Check if the node is not null and is an element
+        if (node != null && node.getNodeType() == Node.ELEMENT_NODE) {
+            return node.getTextContent(); // Return the node content
+        }
+        return null; // Return null if the node does not exist
+    }
+    // Method to get the value from CSV data
+    public static String getCsvValue(String key) {
+        return csvData.get(key);
+    }
+}

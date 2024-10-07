@@ -35,17 +35,10 @@ public class Prueba extends Main {
             //
             action = 0;
             //
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\dataExample.xml");
-            //
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
-            //
-            String fullNameBox = getTagValue("fullNameText_TC_001", doc);
-            String emailBox = getTagValue("emailText_TC_001", doc);
-            String currentAddressBox = getTagValue("currentAddressText_TC_001", doc);
-            String permanentAddressBox = getTagValue("permanentAddressText_TC_001", doc);
+            String fullNameBox = getTagValue("fullNameText_XML", doc);
+            String emailBox = getTagValue("emailText_XML", doc);
+            String currentAddressBox = getTagValue("currentAddressText_XML", doc);
+            String permanentAddressBox = getTagValue("permanentAddressText_XML", doc);
             //
             driver.get("https://demoqa.com");
             action = 1;
@@ -192,10 +185,10 @@ public class Prueba extends Main {
             //
             action = 0;
             //
-            String fullNameBox = getJsonValue("fullNameText_TC_001");
-            String emailBox = getJsonValue("emailText_TC_001");
-            String currentAddressBox = getJsonValue("currentAddressText_TC_001");
-            String permanentAddressBox = getJsonValue("permanentAddressText_TC_001");
+            String fullNameBox = getJsonValue("fullNameText_JSON");
+            String emailBox = getJsonValue("emailText_JSON");
+            String currentAddressBox = getJsonValue("currentAddressText_JSON");
+            String permanentAddressBox = getJsonValue("permanentAddressText_JSON");
             //
             driver.get("https://demoqa.com");
             action = 1;

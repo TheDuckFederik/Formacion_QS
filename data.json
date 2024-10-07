@@ -1,10 +1,10 @@
 {
   "data": [
     {
-      "fullNameText_CSV": "FullNameTest",
-      "emailText_CSV": "EmailTest@Test.com",
-      "currentAddressText_CSV": "CurrentAddressTest",
-      "permanentAddressText_CSV": "PermanentAddressTest"
+      "fullNameText_JSON": "FullNameTest",
+      "emailText_JSON": "EmailTest@Test.com",
+      "currentAddressText_JSON": "CurrentAddressTest",
+      "permanentAddressText_JSON": "PermanentAddressTest"
     },
     {
       "emailText4_TC_001": "EmailTest@Test.com",

@@ -13,6 +13,13 @@
         <secondSubElement>//div[@class='element-list collapse show']//li[@id='item-1']</secondSubElement>
     </submenuItems>
     <!--  -->
+    <XML>
+        <fullNameText_XML>FullNameTest</fullNameText_XML>
+        <emailText_XML>EmailTest@Test.com</emailText_XML>
+        <currentAddressText_XML>CurrentAddressTest</currentAddressText_XML>
+        <permanentAddressText_XML>PermanentAddressTest</permanentAddressText_XML>
+    </XML>
+    <!--  -->
     <TC_001>
         <fullNameID_TC_001>userName</fullNameID_TC_001>
         <emailID_TC_001>userEmail</emailID_TC_001>

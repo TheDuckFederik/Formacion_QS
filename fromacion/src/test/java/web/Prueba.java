@@ -187,7 +187,7 @@ public class Prueba extends Main {
         try {
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|------------------------ Beginning JSON_Test -----------------------|");
+            System.out.println("|------------------------ Beginning JSON_Test ----------------------|");
             System.out.println("|-------------------------------------------------------------------|");
             //
             action = 0;
@@ -208,9 +208,9 @@ public class Prueba extends Main {
             subMenu.click();
             action = 3;
             //
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,350)", "");
-            Thread.sleep(500);
+            // JavascriptExecutor js = (JavascriptExecutor) driver;
+            // js.executeScript("window.scrollBy(0,350)", "");
+            // Thread.sleep(500);
             action = 4;
             //
             WebElement full_name = driver.findElement(By.id("userName"));
@@ -572,6 +572,8 @@ public class Prueba extends Main {
             home_arrow = driver.findElement(By.xpath(homeArrowPath));
             home_arrow.click();
             action = 52;
+            //
+            System.out.println("");
             //
         } catch(Exception e){
             e.printStackTrace();

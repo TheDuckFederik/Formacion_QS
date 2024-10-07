@@ -1,6 +1,5 @@
 package web;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -37,7 +36,7 @@ public class Main {
     // XML, CSV, and JSON
     static Document doc;
     static Map<String, String> csvData = new HashMap<>();
-    static JSONArray jsonDataArray;
+    static JSONObject jsonData;
 
     @BeforeMethod
     public void setup_test() {
@@ -74,8 +73,7 @@ public class Main {
         // JSON Reading
         try {
             String jsonString = new String(Files.readAllBytes(Paths.get(jsonFilePath)));
-            JSONObject jsonData = new JSONObject(jsonString);
-            jsonDataArray = jsonData.getJSONArray("data");
+            jsonData = new JSONObject(jsonString);
         } catch (IOException e) {
             e.printStackTrace(); // Handle exceptions for JSON
         }
@@ -123,13 +121,7 @@ public class Main {
 
     // Method to get the value from JSON data
     public static String getJsonValue(String key) {
-        for (int i = 0; i < jsonDataArray.length(); i++) {
-            JSONObject jsonObject = jsonDataArray.getJSONObject(i);
-            if (jsonObject.has(key)) {
-                return jsonObject.getString(key);
-            }
-        }
-        return null; // Return null if the key does not exist in any object
+        return jsonData.optString(key, null); // Returns null if the key does not exist
     }
 
     // Example method to demonstrate sending keys safely

@@ -11,7 +11,7 @@ import com.opencsv.exceptions.CsvException;
 public class CPD {
 
     public List<String[]> Datos()throws CsvException, FileNotFoundException, IOException{
-        String archivoCSV = "demo2\\CP001Datos.txt";
+        String archivoCSV = "CP001Datos.csv";
         
             CSVReader csvReader = new CSVReader(new FileReader(archivoCSV));
 

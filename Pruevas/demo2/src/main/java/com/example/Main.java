@@ -27,11 +27,17 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 
 import dev.failsafe.internal.util.Assert;
+import java.util.Properties;
+import java.io.FileInputStream;
 
 public class Main {
+      
+      static Properties propiedades = new Properties();
+
     public static void main(String[] args) throws CsvException, FileNotFoundException, IOException{
       
-
+        FileInputStream input = new FileInputStream("C:\\Users\\ramon.fernandez-roig\\Downloads\\Formacion_QS\\Formacion_QS\\Pruevas\\demo2\\src\\main\\resources\\properties.properties");
+        propiedades.load(input);
         // Leer todas las líneas del CSV (cada línea es un array de Strings)
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
@@ -43,89 +49,89 @@ public class Main {
         WebDriver driver = new ChromeDriver(chromeOptions);
         
         //CASO DE Prueba 001
-        // try{           
+      //   try{           
 
-        //     CPD cpdList = new CPD();
-        //     List<String[]> datos = cpdList.Datos();
-        //     String[] datoRequerido = datos.get(1);
-        //     String[] datosIncorrectos = datos.get(2);
+      //       CPD cpdList = new CPD();
+      //       List<String[]> datos = cpdList.Datos();
+      //       String[] datoRequerido = datos.get(1);
+      //       String[] datosIncorrectos = datos.get(2);
 
 
-        //     driver.get("https://demoqa.com");
-        //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
-        //     menu.click();
-        //     Thread.sleep(500);
-        //     WebElement submenu = driver.findElement(By.id("item-0"));
-        //     submenu.click();
-        //     Thread.sleep(500);
+      //       driver.get("https://demoqa.com");
+      //       Thread.sleep(500);
+      //       WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
+      //       menu.click();
+      //       Thread.sleep(500);
+      //       WebElement submenu = driver.findElement(By.id("item-0"));
+      //       submenu.click();
+      //       Thread.sleep(500);
 
-        //    // Rellenar el apartado Full Name
+      //      // Rellenar el apartado Full Name
 
-        //     WebElement userName = driver.findElement(By.id("userName"));
-        //     userName.sendKeys(datoRequerido[0]);
-        //     System.out.println("Se ha escrito el username");
-        //     Thread.sleep(500);
-        //     // Introducir un Correo electronico erroneo
+      //       WebElement userName = driver.findElement(By.id("userName"));
+      //       userName.sendKeys(datoRequerido[0]);
+      //       System.out.println("Se ha escrito el username");
+      //       Thread.sleep(500);
+      //       // Introducir un Correo electronico erroneo
 
-        //     WebElement email = driver.findElement(By.id("userEmail"));
-        //     email.sendKeys(datoRequerido[1]);
-        //     System.out.println("Se ha escrito el email incorrecto");
-        //     Thread.sleep(500);
+      //       WebElement email = driver.findElement(By.id("userEmail"));
+      //       email.sendKeys(datoRequerido[1]);
+      //       System.out.println("Se ha escrito el email incorrecto");
+      //       Thread.sleep(500);
 
-        //     //Pulsar el botón de submit
+      //       //Pulsar el botón de submit
 
-        //     WebElement submit = driver.findElement(By.id("submit"));
-        //     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submit);
-        //     submit.click();
-        //     Thread.sleep(500);
+      //       WebElement submit = driver.findElement(By.id("submit"));
+      //       ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submit);
+      //       submit.click();
+      //       Thread.sleep(500);
 
-        //     //Corregir el correo incorrecto
-        //     email.clear();
-        //     email.sendKeys(datosIncorrectos[1]);
-        //     System.out.println("Se ha escrito el email correcto");
-        //     Thread.sleep(500);
+      //       //Corregir el correo incorrecto
+      //       email.clear();
+      //       email.sendKeys(datosIncorrectos[1]);
+      //       System.out.println("Se ha escrito el email correcto");
+      //       Thread.sleep(500);
 
-        //     //Rellenar el apartado de Current 
+      //       //Rellenar el apartado de Current 
             
-        //     WebElement currentAddress = driver.findElement(By.id("currentAddress"));
-        //     currentAddress.sendKeys(datoRequerido[2]);
-        //     System.out.println("Se ha escrito la dirección");
-        //     Thread.sleep(500);
+      //       WebElement currentAddress = driver.findElement(By.id("currentAddress"));
+      //       currentAddress.sendKeys(datoRequerido[2]);
+      //       System.out.println("Se ha escrito la dirección");
+      //       Thread.sleep(500);
 
-        //     //Rellenar el apartado de Permanent Address
+      //       //Rellenar el apartado de Permanent Address
 
-        //     WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
-        //     permanentAddress.sendKeys(datoRequerido[3]);
-        //     System.out.println("Se ha escrito la dirección permanente");
-        //     Thread.sleep(500);
+      //       WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
+      //       permanentAddress.sendKeys(datoRequerido[3]);
+      //       System.out.println("Se ha escrito la dirección permanente");
+      //       Thread.sleep(500);
 
-        //     //Hacemos click en el botón de submit
+      //       //Hacemos click en el botón de submit
 
-        //     submit.click();
+      //       submit.click();
 
-        //     //Recoger los datos que la pagina nos ha proporcionado
+      //       //Recoger los datos que la pagina nos ha proporcionado
 
-        //     WebElement data = driver.findElement(By.xpath("//div[@id=\"output\"]/div"));
-        //     String dataText = data.getText();
+      //       WebElement data = driver.findElement(By.xpath(propiedades.getProperty("textbox.result")));
+      //       String dataText = data.getText();
 
-        //     //Imprimimos los datos por pantalla
+      //       //Imprimimos los datos por pantalla
 
-        //     System.out.println(dataText);
+      //       System.out.println(dataText);
             
             
-        // } catch(Exception e){
-        //     e.printStackTrace();
-        // } finally{
-        //     driver.quit();
-        // }
+      //   } catch(Exception e){
+      //       e.printStackTrace();
+      //   } finally{
+      //       driver.quit();
+      //   }
 
 
               //CASO DE Prueba 002
         // try{
         //   driver.get("https://demoqa.com");
         //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
         //     menu.click();
         //     Thread.sleep(500);
             
@@ -135,42 +141,42 @@ public class Main {
 
         //   // Hacer clic en desplegable   de Home
 
-        //       WebElement homeDes = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/span[1]/button[1]/*[name()='svg'][1]"));           
+        //       WebElement homeDes = driver.findElement(By.xpath(propiedades.getProperty("checkBox.homedes")));           
         //       homeDes.click();            
         //       Thread.sleep(500);
         //       System.out.println("home desplegado");
 
         //   // Hacer click en desplegable   de Desktop
              
-        //   WebElement desktopDes = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/ol[1]/li[1]/span[1]/button[1]/*[name()='svg'][1]"));       
+        //   WebElement desktopDes = driver.findElement(By.xpath(propiedades.getProperty("checkBox.DeskDes")));       
         //   desktopDes.click();
         //   Thread.sleep(500);
         //   System.out.println("desktop desplegado");           
 
         //   // Hacer click en desplegable   de Documents
 
-        //   WebElement documentsDes = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/ol[1]/li[2]/span[1]/button[1]/*[name()='svg'][1]"));
+        //   WebElement documentsDes = driver.findElement(By.xpath(propiedades.getProperty("checkBox.DocDes")));
         //   documentsDes.click();
         //   Thread.sleep(500); 
         //   System.out.println("documents desplegado");
 
         //   // Hacer click en desplegable de Downloads
 
-        //   WebElement downloadsDes = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/ol[1]/li[3]/span[1]/button[1]/*[name()='svg'][1]"));
+        //   WebElement downloadsDes = driver.findElement(By.xpath(propiedades.getProperty("checkBox.DowDes")));
         //   downloadsDes.click();
         //   Thread.sleep(500);
         //   System.out.println("downloads desplegado");
 
         //   // Hacer click en desplegable de WorkSpace
 
-        //   WebElement workSpaceDes = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/ol[1]/li[2]/ol[1]/li[1]/span[1]/button[1]/*[name()='svg'][1]"));
+        //   WebElement workSpaceDes = driver.findElement(By.xpath(propiedades.getProperty("checkBox.WorkDes")));
         //   workSpaceDes.click();
         //   Thread.sleep(500);
         //   System.out.println("workspace desplegado");
 
         //   // Hacer click en desplegable de Office
 
-        //   WebElement officeDes = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/ol[1]/li[2]/ol[1]/li[2]/span[1]/button[1]/*[name()='svg'][1]"));
+        //   WebElement officeDes = driver.findElement(By.xpath(propiedades.getProperty("checkBox.OffDes")));
         //   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", officeDes);
         //   Thread.sleep(500); 
         //   officeDes.click();
@@ -179,21 +185,21 @@ public class Main {
 
         //   // Hacer click en Check box de Notes
 
-        //   WebElement notesBox = driver.findElement(By.xpath("//label[span[contains(text(),'Notes')]]"));
+        //   WebElement notesBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.NotesBox")));
         //   notesBox.click();
         //   Thread.sleep(500);
         //   System.out.println("notes check");
 
         //   // Hacer click en Check box de Commands
 
-        //   WebElement commandsBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Commands')]]"));
+        //   WebElement commandsBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.ComBox")));
         //   commandsBox.click();
         //   Thread.sleep(500);
         //   System.out.println("comands check");
 
         //   // Hacer click en Check box de Desktop
 
-        //   WebElement desktopBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Desktop')]]"));
+        //   WebElement desktopBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.DeskBox")));
         //   desktopBox.click();   
         //   Thread.sleep(500);
         //   System.out.println("desktop uncheck");
@@ -206,28 +212,28 @@ public class Main {
 
         //   // Hacer click en Check box de React
 
-        //   WebElement reactBox = driver.findElement(By.xpath("//label[span[contains(text(), 'React')]]"));
+        //   WebElement reactBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.ReactBox")));
         //   reactBox.click();
         //   Thread.sleep(500);
         //   System.out.println("react check");
 
         //   // Hacer click en Check box de Angular
 
-        //   WebElement angularBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Angular')]]"));
+        //   WebElement angularBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.AngBox")));
         //   angularBox.click();
         //   Thread.sleep(500);
         //   System.out.println("angular check");
 
         //   // Hacer click en Check box de Veu
 
-        //   WebElement veuBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Veu')]]"));
+        //   WebElement veuBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.VeuBox")));
         //   veuBox.click();
         //   Thread.sleep(500);
         //   System.out.println("veu check");
 
         //   // Hacer click en Check box de WorkSpace
 
-        //   WebElement workSpaceBox = driver.findElement(By.xpath("//label[span[contains(text(), 'WorkSpace')]]"));
+        //   WebElement workSpaceBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.WorkBox")));
         //   workSpaceBox.click();
         //   Thread.sleep(500);
         //   System.out.println("workspace uncheck");
@@ -240,35 +246,35 @@ public class Main {
 
         //   // Hacer click en Check box de Public
 
-        //   WebElement publicBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Public')]]"));
+        //   WebElement publicBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.PublicBox")));
         //   publicBox.click();
         //   Thread.sleep(500);
         //   System.out.println("public check");
 
         //   // Hacer click en Check box de Private
 
-        //   WebElement privateBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Private')]]"));
+        //   WebElement privateBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.PrivateBox")));
         //   privateBox.click();
         //   Thread.sleep(500);
         //   System.out.println("private check");
 
         //   // Hacer click en Check box de Classified
 
-        //   WebElement classifiedBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Classified')]]"));
+        //   WebElement classifiedBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.ClassBox")));
         //   classifiedBox.click();
         //   Thread.sleep(500);
         //   System.out.println("classified check");
 
         //   // Hacer click en Check box de General
 
-        //   WebElement generalBox = driver.findElement(By.xpath("//label[span[contains(text(), 'General')]]"));
+        //   WebElement generalBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.genBox")));
         //   generalBox.click();
         //   Thread.sleep(500);
         //   System.out.println("general check");
 
         //   // Hacer click en Check box de Office
 
-        //   WebElement officeBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Office')]]"));
+        //   WebElement officeBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.OffBox")));
         //   officeBox.click();
         //   Thread.sleep(500);
         //   System.out.println("office uncheck");
@@ -281,21 +287,21 @@ public class Main {
 
         //   // Hacer click en Check box de Word File.doc
 
-        //   WebElement wordBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Word File.doc')]]"));
+        //   WebElement wordBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.WordBox")));
         //   wordBox.click();
         //   Thread.sleep(500);
         //   System.out.println("word check");
 
         //   // Hacer click en Check box de Excel File.doc
 
-        //   WebElement excelBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Excel File.doc')]]"));
+        //   WebElement excelBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.ExcelBox")));
         //   excelBox.click();
         //   Thread.sleep(500);
         //   System.out.println("excel check");
 
         //   // Hacer click en Check box de Downloads
 
-        //   WebElement downloadBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Downloads')]]"));
+        //   WebElement downloadBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.DowBox")));
         //   downloadBox.click();
         //   Thread.sleep(500);
         //   System.out.println("download uncheck");
@@ -308,7 +314,7 @@ public class Main {
 
         //   // Hacer click en Check box de Home
 
-        //   WebElement homeBox = driver.findElement(By.xpath("//label[span[contains(text(), 'Home')]]"));
+        //   WebElement homeBox = driver.findElement(By.xpath(propiedades.getProperty("checkBox.HomeBox")));
         //   homeBox.click();
         //   Thread.sleep(500); 
         //   System.out.println("home uncheck");
@@ -321,14 +327,14 @@ public class Main {
 
         //   // Hacer click en botón de comprimir
 
-        //   WebElement colapseAll = driver.findElement(By.xpath("//button[@Title='Collapse all']"));
+        //   WebElement colapseAll = driver.findElement(By.xpath(propiedades.getProperty("button.CollapseAll")));
         //   colapseAll.click();
         //   Thread.sleep(500);
         //   System.out.println("todo se ha cerrado");
 
         //   // Hacer click en botón de expandir
 
-        //     WebElement expandAll = driver.findElement(By.xpath("//button[@Title='Expand all']"));
+        //     WebElement expandAll = driver.findElement(By.xpath(propiedades.getProperty("button.ExpandAll")));
         //     expandAll.click();
         //     Thread.sleep(500);
         //     System.out.println("todo se ha abierto");
@@ -346,7 +352,7 @@ public class Main {
         // try {
         //     driver.get("https://demoqa.com");
         //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
         //     menu.click();
         //     Thread.sleep(500);
             
@@ -356,14 +362,14 @@ public class Main {
 
         //     // hacemos click en el radio button de yes
 
-        //     WebElement yes = driver.findElement(By.xpath("//label[@for=\"yesRadio\"]"));
+        //     WebElement yes = driver.findElement(By.xpath(propiedades.getProperty("radioButton.yes")));
         //     yes.click();
         //     Thread.sleep(500);
         //     System.out.println("se ha hecho click en yes");
 
         //     // Hacemos click en el radio button de Impresive
 
-        //     WebElement impresive = driver.findElement(By.xpath("//label[@for=\"impressiveRadio\"]"));
+        //     WebElement impresive = driver.findElement(By.xpath(propiedades.getProperty("radioButton.impresive")));
         //     impresive.click();
         //     Thread.sleep(500);
         //     System.out.println("se ha hecho click en Impresive");
@@ -394,7 +400,7 @@ public class Main {
 
         //     driver.get("https://demoqa.com");
         //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
         //     menu.click();
         //     Thread.sleep(500);
             
@@ -550,7 +556,7 @@ public class Main {
 
         //     //Hacemos clic a la cruz del formulario
 
-        //     WebElement exitEdit = driver.findElement(By.xpath("//div/button[@class=\"close\"]"));
+        //     WebElement exitEdit = driver.findElement(By.xpath(propiedades.getProperty("button.ExitEdit")));
         //     exitEdit.click();
         //     Thread.sleep(500);
         //     System.out.println("Hacemos clic a la cruz del formulario"+"\n");
@@ -629,8 +635,8 @@ public class Main {
 
         //     //Ordenamos por orden alfabetico y descendente por el First Name
 
-        //     WebElement firstNameorder = driver.findElement(By.xpath("//div[contains(text(), 'First Name')]"));
-        //     WebElement firstNameorder2 = driver.findElement(By.xpath("//div[contains(text(), 'First Name')]"));
+        //     WebElement firstNameorder = driver.findElement(By.xpath(propiedades.getProperty("button.FirstnameOrder")));
+        //     WebElement firstNameorder2 = driver.findElement(By.xpath(propiedades.getProperty("button.FirstnameOrder")));
         //     firstNameorder.click();
         //     Thread.sleep(500);
         //     System.out.println("Ordenamos por orden alfabetico el First Name"+"\n");
@@ -642,8 +648,8 @@ public class Main {
 
         //     //Ordenamos por orden alfabetico y descendente por el Last Name
 
-        //     WebElement lastNameOrder = driver.findElement(By.xpath("//div[contains(text(), 'Last Name')]"));
-        //     WebElement lastNameOrder2 = driver.findElement(By.xpath("//div[contains(text(), 'Last Name')]"));
+        //     WebElement lastNameOrder = driver.findElement(By.xpath(propiedades.getProperty("button.LastnameOrder")));
+        //     WebElement lastNameOrder2 = driver.findElement(By.xpath(propiedades.getProperty("button.LastnameOrder")));
         //     lastNameOrder.click();
         //     Thread.sleep(500);
         //     System.out.println("Ordenamos por orden alfabetico el First Name"+"\n");
@@ -654,8 +660,8 @@ public class Main {
 
         //     //Ordenamos por orden de mas grande a mas puequeño y viceversa por el Age
 
-        //     WebElement ageOrder = driver.findElement(By.xpath("//div[contains(text(), 'Age')]"));
-        //     WebElement ageOrder2 = driver.findElement(By.xpath("//div[contains(text(), 'Age')]"));
+        //     WebElement ageOrder = driver.findElement(By.xpath(propiedades.getProperty("button.AgeOrder")));
+        //     WebElement ageOrder2 = driver.findElement(By.xpath(propiedades.getProperty("button.AgeOrder")));
         //     ageOrder.click();
         //     Thread.sleep(500);
         //     System.out.println("Ordenamos por orden de mas grande a mas puequeño el Age"+"\n");
@@ -666,8 +672,8 @@ public class Main {
 
         //     //Ordenamos por orden alfabetico y descendente por el Email
 
-        //     WebElement emailOrder = driver.findElement(By.xpath("//div[contains(text(), 'Email')]"));
-        //     WebElement emailOrder2 = driver.findElement(By.xpath("//div[contains(text(), 'Email')]"));
+        //     WebElement emailOrder = driver.findElement(By.xpath(propiedades.getProperty("button.EmailOrder")));
+        //     WebElement emailOrder2 = driver.findElement(By.xpath(propiedades.getProperty("button.EmailOrder")));
         //     emailOrder.click();
         //     Thread.sleep(500);
         //     System.out.println("Ordenamos por orden alfabetico el Email"+"\n");
@@ -678,8 +684,8 @@ public class Main {
 
         //     //Ordenamos por orden de mas grande a mas puequeño y viceversa por el Salary
 
-        //     WebElement salaryOrder = driver.findElement(By.xpath("//div[contains(text(), 'Salary')]"));
-        //     WebElement salaryOrder2 = driver.findElement(By.xpath("//div[contains(text(), 'Salary')]"));
+        //     WebElement salaryOrder = driver.findElement(By.xpath(propiedades.getProperty("button.SalaryOrder")));
+        //     WebElement salaryOrder2 = driver.findElement(By.xpath(propiedades.getProperty("button.SalaryOrder")));
         //     salaryOrder.click();
         //     Thread.sleep(500);
         //     System.out.println("Ordenamos por orden de mas grande a mas puequeño el Salary"+"\n");
@@ -690,8 +696,8 @@ public class Main {
 
         //     //Ordenamos por orden alfabetico y descendente por el Department
 
-        //     WebElement departmentOrder = driver.findElement(By.xpath("//div[contains(text(), 'Department')]"));
-        //     WebElement departmentOrder2 = driver.findElement(By.xpath("//div[contains(text(), 'Department')]"));
+        //     WebElement departmentOrder = driver.findElement(By.xpath(propiedades.getProperty("button.DepartmentOrder")));
+        //     WebElement departmentOrder2 = driver.findElement(By.xpath(propiedades.getProperty("button.DepartmentOrder")));
         //     departmentOrder.click();
         //     Thread.sleep(500);
         //     System.out.println("Ordenamos por orden alfabetico por el Department"+"\n");
@@ -702,8 +708,8 @@ public class Main {
 
         //     //Ordenamos por orden alfabetico y descendente por orden de creación
 
-        //     WebElement actionOrder = driver.findElement(By.xpath("//div[contains(text(), 'Action')]"));
-        //     WebElement actionOrder2 = driver.findElement(By.xpath("//div[contains(text(), 'Action')]"));
+        //     WebElement actionOrder = driver.findElement(By.xpath(propiedades.getProperty("button.Actionorder")));
+        //     WebElement actionOrder2 = driver.findElement(By.xpath(propiedades.getProperty("button.Actionorder")));
         //     actionOrder.click();
         //     Thread.sleep(500);
         //     System.out.println("Ordenamos por orden alfabetico por orden de creación"+"\n");
@@ -746,7 +752,7 @@ public class Main {
 
         //     //Acotamos a 5 lineas
 
-        //     WebElement rows = driver.findElement(By.xpath("//select[@aria-label=\"rows per page\"]"));
+        //     WebElement rows = driver.findElement(By.xpath(propiedades.getProperty("select.Rows")));
         //     Select rowsSelect = new Select(rows);
         //     rowsSelect.selectByVisibleText("5 rows");
         //     Thread.sleep(500);
@@ -754,21 +760,21 @@ public class Main {
 
         //     //Pasamos a la pagina siguiente
 
-        //     WebElement next = driver.findElement(By.xpath("//div[@class=\"-next\"]/button"));
+        //     WebElement next = driver.findElement(By.xpath(propiedades.getProperty("button.Next")));
         //     next.click();
         //     Thread.sleep(500);
         //     System.out.println("Pasamos a la pagina siguiente"+"\n");
 
         //     //Pasamos a la pagina anterior
 
-        //     WebElement previous = driver.findElement(By.xpath("//div[@class=\"-previous\"]/button"));
+        //     WebElement previous = driver.findElement(By.xpath(propiedades.getProperty("button.Previous")));
         //     previous.click();
         //     Thread.sleep(500);
         //     System.out.println("Pasamos a la pagina anterior"+"\n");
 
         //     //Pasamos a la siguiente pagina a traves de escrivir el numero de la pagina que queremos en el quadro de texto
 
-        //     WebElement section = driver.findElement(By.xpath("//input[@aria-label=\"jump to page\"]"));
+        //     WebElement section = driver.findElement(By.xpath(propiedades.getProperty("input.Section")));
         //     section.clear();
         //     section.sendKeys(datoRequerido[7]);
         //     section.sendKeys(Keys.ENTER);
@@ -797,7 +803,7 @@ public class Main {
         //     Actions act = new Actions(driver);
         //     driver.get("https://demoqa.com");
         //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
         //     menu.click();
         //     Thread.sleep(500);
             
@@ -821,7 +827,7 @@ public class Main {
 
         //     //Hacemos click en el boton de Click Me
 
-        //     WebElement click = driver.findElement(By.xpath("//button[text() = 'Click Me']"));
+        //     WebElement click = driver.findElement(By.xpath(propiedades.getProperty("button.clickMe")));
         //     click.click();
         //     Thread.sleep(500);
         //     System.out.println("se ha hecho click al Click Me" + "\n");
@@ -841,7 +847,7 @@ public class Main {
 
         //         driver.get("https://demoqa.com");
         //         Thread.sleep(500);
-        //         WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
+        //         WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
         //         menu.click();
         //         Thread.sleep(500);
                 
@@ -858,7 +864,7 @@ public class Main {
         //         //Subimos el archivo descargado
 
         //         WebElement uploadFile = driver.findElement(By.id("uploadFile"));
-        //         uploadFile.sendKeys("C:\\Users\\ramon.fernandez-roig\\Downloads\\sampleFile.jpeg");
+        //         uploadFile.sendKeys(propiedades.getProperty("file.uploadFile"));
         //         Thread.sleep(500);
         //         System.out.println("se ha cargado el archivo" + "\n");
 
@@ -869,12 +875,12 @@ public class Main {
         // }
 
 
-              //CASO DE Prueba 007
+        //CASO DE Prueba 007
         // try {
 
         //         driver.get("https://demoqa.com");
         //         Thread.sleep(500);
-        //         WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Elements']"));
+        //         WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
         //         menu.click();
         //         Thread.sleep(500);
                 
@@ -895,12 +901,9 @@ public class Main {
         //         System.out.println(extractColor.getCssValue("color"));
         //         System.out.println("se ha extraido despues de que canvie de color" + "\n");
 
-
-
-
         //         //Extremos el random id
 
-        //         WebElement randomId = driver.findElement(By.xpath("//p[text() = \"This text has random Id\"]"));
+        //         WebElement randomId = driver.findElement(By.xpath(propiedades.getProperty("text.RandomId")));
         //         System.out.println(randomId.getAttribute("id"));
         //         System.out.println("se ha extraido el id random" + "\n");
 
@@ -935,11 +938,11 @@ public class Main {
 
         //         driver.get("https://demoqa.com");
         //         Thread.sleep(500);
-        //         WebElement menu = driver.findElement(By.xpath("//div/h5[text()='Forms']"));
+        //         WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.forms")));
         //         menu.click();
         //         Thread.sleep(500);
                 
-        //         WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Practice Form']"));
+        //         WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.forms")));
         //         submenu.click();
         //         Thread.sleep(500);
 
@@ -989,7 +992,7 @@ public class Main {
 
         //         //Hacer click en el radio button de Male
 
-        //         WebElement maleRadioButtonForm = driver.findElement(By.xpath("//div[input[@id=\"gender-radio-1\"]]/label"));
+        //         WebElement maleRadioButtonForm = driver.findElement(By.xpath(propiedades.getProperty("radioButton.Male")));
         //         maleRadioButtonForm.click();
         //         Thread.sleep(500);
         //         System.out.println("se hizo click en Male" + "\n");
@@ -1033,7 +1036,7 @@ public class Main {
                 
         //         //Hacer click en los meses Y seleccionar Enero
 
-        //         WebElement monthForm = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[5]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/select[1]"));
+        //         WebElement monthForm = driver.findElement(By.xpath(propiedades.getProperty("Form.MonthForm")));
         //         Select monthSelect = new Select(monthForm);
         //         monthSelect.selectByVisibleText("January");
         //         Thread.sleep(500);
@@ -1041,7 +1044,7 @@ public class Main {
 
         //         //Hacer click en los años Y seleccionar 2004
 
-        //         WebElement yearForm = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[5]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/select[1]"));
+        //         WebElement yearForm = driver.findElement(By.xpath(propiedades.getProperty("Form.YearForm")));
         //         Select yearSelect = new Select(yearForm);
         //         yearSelect.selectByVisibleText("2004");
         //         Thread.sleep(500);    
@@ -1049,7 +1052,7 @@ public class Main {
                 
         //         //Hacer click en 16
 
-        //         WebElement dayForm = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[5]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[6]"));
+        //         WebElement dayForm = driver.findElement(By.xpath(propiedades.getProperty("Form.DayForm")));
         //         dayForm.click();
         //         Thread.sleep(500);
         //         System.out.println("Se ha seleccionado el dia 16" + "\n");
@@ -1071,9 +1074,9 @@ public class Main {
 
         //         //Hacer click en Sports, Reading y Music
 
-        //         WebElement sports = driver.findElement(By.xpath("//div[input[@id=\"hobbies-checkbox-1\"]]/label"));
-        //         WebElement reading = driver.findElement(By.xpath("//div[input[@id=\"hobbies-checkbox-2\"]]/label"));
-        //         WebElement music = driver.findElement(By.xpath("//div[input[@id=\"hobbies-checkbox-3\"]]/label"));
+        //         WebElement sports = driver.findElement(By.xpath(propiedades.getProperty("Form.Sports")));
+        //         WebElement reading = driver.findElement(By.xpath(propiedades.getProperty("Form.Reading")));
+        //         WebElement music = driver.findElement(By.xpath(propiedades.getProperty("Form.Music")));
 
         //         sports.click();
         //         Thread.sleep(500);
@@ -1086,7 +1089,7 @@ public class Main {
         //         //Subir un archivo
 
         //         WebElement uploadFile = driver.findElement(By.id("uploadPicture"));
-        //         uploadFile.sendKeys("C:\\Users\\ramon.fernandez-roig\\Downloads\\sampleFile.jpeg");
+        //         uploadFile.sendKeys(propiedades.getProperty("file.FormUploadFile"));
         //         Thread.sleep(500);
         //         System.out.println("Se ha subido el archivo" + "\n");
 
@@ -1132,10 +1135,10 @@ public class Main {
 
         //     driver.get("https://demoqa.com");
         //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Alerts, Frame & Windows']"));
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
         //     menu.click();
         //     Thread.sleep(500);       
-        //     WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Browser Windows']"));
+        //     WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Windows")));
         //     submenu.click();
         //     Thread.sleep(500);
 
@@ -1210,10 +1213,10 @@ public class Main {
 
         //     driver.get("https://demoqa.com");
         //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Alerts, Frame & Windows']"));
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
         //     menu.click();
         //     Thread.sleep(500);       
-        //     WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Alerts']"));
+        //     WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Alerts")));
         //     submenu.click();
         //     Thread.sleep(500);
 
@@ -1296,10 +1299,10 @@ public class Main {
 
         //     driver.get("https://demoqa.com");
         //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Alerts, Frame & Windows']"));
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
         //     menu.click();
         //     Thread.sleep(500);       
-        //     WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Frames']"));
+        //     WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Frames")));
         //     submenu.click();
         //     Thread.sleep(500);
             
@@ -1337,10 +1340,10 @@ public class Main {
  
         //     driver.get("https://demoqa.com");
         //     Thread.sleep(500);
-        //     WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Alerts, Frame & Windows']"));
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
         //     menu.click();
         //     Thread.sleep(500);       
-        //     WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Nested Frames']"));
+        //     WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Nested_Frames")));
         //     submenu.click();
         //     Thread.sleep(500);
 
@@ -1350,7 +1353,7 @@ public class Main {
 
         //     // Extraer el Texto  <p>Parent frame</p>
 
-        //         WebElement parentFrame = driver.findElement(By.xpath("/html/body"));
+        //         WebElement parentFrame = driver.findElement(By.xpath(propiedades.getProperty("Frame.ParentFrame")));
         //         System.out.println(parentFrame.getText());
         //         System.out.println("Se ha extraido el texto del parent frame" + "\n");
 
@@ -1360,7 +1363,7 @@ public class Main {
 
         //     // Extraer el Texto  <p>Child Iframe</p>
 
-        //         System.out.println(driver.findElement(By.xpath("/html/body/p")).getText());
+        //         System.out.println(driver.findElement(By.xpath(propiedades.getProperty("Frame.ChildFrame"))).getText());
         //         System.out.println("Se ha extraido el texto del child frame frame" + "\n");
 
 
@@ -1376,10 +1379,10 @@ public class Main {
 
           //   driver.get("https://demoqa.com");
           //   Thread.sleep(500);
-          //   WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Alerts, Frame & Windows']"));
+          //   WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
           //   menu.click();
           //   Thread.sleep(500);       
-          //   WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Modal Dialogs']"));
+          //   WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Modal_Dialogs")));
           //   submenu.click();
           //   Thread.sleep(500);
 
@@ -1391,7 +1394,7 @@ public class Main {
 
           //   // Extraemos el texto
 
-          //       System.err.println(driver.findElement(By.xpath("//div[contains(text(),'This is a small modal')]")).getText());
+          //       System.err.println(driver.findElement(By.xpath(propiedades.getProperty("text.SmallModal"))).getText());
           //       System.out.println("Se ha extraido el texto del Small Modal" + "\n");
 
           //   // Hacer click al botón de Close
@@ -1408,7 +1411,7 @@ public class Main {
 
           //   // Extraemos el texto
 
-          //       System.err.println(driver.findElement(By.xpath("//p[contains(text(),'Lorem Ipsum')]")).getText());
+          //       System.err.println(driver.findElement(By.xpath(propiedades.getProperty("text.largeModal"))).getText());
           //       System.out.println("Se ha extraido el texto del Large Modal" + "\n");
 
           // } catch(Exception e){
@@ -1429,10 +1432,10 @@ public class Main {
 
           //   driver.get("https://demoqa.com");
           //   Thread.sleep(500);
-          //   WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Widgets']"));
+          //   WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
           //   menu.click();
           //   Thread.sleep(500);       
-          //   WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Date Picker']"));
+          //   WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Date_Picker")));
           //   submenu.click();
           //   Thread.sleep(500);
 
@@ -1446,7 +1449,7 @@ public class Main {
           //   // Hacer click en los meses
           //   // Hacer click en el mes January
 
-          //   WebElement month = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+          //   WebElement month = driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate")));
           //     Select monthSelect = new Select(month);
           //     monthSelect.selectByVisibleText("January");
           //     Thread.sleep(500);
@@ -1456,7 +1459,7 @@ public class Main {
           //   // Hacer click en los años
           //   // Hacer click en el año 2004
 
-          //   WebElement year = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
+          //   WebElement year = driver.findElement(By.xpath(propiedades.getProperty("select.YearDate")));
           //     Select yearSelect = new Select(year);
           //     yearSelect.selectByVisibleText("2004");
           //     Thread.sleep(500);
@@ -1465,7 +1468,7 @@ public class Main {
 
           //   // Hacer click en el dia 16
 
-          //       driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[6]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("select.DayDate"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se selecciona 16" + "\n");
 
@@ -1513,34 +1516,34 @@ public class Main {
 
           //   // Hacer click en los meses
 
-          //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div/span[1]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate&TimeSelect"))).click();
               
           //   // Hacer click en el mes January
 
-          //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate&Time"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se selecciona January" + "\n");
 
 
           //   // Hacer click en los años
 
-          //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div/span[1]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("select.YearDate&TimeSelect"))).click();
 
           //   // Hacer click en el año 2021
 
-          //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[10]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("select.YearDate&Time"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se selecciona 2021" + "\n");
 
           //   // Hacer click en el dia 16
 
-          //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[7]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("select.DayDate&Time"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se selecciona 16" + "\n");
 
           //   // Hacer click en la hora 9:15
 
-          //       driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[3]/div[2]/div/ul/li[45]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("select.TimeDate&Time"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se selecciona 9:15" + "\n");
 
@@ -1587,16 +1590,16 @@ public class Main {
             
           //   driver.get("https://demoqa.com");
           //   Thread.sleep(500);
-          //   WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Widgets']"));
+          //   WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
           //   menu.click();
           //   Thread.sleep(500);       
-          //   WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Slider']"));
+          //   WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Slider")));
           //   submenu.click();
           //   Thread.sleep(500);
 
           //   //Mover el slider de arriba a abajo hasta el final
 
-          //   WebElement slider = driver.findElement(By.xpath("//*[@id=\"sliderContainer\"]/div[1]/span/input"));
+          //   WebElement slider = driver.findElement(By.xpath(propiedades.getProperty("slider.Slider")));
           //   for (int i = 0; i < 25; i++) {
           //     slider.sendKeys(Keys.ARROW_LEFT);
           //   }
@@ -1618,10 +1621,10 @@ public class Main {
 
           //   driver.get("https://demoqa.com");
           //   Thread.sleep(500);
-          //   WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Widgets']"));
+          //   WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
           //   menu.click();
           //   Thread.sleep(500);       
-          //   WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Progress Bar']"));
+          //   WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Progress_Bar")));
           //   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submenu);
           //   Thread.sleep(500); 
           //   submenu.click();
@@ -1670,10 +1673,10 @@ public class Main {
 
           //   driver.get("https://demoqa.com");
           //   Thread.sleep(500);
-          //   WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Widgets']"));
+          //   WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
           //   menu.click();
           //   Thread.sleep(500);       
-          //   WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Menu']"));
+          //   WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Menu")));
           //   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submenu);
           //   Thread.sleep(500); 
           //   submenu.click();
@@ -1681,19 +1684,19 @@ public class Main {
 
 
           //   // hacer click en Main Item 1
-          //       driver.findElement(By.xpath("//ul[@id=\"nav\"]/li/a[contains(text(),'Main Item 1')]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("Menu.MainItem1"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se hace click al main item 1" + "\n");
           //   // hacer click en Main Item 2
 
-          //       WebElement subMenu2 = driver.findElement(By.xpath("//ul[@id=\"nav\"]/li/a[contains(text(),'Main Item 2')]"));
+          //       WebElement subMenu2 = driver.findElement(By.xpath(propiedades.getProperty("Menu.MainItem2")));
           //       subMenu2.click();
           //       Thread.sleep(500);
           //       System.out.println("se hace click al main item 2" + "\n");
 
           //   // hacer click en Main Item 3
 
-          //       driver.findElement(By.xpath("//ul[@id=\"nav\"]/li/a[contains(text(),'Main Item 3')]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("Menu.MainItem3"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se hace click al main item 3" + "\n");
 
@@ -1705,31 +1708,31 @@ public class Main {
 
           //   // Hacer click en sub item
             
-          //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("Menu.SubItem1"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se hace click al subItem" + "\n");
 
           //   // Hacer click en sub Item
 
-          //       driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/ul[1]/li[2]/a[1]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("Menu.SubItem2"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se hace click al subItem" + "\n");
 
           //   // Pasar por encima del SUB SUB List
 
-          //       driver.findElement(By.xpath("//ul[@id=\"nav\"]/li/ul/li/a[contains(text(),'SUB SUB LIST')]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("Menu.SubSubList"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se hace click al SUB SUB list" + "\n");
 
           //   // Hacer click en sub sub Item 1
 
-          //       driver.findElement(By.xpath("//ul[@id=\"nav\"]/li/ul/li/ul/li/a[contains(text(),'Sub Sub Item 1')]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("Menu.SubSubItem1"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se hace click al SUB SUB item1" + "\n");
 
           //   // Hacer click en sub sub Item 2
 
-          //       driver.findElement(By.xpath("//ul[@id=\"nav\"]/li/ul/li/ul/li/a[contains(text(),'Sub Sub Item 2')]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("Menu.SubSubItem2"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se hace click al SUB SUB item2" + "\n");
 
@@ -1746,11 +1749,11 @@ public class Main {
           //   driver.get("https://demoqa.com");
           //   Thread.sleep(500);
 
-          //   WebElement menu = driver.findElement(By.xpath("//h5[normalize-space()='Widgets']"));
+          //   WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
           //   menu.click();
           //   Thread.sleep(500);    
 
-          //   WebElement submenu = driver.findElement(By.xpath("//span[text() = 'Select Menu']"));
+          //   WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Select_Menu")));
           //   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submenu);
           //   Thread.sleep(500); 
           //   submenu.click();
@@ -1796,7 +1799,7 @@ public class Main {
 
           //   // Hacer click en la cruz del Blue
 
-          //       driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[1]/div[2]/div/div[2]")).click();
+          //       driver.findElement(By.xpath(propiedades.getProperty("close.CloseBlue"))).click();
           //       Thread.sleep(500);
           //       System.out.println("se desselecciona Green" + "\n");
 
@@ -1821,14 +1824,8 @@ public class Main {
           //     driver.quit();
           // }
     }
-    // public static boolean validarElemento(String xPath) throws IOException{
-    //   try {
-    //     WebElement element = wait.until(ExpectedCondition.visibilityOfElementLocated(By.xpath(xPath)));
-    //     Assert.assertTrue(element.isDisplayed());
-    //     return true;
-    //   } catch (Exception e) {
-    //     System.out.println("No existe el elemento");
-    //     return false;
-    //   }
-    // }
+
+    public void setup_test(){
+
+    }
 }

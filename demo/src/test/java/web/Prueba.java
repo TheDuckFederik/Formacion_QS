@@ -470,7 +470,7 @@ public class Prueba extends Main {
             System.out.println("Editamos el First Name");
             
             driver.findElement(By.xpath(config.getProperty("edLast"))).sendKeys("Usuario1");
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
             driver.findElement(By.xpath(config.getProperty("edLast"))).clear();
             System.out.println("Editamos el Last Name ");
@@ -496,12 +496,12 @@ public class Prueba extends Main {
             System.out.println("Le damos a submit");
             WebElement E_Submit = driver.findElement(By.xpath(config.getProperty("submit")));
             E_Submit.click();
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
             //buscar.sendKeys("User");
             System.out.println("Borramos usuario");
             driver.findElement(By.xpath(config.getProperty("BorrarUser"))).click();
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
             
         } catch(Exception e){
@@ -576,7 +576,7 @@ public class Prueba extends Main {
             
             WebElement Upload_donwload = driver.findElement(By.id("item-7"));
             Upload_donwload.click();
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
             WebElement download_btn = driver.findElement(By.id("downloadButton"));
             download_btn.click();
@@ -585,7 +585,7 @@ public class Prueba extends Main {
             WebElement subir_archivo = driver.findElement(By.id("uploadFile"));
             // Escribimos la ruta de nuestro archivo
             subir_archivo.sendKeys("C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png");
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
         } catch(Exception e){
             e.printStackTrace();
@@ -610,7 +610,7 @@ public class Prueba extends Main {
             
             WebElement Upload_donwload = driver.findElement(By.id("item-8"));
             Upload_donwload.click();
-            Thread.sleep(1000);
+            Thread.sleep(500);
             
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             WebElement primer_boton = wait.until(ExpectedConditions.elementToBeClickable(By.id("enableAfter")));
@@ -626,7 +626,7 @@ public class Prueba extends Main {
            
             WebElement boton_visible = driver.findElement(By.id("visibleAfter"));
             boton_visible.click();
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
         } catch(Exception e){
             e.printStackTrace();
@@ -648,10 +648,10 @@ public class Prueba extends Main {
             driver.get(config.getProperty("urlPrincipal"));
             // Entramos al Forms
             driver.findElement(By.xpath(config.getProperty("forms"))).click();
-            Thread.sleep(1000);
+            Thread.sleep(500);
             //Entramos al unico item
             driver.findElement(By.xpath(config.getProperty("PracticeForm"))).click();
-            Thread.sleep(1000);
+            Thread.sleep(500);
             
             //Introducimos el First Name
             driver.findElement(By.id("firstName")).sendKeys("FUser");
@@ -663,23 +663,23 @@ public class Prueba extends Main {
             // Para hace scroll 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", submit);
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
             // verificar que el correo es erroneo
             email.sendKeys("User");
             js.executeScript("arguments[0].scrollIntoView(true);", submit);
             submit.click();
 
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
             email.clear();
             email.sendKeys("User@");
 
-            Thread.sleep(1000);
+            Thread.sleep(500);
             js.executeScript("arguments[0].scrollIntoView(true);", submit);
             submit.click();
 
-            Thread.sleep(1000);
+            Thread.sleep(500);
             email.clear();
             js.executeScript("arguments[0].scrollIntoView(true);", submit);
             email.sendKeys("User@gmail.com");
@@ -953,12 +953,12 @@ public class Prueba extends Main {
             driver.findElement(By.xpath(config.getProperty("Frames"))).click();
             Thread.sleep(1000);
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0, 500);"); 
+            js.executeScript("window.scrollBy(0, 444);"); 
             // Entrar al primer Frame y coger el texto.
             driver.switchTo().frame(driver.findElements(By.tagName("iframe")).get(0));
 
             WebElement h1Element = driver.findElement(By.tagName("h1"));
-            
+            Thread.sleep(1000);
             String h1Text = h1Element.getText();
             System.out.println("El texto del h1 es: " + h1Text);
 

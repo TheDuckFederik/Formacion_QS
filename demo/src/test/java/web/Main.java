@@ -26,6 +26,7 @@ public class Main {
   static TakesScreenshot scrshot;
   static File srcFile;
   static File destFile;
+  // Para el conf
   static Properties propiedades = new Properties();
   static Properties config;
 
@@ -43,7 +44,7 @@ public class Main {
 
   @BeforeMethod
   public void setup_test() throws Exception {
-
+    // Aqui indicamos la ruta y creamos el objeto 
     config = new Properties();
     InputStream  input = new FileInputStream("src\\test\\java\\web\\selenium.conf");
     config.load(input);

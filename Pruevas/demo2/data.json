@@ -19,23 +19,24 @@
                 "rows":"5 rows"
         },
     "CP008":{
-                "firstname":"TestName",
-                "lastname":"TestLastName",
-                "emailbad":"TestEmail",
-                "emailgood":"test@email.com",
-                "mobilebad":"Test",
-                "mobilesingle":"1",
-                "mobilegood":"1231412412",
+                "firstName":"PruevaName",
+                "lastName":"PrevaLastName",
+                "emailbad":"PruevaEmail",
+                "emailgood":"Prueva@Email.com",
+                "mobilebad":"gshdretsgd",
+                "mobilesingle":"12345",
+                "mobilegood":"1234567890",
                 "dateofbirth":"01 Sept 2024",
-                "subject":"En",
+                "subject":"English",
+                "subject2":"Maths",
                 "department":"TestDepartment",
                 "upload":"C:/Users/alex.martinez.ext/Downloads/samplefile.jpeg",
-                "addresscurrent":"TestAddress",
+                "addresscurrent":"Carrer Hola",
                 "statesel":"NCR",
                 "citysel":"Delhi"
         },
     "CP010":{
-                "textbox":"Test"
+                "alertBox":"hola"
         },
     "CP014":{
                 "seldate":"06/06/2006",

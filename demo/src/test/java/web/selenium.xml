@@ -24,5 +24,36 @@
         <EditarDepart_Web_Tables_TC_004>IA</EditarDepart_Web_Tables_TC_004>
 
     </TC_004>
-
+    <TC_006>
+        <Archivo_Upload_Download_TC_006>C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png</Archivo_Upload_Download_TC_006>
+    </TC_006>
+    <TC_008>
+        <UserFirstName_Practice_Forms_TC_008>FUser</UserFirstName_Practice_Forms_TC_008>
+        <UserLastName_Practice_Forms_TC_008>LUser</UserLastName_Practice_Forms_TC_008>
+        <UserEmailIncorrecto_Practice_Forms_TC_008>User</UserEmailIncorrecto_Practice_Forms_TC_008>
+        <UserEmailIncorrecto2_Practice_Forms_TC_008>User@</UserEmailIncorrecto2_Practice_Forms_TC_008>
+        <UserEmailCorrecto_Practice_Forms_TC_008>User@gmail.com</UserEmailCorrecto_Practice_Forms_TC_008>
+        <Movil_Practice_Forms_TC_008>1234567890</Movil_Practice_Forms_TC_008>
+        <SubjectMath_Practice_Froms_TC_008>Math</SubjectMath_Practice_Froms_TC_008>
+        <SubjectAccounting_Practice_Forms_TC_008>Accounting</SubjectAccounting_Practice_Forms_TC_008>
+        <SubjectArts_Practice_Forms_TC_008>Arts</SubjectArts_Practice_Forms_TC_008>
+        <SubjectSoci_Practice_Forms_TC_008>Soci</SubjectSoci_Practice_Forms_TC_008>
+        <SubirArchivo_Practice_Froms_TC_008>C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png</SubirArchivo_Practice_Froms_TC_008>
+        <CurrentAddress_Practice_Forms_TC_008>Current Address</CurrentAddress_Practice_Forms_TC_008>
+        <State_Practice_Froms_TC_008>NCR</State_Practice_Froms_TC_008>
+        <City_Practice_Froms_TC_008>Noida</City_Practice_Froms_TC_008>
+    </TC_008>
+    <TC_010>
+        <MensajePromp_Alerts_TC_010>Hola</MensajePromp_Alerts_TC_010>
+    </TC_010>
+    <TC_018>
+        <PrimeraOpcionOption_Select_Menu_TC_018>Group 1, option 1</PrimeraOpcionOption_Select_Menu_TC_018>
+        <SegundaOpcionOption_Select_Menu_TC_018>Group 1, option 2</SegundaOpcionOption_Select_Menu_TC_018>
+        <PrimeraOpcionTitle_Select_Menu_TC_018>Mr.</PrimeraOpcionTitle_Select_Menu_TC_018>
+        <SegundaOpcionTilte_Select_Menu_TC_018>Mrs.</SegundaOpcionTilte_Select_Menu_TC_018>
+        <PrimerColor_Select_Menu_TC_018>Blue</PrimerColor_Select_Menu_TC_018>
+        <SegundoColor_Select_Menu_TC_018>Black</SegundoColor_Select_Menu_TC_018>
+        <TercerColor_Select_Menu_TC_018>Green</TercerColor_Select_Menu_TC_018>
+        <CuartoColor_Select_Menu_TC_018>Red</CuartoColor_Select_Menu_TC_018>
+    </TC_018>
 </Elements>

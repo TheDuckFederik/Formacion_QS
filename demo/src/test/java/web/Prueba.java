@@ -366,30 +366,30 @@ public class Prueba extends Main {
                 Thread.sleep(500);
 
                 WebElement Add_LastN = driver.findElement(By.id("lastName"));
-                Add_LastN.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
+                Add_LastN.sendKeys(Main.getTagValue("UserLastName_Web_Tables_TC_004", Main.doc) + i);
     
                 WebElement Add_Email = driver.findElement(By.id("userEmail"));
-                Add_Email.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
+                Add_Email.sendKeys(Main.getTagValue("UserEmailIncorrecto_Web_Tables_TC_004", Main.doc) + i);
                 Thread.sleep(500);
                 WebElement submit = driver.findElement(By.id("submit"));
                 submit.click();
                 Add_Email.clear();
                 
-                Add_Email.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
+                Add_Email.sendKeys(Main.getTagValue("UserEmailIncorrecto2_Web_Tables_TC_004", Main.doc));
                 submit.click();
                 Thread.sleep(500);
                 Add_Email.clear();
 
-                Add_Email.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc) + i);
+                Add_Email.sendKeys(Main.getTagValue("UserEmailCorrecto_Web_Tables_TC_004", Main.doc));
 
                 WebElement Add_Age = driver.findElement(By.id("age"));
-                Add_Age.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc));
+                Add_Age.sendKeys(Main.getTagValue("UserAge_Web_Tables_TC_004", Main.doc));
 
                 WebElement Add_Salary = driver.findElement(By.id("salary"));
-                Add_Salary.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc));
+                Add_Salary.sendKeys(Main.getTagValue("UserSalary_Web_Tables_TC_004", Main.doc));
 
                 WebElement Add_Department = driver.findElement(By.id("department"));
-                Add_Department.sendKeys(Main.getTagValue("UserFullName_Web_Tables_TC_004", Main.doc));
+                Add_Department.sendKeys(Main.getTagValue("UserDepartament_Web_Tables_TC_004", Main.doc));
                 Thread.sleep(500);
                 submit.click();
             }
@@ -470,29 +470,29 @@ public class Prueba extends Main {
             driver.findElement(By.xpath(config.getProperty("edFirst"))).clear();
             System.out.println("Editamos el First Name");
             
-            driver.findElement(By.xpath(config.getProperty("edLast"))).sendKeys("Usuario1");
+            driver.findElement(By.xpath(config.getProperty("edLast"))).sendKeys(Main.getTagValue("EditarFirstName_Web_Tables_TC_004", Main.doc));
             Thread.sleep(500);
 
             driver.findElement(By.xpath(config.getProperty("edLast"))).clear();
             System.out.println("Editamos el Last Name ");
-            driver.findElement(By.xpath(config.getProperty("edLast"))).sendKeys("Lusuario1");
+            driver.findElement(By.xpath(config.getProperty("edLast"))).sendKeys(Main.getTagValue("EditarLastName_Web_Tables_TC_004", Main.doc));
 
             driver.findElement(By.xpath(config.getProperty("edEmail"))).clear();
             System.out.println("Editamos el Email");
-            driver.findElement(By.xpath(config.getProperty("edEmail"))).sendKeys("usuario@gmail.com");
+            driver.findElement(By.xpath(config.getProperty("edEmail"))).sendKeys(Main.getTagValue("EditarEmail_Web_Tables_TC_004", Main.doc));
             Thread.sleep(500);
 
             driver.findElement(By.xpath(config.getProperty("edAge"))).clear();
             System.out.println("Editamos el año");
-            driver.findElement(By.xpath(config.getProperty("edAge"))).sendKeys("22");
+            driver.findElement(By.xpath(config.getProperty("edAge"))).sendKeys(Main.getTagValue("EditarAge_Web_Tables_TC_004", Main.doc));
 
             driver.findElement(By.xpath(config.getProperty("edSalary"))).clear();
             System.out.println("Editamos el salario");
-            driver.findElement(By.xpath(config.getProperty("edSalary"))).sendKeys("520");
+            driver.findElement(By.xpath(config.getProperty("edSalary"))).sendKeys(Main.getTagValue("EditarSalary_Web_Tables_TC_004", Main.doc));
 
             driver.findElement(By.xpath(config.getProperty("edDep"))).clear();
             System.out.println("Editamos el departamento");
-            driver.findElement(By.xpath(config.getProperty("edDep"))).sendKeys("Depart");
+            driver.findElement(By.xpath(config.getProperty("edDep"))).sendKeys(Main.getTagValue("EditarDepart_Web_Tables_TC_004", Main.doc));
             
             System.out.println("Le damos a submit");
             WebElement E_Submit = driver.findElement(By.xpath(config.getProperty("submit")));
@@ -585,7 +585,7 @@ public class Prueba extends Main {
 
             WebElement subir_archivo = driver.findElement(By.id("uploadFile"));
             // Escribimos la ruta de nuestro archivo
-            subir_archivo.sendKeys("C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png");
+            subir_archivo.sendKeys(Main.getTagValue("Archivo_Upload_Download_TC_006", Main.doc));
             Thread.sleep(500);
 
         } catch(Exception e){
@@ -655,8 +655,8 @@ public class Prueba extends Main {
             Thread.sleep(500);
             
             //Introducimos el First Name
-            driver.findElement(By.id("firstName")).sendKeys("FUser");
-            driver.findElement(By.id("lastName")).sendKeys("LUser");
+            driver.findElement(By.id("firstName")).sendKeys(Main.getTagValue("UserFirstName_Practice_Forms_TC_008", Main.doc));
+            driver.findElement(By.id("lastName")).sendKeys(Main.getTagValue("UserLastName_Practice_Forms_TC_008", Main.doc));
             WebElement email =driver.findElement(By.id("userEmail"));
             
             WebElement submit = driver.findElement(By.id("submit"));
@@ -667,14 +667,14 @@ public class Prueba extends Main {
             Thread.sleep(500);
 
             // verificar que el correo es erroneo
-            email.sendKeys("User");
+            email.sendKeys(Main.getTagValue("UserEmailIncorrecto_Practice_Forms_TC_008", Main.doc));
             js.executeScript("arguments[0].scrollIntoView(true);", submit);
             submit.click();
 
             Thread.sleep(500);
 
             email.clear();
-            email.sendKeys("User@");
+            email.sendKeys(Main.getTagValue("UserEmailIncorrecto2_Practice_Forms_TC_008", Main.doc));
 
             Thread.sleep(500);
             js.executeScript("arguments[0].scrollIntoView(true);", submit);
@@ -683,7 +683,7 @@ public class Prueba extends Main {
             Thread.sleep(500);
             email.clear();
             js.executeScript("arguments[0].scrollIntoView(true);", submit);
-            email.sendKeys("User@gmail.com");
+            email.sendKeys(Main.getTagValue("UserEmailCorrecto_Practice_Forms_TC_008", Main.doc));
             Thread.sleep(500);
 
             // Elegimos el genero
@@ -697,7 +697,7 @@ public class Prueba extends Main {
             System.out.println("Clicamos al Male");
 
             // Escribimos el mobile
-            driver.findElement(By.id("userNumber")).sendKeys("1234567890");
+            driver.findElement(By.id("userNumber")).sendKeys(Main.getTagValue("Movil_Practice_Forms_TC_008", Main.doc));
 
             // Fecha de nacimiento
             WebElement fecha = driver.findElement(By.id("dateOfBirthInput"));
@@ -719,13 +719,13 @@ public class Prueba extends Main {
             driver.findElement(By.xpath(config.getProperty("EscoDia"))).click();
 
             // Escogeremos el Subject
-            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys("Math");
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Main.getTagValue("SubjectMath_Practice_Froms_TC_008", Main.doc));
             driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Keys.RETURN);
-            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys("Accounting");
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Main.getTagValue("SubjectAccounting_Practice_Forms_TC_008", Main.doc));
             driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Keys.RETURN);
-            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys("Arts");
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Main.getTagValue("SubjectArts_Practice_Forms_TC_008", Main.doc));
             driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Keys.RETURN);
-            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys("Soci");
+            driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Main.getTagValue("SubjectSoci_Practice_Forms_TC_008", Main.doc));
             driver.findElement(By.xpath(config.getProperty("Subject"))).sendKeys(Keys.RETURN);
             Thread.sleep(2000);
 
@@ -751,17 +751,17 @@ public class Prueba extends Main {
             // selecionamos el archivo
             WebElement subir_archivo = driver.findElement(By.id("uploadPicture"));
             // Escribimos la ruta de nuestro archivo
-            subir_archivo.sendKeys("C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png");
+            subir_archivo.sendKeys(Main.getTagValue("SubirArchivo_Practice_Froms_TC_008", Main.doc));
             Thread.sleep(1000);
 
             // Current Addres
-            driver.findElement(By.id("currentAddress")).sendKeys("Current Address");
+            driver.findElement(By.id("currentAddress")).sendKeys(Main.getTagValue("CurrentAddress_Practice_Forms_TC_008", Main.doc));
             // State and City
             js.executeScript("arguments[0].scrollIntoView(true);", submit);
-            driver.findElement(By.id("react-select-3-input")).sendKeys("NCR");
+            driver.findElement(By.id("react-select-3-input")).sendKeys(Main.getTagValue("State_Practice_Froms_TC_008", Main.doc));
             driver.findElement(By.id("react-select-3-input")).sendKeys(Keys.RETURN);
             Thread.sleep(1000);
-            driver.findElement(By.id("react-select-4-input")).sendKeys("Noida");
+            driver.findElement(By.id("react-select-4-input")).sendKeys(Main.getTagValue("City_Practice_Froms_TC_008", Main.doc));
             driver.findElement(By.id("react-select-4-input")).sendKeys(Keys.RETURN);
             Thread.sleep(1000);
             submit.click();
@@ -913,8 +913,8 @@ public class Prueba extends Main {
 
             // Cambiar el foco a la alerta y enviar el texto
             Alert promptAlert = driver.switchTo().alert();
-            promptAlert.sendKeys("Holaa");
-            
+            promptAlert.sendKeys(Main.getTagValue("MensajePromp_Alerts_TC_010", Main.doc)); 
+
             Thread.sleep(1000);
             // Aceptar la alerta
             driver.switchTo().alert().accept();
@@ -924,7 +924,7 @@ public class Prueba extends Main {
             Thread.sleep(1000);
 
             // Cambiar el foco a la alerta nuevamente y enviar el texto
-            driver.switchTo().alert().sendKeys("Holaa");
+            driver.switchTo().alert().sendKeys(Main.getTagValue("MensajePromp_Alerts_TC_010", Main.doc));
 
             // Cancelar la alerta
             driver.switchTo().alert().dismiss();
@@ -1266,15 +1266,15 @@ public class Prueba extends Main {
             entrar.click();
             // Introducios texto en el primer campo 
             Thread.sleep(500);
-            driver.findElement(By.id("react-select-2-input")).sendKeys("Group 1, option 1"+ Keys.ENTER);
+            driver.findElement(By.id("react-select-2-input")).sendKeys(Main.getTagValue("PrimeraOpcionOption_Select_Menu_TC_018", Main.doc) + Keys.ENTER);
             Thread.sleep(500);
-            driver.findElement(By.id("react-select-2-input")).sendKeys("Group 1, option 2"+ Keys.ENTER);
+            driver.findElement(By.id("react-select-2-input")).sendKeys(Main.getTagValue("SegundaOpcionOption_Select_Menu_TC_018", Main.doc) + Keys.ENTER);
             Thread.sleep(500);
 
             // Introducimos texto en el segundo campo
-            driver.findElement(By.id("react-select-3-input")).sendKeys("Mr."+ Keys.ENTER);
+            driver.findElement(By.id("react-select-3-input")).sendKeys(Main.getTagValue("PrimeraOpcionTitle_Select_Menu_TC_018", Main.doc)+ Keys.ENTER);
             Thread.sleep(500);
-            driver.findElement(By.id("react-select-3-input")).sendKeys("Mrs."+ Keys.ENTER);
+            driver.findElement(By.id("react-select-3-input")).sendKeys(Main.getTagValue("SegundaOpcionTilte_Select_Menu_TC_018", Main.doc)+ Keys.ENTER);
 
             // Elegimos color 
             driver.findElement(By.xpath(config.getProperty("PrimerColor"))).click();
@@ -1285,10 +1285,10 @@ public class Prueba extends Main {
             // Seleccion multiple
             WebElement seleccionMultiple = driver.findElement(By.id("react-select-4-input"));
             js.executeScript("arguments[0].scrollIntoView(true);", seleccionMultiple);
-            seleccionMultiple.sendKeys("Blue"+ Keys.ENTER);
-            seleccionMultiple.sendKeys("Black"+ Keys.ENTER);
-            seleccionMultiple.sendKeys("Green"+ Keys.ENTER);
-            seleccionMultiple.sendKeys("Red"+ Keys.ENTER);
+            seleccionMultiple.sendKeys(Main.getTagValue("PrimerColor_Select_Menu_TC_018", Main.doc) + Keys.ENTER);
+            seleccionMultiple.sendKeys(Main.getTagValue("SegundoColor_Select_Menu_TC_018", Main.doc) + Keys.ENTER);
+            seleccionMultiple.sendKeys(Main.getTagValue("TercerColor_Select_Menu_TC_018", Main.doc) + Keys.ENTER);
+            seleccionMultiple.sendKeys(Main.getTagValue("CuartoColor_Select_Menu_TC_018", Main.doc) + Keys.ENTER);
             Thread.sleep(500);
             // Le damos a la cruz 
             driver.findElement(By.xpath(config.getProperty("Cruz"))).click();

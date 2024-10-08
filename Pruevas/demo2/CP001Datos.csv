@@ -1,6 +1,6 @@
 FullName,Email,CurrentAddress,PermanentAddress
-Holaquetal,correomalo,hola,hola
-,correu@correcte.com
+Holaquetal,correu@correcte.com,hola,hola
+,correomalo
 FirstName,LastName,Email,Age,Salary,Department,NombresFiltros,Rows
 PruevaNombre,PruevaApellido,Correo@correcto.com,23,1200,poidf,Kierra,2
 ,,CorreoIncorrecto,asdf,aqwer

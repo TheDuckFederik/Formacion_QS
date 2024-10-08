@@ -49,82 +49,85 @@ public class Main {
         WebDriver driver = new ChromeDriver(chromeOptions);
         
         //CASO DE Prueba 001
-      //   try{           
+        // try{       
 
-      //       CPD cpdList = new CPD();
-      //       List<String[]> datos = cpdList.Datos();
-      //       String[] datoRequerido = datos.get(1);
-      //       String[] datosIncorrectos = datos.get(2);
+        //     MyReader jsonReader = new MyReader();
+
+        //     // datosPrueba = gson.fromJson(reader, DatosPrueba.class);
+        //     CPD cpdList = new CPD();
+        //     List<String[]> datos = cpdList.Datos();
+        //     String[] datoRequerido = datos.get(1);
+        //     String[] datosIncorrectos = datos.get(2);
 
 
-      //       driver.get("https://demoqa.com");
-      //       Thread.sleep(500);
-      //       WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
-      //       menu.click();
-      //       Thread.sleep(500);
-      //       WebElement submenu = driver.findElement(By.id("item-0"));
-      //       submenu.click();
-      //       Thread.sleep(500);
+        //     driver.get("https://demoqa.com");
+        //     Thread.sleep(500);
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.elements")));
+        //     menu.click();
+        //     Thread.sleep(500);
+        //     WebElement submenu = driver.findElement(By.id("item-0"));
+        //     submenu.click();
+        //     Thread.sleep(500);
 
-      //      // Rellenar el apartado Full Name
+        //    // Rellenar el apartado Full Name
 
-      //       WebElement userName = driver.findElement(By.id("userName"));
-      //       userName.sendKeys(datoRequerido[0]);
-      //       System.out.println("Se ha escrito el username");
-      //       Thread.sleep(500);
-      //       // Introducir un Correo electronico erroneo
+        //     WebElement userName = driver.findElement(By.id("userName"));
+        //     userName.sendKeys(jsonReader.dato("CP001","fullname"));
+        //     System.out.println("Se ha escrito el username");
+        //     Thread.sleep(500);
+        //     // Introducir un Correo electronico erroneo
 
-      //       WebElement email = driver.findElement(By.id("userEmail"));
-      //       email.sendKeys(datoRequerido[1]);
-      //       System.out.println("Se ha escrito el email incorrecto");
-      //       Thread.sleep(500);
+        //     WebElement email = driver.findElement(By.id("userEmail"));
+        //     email.sendKeys(jsonReader.dato("CP001","correoMalo"));
+        //     System.out.println("Se ha escrito el email incorrecto");
+        //     Thread.sleep(500);
 
-      //       //Pulsar el botón de submit
+        //     //Pulsar el botón de submit
 
-      //       WebElement submit = driver.findElement(By.id("submit"));
-      //       ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submit);
-      //       submit.click();
-      //       Thread.sleep(500);
+        //     WebElement submit = driver.findElement(By.id("submit"));
+        //     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submit);
+        //     submit.click();
+        //     Thread.sleep(500);
 
-      //       //Corregir el correo incorrecto
-      //       email.clear();
-      //       email.sendKeys(datosIncorrectos[1]);
-      //       System.out.println("Se ha escrito el email correcto");
-      //       Thread.sleep(500);
+        //     //Corregir el correo correcto
+        //     email.clear();
+        //     email.sendKeys(datoRequerido[1]);
+        //     System.out.println("Se ha escrito el email correcto");
+        //     Thread.sleep(500);
 
-      //       //Rellenar el apartado de Current 
+        //     //Rellenar el apartado de Current 
             
-      //       WebElement currentAddress = driver.findElement(By.id("currentAddress"));
-      //       currentAddress.sendKeys(datoRequerido[2]);
-      //       System.out.println("Se ha escrito la dirección");
-      //       Thread.sleep(500);
+        //     WebElement currentAddress = driver.findElement(By.id("currentAddress"));
+        //     currentAddress.sendKeys(jsonReader.dato("CP001","currAddress"));
+        //     System.out.println("Se ha escrito la dirección");
+        //     Thread.sleep(500);
 
-      //       //Rellenar el apartado de Permanent Address
+        //     //Rellenar el apartado de Permanent Address
 
-      //       WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
-      //       permanentAddress.sendKeys(datoRequerido[3]);
-      //       System.out.println("Se ha escrito la dirección permanente");
-      //       Thread.sleep(500);
+        //     WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
+        //     permanentAddress.sendKeys(datoRequerido[3]);
+        //     System.out.println("Se ha escrito la dirección permanente");
+        //     Thread.sleep(500);
 
-      //       //Hacemos click en el botón de submit
+        //     //Hacemos click en el botón de submit
 
-      //       submit.click();
+        //     submit.click();
 
-      //       //Recoger los datos que la pagina nos ha proporcionado
+        //     //Recoger los datos que la pagina nos ha proporcionado
 
-      //       WebElement data = driver.findElement(By.xpath(propiedades.getProperty("textbox.result")));
-      //       String dataText = data.getText();
+        //     WebElement data = driver.findElement(By.xpath(propiedades.getProperty("textbox.result")));
+        //     String dataText = data.getText();
 
-      //       //Imprimimos los datos por pantalla
+        //     //Imprimimos los datos por pantalla
 
-      //       System.out.println(dataText);
+        //     System.out.println(dataText);
             
             
-      //   } catch(Exception e){
-      //       e.printStackTrace();
-      //   } finally{
-      //       driver.quit();
-      //   }
+        // } catch(Exception e){
+        //     e.printStackTrace();
+        // } finally{
+        //     driver.quit();
+        // }
 
 
               //CASO DE Prueba 002
@@ -393,6 +396,8 @@ public class Main {
       //CASO DE Prueba 004
         // try {
 
+        //     MyReader jsonReader = new MyReader();
+
         //     CPD cpdList = new CPD();
         //     List<String[]> datos = cpdList.Datos();
         //     String[] datoRequerido = datos.get(4);
@@ -419,42 +424,42 @@ public class Main {
 
         //     WebElement firstNameAdd = driver.findElement(By.id("firstName"));
         //     System.out.println(driver.findElement(By.id("firstName")).getCssValue("class"));
-        //     firstNameAdd.sendKeys(datoRequerido[0]);
+        //     firstNameAdd.sendKeys(jsonReader.dato("CP004", "firstnameAdd"));
         //     Thread.sleep(500);
         //     System.out.println("se añade el nombre"+"\n");
 
         //     // //Añadimos el apellido
             
         //     WebElement lastNameAdd = driver.findElement(By.id("lastName"));
-        //     lastNameAdd.sendKeys(datoRequerido[1]);
+        //     lastNameAdd.sendKeys(jsonReader.dato("CP004", "lastnameAdd"));
         //     Thread.sleep(500);
         //     System.out.println("se añade el apellido"+"\n");
 
         //     //Añadimos un correo incorrecto
             
         //     WebElement emailAdd = driver.findElement(By.id("userEmail"));
-        //     emailAdd.sendKeys(datosIncorrectos[2]);
+        //     emailAdd.sendKeys(jsonReader.dato("CP004", "emailbadAdd"));
         //     Thread.sleep(500);
         //     System.out.println("se añade un correao incorrecto"+"\n");
 
         //     //Añadimos una edad incorrecta
 
         //     WebElement ageAdd = driver.findElement(By.id("age"));
-        //     ageAdd.sendKeys(datosIncorrectos[3]);
+        //     ageAdd.sendKeys(jsonReader.dato("CP004", "agebadAdd"));
         //     Thread.sleep(500);
         //     System.out.println("se añade una edad incorrecta"+"\n");
 
         //     //Añadimos un salario incorrecto
 
         //     WebElement salaryAdd = driver.findElement(By.id("salary"));
-        //     salaryAdd.sendKeys(datosIncorrectos[4]);
+        //     salaryAdd.sendKeys(jsonReader.dato("CP004", "salarybadAdd"));
         //     Thread.sleep(500);
         //     System.out.println("se añade un salario incorrecto"+"\n");
 
         //     //Añadimos un departamento
 
         //     WebElement departmentAdd = driver.findElement(By.id("department"));
-        //     departmentAdd.sendKeys(datoRequerido[5]);
+        //     departmentAdd.sendKeys(jsonReader.dato("CP004", "departmentAdd"));
         //     Thread.sleep(500);
         //     System.out.println("se añade un departamento"+"\n");
 
@@ -468,7 +473,7 @@ public class Main {
         //     //Introducimos un email Correcto
 
         //     emailAdd.clear();
-        //     emailAdd.sendKeys(datoRequerido[2]);
+        //     emailAdd.sendKeys(jsonReader.dato("CP004", "emailgoodAdd"));
         //     Thread.sleep(500);
         //     System.out.println("se pone un email correcto"+"\n");
 
@@ -481,14 +486,14 @@ public class Main {
         //     //Introducimos una edad correcta
 
         //     ageAdd.clear();
-        //     ageAdd.sendKeys(datoRequerido[3]);
+        //     ageAdd.sendKeys(jsonReader.dato("CP004", "agegoodAdd"));
         //     Thread.sleep(500);
         //     System.out.println("Introducimos una edad correcta"+"\n");
 
         //     //Introducimos un salario correcto
 
         //     salaryAdd.clear();
-        //     salaryAdd.sendKeys(datoRequerido[4]);
+        //     salaryAdd.sendKeys(jsonReader.dato("CP004", "salarygoodAdd"));
         //     Thread.sleep(500);
         //     System.out.println("Introducimos un salario correcto"+"\n");
 
@@ -725,22 +730,22 @@ public class Main {
         //           addUser.click();
     
         //           firstNameAdd = driver.findElement(By.id("firstName"));
-        //           firstNameAdd.sendKeys(datoRequerido[0]);
+        //           firstNameAdd.sendKeys(jsonReader.dato("CP004", "firstnameAdd"));
                 
         //           lastNameAdd = driver.findElement(By.id("lastName"));
-        //           lastNameAdd.sendKeys(datoRequerido[1]);
+        //           lastNameAdd.sendKeys(jsonReader.dato("CP004", "lastnameAdd"));
     
         //           departmentAdd = driver.findElement(By.id("department"));
-        //           departmentAdd.sendKeys("poidf");
+        //           departmentAdd.sendKeys(jsonReader.dato("CP004", "departmentAdd"));
                   
         //           emailAdd = driver.findElement(By.id("userEmail"));
-        //           emailAdd.sendKeys(datoRequerido[2]);
+        //           emailAdd.sendKeys(jsonReader.dato("CP004", "emailgoodAdd"));
     
         //           ageAdd = driver.findElement(By.id("age"));
-        //           ageAdd.sendKeys(datoRequerido[3]);
+        //           ageAdd.sendKeys(jsonReader.dato("CP004", "agegoodAdd"));
                   
         //           salaryAdd = driver.findElement(By.id("salary"));
-        //           salaryAdd.sendKeys(datoRequerido[4]);
+        //           salaryAdd.sendKeys(jsonReader.dato("CP004", "salarygoodAdd"));
 
         //           submitAdd = driver.findElement(By.id("submit"));
         //           submitAdd.click();
@@ -754,7 +759,7 @@ public class Main {
 
         //     WebElement rows = driver.findElement(By.xpath(propiedades.getProperty("select.Rows")));
         //     Select rowsSelect = new Select(rows);
-        //     rowsSelect.selectByVisibleText("5 rows");
+        //     rowsSelect.selectByVisibleText(jsonReader.dato("CP004", "rows"));
         //     Thread.sleep(500);
         //     System.out.println("se acotaros las lineas"+"\n");
 
@@ -929,206 +934,208 @@ public class Main {
 
 
       //CASO DE Prueba 008
-        // try{
+        try{
 
-        //     CPD cpdList = new CPD();
-        //     List<String[]> datos = cpdList.Datos();
-        //     String[] datoRequerido = datos.get(7);
-        //     String[] datosIncorrectos = datos.get(8);
+            MyReader jsonReader = new MyReader();
 
-        //         driver.get("https://demoqa.com");
-        //         Thread.sleep(500);
-        //         WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.forms")));
-        //         menu.click();
-        //         Thread.sleep(500);
+            CPD cpdList = new CPD();
+            List<String[]> datos = cpdList.Datos();
+            String[] datoRequerido = datos.get(7);
+            String[] datosIncorrectos = datos.get(8);
+
+                driver.get("https://demoqa.com");
+                Thread.sleep(500);
+                WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.forms")));
+                menu.click();
+                Thread.sleep(500);
                 
-        //         WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.forms")));
-        //         submenu.click();
-        //         Thread.sleep(500);
+                WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.forms")));
+                submenu.click();
+                Thread.sleep(500);
 
-        //         // //Hacemos click al boton de submit
+                // //Hacemos click al boton de submit
 
-        //         WebElement submitForm = driver.findElement(By.id("submit"));
-        //         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitForm);
-        //         Thread.sleep(500); 
-        //         submitForm.click();
-        //         Thread.sleep(500);
-        //         System.out.println("se ha hecho click en submit" + "\n");
+                WebElement submitForm = driver.findElement(By.id("submit"));
+                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitForm);
+                Thread.sleep(500); 
+                submitForm.click();
+                Thread.sleep(500);
+                System.out.println("se ha hecho click en submit" + "\n");
 
-        //         //Rellenamos el campo firstName
+                //Rellenamos el campo firstName
 
-        //         WebElement firstNameForm = driver.findElement(By.id("firstName"));
-        //         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstNameForm);
-        //         Thread.sleep(500); 
-        //         firstNameForm.sendKeys(datoRequerido[0]);
-        //         Thread.sleep(500);
-        //         System.out.println("se ha rellenado firstname" + "\n");
+                WebElement firstNameForm = driver.findElement(By.id("firstName"));
+                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstNameForm);
+                Thread.sleep(500); 
+                firstNameForm.sendKeys(datoRequerido[0]);
+                Thread.sleep(500);
+                System.out.println("se ha rellenado firstname" + "\n");
                 
-        //         //Rellenamos el campo Last Name
+                //Rellenamos el campo Last Name
 
-        //         WebElement lastNameForm = driver.findElement(By.id("lastName"));
-        //         lastNameForm.sendKeys(datoRequerido[1]);
-        //         Thread.sleep(500);
-        //         System.out.println("se ha rellenado lastName" + "\n");
+                WebElement lastNameForm = driver.findElement(By.id("lastName"));
+                lastNameForm.sendKeys(datoRequerido[1]);
+                Thread.sleep(500);
+                System.out.println("se ha rellenado lastName" + "\n");
 
-        //         //Rellenamos el campo Email
+                //Rellenamos el campo Email
 
-        //         WebElement emailForm = driver.findElement(By.id("userEmail"));
-        //         emailForm.sendKeys(datosIncorrectos[3]);
-        //         Thread.sleep(1500);
-        //         System.out.println("se ha rellenado email erroneamente" + "\n");
+                WebElement emailForm = driver.findElement(By.id("userEmail"));
+                emailForm.sendKeys(datosIncorrectos[3]);
+                Thread.sleep(1500);
+                System.out.println("se ha rellenado email erroneamente" + "\n");
 
-        //         //Hacer click en el boton de submit
+                //Hacer click en el boton de submit
 
-        //         submitForm.click();
-        //         System.out.println("se ha hecho click en submit" + "\n");
+                submitForm.click();
+                System.out.println("se ha hecho click en submit" + "\n");
 
-        //         //Rellenamos el campo Email carrectamente
+                //Rellenamos el campo Email carrectamente
 
-        //         emailForm.clear();
-        //         emailForm.sendKeys(datoRequerido[2]);
-        //         Thread.sleep(500);
-        //         System.out.println("se ha rellenado email correctamente" + "\n");
+                emailForm.clear();
+                emailForm.sendKeys(datoRequerido[2]);
+                Thread.sleep(500);
+                System.out.println("se ha rellenado email correctamente" + "\n");
 
-        //         //Hacer click en el radio button de Male
+                //Hacer click en el radio button de Male
 
-        //         WebElement maleRadioButtonForm = driver.findElement(By.xpath(propiedades.getProperty("radioButton.Male")));
-        //         maleRadioButtonForm.click();
-        //         Thread.sleep(500);
-        //         System.out.println("se hizo click en Male" + "\n");
-
-
-        //         //Rellenamos el campo Mobile con 10 letras
-
-        //         WebElement mobileForm = driver.findElement(By.id("userNumber"));
-        //         mobileForm.sendKeys(datosIncorrectos[4]);
-        //         Thread.sleep(500);
-        //         System.out.println("se ha rellenado Mobile con 10 letras" + "\n");
+                WebElement maleRadioButtonForm = driver.findElement(By.xpath(propiedades.getProperty("radioButton.Male")));
+                maleRadioButtonForm.click();
+                Thread.sleep(500);
+                System.out.println("se hizo click en Male" + "\n");
 
 
-        //         //Rellenamos el campo mobile con 5 numeros
+                //Rellenamos el campo Mobile con 10 letras
 
-        //         mobileForm.clear();
-        //         mobileForm.sendKeys(datosIncorrectos[5]);
-        //         Thread.sleep(500);
-        //         System.out.println("Rellenamos el campo mobile con 5 numeros" + "\n");
+                WebElement mobileForm = driver.findElement(By.id("userNumber"));
+                mobileForm.sendKeys(datosIncorrectos[4]);
+                Thread.sleep(500);
+                System.out.println("se ha rellenado Mobile con 10 letras" + "\n");
 
 
-        //         //Hacemos click al boton de submit
+                //Rellenamos el campo mobile con 5 numeros
 
-        //         submitForm.click();
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha hecho click al boton de submit" + "\n");
+                mobileForm.clear();
+                mobileForm.sendKeys(datosIncorrectos[5]);
+                Thread.sleep(500);
+                System.out.println("Rellenamos el campo mobile con 5 numeros" + "\n");
 
-        //         //Rellenamos el campo Mobile con 10 numeros
 
-        //         mobileForm.clear();
-        //         mobileForm.sendKeys(datoRequerido[3]);
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha hecho click al boton de submit" + "\n");
+                //Hacemos click al boton de submit
 
-        //         //Hacer click en date of birth
+                submitForm.click();
+                Thread.sleep(500);
+                System.out.println("Se ha hecho click al boton de submit" + "\n");
 
-        //         WebElement dateOfBirth = driver.findElement(By.id("dateOfBirthInput"));
-        //         dateOfBirth.click();
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha hecho click a date of birth" + "\n");
+                //Rellenamos el campo Mobile con 10 numeros
+
+                mobileForm.clear();
+                mobileForm.sendKeys(datoRequerido[3]);
+                Thread.sleep(500);
+                System.out.println("Se ha hecho click al boton de submit" + "\n");
+
+                //Hacer click en date of birth
+
+                WebElement dateOfBirth = driver.findElement(By.id("dateOfBirthInput"));
+                dateOfBirth.click();
+                Thread.sleep(500);
+                System.out.println("Se ha hecho click a date of birth" + "\n");
                 
-        //         //Hacer click en los meses Y seleccionar Enero
+                //Hacer click en los meses Y seleccionar Enero
 
-        //         WebElement monthForm = driver.findElement(By.xpath(propiedades.getProperty("Form.MonthForm")));
-        //         Select monthSelect = new Select(monthForm);
-        //         monthSelect.selectByVisibleText("January");
-        //         Thread.sleep(500);
-        //         System.out.println("se ha seleccionado january" + "\n");
+                WebElement monthForm = driver.findElement(By.xpath(propiedades.getProperty("Form.MonthForm")));
+                Select monthSelect = new Select(monthForm);
+                monthSelect.selectByVisibleText("January");
+                Thread.sleep(500);
+                System.out.println("se ha seleccionado january" + "\n");
 
-        //         //Hacer click en los años Y seleccionar 2004
+                //Hacer click en los años Y seleccionar 2004
 
-        //         WebElement yearForm = driver.findElement(By.xpath(propiedades.getProperty("Form.YearForm")));
-        //         Select yearSelect = new Select(yearForm);
-        //         yearSelect.selectByVisibleText("2004");
-        //         Thread.sleep(500);    
-        //         System.out.println("Se ha seleccionado 2004" + "\n");
+                WebElement yearForm = driver.findElement(By.xpath(propiedades.getProperty("Form.YearForm")));
+                Select yearSelect = new Select(yearForm);
+                yearSelect.selectByVisibleText("2004");
+                Thread.sleep(500);    
+                System.out.println("Se ha seleccionado 2004" + "\n");
                 
-        //         //Hacer click en 16
+                //Hacer click en 16
 
-        //         WebElement dayForm = driver.findElement(By.xpath(propiedades.getProperty("Form.DayForm")));
-        //         dayForm.click();
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha seleccionado el dia 16" + "\n");
+                WebElement dayForm = driver.findElement(By.xpath(propiedades.getProperty("Form.DayForm")));
+                dayForm.click();
+                Thread.sleep(500);
+                System.out.println("Se ha seleccionado el dia 16" + "\n");
 
-        //         //Rellenar el campo Subjects
+                //Rellenar el campo Subjects
 
-        //         WebElement subjectsForm = driver.findElement(By.id("subjectsInput"));
-        //         subjectsForm.sendKeys(datoRequerido[5]);
-        //         subjectsForm.sendKeys(Keys.ENTER);
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha rellenado el campo subjects una vez" + "\n");
+                WebElement subjectsForm = driver.findElement(By.id("subjectsInput"));
+                subjectsForm.sendKeys(datoRequerido[5]);
+                subjectsForm.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("Se ha rellenado el campo subjects una vez" + "\n");
 
-        //         //Rellenar el campo subjects
+                //Rellenar el campo subjects
 
-        //         subjectsForm.sendKeys(datoRequerido[6]);
-        //         subjectsForm.sendKeys(Keys.ENTER);
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha rellenado el campo subjects dos vezes" + "\n");
+                subjectsForm.sendKeys(datoRequerido[6]);
+                subjectsForm.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("Se ha rellenado el campo subjects dos vezes" + "\n");
 
-        //         //Hacer click en Sports, Reading y Music
+                //Hacer click en Sports, Reading y Music
 
-        //         WebElement sports = driver.findElement(By.xpath(propiedades.getProperty("Form.Sports")));
-        //         WebElement reading = driver.findElement(By.xpath(propiedades.getProperty("Form.Reading")));
-        //         WebElement music = driver.findElement(By.xpath(propiedades.getProperty("Form.Music")));
+                WebElement sports = driver.findElement(By.xpath(propiedades.getProperty("Form.Sports")));
+                WebElement reading = driver.findElement(By.xpath(propiedades.getProperty("Form.Reading")));
+                WebElement music = driver.findElement(By.xpath(propiedades.getProperty("Form.Music")));
 
-        //         sports.click();
-        //         Thread.sleep(500);
-        //         reading.click();
-        //         Thread.sleep(500);
-        //         music.click();
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha seleccionado sports, reading y music" + "\n");
+                sports.click();
+                Thread.sleep(500);
+                reading.click();
+                Thread.sleep(500);
+                music.click();
+                Thread.sleep(500);
+                System.out.println("Se ha seleccionado sports, reading y music" + "\n");
 
-        //         //Subir un archivo
+                //Subir un archivo
 
-        //         WebElement uploadFile = driver.findElement(By.id("uploadPicture"));
-        //         uploadFile.sendKeys(propiedades.getProperty("file.FormUploadFile"));
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha subido el archivo" + "\n");
+                WebElement uploadFile = driver.findElement(By.id("uploadPicture"));
+                uploadFile.sendKeys(propiedades.getProperty("file.FormUploadFile"));
+                Thread.sleep(500);
+                System.out.println("Se ha subido el archivo" + "\n");
 
-        //         //Rellenar el campo current address
+                //Rellenar el campo current address
 
-        //         WebElement currentAddressForm = driver.findElement(By.id("currentAddress"));
-        //         currentAddressForm.sendKeys(datoRequerido[7]);
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha rellenado current address" + "\n");
+                WebElement currentAddressForm = driver.findElement(By.id("currentAddress"));
+                currentAddressForm.sendKeys(datoRequerido[7]);
+                Thread.sleep(500);
+                System.out.println("Se ha rellenado current address" + "\n");
 
-        //         //Seleccionar un estado y ciudad
+                //Seleccionar un estado y ciudad
 
-        //         WebElement stateForm = driver.findElement(By.id("react-select-3-input"));
-        //         stateForm.sendKeys(datoRequerido[8]);
-        //         stateForm.sendKeys(Keys.ENTER);
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha implementado el estado" + "\n");
+                WebElement stateForm = driver.findElement(By.id("react-select-3-input"));
+                stateForm.sendKeys(datoRequerido[8]);
+                stateForm.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("Se ha implementado el estado" + "\n");
 
-        //         WebElement cityForm = driver.findElement(By.id("react-select-4-input"));
-        //         cityForm.sendKeys(datoRequerido[9]);
-        //         cityForm.sendKeys(Keys.ENTER);
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha implementado la ciudad" + "\n");
-        //         //hacer click al boton de submit
+                WebElement cityForm = driver.findElement(By.id("react-select-4-input"));
+                cityForm.sendKeys(datoRequerido[9]);
+                cityForm.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("Se ha implementado la ciudad" + "\n");
+                //hacer click al boton de submit
 
-        //         submitForm.click();
+                submitForm.click();
 
-        //         Thread.sleep(500);
-        //         System.out.println("Se ha hecho click en submit" + "\n");
+                Thread.sleep(500);
+                System.out.println("Se ha hecho click en submit" + "\n");
 
-        //         //Obtener los resultados
-        //         System.out.println("Se han recogido los resultados" + "\n");
-        //         System.out.println(driver.findElement(By.xpath("//div[@class=\"table-responsive\"]")).getText());
+                //Obtener los resultados
+                System.out.println("Se han recogido los resultados" + "\n");
+                System.out.println(driver.findElement(By.xpath("//div[@class=\"table-responsive\"]")).getText());
 
-        // } catch(Exception e){
-        //     e.printStackTrace();
-        // } finally{
-        //     driver.quit();
-        // }
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            driver.quit();
+        }
 
         //CASO DE Prueba 009
         // try {

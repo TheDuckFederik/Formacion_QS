@@ -1,0 +1,44 @@
+{ 
+    "CP001":{
+                "fullname":"hola",
+                "correoMalo":"correoMalo",
+                "correoBueno":"correo@bueno.com",
+                "currAddress":"PruebaAddress",
+                "permAddress":"pruebaPermaAddress"
+            },
+    "CP004":{
+                "firstnameAdd":"pruebaNombre",
+                "lastnameAdd":"PruebaApellido",
+                "emailbadAdd":"CorreoIncorrecto",
+                "emailgoodAdd":"Correo@correcto.com",
+                "agebadAdd":"asdf",
+                "agegoodAdd":"23",
+                "salarybadAdd":"aqwer",
+                "salarygoodAdd":"12000",
+                "departmentAdd":"poidf",
+                "rows":"5 rows"
+        },
+    "CP008":{
+                "firstname":"TestName",
+                "lastname":"TestLastName",
+                "emailbad":"TestEmail",
+                "emailgood":"test@email.com",
+                "mobilebad":"Test",
+                "mobilesingle":"1",
+                "mobilegood":"1231412412",
+                "dateofbirth":"01 Sept 2024",
+                "subject":"En",
+                "department":"TestDepartment",
+                "upload":"C:/Users/alex.martinez.ext/Downloads/samplefile.jpeg",
+                "addresscurrent":"TestAddress",
+                "statesel":"NCR",
+                "citysel":"Delhi"
+        },
+    "CP010":{
+                "textbox":"Test"
+        },
+    "CP014":{
+                "seldate":"06/06/2006",
+                "seldatetime":"June 06, 2006 05:15 PM"
+        }
+}

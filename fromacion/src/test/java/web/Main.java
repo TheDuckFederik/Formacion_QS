@@ -24,6 +24,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class Main {
     public static String testId;
@@ -33,7 +36,7 @@ public class Main {
     protected File srcFile;
     protected File destFile;
     protected static String paso;
-
+    static Properties config;
     // XML, CSV, and JSON
     static Document doc;
     static Map<String, String> csvData = new HashMap<>();
@@ -41,6 +44,14 @@ public class Main {
 
     @BeforeMethod
     public void setup_test() {
+        // Load configuration file
+        config = new Properties();
+        try (InputStream input = new FileInputStream("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\config.conf")) {
+            config.load(input);
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle exceptions for config
+        }
+
         String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml";
         String csvFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.csv";
         String jsonFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.json";
@@ -65,7 +76,6 @@ public class Main {
                     csvData.put(values[0].trim(), values[1].trim());
                 }
             }
-            // Debug: Print loaded CSV data
             System.out.println("CSV Data Loaded: " + csvData);
         } catch (IOException e) {
             e.printStackTrace(); // Handle exceptions for CSV
@@ -80,7 +90,6 @@ public class Main {
             e.printStackTrace(); // Handle exceptions for JSON
         }
 
-        // WebDriver Setup
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
@@ -90,6 +99,10 @@ public class Main {
 
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 45);
+
+        // Navigate to the URL from the config file
+        String url = config.getProperty("url");
+        driver.get(url);
     }
 
     @AfterMethod
@@ -109,11 +122,10 @@ public class Main {
         NodeList nodeList = doc.getElementsByTagName(tag);
         Node node = nodeList.item(0); // Get the first node
 
-        // Check if the node is not null and is an element
         if (node != null && node.getNodeType() == Node.ELEMENT_NODE) {
-            return node.getTextContent(); // Return the node content
+            return node.getTextContent();
         }
-        return null; // Return null if the node does not exist
+        return null;
     }
 
     // Method to get the value from CSV data
@@ -129,7 +141,7 @@ public class Main {
                 return jsonObject.getString(key);
             }
         }
-        return null; // Return null if the key does not exist in any object
+        return null;
     }
 
     // Example method to demonstrate sending keys safely

@@ -1,5 +1,6 @@
 package web;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -23,7 +24,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
+//
 public class Main {
     public static String testId;
     protected WebDriver driver;
@@ -32,11 +37,11 @@ public class Main {
     protected File srcFile;
     protected File destFile;
     protected static String paso;
-
+    static Properties config;
     // XML, CSV, and JSON
     static Document doc;
     static Map<String, String> csvData = new HashMap<>();
-    static JSONObject jsonData;
+    static JSONArray jsonDataArray;
 
     @BeforeMethod
     public void setup_test() {
@@ -73,12 +78,14 @@ public class Main {
         // JSON Reading
         try {
             String jsonString = new String(Files.readAllBytes(Paths.get(jsonFilePath)));
-            jsonData = new JSONObject(jsonString);
+            JSONObject jsonData = new JSONObject(jsonString);
+            jsonDataArray = jsonData.getJSONArray("data");
         } catch (IOException e) {
             e.printStackTrace(); // Handle exceptions for JSON
         }
-
-        // WebDriver Setup
+        //
+        
+        //
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
@@ -121,7 +128,13 @@ public class Main {
 
     // Method to get the value from JSON data
     public static String getJsonValue(String key) {
-        return jsonData.optString(key, null); // Returns null if the key does not exist
+        for (int i = 0; i < jsonDataArray.length(); i++) {
+            JSONObject jsonObject = jsonDataArray.getJSONObject(i);
+            if (jsonObject.has(key)) {
+                return jsonObject.getString(key);
+            }
+        }
+        return null; // Return null if the key does not exist in any object
     }
 
     // Example method to demonstrate sending keys safely

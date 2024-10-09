@@ -1,5 +1,7 @@
 package web;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,6 +12,9 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
+
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 
@@ -17,9 +22,12 @@ public class Prueba extends Main {
     @Test(description = "Prueba DemoQA Elements Text box")
     @Story("Elements")
     @Description("Rellenar Text Box")
-    public void TC001_TextBox() throws InterruptedException, IOException {
+    public void TC001_TextBox() throws InterruptedException, IOException, CsvException {
         testId = "TC001_TextBox";
+        String[] datosCorrectosCP001 = datosCsv().get(2);
+        String[] datosErroneosCP001 = datosCsv().get(3);
          try{
+
             driver.get("https://demoqa.com");
             System.out.println("Se abre la página DemoQA" + "\n");        
   
@@ -28,7 +36,7 @@ public class Prueba extends Main {
             Thread.sleep(100);
             System.out.println("Se abre el apartado Elements" + "\n");
 
-            WebElement textbox = driver.findElement(By.xpath(propiedades.getProperty("menu.textbox")));
+            WebElement textbox = driver.findElement(By.xpath(propiedades.getProperty("elements.textbox")));
             textbox.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Text Box" + "\n");
@@ -37,22 +45,22 @@ public class Prueba extends Main {
             js.executeScript("window.scrollBy(0, 444);");  
 
             WebElement fullname = driver.findElement(By.xpath(propiedades.getProperty("textbox.fullname")));
-            fullname.sendKeys("ejemplo");
+            fullname.sendKeys(datosCorrectosCP001[0]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Full Name" + "\n");
 
             WebElement email = driver.findElement(By.xpath(propiedades.getProperty("textbox.email")));
-            email.sendKeys("ejemplo");
+            email.sendKeys(datosErroneosCP001[1]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Email" + "\n");
             
             WebElement caddress = driver.findElement(By.xpath(propiedades.getProperty("textbox.current_address")));
-            caddress.sendKeys("ejemplo");
+            caddress.sendKeys(datosCorrectosCP001[2]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Current Address" + "\n");
 
             WebElement paddress = driver.findElement(By.xpath(propiedades.getProperty("textbox.permanent_address")));
-            paddress.sendKeys("ejemplo");
+            paddress.sendKeys(datosCorrectosCP001[3]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Permanent Address" + "\n");
 
@@ -63,7 +71,7 @@ public class Prueba extends Main {
             driver.findElement(By.xpath(propiedades.getProperty("textbox.email"))).clear();
 
             WebElement email2 = driver.findElement(By.xpath(propiedades.getProperty("textbox.email")));
-            email2.sendKeys("ejemplo@ejemplo.com");
+            email2.sendKeys(datosCorrectosCP001[1]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Email" + "\n");
 
@@ -95,7 +103,7 @@ public class Prueba extends Main {
             Thread.sleep(100);
             System.out.println("Se abre el apartado Elements" + "\n");
 
-            WebElement checkbox = driver.findElement(By.xpath(propiedades.getProperty("menu.checkbox")));
+            WebElement checkbox = driver.findElement(By.xpath(propiedades.getProperty("elements.checkbox")));
             checkbox.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Check Box" + "\n");
@@ -278,7 +286,7 @@ public class Prueba extends Main {
 
             System.out.println(driver.findElement(By.xpath(propiedades.getProperty("checkbox.result"))).getText());
 
-            WebElement menos = driver.findElement(By.xpath());
+            WebElement menos = driver.findElement(By.xpath(propiedades.getProperty("checkbox.menos")));;
             menos.click();
             Thread.sleep(100);
             System.out.println("\n" + "Se cierran todos los desplegables" + "\n");
@@ -329,8 +337,10 @@ public class Prueba extends Main {
     @Test(description = "Prueba DemoQA Elements Web Tables")
     @Story("Elements")
     @Description("Probar Web Tables")
-    public void TC004_WebTables() throws InterruptedException, IOException {
+    public void TC004_WebTables() throws InterruptedException, IOException, CsvException {
         testId = "TC004_WebTables";
+        String[] datosCorrectosCP004 = datosCsv().get(7);
+        String[] datosErroneosCP004 = datosCsv().get(8);
          try{
             driver.get("https://demoqa.com");
             System.out.println("Se abre la página DemoQA" + "\n");          
@@ -412,27 +422,27 @@ public class Prueba extends Main {
             Thread.sleep(100);
             System.out.println("Nos sale un error en todos los campos sin rellenar" + "\n");
 
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.firstnamef"))).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.firstnamef"))).sendKeys(datosCorrectosCP004[0]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo First Name" + "\n");
 
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.lastnamef"))).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.lastnamef"))).sendKeys(datosCorrectosCP004[1]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Last Name" + "\n");
 
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.emailf"))).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.emailf"))).sendKeys(datosErroneosCP004[2]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Email" + "\n");
 
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.agef"))).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.agef"))).sendKeys(datosErroneosCP004[3]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Age" + "\n");
 
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.salaryf"))).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.salaryf"))).sendKeys(datosErroneosCP004[4]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Salary" + "\n");
 
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.departmentf"))).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.departmentf"))).sendKeys(datosCorrectosCP004[5]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Department" + "\n");
 
@@ -441,17 +451,17 @@ public class Prueba extends Main {
             System.out.println("Nos da error en los campos Email Age y Salary" + "\n");
 
             driver.findElement(By.xpath(propiedades.getProperty("webtables.emailf"))).clear();
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.emailf"))).sendKeys("ejemplo@ejemplo.com");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.emailf"))).sendKeys(datosCorrectosCP004[2]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Email" + "\n");
 
             driver.findElement(By.xpath(propiedades.getProperty("webtables.agef"))).clear();
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.agef"))).sendKeys("44");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.agef"))).sendKeys(datosCorrectosCP004[3]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Age" + "\n");
 
             driver.findElement(By.xpath(propiedades.getProperty("webtables.salaryf"))).clear();
-            driver.findElement(By.xpath(propiedades.getProperty("webtables.salaryf"))).sendKeys("4444");
+            driver.findElement(By.xpath(propiedades.getProperty("webtables.salaryf"))).sendKeys(datosCorrectosCP004[4]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Salary" + "\n");
 
@@ -465,7 +475,7 @@ public class Prueba extends Main {
             Thread.sleep(100);
             System.out.println("Aparecen 100 filas en la página" + "\n");
 
-            js.executeScript("window.scrollBy(0, 1500);"); 
+            js.executeScript("window.scrollBy(0, 1100);"); 
 
             WebElement rows2 = driver.findElement(By.xpath(propiedades.getProperty("webtables.rows")));
             Select rowsSelect2 = new Select(rows2);
@@ -502,22 +512,22 @@ public class Prueba extends Main {
                 driver.findElement(By.xpath(propiedades.getProperty("webtables.add"))).click();
                 Thread.sleep(100);
 
-                driver.findElement(By.xpath(propiedades.getProperty("webtables.firstnamef"))).sendKeys("ejemplo");
+                driver.findElement(By.xpath(propiedades.getProperty("webtables.firstnamef"))).sendKeys(datosCorrectosCP004[0]);
                 Thread.sleep(100);
 
-                driver.findElement(By.xpath(propiedades.getProperty("webtables.lastnamef"))).sendKeys("ejemplo");
+                driver.findElement(By.xpath(propiedades.getProperty("webtables.lastnamef"))).sendKeys(datosCorrectosCP004[1]);
                 Thread.sleep(100);
 
-                driver.findElement(By.xpath(propiedades.getProperty("webtables.emailf"))).sendKeys("ejemplo@ejemplo.com");
+                driver.findElement(By.xpath(propiedades.getProperty("webtables.emailf"))).sendKeys(datosCorrectosCP004[2]);
                 Thread.sleep(100);
 
-                driver.findElement(By.xpath(propiedades.getProperty("webtables.agef"))).sendKeys("44");
+                driver.findElement(By.xpath(propiedades.getProperty("webtables.agef"))).sendKeys(datosCorrectosCP004[3]);
                 Thread.sleep(100);
 
-                driver.findElement(By.xpath(propiedades.getProperty("webtables.salaryf"))).sendKeys("4444");
+                driver.findElement(By.xpath(propiedades.getProperty("webtables.salaryf"))).sendKeys(datosCorrectosCP004[4]);
                 Thread.sleep(100);
 
-                driver.findElement(By.xpath(propiedades.getProperty("webtables.departmentf"))).sendKeys("ejemplo");
+                driver.findElement(By.xpath(propiedades.getProperty("webtables.departmentf"))).sendKeys(datosCorrectosCP004[5]);
                 Thread.sleep(100);
         
                 driver.findElement(By.xpath(propiedades.getProperty("webtables.submit"))).click();
@@ -532,7 +542,7 @@ public class Prueba extends Main {
         Thread.sleep(100);
         System.out.println("Pasa a la anterior página" + "\n");
 
-        driver.findElement(By.xpath(propiedades.getProperty("webtables.search"))).sendKeys("ejemplo");
+        driver.findElement(By.xpath(propiedades.getProperty("webtables.search"))).sendKeys(datosCorrectosCP004[0]);
         Thread.sleep(100);
         System.out.println("Filtra los nombres de la tabla que empiecen por lo que hemos escrito" + "\n");
 
@@ -664,6 +674,9 @@ public class Prueba extends Main {
     public void TC008_Practice_Form() throws InterruptedException, IOException {
         testId = "TC008_Practice_Form";
          try{
+            String[] datosCorrectosCP008 = datosCsv().get(12);
+            String[] datosErroneosCP008 = datosCsv().get(13);
+
             driver.get("https://demoqa.com");
             System.out.println("Se abre la página DemoQA" + "\n");          
 
@@ -672,7 +685,7 @@ public class Prueba extends Main {
             Thread.sleep(100);
             System.out.println("Se abre el apartado Forms" + "\n");
 
-            WebElement form = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/div/div/div[2]/div"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("forms.form")));
             form.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Practice Form" + "\n");
@@ -681,116 +694,115 @@ public class Prueba extends Main {
             js.executeScript("window.scrollBy(0, 444);");  
             Thread.sleep(100);
 
-            driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("form.firstname"))).sendKeys(datosCorrectosCP008[0]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo First Name" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("form.lastname"))).sendKeys(datosCorrectosCP008[1]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Last Name" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("form.email"))).sendKeys(datosErroneosCP008[2]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Email" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"genterWrapper\"]/div[2]/div[1]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.gender"))).click();
             Thread.sleep(100);
             System.out.println("El botón Male se selecciona" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"userNumber\"]")).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("form.mobile"))).sendKeys(datosErroneosCP008[3]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Mobile" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"dateOfBirthInput\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.birth"))).click();
             Thread.sleep(100);
             System.out.println("Se abre un calendario" + "\n");
 
-            WebElement mes = driver.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            WebElement mes = driver.findElement(By.xpath(propiedades.getProperty("form.mes")));
             Select mesSelect = new Select(mes);
             mesSelect.selectByVisibleText("April");
             Thread.sleep(100);
-            
 
-            WebElement año = driver.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
+            WebElement año = driver.findElement(By.xpath(propiedades.getProperty("form.year")));
             Select añoSelect = new Select(año);
-            añoSelect.selectByVisibleText("2005");
+            añoSelect.selectByVisibleText("2023");
             Thread.sleep(100);
 
-            driver.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.date"))).click();
             Thread.sleep(100);
             System.out.println("Se selecciona la fecha" + "\n");
 
-            WebElement subject = driver.findElement(By.xpath("//*[@id=\"subjectsInput\"]"));
-            subject.sendKeys("Maths");
+            WebElement subject = driver.findElement(By.xpath(propiedades.getProperty("form.subjects")));
+            subject.sendKeys(datosCorrectosCP008[4]);
             subject.sendKeys(Keys.ENTER);
             Thread.sleep(100);
             System.out.println("Se añade Maths al campo" + "\n");
 
-            WebElement subject2 = driver.findElement(By.xpath("//*[@id=\"subjectsInput\"]"));
-            subject2.sendKeys("Arts");
+            WebElement subject2 = driver.findElement(By.xpath(propiedades.getProperty("form.subjects")));
+            subject2.sendKeys(datosCorrectosCP008[5]);
             subject2.sendKeys(Keys.ENTER);
             Thread.sleep(100);
             System.out.println("Se añade Arts al campo" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"subjectsContainer\"]/div/div[2]/div")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.subjectsb"))).click();
             Thread.sleep(100);
             System.out.println("Se borra todo" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.sports"))).click();
             Thread.sleep(100);
             System.out.println("El botón Sports se selecciona" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[2]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.reading"))).click();
             Thread.sleep(100);
             System.out.println("El botón Reading se selecciona" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[3]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.music"))).click();
             Thread.sleep(100);
             System.out.println("El botón Music se selecciona" + "\n");
 
             WebElement upload = driver.findElement(By.id("uploadPicture"));
-            upload.sendKeys("C:\\Users\\ricard.ferrando.ext\\Downloads\\sampleFile.jpeg");
+            upload.sendKeys(datosCorrectosCP008[9]);
             Thread.sleep(100);
             System.out.println("Se sube el archivo" + "\n");
             
-            driver.findElement(By.xpath("//*[@id=\"currentAddress\"]")).sendKeys("ejemplo");
+            driver.findElement(By.xpath(propiedades.getProperty("form.address"))).sendKeys(datosCorrectosCP008[6]);
             Thread.sleep(100);
 
-            WebElement state = driver.findElement(By.xpath("//*[@id=\"react-select-3-input\"]"));
-            state.sendKeys("NCR");
+            WebElement state = driver.findElement(By.xpath(propiedades.getProperty("form.state")));
+            state.sendKeys(datosCorrectosCP008[7]);
             state.sendKeys(Keys.ENTER);
             Thread.sleep(100);
             System.out.println("El estado queda seleccionado en el menu" + "\n");
 
-            WebElement city = driver.findElement(By.xpath("//*[@id=\"react-select-4-input\"]"));
-            city.sendKeys("Delhi");
+            WebElement city = driver.findElement(By.xpath(propiedades.getProperty("form.city")));
+            city.sendKeys(datosCorrectosCP008[8]);
             city.sendKeys(Keys.ENTER);
             Thread.sleep(100);
             System.out.println("La ciudad queda seleccionada en el menu" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.submit"))).click();
             Thread.sleep(100);
             System.out.println("Nos da error en el campo Email y en el campo Mobile" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).clear();
+            driver.findElement(By.xpath(propiedades.getProperty("form.email"))).clear();
             Thread.sleep(100);
 
-            driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("ejemplo@ejemplo.com");
+            driver.findElement(By.xpath(propiedades.getProperty("form.email"))).sendKeys(datosCorrectosCP008[2]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Email" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"userNumber\"]")).clear();
+            driver.findElement(By.xpath(propiedades.getProperty("form.mobile"))).clear();
             Thread.sleep(100);
 
-            driver.findElement(By.xpath("//*[@id=\"userNumber\"]")).sendKeys("4444444444");
+            driver.findElement(By.xpath(propiedades.getProperty("form.mobile"))).sendKeys(datosCorrectosCP008[3]);
             Thread.sleep(100);
             System.out.println("Se rellena el campo Mobile" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("form.submit"))).click();
             Thread.sleep(100);
             System.out.println("Nos sale el mensaje Thanks for submitting the form y nos da un esquema con los datos que le hemos proporcionado anteriormente" + "\n");
 
-            System.out.println(driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/div")).getText());
+            System.out.println(driver.findElement(By.xpath(propiedades.getProperty("form.result"))).getText());
 
         } catch(Exception e){
             e.printStackTrace();
@@ -807,25 +819,25 @@ public class Prueba extends Main {
             driver.get("https://demoqa.com");
             System.out.println("Se abre la página DemoQA" + "\n");           
 
-            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
+            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.windows")));
             menu.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Alerts, Frame & Windows" + "\n"); 
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("windows.browser")));
             form.click();
             Thread.sleep(100);
-            System.out.println("Se abre el apartado Dynamic Properties" + "\n"); 
+            System.out.println("Se abre el apartado Browser Windows" + "\n"); 
 
-            driver.findElement(By.xpath("//*[@id=\"tabButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("browser.tab"))).click();
             Thread.sleep(100);
             System.out.println("Se abre una pestaña" + "\n"); 
 
-            driver.findElement(By.xpath("//*[@id=\"windowButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("browser.window"))).click();
             Thread.sleep(100);            
             System.out.println("Se abre una ventana" + "\n"); 
 
-            driver.findElement(By.xpath("//*[@id=\"messageWindowButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("browser.windowm"))).click();
             Thread.sleep(100);
             System.out.println("Se abre una ventana con un mensaje" + "\n"); 
 
@@ -841,31 +853,33 @@ public class Prueba extends Main {
     public void TC010_Alerts() throws InterruptedException, IOException {
         testId = "TC010_Alerts";
          try{
+            String[] datosCorrectosCP010 = datosCsv().get(17);
+
             driver.get("https://demoqa.com");
             System.out.println("Se abre la página DemoQA" + "\n");           
 
-            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
+            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.windows")));
             menu.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Alerts, Frame & Windows" + "\n"); 
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("windows.alerts")));
             form.click();
             Thread.sleep(100);
             System.out.println("Se abre el apartado Alerts" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"alertButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("alerts.boton1"))).click();
             Thread.sleep(100);
             System.out.println("Nos sale el texto You clicked a button" + "\n");
             driver.switchTo().alert().accept();
             Thread.sleep(100);
 
-            driver.findElement(By.xpath("//*[@id=\"timerAlertButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("alerts.boton2"))).click();
             Thread.sleep(5000);
             System.out.println("Nos sale el texto This alert appeared after 5 seconds" + "\n");
             driver.switchTo().alert().accept();
 
-            driver.findElement(By.xpath("//*[@id=\"confirmButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("alerts.boton3"))).click();
             Thread.sleep(100);
             System.out.println("Nos sale el texto Do you confirm action?" + "\n");
             driver.switchTo().alert().dismiss();
@@ -873,21 +887,21 @@ public class Prueba extends Main {
             System.out.println("Nos sale el texto You selected Cancel" + "\n");
             
 
-            driver.findElement(By.xpath("//*[@id=\"confirmButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("alerts.boton3"))).click();
             Thread.sleep(100);
             System.out.println("Nos sale el texto Do you confirm action?" + "\n");
             driver.switchTo().alert().accept();
             Thread.sleep(100);
             System.out.println("Nos sale el texto You selected Ok" + "\n");
 
-            driver.findElement(By.xpath("//*[@id=\"promtButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("alerts.boton4"))).click();
             Thread.sleep(100);
-            driver.switchTo().alert().sendKeys("ejemplo");
+            driver.switchTo().alert().sendKeys(datosCorrectosCP010[0]);
             driver.switchTo().alert().accept();
             Thread.sleep(100);
 
-            System.out.println(driver.findElement(By.xpath("//*[@id=\"confirmResult\"]")).getText());
-            System.out.println(driver.findElement(By.xpath("//*[@id=\"promptResult\"]")).getText());
+            System.out.println(driver.findElement(By.xpath(propiedades.getProperty("alerts.boton3m"))).getText());
+            System.out.println(driver.findElement(By.xpath(propiedades.getProperty("alerts.boton4m"))).getText());
 
         } catch(Exception e){
             e.printStackTrace();
@@ -903,11 +917,11 @@ public class Prueba extends Main {
          try{
             driver.get("https://demoqa.com");          
 
-            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
+            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.windows")));
             menu.click();
             Thread.sleep(100);
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("windows.frames")));
             form.click();
             Thread.sleep(100);
             
@@ -945,11 +959,11 @@ public class Prueba extends Main {
          try{
             driver.get("https://demoqa.com");          
 
-            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
+            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.windows")));
             menu.click();
             Thread.sleep(100);
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("windows.nframes")));
             form.click();
             Thread.sleep(100);
 
@@ -985,32 +999,32 @@ public class Prueba extends Main {
          try{
             driver.get("https://demoqa.com");          
 
-            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
+            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.windows")));
             menu.click();
             Thread.sleep(100);
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("windows.modal")));
             form.click();
             Thread.sleep(100);
 
-            driver.findElement(By.xpath("//*[@id=\"showSmallModal\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("modal.small"))).click();
             Thread.sleep(100);
 
-            WebElement textosmall = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]"));
+            WebElement textosmall = driver.findElement(By.xpath(propiedades.getProperty("modal.stexto")));
             String smallm = textosmall.getText();
             System.out.println("Texto del Small Modal: " + smallm);
 
-            driver.findElement(By.xpath("//*[@id=\"closeSmallModal\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("modal.sclose"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"showLargeModal\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("modal.large"))).click();
             Thread.sleep(500);
 
-            WebElement textolarge = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]"));
+            WebElement textolarge = driver.findElement(By.xpath(propiedades.getProperty("modal.ltexto")));
             String largem = textolarge.getText();
             System.out.println("Texto del Large Modal: " + largem);
 
-            driver.findElement(By.xpath("//*[@id=\"closeLargeModal\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("modal.lclose"))).click();
             Thread.sleep(500);
 
         } catch(Exception e){
@@ -1029,47 +1043,52 @@ public class Prueba extends Main {
 
             WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
             menu.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
-            WebElement form = driver.findElement(By.xpath());
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.datepicker")));
             form.click();
+            Thread.sleep(100);
+
+            driver.findElement(By.xpath(propiedades.getProperty("datepicker.selectdate"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"datePickerMonthYearInput\"]")).click();
-            Thread.sleep(500);
-
-            WebElement mes = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select"));
+            WebElement mes = driver.findElement(By.xpath(propiedades.getProperty("datepicker.months")));
             Select mesSelect = new Select(mes);
             mesSelect.selectByVisibleText("April");
             Thread.sleep(500);
 
-            WebElement año = driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select"));
+            WebElement año = driver.findElement(By.xpath(propiedades.getProperty("datepicker.years")));
             Select añoSelect = new Select(año);
             añoSelect.selectByVisibleText("2005");
             Thread.sleep(500);
 
             driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]")).click();
+
+
+            // driver.findElement(By.xpath(propiedades.getProperty("datepicker.days"))).click();
+            // Thread.sleep(500);
+
+            driver.findElement(By.xpath(propiedades.getProperty("datepicker.dateandtime"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"dateAndTimePickerInput\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("datepicker.months2.1"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("datepicker.months2.2"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/div[4]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("datepicker.years2.1"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("datepicker.years2.2"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[11]")).click();
-            Thread.sleep(500);
+            // driver.findElement(By.xpath(propiedades.getProperty("datepicker.days2"))).click();
+            // Thread.sleep(500);
 
             driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[7]")).click();
-            Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[3]/div[2]/div/ul/li[40]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("datepicker.hour"))).click();
             Thread.sleep(500);
 
         } catch(Exception e){
@@ -1090,11 +1109,11 @@ public class Prueba extends Main {
             menu.click();
             Thread.sleep(500);
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[4]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.slider")));
             form.click();
             Thread.sleep(500);
 
-            WebElement slider = driver.findElement(By.xpath("//*[@id='sliderContainer']/div[1]/span/input"));
+            WebElement slider = driver.findElement(By.xpath(propiedades.getProperty("slider.slider")));
 
             for(int i = 1; i < 25; i++) {
                 
@@ -1126,20 +1145,20 @@ public class Prueba extends Main {
             menu.click();
             Thread.sleep(500);
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[5]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.progressbar")));
             form.click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"startStopButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("progressbar.start"))).click();
             Thread.sleep(5000);
 
-            driver.findElement(By.xpath("//*[@id=\"startStopButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("progressbar.start"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"startStopButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("progressbar.start"))).click();
             Thread.sleep(6000);
 
-            driver.findElement(By.xpath("//*[@id=\"resetButton\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("progressbar.restart"))).click();
             Thread.sleep(500);
 
         } catch(Exception e){
@@ -1164,23 +1183,23 @@ public class Prueba extends Main {
             js.executeScript("window.scrollBy(0, 444);");  
             Thread.sleep(500);
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[8]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.menu")));;
             form.click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[1]/a")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("menu.mainitem1"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[3]/a")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("menu.mainitem3"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/a")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("menu.mainitem2"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[3]/a")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("menu.subsublist"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[3]/ul/li[1]/a")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("menu.subsub1"))).click();
             Thread.sleep(500);
 
         } catch(Exception e){
@@ -1205,7 +1224,7 @@ public class Prueba extends Main {
             js.executeScript("window.scrollBy(0, 444);");  
             Thread.sleep(500);
 
-            WebElement form = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/ul[1]/li[9]"));
+            WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.selectmenu")));
             form.click();
             Thread.sleep(500);
 
@@ -1218,13 +1237,13 @@ public class Prueba extends Main {
             driver.findElement(By.id("react-select-3-input")).sendKeys("Mr."+ Keys.ENTER);
             Thread.sleep(1000);
 
-            driver.findElement(By.xpath("//*[@id=\"oldSelectMenu\"]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("selectmenu.oldstyle"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"oldSelectMenu\"]/option[3]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("selectmenu.oldstyle2"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"oldSelectMenu\"]/option[3]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("selectmenu.oldstyle2"))).click();
             Thread.sleep(500);
 
             WebElement multiSelect = driver.findElement(By.id("react-select-4-input"));
@@ -1235,10 +1254,10 @@ public class Prueba extends Main {
             multiSelect.sendKeys("Blue"+ Keys.ENTER);
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[2]/div[1]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("selectmenu.multiselect"))).click();
             Thread.sleep(500);
 
-            driver.findElement(By.xpath("//*[@id=\"cars\"]/option[3]")).click();
+            driver.findElement(By.xpath(propiedades.getProperty("selectmenu.opel"))).click();
             Thread.sleep(500);
 
         } catch(Exception e){
@@ -1246,5 +1265,15 @@ public class Prueba extends Main {
         } finally{
             driver.quit();
         }
+    }
+
+    public List<String[]> datosCsv() throws IOException, CsvException{
+        String file = "C:\\Users\\ricard.ferrando.ext\\OneDrive - GFI\\Documentos\\FormacionQS\\Formacion_QS\\demo\\CSV.csv";
+
+        CSVReader reader = new CSVReader(new FileReader(file));
+        List<String[]> listDatos = reader.readAll();
+        reader.close();
+        return listDatos;
+        
     }
 }

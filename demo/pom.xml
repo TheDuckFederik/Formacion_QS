@@ -19,7 +19,11 @@
     </properties>
 
     <dependencies>
-
+            <dependency>
+                <groupId>com.opencsv</groupId>
+                <artifactId>opencsv</artifactId>
+                <version>5.9</version>
+            </dependency>
         <!-- Dependencia base de la librería de Selenium para Java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -97,6 +101,12 @@
             <version>2.11.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20210307</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -149,7 +159,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
         </dependencies>
     </dependencyManagement>
-    
+
 </project>

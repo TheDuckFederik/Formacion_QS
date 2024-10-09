@@ -1521,44 +1521,43 @@ public class Prueba extends Main {
             action = 5;
             //
             WebElement alert2 = driver.findElement(By.id("timerAlertButton"));
-            Thread.sleep(500);
             alert2.click();
             action = 6;
+            Thread.sleep(5000);
             driver.switchTo().alert().accept();
             action = 7;
             //
             WebElement alert3 = driver.findElement(By.id("confirmButton"));
             alert3.click();
-            Thread.sleep(500);
+            action = 8;
             driver.switchTo().alert().accept();
-            Thread.sleep(500);
+            action = 9;
             //
             WebElement confirmResult = driver.findElement(By.id("confirmResult"));
             String confirmOutput = confirmResult.getText();
             System.out.println(confirmOutput);
-            Thread.sleep(500);
+            action = 10;
             //
             alert3.click();
-            Thread.sleep(500);
+            action = 11;
             driver.switchTo().alert().dismiss();
-            Thread.sleep(500);
+            action = 12;
             //
             String confirmOutput2 = confirmResult.getText();
             System.out.println(confirmOutput2);
-            Thread.sleep(500);
             //
             WebElement alert4 = driver.findElement(By.id("promtButton"));
             alert4.click();
-            Thread.sleep(500);
+            action = 13;
             driver.switchTo().alert().sendKeys("TextTest");
-            Thread.sleep(500);
+            action = 14;
             driver.switchTo().alert().accept();
-            Thread.sleep(500);
+            action = 15;
             //
             WebElement promptResult = driver.findElement(By.id("promptResult"));
             String promptOutput = promptResult.getText();
             System.out.println(promptOutput);
-            Thread.sleep(500);
+            action = 16;
             //
         } catch(Exception e){
             e.printStackTrace();
@@ -1566,7 +1565,7 @@ public class Prueba extends Main {
             driver.quit();
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_010 stopped after performing action " + action + " of 9 ----------|");
+            System.out.println("|--------- TC_010 stopped after performing action " + action + " of 16 ---------|");
             System.out.println("|-------------------------------------------------------------------|");
             //
         }
@@ -1579,6 +1578,13 @@ public class Prueba extends Main {
         testId = "TC011_Frames";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_011 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -1587,32 +1593,39 @@ public class Prueba extends Main {
             doc.getDocumentElement().normalize();
             //
             driver.get("https://demoqa.com");
+            action = 1;
             //
             WebElement menu = driver.findElement(By.xpath("//div[3]//div[1]//div[2]"));
             menu.click();
-            Thread.sleep(500);
+            action = 2;
             WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-2']"));
             sub_menu.click();
-            Thread.sleep(500);
+            action = 3;
             //
             driver.switchTo().frame(driver.findElements(By.id("frame1")).get(0));
             WebElement text1 = driver.findElement(By.id("sampleHeading"));
             String output1 = text1.getText();
-            Thread.sleep(500);
+            action = 4;
             //
             driver.switchTo().defaultContent();
             driver.switchTo().frame(driver.findElements(By.id("frame2")).get(0));
             WebElement text2 = driver.findElement(By.tagName("h1"));
             String output2 = text2.getText();
-            Thread.sleep(500);
+            action = 5;
             //
             System.out.println("Texto iFrame 1: " + output1);
             System.out.println("Texto iFrame 2: " + output2);
+            action = 6;
             //
         } catch(Exception e){
             e.printStackTrace();
         } finally{
             driver.quit();
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 6 ----------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Alerts, Frames & Windows Nested Frames.")

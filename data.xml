@@ -38,39 +38,6 @@
         <outputTextXpath_TC_001>(//div[@class='border col-md-12 col-sm-12'])[1]</outputTextXpath_TC_001>
     </TC_001>
     <!--  -->
-    <TC_002>
-        <plusXpath_TC_002>//*[@id="tree-node"]/div/button[1]</plusXpath_TC_002>
-        <minusXpath_TC_002>//*[@id="tree-node"]/div/button[2]</minusXpath_TC_002>
-        <!--  -->
-        <homeArrowXpath>//*[@id='tree-node']/ol/li/span/button</homeArrowXpath>
-        <!--  -->
-        <desktopArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/span/button</desktopArrowXpath>
-        <!--  -->
-        <documentsArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</documentsArrowXpath>
-        <workSpaceArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/button</workSpaceArrowXpath>
-        <officeArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/button</officeArrowXpath>
-        <!--  -->
-        <downloadArrowXpath>//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</downloadArrowXpath>
-        <!--  -->
-        <homeBoxXpath>//*[@id="tree-node"]/ol/li/span/label/span[1]</homeBoxXpath>
-        <!--  -->
-        <desktopBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/span/label/span[1]</desktopBoxXpath>
-        <notesBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</notesBoxXpath>
-        <commandsBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[2]/span/label/span[1]</commandsBoxXpath>
-        <!--  -->
-        <documentsBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</documentsBoxXpath>
-        <!--  -->
-        <workSpaceBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/button</workSpaceBoxXpath>
-        <reactBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[1]/span/label/span[1]</reactBoxXpath>
-        <angularBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[2]/span/label/span[1]</angularBoxXpath>
-        <veuBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/ol/li[3]/span/label/span[1]</veuBoxXpath>
-        <!--  -->
-        <officeBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/button</officeBoxXpath>
-        <!--  -->
-        <downloadBoxXpath>//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</downloadBoxXpath>
-        <!--  -->
-    </TC_002>
-    <!--  -->
     <TC_004>
         <firstNameText_TC_004>FirstNameTest</firstNameText_TC_004>
         <firstNameText1_TC_004>FirstNameTest1</firstNameText1_TC_004>
@@ -127,8 +94,6 @@
         <numberText2_TC_008>1234567890</numberText2_TC_008>
         <!--  -->
         <subjectText_TC_008>Computer</subjectText_TC_008>
-        <!--  -->
-        <picPath_TC_008>C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg</picPath_TC_008>
         <!--  -->
         <currentAddressText_TC_008>CurrentAddressTest</currentAddressText_TC_008>
         <!--  -->

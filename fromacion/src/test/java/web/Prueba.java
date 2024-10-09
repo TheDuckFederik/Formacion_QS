@@ -263,14 +263,15 @@ public class Prueba extends Main {
             //
             String url = config.getProperty("url");
             //
-            String elementsXpath = getTagValue("elements", doc);
-            String textBoxXpath = getTagValue("firstSubElement", doc);
+            String elementsXpath = config.getProperty("elements");
+            String textBoxXpath = config.getProperty("firstSubElement");
             //
-            String fullNameId = getTagValue("fullNameID_TC_001", doc);
-            String emailId = getTagValue("emailID_TC_001", doc);
-            String currentAddressId = getTagValue("currentAddressID_TC_001", doc);
-            String permanentAddressId = getTagValue("permanentAddressID_TC_001", doc);
-            String submitId = getTagValue("submitID_TC_001", doc);
+            String fullNameId = config.getProperty("fullNameID_TC_001");
+            String emailId = config.getProperty("emailID_TC_001");
+            String currentAddressId = config.getProperty("currentAddressID_TC_001");
+            String permanentAddressId = config.getProperty("permanentAddressID_TC_001");
+            String submitId = config.getProperty("submitID_TC_001");
+
             //
             String fullNameBox = getTagValue("fullNameText_TC_001", doc);
             String emailBox1 = getTagValue("emailText1_TC_001", doc);
@@ -401,6 +402,12 @@ public class Prueba extends Main {
             String veuBoxPath = config.getProperty("veuBoxXpath");
             //
             String officeBoxPath = config.getProperty("officeBoxXpath");
+            String publicBoxPath = config.getProperty("publicBoxXpath");
+            String privateBoxPath = config.getProperty("privateBoxXpath");
+            String classifiedBoxPath = config.getProperty("classifiedBoxXpath");
+            String generalBoxPath = config.getProperty("generalBoxXpath");
+            String wordFileBoxPath = config.getProperty("wordFileBoxXpath");
+            String excelFileBoxPath = config.getProperty("excelFileBoxXpath");
             String downloadBoxPath = config.getProperty("downloadBoxXpath");
             //
             driver.get(url);
@@ -500,22 +507,22 @@ public class Prueba extends Main {
             action = 31;
             office_check_box.click();
             action = 32;
-            WebElement public_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[1]/span/label/span[1]"));
+            WebElement public_check_box = driver.findElement(By.xpath(publicBoxPath));
             public_check_box.click();
             action = 33;
             public_check_box.click();
             action = 34;
-            WebElement private_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[2]/span/label/span[1]"));
+            WebElement private_check_box = driver.findElement(By.xpath(privateBoxPath));
             private_check_box.click();
             action = 35;
             private_check_box.click();
             action = 36;
-            WebElement classified_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[3]/span/label/span[1]"));
+            WebElement classified_check_box = driver.findElement(By.xpath(classifiedBoxPath));
             classified_check_box.click();
             action = 37;
             classified_check_box.click();
             action = 38;
-            WebElement general_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[1]"));
+            WebElement general_check_box = driver.findElement(By.xpath(generalBoxPath));
             general_check_box.click();
             action = 39;
             general_check_box.click();
@@ -526,12 +533,12 @@ public class Prueba extends Main {
             action = 41;
             downloads_check_box.click();
             action = 42;
-            WebElement wordFile_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/ol/li[1]/span/label/span[1]"));
+            WebElement wordFile_check_box = driver.findElement(By.xpath(wordFileBoxPath));
             wordFile_check_box.click();
             action = 43;
             wordFile_check_box.click();
             action = 44;
-            WebElement excelFile_check_box = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/ol/li[3]/ol/li[2]/span/label/span[1]"));
+            WebElement excelFile_check_box = driver.findElement(By.xpath(excelFileBoxPath));
             excelFile_check_box.click();
             action = 45;
             excelFile_check_box.click();
@@ -1254,9 +1261,9 @@ public class Prueba extends Main {
             String numberBox1 = getTagValue("numberText1_TC_008", doc);
             String numberBox2 = getTagValue("numberText2_TC_008", doc);
             String subjectBox = getTagValue("subjectText_TC_008", doc);
-            String picPathBox = getTagValue("picPath_TC_008", doc);
             String currentAddressBox = getTagValue("currentAddressText_TC_008", doc);
-
+            //
+            String picPathBox = config.getProperty("picPath_TC_008");
             //
             driver.get("https://demoqa.com");
             action = 1;
@@ -1483,6 +1490,13 @@ public class Prueba extends Main {
         testId = "TC010_Alerts";
         //
         try{
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_010 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
+            action = 0;
+            //
             File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -1491,26 +1505,27 @@ public class Prueba extends Main {
             doc.getDocumentElement().normalize();
             //
             driver.get("https://demoqa.com");
+            action = 1;
             //
             WebElement menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[3]/div/div[2]"));
             menu.click();
-            Thread.sleep(500);
+            action = 2;
             WebElement sub_menu = driver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-1']"));
             sub_menu.click();
-            Thread.sleep(500);
+            action = 3;
             //
             WebElement alert1 = driver.findElement(By.id("alertButton"));
             alert1.click();
-            Thread.sleep(500);
+            action = 4;
             driver.switchTo().alert().accept();
-            Thread.sleep(500);
+            action = 5;
             //
             WebElement alert2 = driver.findElement(By.id("timerAlertButton"));
             Thread.sleep(500);
             alert2.click();
-            Thread.sleep(5000);
+            action = 6;
             driver.switchTo().alert().accept();
-            Thread.sleep(500);
+            action = 7;
             //
             WebElement alert3 = driver.findElement(By.id("confirmButton"));
             alert3.click();
@@ -1549,6 +1564,11 @@ public class Prueba extends Main {
             e.printStackTrace();
         } finally{
             driver.quit();
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_010 stopped after performing action " + action + " of 9 ----------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
         }
     }
     @Test(description = "Prueba DemoQA Alerts, Frames & Windows Frames.")

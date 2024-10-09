@@ -261,7 +261,8 @@ public class Prueba extends Main {
             //
             action = 0;
             //
-            String url = getTagValue("demoqa", doc);
+            String url = config.getProperty("url");
+            //
             String elementsXpath = getTagValue("elements", doc);
             String textBoxXpath = getTagValue("firstSubElement", doc);
             //

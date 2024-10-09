@@ -1,0 +1,37 @@
+{
+    "CP001": {
+        "nombre": "ejemplo",
+        "apellido": "ejemplo",
+        "correo": "ejemplo@ejemplo.com",
+        "correobad": "ejemplo",
+        "address": "ejemplo",
+        "addressp": "ejemplo"
+    },
+    "CP004": {
+        "firstname": "ejemplo",
+        "lastname": "ejemplo",
+        "emailbad": "ejemplo",
+        "emailgood": "ejemplo@ejemplo.com",
+        "agebad": "ej",
+        "agegood": "44",
+        "salarybad": "ejemplo",
+        "salarygood": "4444",
+        "department": "ejemplo"
+    },
+    "CP008": {
+        "firstname": "ejemplo",
+        "lastname": "ejemplo",
+        "emailbad": "ejemplo",
+        "emailgood": "ejemplo@ejemplo.com",
+        "mobilebad": "ejemplo",
+        "mobilegood": "4444444444",
+        "subject": "Maths",
+        "subject2": "Arts",
+        "addresscurrent": "ejemplo",
+        "state": "NCR",
+        "city": "Delhi"
+    },
+    "CP010": {
+        "alertbox": "ejemplo"
+    }
+}

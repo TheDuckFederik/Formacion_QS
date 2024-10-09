@@ -1,7 +1,12 @@
 package web;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,7 +23,11 @@ import com.opencsv.exceptions.CsvException;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 
+import com.google.gson.Gson;
+
+
 public class Prueba extends Main {
+
     @Test(description = "Prueba DemoQA Elements Text box")
     @Story("Elements")
     @Description("Rellenar Text Box")
@@ -28,6 +37,7 @@ public class Prueba extends Main {
         String[] datosErroneosCP001 = datosCsv().get(3);
          try{
 
+            System.out.println();
             driver.get("https://demoqa.com");
             System.out.println("Se abre la página DemoQA" + "\n");        
   
@@ -45,22 +55,22 @@ public class Prueba extends Main {
             js.executeScript("window.scrollBy(0, 444);");  
 
             WebElement fullname = driver.findElement(By.xpath(propiedades.getProperty("textbox.fullname")));
-            fullname.sendKeys(datosCorrectosCP001[0]);
+            fullname.sendKeys(datoJson("CP001", "nombre"));
             Thread.sleep(100);
             System.out.println("Se rellena el campo Full Name" + "\n");
 
             WebElement email = driver.findElement(By.xpath(propiedades.getProperty("textbox.email")));
-            email.sendKeys(datosErroneosCP001[1]);
+            email.sendKeys(datoJson("CP001", "correobad"));
             Thread.sleep(100);
             System.out.println("Se rellena el campo Email" + "\n");
             
             WebElement caddress = driver.findElement(By.xpath(propiedades.getProperty("textbox.current_address")));
-            caddress.sendKeys(datosCorrectosCP001[2]);
+            caddress.sendKeys(datoJson("CP001", "address"));
             Thread.sleep(100);
             System.out.println("Se rellena el campo Current Address" + "\n");
 
             WebElement paddress = driver.findElement(By.xpath(propiedades.getProperty("textbox.permanent_address")));
-            paddress.sendKeys(datosCorrectosCP001[3]);
+            paddress.sendKeys(datoJson("CP001", "addressp"));
             Thread.sleep(100);
             System.out.println("Se rellena el campo Permanent Address" + "\n");
 
@@ -71,7 +81,7 @@ public class Prueba extends Main {
             driver.findElement(By.xpath(propiedades.getProperty("textbox.email"))).clear();
 
             WebElement email2 = driver.findElement(By.xpath(propiedades.getProperty("textbox.email")));
-            email2.sendKeys(datosCorrectosCP001[1]);
+            email2.sendKeys(datoJson("CP001", "correo"));
             Thread.sleep(100);
             System.out.println("Se rellena el campo Email" + "\n");
 
@@ -1275,5 +1285,14 @@ public class Prueba extends Main {
         reader.close();
         return listDatos;
         
+    }
+    public String datoJson(String clavePrueba, String clave) throws IOException{
+
+        Reader myreader = Files.newBufferedReader(Paths.get("C:\\Users\\ricard.ferrando.ext\\OneDrive - GFI\\Documentos\\FormacionQS\\Formacion_QS\\demo\\src\\test\\resources\\config.json"));
+        Gson gson = new Gson();
+        Map<?,Map<?,?>> userMap = gson.fromJson(myreader, Map.class);
+        Map<?,?> subMap = userMap.get(clavePrueba);
+        String valor = subMap.get(clave).toString();
+        return valor;
     }
 }

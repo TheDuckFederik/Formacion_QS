@@ -44,18 +44,17 @@ public class Main {
 
     @BeforeMethod
     public void setup_test() {
+        String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml";
+        String csvFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.csv";
+        String jsonFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.json";
+        String confFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.conf";
         // Load configuration file
         config = new Properties();
-        try (InputStream input = new FileInputStream("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\config.conf")) {
+        try (InputStream input = new FileInputStream(confFilePath)) {
             config.load(input);
         } catch (IOException ex) {
             ex.printStackTrace(); // Handle exceptions for config
         }
-
-        String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml";
-        String csvFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.csv";
-        String jsonFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.json";
-
         // XML Reading
         try {
             File inputFile = new File(xmlFilePath);
@@ -90,7 +89,7 @@ public class Main {
             e.printStackTrace(); // Handle exceptions for JSON
         }
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\fromacion\\src\\test\\resources\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
         chromeOptions.addArguments("--log-level=1");

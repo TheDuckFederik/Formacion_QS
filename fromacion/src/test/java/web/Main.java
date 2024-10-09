@@ -86,7 +86,7 @@ public class Main {
             JSONObject jsonData = new JSONObject(jsonString);
             jsonDataArray = jsonData.getJSONArray("data");
         } catch (IOException e) {
-            e.printStackTrace(); // Handle exceptions for JSON
+            e.printStackTrace();
         }
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\fromacion\\src\\test\\resources\\chromedriver.exe");

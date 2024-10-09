@@ -374,38 +374,34 @@ public class Prueba extends Main {
             doc.getDocumentElement().normalize();
             //
             String url = getTagValue("demoqa", doc);
-            String elementsXpath = getTagValue("elements", doc);
-            String checkBoxXpath = getTagValue("secondSubElement", doc);
+            String elementsXpath = config.getProperty("elements");
+            String checkBoxXpath = config.getProperty("secondSubElement");
+
             //
-            String plusPath = getTagValue("plusXpath_TC_002", doc);
-            String minusPath = getTagValue("minusXpath_TC_002", doc);
+            String plusPath = config.getProperty("plusXpath_TC_002");
+            String minusPath = config.getProperty("minusXpath_TC_002");
             //
-            String homeArrowPath = getTagValue("homeArrowXpath", doc);
+            String homeArrowPath = config.getProperty("homeArrowXpath");
+            String desktopArrowPath = config.getProperty("desktopArrowXpath");
+            String documentArrowPath = config.getProperty("documentsArrowXpath");
+            String workSpaceArrowPath = config.getProperty("workSpaceArrowXpath");
+            String officeArrowPath = config.getProperty("officeArrowXpath");
             //
-            String desktopArrowPath = getTagValue("desktopArrowXpath", doc);
+            String downloadArrowPath = config.getProperty("downloadArrowXpath");
             //
-            String documentArrowPath = getTagValue("documentsArrowXpath", doc);
-            String workSpaceArrowPath = getTagValue("workSpaceArrowXpath", doc);
-            String officeArrowPath = getTagValue("officeArrowXpath", doc);
+            String homeBoxPath = config.getProperty("homeBoxXpath");
+            String desktopBoxPath = config.getProperty("desktopBoxXpath");
+            String documentBoxPath = config.getProperty("documentsBoxXpath");
+            String notesBoxPath = config.getProperty("notesBoxXpath");
+            String commandsBoxPath = config.getProperty("commandsBoxXpath");
             //
-            String downloadArrowPath = getTagValue("downloadArrowXpath", doc);
+            String workSpaceBoxPath = config.getProperty("workSpaceBoxXpath");
+            String reactBoxPath = config.getProperty("reactBoxXpath");
+            String angularBoxPath = config.getProperty("angularBoxXpath");
+            String veuBoxPath = config.getProperty("veuBoxXpath");
             //
-            String homeBoxPath = getTagValue("homeArrowXpath", doc);
-            //
-            String desktopBoxPath = getTagValue("desktopArrowXpath", doc);
-            //
-            String documentBoxPath = getTagValue("documentsBoxXpath", doc);
-            String notesBoxPath = getTagValue("notesBoxXpath", doc);
-            String commandsBoxPath = getTagValue("commandsBoxXpath", doc);
-            //
-            String workSpaceBoxPath = getTagValue("workSpaceBoxXpath", doc);
-            String reactBoxPath = getTagValue("reactBoxXpath", doc);
-            String angularBoxPath = getTagValue("angularBoxXpath", doc);
-            String veuBoxPath = getTagValue("veuBoxXpath", doc);
-            //
-            String officeBoxPath = getTagValue("officeBoxXpath", doc);
-            //
-            String downloadBoxPath = getTagValue("downloadBoxXpath", doc);
+            String officeBoxPath = config.getProperty("officeBoxXpath");
+            String downloadBoxPath = config.getProperty("downloadBoxXpath");
             //
             driver.get(url);
             action = 1;

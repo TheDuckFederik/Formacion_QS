@@ -2161,14 +2161,5 @@ public class Prueba extends Main {
             driver.quit();
         }
     }
-
-    // private String getTagValue(String tag, Document doc) {
-    //     NodeList nodeList = doc.getElementsByTagName(tag);
-    //     if (nodeList != null && nodeList.getLength() > 0) {
-    //         Node node = nodeList.item(0);
-    //         return node.getTextContent();
-    //     }
-    //     return null;
-    // }
 }
 //

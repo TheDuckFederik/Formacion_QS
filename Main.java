@@ -30,18 +30,18 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Main {
-    public static String testId;
+    public String testId;
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected TakesScreenshot scrshot;
     protected File srcFile;
     protected File destFile;
-    protected static String paso;
+    protected String paso;
     static Properties config;
     // XML, CSV, and JSON
-    static Document doc;
-    static Map<String, String> csvData = new HashMap<>();
-    static JSONArray jsonDataArray;
+    Document doc;
+    Map<String, String> csvData = new HashMap<>();
+    JSONArray jsonDataArray;
 
     /**
      * Setup test environment before each test method
@@ -140,8 +140,8 @@ public class Main {
     }
 
     // Method to get the value of a specific tag in the XML document
-    public static String getTagValue(String tag, Document doc) {
- NodeList nodeList = doc.getElementsByTagName(tag);
+    public String getTagValue(String tag) {
+        NodeList nodeList = doc.getElementsByTagName(tag);
         Node node = nodeList.item(0); // Get the first node
 
         if (node != null && node.getNodeType() == Node.ELEMENT_NODE) {
@@ -151,12 +151,12 @@ public class Main {
     }
 
     // Method to get the value from CSV data
-    public static String getCsvValue(String key) {
+    public String getCsvValue(String key) {
         return csvData.get(key);
     }
 
     // Method to get the value from JSON data
-    public static String getJsonValue(String key) {
+    public String getJsonValue(String key) {
         for (int i = 0; i < jsonDataArray.length(); i++) {
             JSONObject jsonObject = jsonDataArray.getJSONObject(i);
             if (jsonObject.has(key)) {
@@ -173,5 +173,10 @@ public class Main {
         } else {
             System.out.println("Value is null or empty for element: " + element.toString());
         }
+    }
+
+    // Getter method for the doc field
+    public Document getDoc() {
+        return doc;
     }
 }

@@ -14,6 +14,7 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
+// import org.junit.experimental.categories.Category;
 // import org.w3c.dom.NodeList;
 // import org.w3c.dom.Node;
 //
@@ -24,6 +25,7 @@ public class Prueba extends Main {
     @Test(description = "Prueba DemoQA Elements Text Box")
     @Story("Elements")
     @Description("Rellenar textbox")
+    // @Category(Format_Test.class)
     //
     public void XML_Test() throws InterruptedException, IOException {
         testId = "XML_Test";
@@ -99,6 +101,7 @@ public class Prueba extends Main {
     @Test(description = "Prueba DemoQA Elements Text Box")
     @Story("Elements")
     @Description("Rellenar textbox")
+    // @Category("Format_Test")
     //
     public void CSV_Test() throws InterruptedException, IOException {
         testId = "CSV_Test";
@@ -174,6 +177,7 @@ public class Prueba extends Main {
     @Test(description = "Prueba DemoQA Elements Text Box")
     @Story("Elements")
     @Description("Rellenar textbox")
+    // @Category("Format_Test")
     //
     public void JSON_Test() throws InterruptedException, IOException {
         testId = "JSON_Test";
@@ -249,6 +253,7 @@ public class Prueba extends Main {
     @Test(description = "Prueba DemoQA Elements Text Box")
     @Story("Elements")
     @Description("Rellenar textbox")
+    // @Category("Elemets")
     //
     public void TC001_Text_Box() throws InterruptedException, IOException {
         testId = "TC001_Text_Box";

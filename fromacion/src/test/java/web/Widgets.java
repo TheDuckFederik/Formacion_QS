@@ -1,7 +1,6 @@
 package web;
-//
+
 import java.io.IOException;
-import java.util.ArrayList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -14,11 +13,9 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
-// import org.junit.experimental.categories.Category;
-// import org.w3c.dom.NodeList;
-// import org.w3c.dom.Node;
-//
-public class Prueba extends Main {
+// import java.util.ArrayList;
+
+public class Widgets extends Main {
     //
     public int action = 0;
     //
@@ -460,4 +457,3 @@ public class Prueba extends Main {
         }
     }
 }
-//

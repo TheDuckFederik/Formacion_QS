@@ -1,0 +1,61 @@
+{
+    "Elements": {
+      "TC_001": {
+        "fullNameText_TC_001": "User",
+        "EmailincorrectoText_TC_001": "User",
+        "Emailincorrecto2Text_TC_001": "User@",
+        "EmailCorrectoText_TC_001": "User@gmail.com",
+        "CurrentAddressText_TC_001": "Current Address",
+        "PermanentAddressText_TC_001": "Permanent Address"
+      },
+      "TC_004": {
+        "UserFullName_Web_Tables_TC_004": "FUser",
+        "UserLastName_Web_Tables_TC_004": "LUser",
+        "UserEmailIncorrecto_Web_Tables_TC_004": "User",
+        "UserEmailIncorrecto2_Web_Tables_TC_004": "User@",
+        "UserEmailCorrecto_Web_Tables_TC_004": "User@gmail.com",
+        "UserAge_Web_Tables_TC_004": "20",
+        "UserSalary_Web_Tables_TC_004": "2000",
+        "UserDepartament_Web_Tables_TC_004": "Departament",
+        "EditarFirstName_Web_Tables_TC_004": "Usuario",
+        "EditarLastName_Web_Tables_TC_004": "LUsuario",
+        "EditarEmail_Web_Tables_TC_004": "Usuario@gmail.com",
+        "EditarAge_Web_Tables_TC_004": "22",
+        "EditarSalary_Web_Tables_TC_004": "520",
+        "EditarDepart_Web_Tables_TC_004": "IA"
+      },
+      "TC_006": {
+        "Archivo_Upload_Download_TC_006": "C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png"
+      },
+      "TC_008": {
+        "UserFirstName_Practice_Forms_TC_008": "FUser",
+        "UserLastName_Practice_Forms_TC_008": "LUser",
+        "UserEmailIncorrecto_Practice_Forms_TC_008": "User",
+        "UserEmailIncorrecto2_Practice_Forms_TC_008": "User@",
+        "UserEmailCorrecto_Practice_Forms_TC_008": "User@gmail.com",
+        "Movil_Practice_Forms_TC_008": "1234567890",
+        "SubjectMath_Practice_Froms_TC_008": "Math",
+        "SubjectAccounting_Practice_Forms_TC_008": "Accounting",
+        "SubjectArts_Practice_Forms_TC_008": "Arts",
+        "SubjectSoci_Practice_Forms_TC_008": "Soci",
+        "SubirArchivo_Practice_Froms_TC_008": "C:\\Users\\kevin.riese.ext\\Downloads\\FOODTURE.png",
+        "CurrentAddress_Practice_Forms_TC_008": "Current Address",
+        "State_Practice_Froms_TC_008": "NCR",
+        "City_Practice_Froms_TC_008": "Noida"
+      },
+      "TC_010": {
+        "MensajePromp_Alerts_TC_010": "Hola"
+      },
+      "TC_018": {
+        "PrimeraOpcionOption_Select_Menu_TC_018": "Group 1, option 1",
+        "SegundaOpcionOption_Select_Menu_TC_018": "Group 1, option 2",
+        "PrimeraOpcionTitle_Select_Menu_TC_018": "Mr.",
+        "SegundaOpcionTilte_Select_Menu_TC_018": "Mrs.",
+        "PrimerColor_Select_Menu_TC_018": "Blue",
+        "SegundoColor_Select_Menu_TC_018": "Black",
+        "TercerColor_Select_Menu_TC_018": "Green",
+        "CuartoColor_Select_Menu_TC_018": "Red"
+      }
+    }
+  }
+  

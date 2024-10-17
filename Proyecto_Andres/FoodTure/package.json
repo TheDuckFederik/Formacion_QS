@@ -1,0 +1,27 @@
+{
+  "name": "foodture",
+  "version": "1.0.0",
+  "description": "Proyecto Foodture",
+  "main": "main.js",
+  "scripts": {
+    "ejecutar": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheDuckFrederik/Formacion_QS.git"
+  },
+  "keywords": [
+    "proyecto",
+    "andres",
+    "foodture"
+  ],
+  "author": "Kevin and QS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheDuckFrederik/Formacion_QS/issues"
+  },
+  "homepage": "https://github.com/TheDuckFrederik/Formacion_QS#readme",
+  "dependencies": {
+    "foodture": "file:"
+  }
+}

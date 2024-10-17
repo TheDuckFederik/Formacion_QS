@@ -19,25 +19,36 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.Properties;
+
+
+import org.json.JSONObject;
+
+
+import java.nio.file.Files;
 
 public class Main {
 
     // Instanciar acciones y condiciones
     public static String testId;
-    static WebDriver driver;
-    static Wait<WebDriver> wait;
+    public static WebDriver driver;
+    protected static Wait<WebDriver> wait;
     static TakesScreenshot scrshot;
     static File srcFile;
     static File destFile;
 
     // Para el archivo de configuración
-    static Properties config;
+    public static Properties config;
 
-    // Para el archivo XML
-    static Document doc;
-    
+    // Para el archivo XML y JSON
+
+    public static Document doc;
+    public static JSONObject jsonData;
+    public static String jsonFilePath;
     private static Main home_instance = null;
 
     // Patrón Singleton para instanciar la clase
@@ -55,13 +66,13 @@ public class Main {
         InputStream input = new FileInputStream("src\\test\\java\\web\\selenium.conf");
         config.load(input);
 
+        // Cargar el archivo JSON
+        jsonFilePath = "src\\test\\java\\web\\selenium.json"; // Ruta modificada según tu estructura de directorios
+        loadJSON(jsonFilePath); // Llamada al método para cargar el archivo JSON
+
         // Cargar el archivo XML
         String xmlFilePath = "src\\test\\java\\web\\selenium.xml";
-        File inputFile = new File(xmlFilePath);
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        doc = dBuilder.parse(inputFile);
-        doc.getDocumentElement().normalize(); // Normaliza el documento
+        loadXML(xmlFilePath);
 
         // Configuración del WebDriver
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -71,7 +82,27 @@ public class Main {
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--disable-search-engine-choice-screen");
         driver = new ChromeDriver(chromeOptions);
-        wait = new WebDriverWait(driver, 45);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+    }
+
+    // Método para cargar el archivo JSON
+    public static void loadJSON(String filePath) throws IOException {
+        String jsonString = new String(Files.readAllBytes(Paths.get(filePath)));
+        jsonData = new JSONObject(jsonString); // Cargar el archivo JSON en un JSONObject
+    }
+
+    // Método para obtener un valor del JSON según el ID del caso de prueba
+    public static String getJSONValue(String testCaseId, String key) {
+        return jsonData.getJSONObject(testCaseId).getString(key);
+    }
+
+    // Método para cargar el archivo XML (No modificado)
+    public static void loadXML(String filePath) throws Exception {
+        File inputFile = new File(filePath);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        doc = dBuilder.parse(inputFile);
+        doc.getDocumentElement().normalize(); // Normalizar el documento
     }
 
     @AfterMethod
@@ -83,17 +114,13 @@ public class Main {
     @AfterSuite
     public void after_suite() throws Exception {
         // Procesos finales, si es necesario
-        // ProcessBuilder procesoBuilder = new ProcessBuilder("./script.bat");
-        // Process proceso = procesoBuilder.start();
-        // proceso.waitFor();
     }
 
-    // Método para obtener el valor de una etiqueta específica en el documento XML
+    // Método para obtener el valor de una etiqueta específica en el documento XML (No modificado)
     public static String getTagValue(String tag, Document doc) {
-        // Buscar todas las ocurrencias del tag
         NodeList nodeList = doc.getElementsByTagName(tag);
         Node node = nodeList.item(0); // Obtener el primer nodo de la lista
-        
+
         // Verificar si el nodo no es nulo y es un elemento
         if (node != null && node.getNodeType() == Node.ELEMENT_NODE) {
             return node.getTextContent(); // Devolver el contenido del nodo

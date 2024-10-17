@@ -33,10 +33,11 @@ public class Prueba extends Main {
     @Description("Rellenar Text Box")
     public void TC001_TextBox() throws InterruptedException, IOException, CsvException {
         testId = "TC001_TextBox";
-        String[] datosCorrectosCP001 = datosCsv().get(2);
-        String[] datosErroneosCP001 = datosCsv().get(3);
          try{
 
+            // String[] datosCorrectosCP001 = datosCsv().get(2);
+            // String[] datosErroneosCP001 = datosCsv().get(3);
+            
             System.out.println();
             driver.get("https://demoqa.com");
             System.out.println("Se abre la página DemoQA" + "\n");        
@@ -349,9 +350,11 @@ public class Prueba extends Main {
     @Description("Probar Web Tables")
     public void TC004_WebTables() throws InterruptedException, IOException, CsvException {
         testId = "TC004_WebTables";
-        String[] datosCorrectosCP004 = datosCsv().get(7);
-        String[] datosErroneosCP004 = datosCsv().get(8);
          try{
+
+            String[] datosCorrectosCP004 = datosCsv().get(7);
+            String[] datosErroneosCP004 = datosCsv().get(8);
+            
             driver.get("https://demoqa.com");
             System.out.println("Se abre la página DemoQA" + "\n");          
 
@@ -627,7 +630,7 @@ public class Prueba extends Main {
             System.out.println("Se abre el apartado Upload and Download" + "\n");
 
             driver.findElement(By.xpath(propiedades.getProperty("upload.download"))).click();
-            Thread.sleep(1000);
+            Thread.sleep(100);
             System.out.println("Se descarga el archivo sampleFile.jpeg" + "\n");
 
             WebElement upload = driver.findElement(By.xpath(propiedades.getProperty("upload.archivo")));
@@ -1025,17 +1028,17 @@ public class Prueba extends Main {
             System.out.println("Texto del Small Modal: " + smallm);
 
             driver.findElement(By.xpath(propiedades.getProperty("modal.sclose"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("modal.large"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement textolarge = driver.findElement(By.xpath(propiedades.getProperty("modal.ltexto")));
             String largem = textolarge.getText();
             System.out.println("Texto del Large Modal: " + largem);
 
             driver.findElement(By.xpath(propiedades.getProperty("modal.lclose"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
         } catch(Exception e){
             e.printStackTrace();
@@ -1060,46 +1063,49 @@ public class Prueba extends Main {
             Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("datepicker.selectdate"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement mes = driver.findElement(By.xpath(propiedades.getProperty("datepicker.months")));
             Select mesSelect = new Select(mes);
             mesSelect.selectByVisibleText("April");
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement año = driver.findElement(By.xpath(propiedades.getProperty("datepicker.years")));
             Select añoSelect = new Select(año);
             añoSelect.selectByVisibleText("2005");
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath("//*[@id=\"datePickerMonthYear\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]")).click();
 
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);");  
+            Thread.sleep(100);
 
             // driver.findElement(By.xpath(propiedades.getProperty("datepicker.days"))).click();
-            // Thread.sleep(500);
+            // Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("datepicker.dateandtime"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("datepicker.months2.1"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("datepicker.months2.2"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("datepicker.years2.1"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("datepicker.years2.2"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             // driver.findElement(By.xpath(propiedades.getProperty("datepicker.days2"))).click();
-            // Thread.sleep(500);
+            // Thread.sleep(100);
 
             driver.findElement(By.xpath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[7]")).click();
 
             driver.findElement(By.xpath(propiedades.getProperty("datepicker.hour"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
         } catch(Exception e){
             e.printStackTrace();
@@ -1117,11 +1123,11 @@ public class Prueba extends Main {
 
             WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
             menu.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.slider")));
             form.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement slider = driver.findElement(By.xpath(propiedades.getProperty("slider.slider")));
 
@@ -1153,23 +1159,23 @@ public class Prueba extends Main {
 
             WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
             menu.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.progressbar")));
             form.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("progressbar.start"))).click();
             Thread.sleep(5000);
 
             driver.findElement(By.xpath(propiedades.getProperty("progressbar.start"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("progressbar.start"))).click();
             Thread.sleep(6000);
 
             driver.findElement(By.xpath(propiedades.getProperty("progressbar.restart"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
         } catch(Exception e){
             e.printStackTrace();
@@ -1187,30 +1193,30 @@ public class Prueba extends Main {
 
             WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
             menu.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0, 444);");  
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.menu")));;
             form.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("menu.mainitem1"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("menu.mainitem3"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("menu.mainitem2"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("menu.subsublist"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("menu.subsub1"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
         } catch(Exception e){
             e.printStackTrace();
@@ -1228,47 +1234,47 @@ public class Prueba extends Main {
 
             WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
             menu.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0, 444);");  
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement form = driver.findElement(By.xpath(propiedades.getProperty("widgets.selectmenu")));
             form.click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             js.executeScript("window.scrollBy(0, 444);");  
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.id("react-select-2-input")).sendKeys("Group 1, option 1"+ Keys.ENTER);
-            Thread.sleep(1000);
+            Thread.sleep(100);
 
             driver.findElement(By.id("react-select-3-input")).sendKeys("Mr."+ Keys.ENTER);
-            Thread.sleep(1000);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("selectmenu.oldstyle"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("selectmenu.oldstyle2"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("selectmenu.oldstyle2"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             WebElement multiSelect = driver.findElement(By.id("react-select-4-input"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", multiSelect);
             multiSelect.sendKeys("Green"+ Keys.ENTER);
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             multiSelect.sendKeys("Blue"+ Keys.ENTER);
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("selectmenu.multiselect"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("selectmenu.opel"))).click();
-            Thread.sleep(500);
+            Thread.sleep(100);
 
         } catch(Exception e){
             e.printStackTrace();

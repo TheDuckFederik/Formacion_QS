@@ -59,9 +59,6 @@ public class Elements extends Main {
             Thread.sleep(100);
             System.out.println("Se abre el apartado Text Box" + "\n");
 
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0, 444);");  
-
             WebElement fullname = driver.findElement(By.xpath(propiedades.getProperty("textbox.fullname")));
             fullname.sendKeys(datoJson("CP001", "nombre"));
             Thread.sleep(100);
@@ -82,8 +79,11 @@ public class Elements extends Main {
             Thread.sleep(100);
             System.out.println("Se rellena el campo Permanent Address" + "\n");
 
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);");  
+
             WebElement submit = driver.findElement(By.xpath(propiedades.getProperty("textbox.submit")));
-            submit.clear();
+            submit.click();
             Thread.sleep(100);
 
             driver.findElement(By.xpath(propiedades.getProperty("textbox.email"))).clear();
@@ -98,7 +98,7 @@ public class Elements extends Main {
             Thread.sleep(100);
             System.out.println("Nos devuelve los datos que hemos puesto anteriormente en los campos" + "\n");
 
-            System.out.println(driver.findElement(By.xpath(propiedades.getProperty(""))).getText());
+            System.out.println(driver.findElement(By.xpath(propiedades.getProperty("textbox.output"))).getText());
 
         } catch(IllegalArgumentException e){
             System.out.println("Xpath nulo");
@@ -727,7 +727,7 @@ public class Elements extends Main {
             System.out.println("Se abre el apartado Upload and Download" + "\n");
 
             driver.findElement(By.xpath(propiedades.getProperty("upload.download"))).click();
-            Thread.sleep(100);
+            Thread.sleep(1000);
             System.out.println("Se descarga el archivo sampleFile.jpeg" + "\n");
 
             WebElement upload = driver.findElement(By.xpath(propiedades.getProperty("upload.archivo")));

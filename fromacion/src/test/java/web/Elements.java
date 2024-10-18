@@ -4,6 +4,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -115,8 +116,10 @@ public class Elements extends Main {
             System.out.println(print_output);
             action = 16;
             //
-        } catch(Exception e){
-            e.printStackTrace();
+        } catch(IllegalArgumentException e) {
+            System.out.println("XPath ID or other locator method empty.");
+        } catch(WebDriverException e) {
+            System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
         } finally{
             driver.quit();
             //

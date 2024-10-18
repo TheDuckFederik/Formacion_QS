@@ -1,9 +1,14 @@
 package web;
 //
 import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -116,11 +121,28 @@ public class Elements extends Main {
             System.out.println(print_output);
             action = 16;
             //
-        } catch(IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("XPath ID or other locator method empty.");
-        } catch(WebDriverException e) {
+            System.out.println("Err code = 0001");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_001\\0001.png"));
+        } catch (NoSuchElementException e) {
+            System.out.println("The XPath or ID isn't assigned to an element.");
+            System.out.println("Err code = 0002");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_001\\0002.png"));
+        }catch (WebDriverException e) {
             System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
-        } finally{
+            System.out.println("Err code = 0003");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_001\\0003.png"));
+        } catch (Exception e) {
+            // This will catch any other exceptions
+            System.out.println("Err\nNon common error, not registered.");
+            System.out.println("Err code = 0000");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_001\\0000.png"));
+        } finally {
             driver.quit();
             //
             System.out.println("|-------------------------------------------------------------------|");
@@ -342,8 +364,27 @@ public class Elements extends Main {
             //
             System.out.println("");
             //
-        } catch(Exception e){
-            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            System.out.println("XPath ID or other locator method empty.");
+            System.out.println("Err code = 0001");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_002\\0001.png"));
+        } catch (NoSuchElementException e) {
+            System.out.println("The XPath or ID isn't assigned to an element.");
+            System.out.println("Err code = 0002");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_002\\0002.png"));
+        }catch (WebDriverException e) {
+            System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
+            System.out.println("Err code = 0003");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_002\\0003.png"));
+        } catch (Exception e) {
+            // This will catch any other exceptions
+            System.out.println("Err\nNon common error, not registered.");
+            System.out.println("Err code = 0000");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_002\\0000.png"));
         } finally{
             driver.quit();
             //
@@ -408,8 +449,27 @@ public class Elements extends Main {
             System.out.println("You have selected " + selectedButton);
             action = 9;
             //
-        } catch(Exception e){
-            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            System.out.println("XPath ID or other locator method empty.");
+            System.out.println("Err code = 0001");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_003\\0001.png"));
+        } catch (NoSuchElementException e) {
+            System.out.println("The XPath or ID isn't assigned to an element.");
+            System.out.println("Err code = 0002");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_003\\0002.png"));
+        }catch (WebDriverException e) {
+            System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
+            System.out.println("Err code = 0003");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_003\\0003.png"));
+        } catch (Exception e) {
+            // This will catch any other exceptions
+            System.out.println("Err\nNon common error, not registered.");
+            System.out.println("Err code = 0000");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_003\\0000.png"));
         } finally{
             driver.quit();
             //
@@ -807,8 +867,27 @@ public class Elements extends Main {
             //
             System.out.println();
             //
-        } catch(Exception e){
-            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            System.out.println("XPath ID or other locator method empty.");
+            System.out.println("Err code = 0001");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_004\\0001.png"));
+        } catch (NoSuchElementException e) {
+            System.out.println("The XPath or ID isn't assigned to an element.");
+            System.out.println("Err code = 0002");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_004\\0002.png"));
+        }catch (WebDriverException e) {
+            System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
+            System.out.println("Err code = 0003");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_004\\0003.png"));
+        } catch (Exception e) {
+            // This will catch any other exceptions
+            System.out.println("Err\nNon common error, not registered.");
+            System.out.println("Err code = 0000");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_004\\0000.png"));
         } finally{
             driver.quit();
             //
@@ -877,8 +956,27 @@ public class Elements extends Main {
             System.out.println("You have performed a " + performedClick);
             action = 10;
             //
-        } catch(Exception e){
-            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            System.out.println("XPath ID or other locator method empty.");
+            System.out.println("Err code = 0001");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_005\\0001.png"));
+        } catch (NoSuchElementException e) {
+            System.out.println("The XPath or ID isn't assigned to an element.");
+            System.out.println("Err code = 0002");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_005\\0002.png"));
+        }catch (WebDriverException e) {
+            System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
+            System.out.println("Err code = 0003");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_005\\0003.png"));
+        } catch (Exception e) {
+            // This will catch any other exceptions
+            System.out.println("Err\nNon common error, not registered.");
+            System.out.println("Err code = 0000");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_005\\0000.png"));
         } finally{
             driver.quit();
             //
@@ -932,8 +1030,27 @@ public class Elements extends Main {
             System.out.println(filePath);
             action = 5;
             //
-        } catch(Exception e){
-            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            System.out.println("XPath ID or other locator method empty.");
+            System.out.println("Err code = 0001");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_006\\0001.png"));
+        } catch (NoSuchElementException e) {
+            System.out.println("The XPath or ID isn't assigned to an element.");
+            System.out.println("Err code = 0002");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_006\\0002.png"));
+        }catch (WebDriverException e) {
+            System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
+            System.out.println("Err code = 0003");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_006\\0003.png"));
+        } catch (Exception e) {
+            // This will catch any other exceptions
+            System.out.println("Err\nNon common error, not registered.");
+            System.out.println("Err code = 0000");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_006\\0000.png"));
         } finally{
             driver.quit();
             //
@@ -996,8 +1113,27 @@ public class Elements extends Main {
             visibleAfter.click();
             action = 8;
             //
-        } catch(Exception e){
-            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            System.out.println("XPath ID or other locator method empty.");
+            System.out.println("Err code = 0001");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_007\\0001.png"));
+        } catch (NoSuchElementException e) {
+            System.out.println("The XPath or ID isn't assigned to an element.");
+            System.out.println("Err code = 0002");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_007\\0002.png"));
+        }catch (WebDriverException e) {
+            System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
+            System.out.println("Err code = 0003");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_007\\0003.png"));
+        } catch (Exception e) {
+            // This will catch any other exceptions
+            System.out.println("Err\nNon common error, not registered.");
+            System.out.println("Err code = 0000");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_007\\0000.png"));
         } finally{
             driver.quit();
             //

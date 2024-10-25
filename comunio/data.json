@@ -1,0 +1,45 @@
+{ 
+    "Entrar":{
+                "Usuario":"RFR1",
+                "Contraseña":"Tortazo9@@##",
+                "correoBueno":"correo@bueno.com",
+                "currAddress":"PruebaAddress",
+                "permAddress":"pruebaPermaAddress"
+            },
+    "CP004":{
+                "firstnameAdd":"pruebaNombre",
+                "lastnameAdd":"PruebaApellido",
+                "emailbadAdd":"CorreoIncorrecto",
+                "emailgoodAdd":"Correo@correcto.com",
+                "agebadAdd":"asdf",
+                "agegoodAdd":"23",
+                "salarybadAdd":"aqwer",
+                "salarygoodAdd":"12000",
+                "departmentAdd":"poidf",
+                "rows":"5 rows"
+        },
+    "CP008":{
+                "firstName":"PruebaName",
+                "lastName":"PrebaLastName",
+                "emailbad":"PruebaEmail",
+                "emailgood":"Prueba@Email.com",
+                "mobilebad":"gshdretsgd",
+                "mobilesingle":"12345",
+                "mobilegood":"1234567890",
+                "dateofbirth":"01 Sept 2024",
+                "subject":"English",
+                "subject2":"Maths",
+                "addresscurrent":"Carrer Hola",
+                "statesel":"NCR",
+                "citysel":"Delhi"
+        },
+    "CP010":{
+                "alertBox":"hola"
+        },
+    "CP014":{
+                "selectdateMonth":"January",
+                "selectDateYear":"2004",
+                "selectDateGood":"3/3/2023",
+                "selectDateTimeGood":"3/3/2023 18:30"
+        }
+}

@@ -10,12 +10,12 @@ import com.google.gson.Gson;
 
 public class MyReader {
     
-    public String dato(String clavePrueva,String clave ) throws IOException{
+    public String dato(String clavePrueba,String clave ) throws IOException{
 
             Reader myReader = Files.newBufferedReader(Paths.get("data.json"));
             Gson gson = new Gson();
             Map<?,Map<?,?>> userMap = gson.fromJson(myReader, Map.class);
-            Map<?,?> subMap = userMap.get(clavePrueva);
+            Map<?,?> subMap = userMap.get(clavePrueba);
             String valor = subMap.get(clave).toString();
 
             return valor;

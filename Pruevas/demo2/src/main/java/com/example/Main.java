@@ -1212,95 +1212,91 @@ public class Main {
 
         //CASO DE Prueba 010
 
-        try{
+        // try{
 
-            MyReader jsonReader = new MyReader();
+        //     MyReader jsonReader = new MyReader();
 
-            CPD cpdList = new CPD();
-            List<String[]> datos = cpdList.Datos();
-            String[] datoRequerido = datos.get(10);
+        //     driver.get("https://demoqa.com");
+        //     Thread.sleep(500);
+        //     WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
+        //     menu.click();
+        //     Thread.sleep(500);       
+        //     WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Alerts")));
+        //     submenu.click();
+        //     Thread.sleep(500);
 
-            driver.get("https://demoqa.com");
-            Thread.sleep(500);
-            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.alerts")));
-            menu.click();
-            Thread.sleep(500);       
-            WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Alerts")));
-            submenu.click();
-            Thread.sleep(500);
+        //     //Hacemos click en el boton para ver una alert
 
-            //Hacemos click en el boton para ver una alert
+        //     driver.findElement(By.id("alertButton")).click();
+        //     Thread.sleep(500);
+        //     System.out.println("se abre el alert" + "\n");
 
-            driver.findElement(By.id("alertButton")).click();
-            Thread.sleep(500);
-            System.out.println("se abre el alert" + "\n");
+        //     //Cambiamos al alert y acceptamos el alert
 
-            //Cambiamos al alert y acceptamos el alert
+        //     driver.switchTo().alert();
+        //     driver.switchTo().alert().accept();
+        //     Thread.sleep(500);
+        //     System.out.println("se acepta el alert" + "\n");
 
-            driver.switchTo().alert();
-            driver.switchTo().alert().accept();
-            Thread.sleep(500);
-            System.out.println("se acepta el alert" + "\n");
+        //     //Hacemos click al segundo boton y esperamos 5 segundos
 
-            //Hacemos click al segundo boton y esperamos 5 segundos
+        //     driver.findElement(By.id("timerAlertButton")).click();
+        //     Thread.sleep(7000);
+        //     System.out.println("se abre el alert despues de 5 segundos" + "\n");
 
-            driver.findElement(By.id("timerAlertButton")).click();
-            Thread.sleep(7000);
-            System.out.println("se abre el alert despues de 5 segundos" + "\n");
+        //     //Cambiamos al alert que saldrá dentro de 5 segundos y lo aceptamos
 
-            //Cambiamos al alert que saldrá dentro de 5 segundos y lo aceptamos
+        //     driver.switchTo().alert();
+        //     driver.switchTo().alert().accept();
+        //     Thread.sleep(500);
+        //     System.out.println("se acepta el alert" + "\n");
 
-            driver.switchTo().alert();
-            driver.switchTo().alert().accept();
-            Thread.sleep(500);
-            System.out.println("se acepta el alert" + "\n");
+        //     //Hacemos click al tercer boton
 
-            //Hacemos click al tercer boton
+        //     driver.findElement(By.id("confirmButton")).click();
+        //     Thread.sleep(500);
+        //     System.out.println("se abre el alert de acept y cancel" + "\n");
 
-            driver.findElement(By.id("confirmButton")).click();
-            Thread.sleep(500);
-            System.out.println("se abre el alert de acept y cancel" + "\n");
+        //     //Cambiamos al alert que saldrá y acceptamos
 
-            //Cambiamos al alert que saldrá y acceptamos
+        //     driver.switchTo().alert();
+        //     driver.switchTo().alert().accept();
+        //     Thread.sleep(500);  
+        //     System.out.println("se acepta el alert" + "\n");
 
-            driver.switchTo().alert();
-            driver.switchTo().alert().accept();
-            Thread.sleep(500);  
-            System.out.println("se acepta el alert" + "\n");
+        //     //Hacemos click al tercer boton
 
-            //Hacemos click al tercer boton
+        //     driver.findElement(By.id("confirmButton")).click();
+        //     Thread.sleep(500);
+        //     System.out.println("se abre el alert de acept y cancel" + "\n");
 
-            driver.findElement(By.id("confirmButton")).click();
-            Thread.sleep(500);
-            System.out.println("se abre el alert de acept y cancel" + "\n");
+        //     //Cambiamos al alert que saldrá y cancelamos
 
-            //Cambiamos al alert que saldrá y cancelamos
+        //     driver.switchTo().alert();
+        //     driver.switchTo().alert().dismiss();
+        //     Thread.sleep(500);     
+        //     System.out.println("se cancela el alert" + "\n");
 
-            driver.switchTo().alert();
-            driver.switchTo().alert().dismiss();
-            Thread.sleep(500);     
-            System.out.println("se cancela el alert" + "\n");
+        //     //Hacemos click al cuarto boton
 
-            //Hacemos click al cuarto boton
-
-            driver.findElement(By.id("promtButton")).click();
-            Thread.sleep(500);
-            System.out.println("se abre el alert de texto" + "\n");
+        //     driver.findElement(By.id("promtButton")).click();
+        //     Thread.sleep(500);
+        //     System.out.println("se abre el alert de texto" + "\n");
             
-            //Cambiamos al alert que saldrá y escrivimos la Prueba y aceptamos
+        //     //Cambiamos al alert que saldrá y escrivimos la Prueba y aceptamos
 
-            driver.switchTo().alert();
-            driver.switchTo().alert().sendKeys(jsonReader.dato("CP010", "alertBox"));
-            Thread.sleep(500);
-            driver.switchTo().alert().accept();
-            Thread.sleep(500);  
-            System.out.println("se ha escrito el texto y se ha aceptado el alert" + "\n");
+        //     driver.switchTo().alert();
+        //     driver.switchTo().alert().sendKeys(jsonReader.dato("CP010", "alertBox"));
+        //     Thread.sleep(500);
+        //     driver.switchTo().alert().accept();
+        //     Thread.sleep(500);  
+        //     System.out.println("se ha escrito el texto y se ha aceptado el alert" + "\n");
 
-        } catch(Exception e){
-            e.printStackTrace();
-        } finally{
-            driver.quit();
-        }
+        // } catch(Exception e){
+        //     e.printStackTrace();
+        // } finally{
+        //     driver.quit();
+        // }
 
         //CASO DE Prueba 011
 
@@ -1431,166 +1427,168 @@ public class Main {
 
           //CASO DE PRUEBA 014
 
-          // try {
+          try {
 
-          //   CPD cpdList = new CPD();
-          //   List<String[]> datos = cpdList.Datos();
-          //   String[] datoRequerido = datos.get(12);
-          //   String[] datosIncorrectos = datos.get(13);
+            MyReader jsonReader = new MyReader();
+
+            CPD cpdList = new CPD();
+            List<String[]> datos = cpdList.Datos();
+            String[] datoRequerido = datos.get(12);
+            String[] datosIncorrectos = datos.get(13);
 
 
-          //   driver.get("https://demoqa.com");
-          //   Thread.sleep(500);
-          //   WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
-          //   menu.click();
-          //   Thread.sleep(500);       
-          //   WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Date_Picker")));
-          //   submenu.click();
-          //   Thread.sleep(500);
+            driver.get("https://demoqa.com");
+            Thread.sleep(500);
+            WebElement menu = driver.findElement(By.xpath(propiedades.getProperty("menu.widgets")));
+            menu.click();
+            Thread.sleep(500);       
+            WebElement submenu = driver.findElement(By.xpath(propiedades.getProperty("submenu.Date_Picker")));
+            submenu.click();
+            Thread.sleep(500);
 
-          //   //Hacer click  al cuadro de texto de Select 
+            //Hacer click  al cuadro de texto de Select 
             
-          //       WebElement date = driver.findElement(By.id("datePickerMonthYearInput"));
-          //       date.click();
-          //       Thread.sleep(500);
-          //       System.out.println("se abre el cuadro de Select Date" + "\n");
+                WebElement date = driver.findElement(By.id("datePickerMonthYearInput"));
+                date.click();
+                Thread.sleep(500);
+                System.out.println("se abre el cuadro de Select Date" + "\n");
 
-          //   // Hacer click en los meses
-          //   // Hacer click en el mes January
+            // Hacer click en los meses
+            // Hacer click en el mes January
 
-          //   WebElement month = driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate")));
-          //     Select monthSelect = new Select(month);
-          //     monthSelect.selectByVisibleText("January");
-          //     Thread.sleep(500);
-          //     System.out.println("se selecciona January" + "\n");
-
-
-          //   // Hacer click en los años
-          //   // Hacer click en el año 2004
-
-          //   WebElement year = driver.findElement(By.xpath(propiedades.getProperty("select.YearDate")));
-          //     Select yearSelect = new Select(year);
-          //     yearSelect.selectByVisibleText("2004");
-          //     Thread.sleep(500);
-          //     System.out.println("se selecciona 2004" + "\n");
+            WebElement month = driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate")));
+              Select monthSelect = new Select(month);
+              monthSelect.selectByVisibleText(jsonReader.dato("CP014", "selectdateMonth"));
+              Thread.sleep(500);
+              System.out.println("se selecciona January" + "\n");
 
 
-          //   // Hacer click en el dia 16
+            // Hacer click en los años
+            // Hacer click en el año 2004
 
-          //       driver.findElement(By.xpath(propiedades.getProperty("select.DayDate"))).click();
-          //       Thread.sleep(500);
-          //       System.out.println("se selecciona 16" + "\n");
+            WebElement year = driver.findElement(By.xpath(propiedades.getProperty("select.YearDate")));
+              Select yearSelect = new Select(year);
+              yearSelect.selectByVisibleText(jsonReader.dato("CP014", "selectDateYear"));
+              Thread.sleep(500);
+              System.out.println("se selecciona 2004" + "\n");
 
 
-          //   // escrivir una fecha incorrecta con letras
-          //       date.sendKeys(Keys.CONTROL+"a");
-          //       date.sendKeys(Keys.DELETE);
-          //       Thread.sleep(500);
-          //       date.sendKeys(datosIncorrectos[0]);
-          //       date.sendKeys(Keys.ENTER);
-          //       Thread.sleep(500);
-          //       System.out.println("se ha escrito una fecha incorrecta" + "\n");
+            // Hacer click en el dia 16
+
+                driver.findElement(By.xpath(propiedades.getProperty("select.DayDate"))).click();
+                Thread.sleep(500);
+                System.out.println("se selecciona 16" + "\n");
+
+
+            // escrivir una fecha incorrecta con letras
+                date.sendKeys(Keys.CONTROL+"a");
+                date.sendKeys(Keys.DELETE);
+                Thread.sleep(500);
+                date.sendKeys(datosIncorrectos[0]);
+                date.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("se ha escrito una fecha incorrecta" + "\n");
 
                 
-          //   // escrivir una fecha incorrecta con numeros
+            // escrivir una fecha incorrecta con numeros
 
-          //       date.sendKeys(Keys.CONTROL+"a");
-          //       date.sendKeys(Keys.DELETE);
-          //       Thread.sleep(500);
-          //       date.sendKeys(datosIncorrectos[1]);
-          //       date.sendKeys(Keys.ENTER);
-          //       Thread.sleep(500);
-          //       System.out.println("se ha escrito una fecha incorrecta con numeros" + "\n");
-
-
-          //   // escrivir una fecha correcta 
-
-          //       date.sendKeys(Keys.CONTROL+"a");
-          //       date.sendKeys(Keys.DELETE);
-          //       Thread.sleep(500);
-          //       date.sendKeys(datoRequerido[1]);
-          //       date.sendKeys(Keys.ENTER);
-          //       Thread.sleep(500);
-          //       System.out.println("se ha escrito una fecha correcta" + "\n");
+                date.sendKeys(Keys.CONTROL+"a");
+                date.sendKeys(Keys.DELETE);
+                Thread.sleep(500);
+                date.sendKeys(datosIncorrectos[1]);
+                date.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("se ha escrito una fecha incorrecta con numeros" + "\n");
 
 
+            // escrivir una fecha correcta 
 
-          //   // Hacer click  al cuadro de texto de Date And Time
+                date.sendKeys(Keys.CONTROL+"a");
+                date.sendKeys(Keys.DELETE);
+                Thread.sleep(500);
+                date.sendKeys(jsonReader.dato("CP014", "selectDateGood"));
+                date.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("se ha escrito una fecha correcta" + "\n");
 
-          //       WebElement dateAndTime = driver.findElement(By.id("dateAndTimePickerInput"));
-          //       dateAndTime.click();
-          //       Thread.sleep(500);
-          //       System.out.println("se selecciona el cuador de date and time" + "\n");
 
 
-          //   // Hacer click en los meses
+            // Hacer click  al cuadro de texto de Date And Time
 
-          //       driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate&TimeSelect"))).click();
+                WebElement dateAndTime = driver.findElement(By.id("dateAndTimePickerInput"));
+                dateAndTime.click();
+                Thread.sleep(500);
+                System.out.println("se selecciona el cuador de date and time" + "\n");
+
+
+            // Hacer click en los meses
+
+                driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate&TimeSelect"))).click();
               
-          //   // Hacer click en el mes January
+            // Hacer click en el mes January
 
-          //       driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate&Time"))).click();
-          //       Thread.sleep(500);
-          //       System.out.println("se selecciona January" + "\n");
+                driver.findElement(By.xpath(propiedades.getProperty("select.MonthDate&Time"))).click();
+                Thread.sleep(500);
+                System.out.println("se selecciona January" + "\n");
 
 
-          //   // Hacer click en los años
+            // Hacer click en los años
 
-          //       driver.findElement(By.xpath(propiedades.getProperty("select.YearDate&TimeSelect"))).click();
+                driver.findElement(By.xpath(propiedades.getProperty("select.YearDate&TimeSelect"))).click();
 
-          //   // Hacer click en el año 2021
+            // Hacer click en el año 2021
 
-          //       driver.findElement(By.xpath(propiedades.getProperty("select.YearDate&Time"))).click();
-          //       Thread.sleep(500);
-          //       System.out.println("se selecciona 2021" + "\n");
+                driver.findElement(By.xpath(propiedades.getProperty("select.YearDate&Time"))).click();
+                Thread.sleep(500);
+                System.out.println("se selecciona 2021" + "\n");
 
-          //   // Hacer click en el dia 16
+            // Hacer click en el dia 16
 
-          //       driver.findElement(By.xpath(propiedades.getProperty("select.DayDate&Time"))).click();
-          //       Thread.sleep(500);
-          //       System.out.println("se selecciona 16" + "\n");
+                driver.findElement(By.xpath(propiedades.getProperty("select.DayDate&Time"))).click();
+                Thread.sleep(500);
+                System.out.println("se selecciona 16" + "\n");
 
-          //   // Hacer click en la hora 9:15
+            // Hacer click en la hora 9:15
 
-          //       driver.findElement(By.xpath(propiedades.getProperty("select.TimeDate&Time"))).click();
-          //       Thread.sleep(500);
-          //       System.out.println("se selecciona 9:15" + "\n");
+                driver.findElement(By.xpath(propiedades.getProperty("select.TimeDate&Time"))).click();
+                Thread.sleep(500);
+                System.out.println("se selecciona 9:15" + "\n");
 
-          //   // escrivir una fecha incorrecta con letras
+            // escrivir una fecha incorrecta con letras
 
-          //       dateAndTime.sendKeys(Keys.CONTROL+"a");
-          //       dateAndTime.sendKeys(Keys.DELETE);
-          //       Thread.sleep(500);
-          //       dateAndTime.sendKeys(datosIncorrectos[2]);
-          //       dateAndTime.sendKeys(Keys.ENTER);
-          //       Thread.sleep(500);
-          //       System.out.println("se escrive una fecha incorrecta con letras" + "\n");
+                dateAndTime.sendKeys(Keys.CONTROL+"a");
+                dateAndTime.sendKeys(Keys.DELETE);
+                Thread.sleep(500);
+                dateAndTime.sendKeys(datosIncorrectos[2]);
+                dateAndTime.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("se escrive una fecha incorrecta con letras" + "\n");
 
-          //   // escrivir una fecha incorrecta con numeros
+            // escrivir una fecha incorrecta con numeros
 
-          //       dateAndTime.sendKeys(Keys.CONTROL+"a");
-          //       dateAndTime.sendKeys(Keys.DELETE);
-          //       Thread.sleep(500);
-          //       dateAndTime.sendKeys(datosIncorrectos[3]);
-          //       dateAndTime.sendKeys(Keys.ENTER);
-          //       Thread.sleep(500);
-          //       System.out.println("se escrive una fecha incorrecta con numeros" + "\n");
+                dateAndTime.sendKeys(Keys.CONTROL+"a");
+                dateAndTime.sendKeys(Keys.DELETE);
+                Thread.sleep(500);
+                dateAndTime.sendKeys(datosIncorrectos[3]);
+                dateAndTime.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("se escrive una fecha incorrecta con numeros" + "\n");
 
-          //   // escrivir una fecha y hora correcta
+            // escrivir una fecha y hora correcta
 
-          //       dateAndTime.sendKeys(Keys.CONTROL+"a");
-          //       dateAndTime.sendKeys(Keys.DELETE);
-          //       Thread.sleep(500);
-          //       dateAndTime.sendKeys(datoRequerido[1]);
-          //       dateAndTime.sendKeys(Keys.ENTER);
-          //       Thread.sleep(500);
-          //       System.out.println("se escrive una fecha correcta" + "\n");
+                dateAndTime.sendKeys(Keys.CONTROL+"a");
+                dateAndTime.sendKeys(Keys.DELETE);
+                Thread.sleep(500);
+                dateAndTime.sendKeys(jsonReader.dato("CP014", "selectDateTimeGood"));
+                dateAndTime.sendKeys(Keys.ENTER);
+                Thread.sleep(500);
+                System.out.println("se escrive una fecha correcta" + "\n");
 
-          // } catch(Exception e){
-          //     e.printStackTrace();
-          // } finally{
-          //     driver.quit();
-          // }
+          } catch(Exception e){
+              e.printStackTrace();
+          } finally{
+              driver.quit();
+          }
 
           //CASO DE PRUEBA 015
 
@@ -1832,9 +1830,5 @@ public class Main {
           // } finally{
           //     driver.quit();
           // }
-    }
-
-    public void setup_test(){
-
     }
 }

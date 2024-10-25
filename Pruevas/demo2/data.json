@@ -19,18 +19,16 @@
                 "rows":"5 rows"
         },
     "CP008":{
-                "firstName":"PruevaName",
-                "lastName":"PrevaLastName",
-                "emailbad":"PruevaEmail",
-                "emailgood":"Prueva@Email.com",
+                "firstName":"PruebaName",
+                "lastName":"PrebaLastName",
+                "emailbad":"PruebaEmail",
+                "emailgood":"Prueba@Email.com",
                 "mobilebad":"gshdretsgd",
                 "mobilesingle":"12345",
                 "mobilegood":"1234567890",
                 "dateofbirth":"01 Sept 2024",
                 "subject":"English",
                 "subject2":"Maths",
-                "department":"TestDepartment",
-                "upload":"C:/Users/alex.martinez.ext/Downloads/samplefile.jpeg",
                 "addresscurrent":"Carrer Hola",
                 "statesel":"NCR",
                 "citysel":"Delhi"
@@ -39,7 +37,9 @@
                 "alertBox":"hola"
         },
     "CP014":{
-                "seldate":"06/06/2006",
-                "seldatetime":"June 06, 2006 05:15 PM"
+                "selectdateMonth":"January",
+                "selectDateYear":"2004",
+                "selectDateGood":"3/3/2023",
+                "selectDateTimeGood":"3/3/2023 18:30"
         }
 }

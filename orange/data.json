@@ -4,12 +4,10 @@
                 "Contraseña":"admin123"
             },
     "PIM":{
-                "firstName":"First_Name_Prueva",
-                "middleName":"Middle_Name_Prueva",
-                "lastName":"Last_Name_Prueva",
-                "employeeID":"434",
-                "Username":"User_Prueba",
-                "Password":"Admin123"
+                "firstName":"First_Name_Prueba",
+                "middleName":"Middle_Name_Prueba",
+                "lastName":"Last_Name_Prueba",
+                "employeeID":"434"
         },
     "CP008":{
                 "firstName":"PruebaName",

@@ -1,0 +1,38 @@
+{ 
+    "Login":{
+                "Usuario":"Admin",
+                "Contraseña":"admin123"
+            },
+    "PIM":{
+                "firstName":"First_Name_Prueva",
+                "middleName":"Middle_Name_Prueva",
+                "lastName":"Last_Name_Prueva",
+                "employeeID":"434",
+                "Username":"User_Prueba",
+                "Password":"Admin123"
+        },
+    "CP008":{
+                "firstName":"PruebaName",
+                "lastName":"PrebaLastName",
+                "emailbad":"PruebaEmail",
+                "emailgood":"Prueba@Email.com",
+                "mobilebad":"gshdretsgd",
+                "mobilesingle":"12345",
+                "mobilegood":"1234567890",
+                "dateofbirth":"01 Sept 2024",
+                "subject":"English",
+                "subject2":"Maths",
+                "addresscurrent":"Carrer Hola",
+                "statesel":"NCR",
+                "citysel":"Delhi"
+        },
+    "CP010":{
+                "alertBox":"hola"
+        },
+    "CP014":{
+                "selectdateMonth":"January",
+                "selectDateYear":"2004",
+                "selectDateGood":"3/3/2023",
+                "selectDateTimeGood":"3/3/2023 18:30"
+        }
+}

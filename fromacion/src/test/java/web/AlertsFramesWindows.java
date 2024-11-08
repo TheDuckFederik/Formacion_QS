@@ -103,7 +103,7 @@ public class AlertsFramesWindows extends Main {
             FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_009\\0000.png"));
         } finally{
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_010\\Succesful.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_009\\Succesful.png"));
             driver.quit();
             //
             System.out.println("|-------------------------------------------------------------------|");

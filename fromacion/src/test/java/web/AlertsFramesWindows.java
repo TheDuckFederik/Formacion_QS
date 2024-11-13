@@ -40,7 +40,7 @@ public class AlertsFramesWindows extends Main {
             //
             action = 0;
             //
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -84,26 +84,26 @@ public class AlertsFramesWindows extends Main {
             System.out.println("XPath ID or other locator method empty.");
             System.out.println("Err code = 0001");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_009\\0001.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_009\\0001.png"));
         } catch (NoSuchElementException e) {
             System.out.println("The XPath or ID isn't assigned to an element.");
             System.out.println("Err code = 0002");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_009\\0002.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_009\\0002.png"));
         }catch (WebDriverException e) {
             System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
             System.out.println("Err code = 0003");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_009\\0003.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_009\\0003.png"));
         } catch (Exception e) {
             // This will catch any other exceptions
             System.out.println("Err\nNon common error, not registered.");
             System.out.println("Err code = 0000");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_009\\0000.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_009\\0000.png"));
         } finally{
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_009\\Succesful.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_009\\Succesful.png"));
             driver.quit();
             //
             System.out.println("|-------------------------------------------------------------------|");
@@ -127,7 +127,7 @@ public class AlertsFramesWindows extends Main {
             //
             action = 0;
             //
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -193,26 +193,26 @@ public class AlertsFramesWindows extends Main {
             System.out.println("XPath ID or other locator method empty.");
             System.out.println("Err code = 0001");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_010\\0001.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_010\\0001.png"));
         } catch (NoSuchElementException e) {
             System.out.println("The XPath or ID isn't assigned to an element.");
             System.out.println("Err code = 0002");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_010\\0002.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_010\\0002.png"));
         }catch (WebDriverException e) {
             System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
             System.out.println("Err code = 0003");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_010\\0003.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_010\\0003.png"));
         } catch (Exception e) {
             // This will catch any other exceptions
             System.out.println("Err\nNon common error, not registered.");
             System.out.println("Err code = 0000");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_010\\0000.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_010\\0000.png"));
         } finally{
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_010\\Succesful.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_010\\Succesful.png"));
             driver.quit();
             //
             System.out.println("|-------------------------------------------------------------------|");
@@ -236,7 +236,7 @@ public class AlertsFramesWindows extends Main {
             //
             action = 0;
             //
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -272,26 +272,26 @@ public class AlertsFramesWindows extends Main {
             System.out.println("XPath ID or other locator method empty.");
             System.out.println("Err code = 0001");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_011\\0001.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_011\\0001.png"));
         } catch (NoSuchElementException e) {
             System.out.println("The XPath or ID isn't assigned to an element.");
             System.out.println("Err code = 0002");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_011\\0002.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_011\\0002.png"));
         }catch (WebDriverException e) {
             System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
             System.out.println("Err code = 0003");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_011\\0003.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_011\\0003.png"));
         } catch (Exception e) {
             // This will catch any other exceptions
             System.out.println("Err\nNon common error, not registered.");
             System.out.println("Err code = 0000");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_011\\0000.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_011\\0000.png"));
         } finally{
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_011\\Succesful.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_011\\Succesful.png"));
             driver.quit();
             //
             System.out.println("|-------------------------------------------------------------------|");
@@ -308,7 +308,7 @@ public class AlertsFramesWindows extends Main {
         testId = "TC012_Nested_Frames";
         //
         try{
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -341,26 +341,26 @@ public class AlertsFramesWindows extends Main {
             System.out.println("XPath ID or other locator method empty.");
             System.out.println("Err code = 0001");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_012\\0001.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_012\\0001.png"));
         } catch (NoSuchElementException e) {
             System.out.println("The XPath or ID isn't assigned to an element.");
             System.out.println("Err code = 0002");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_012\\0002.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_012\\0002.png"));
         }catch (WebDriverException e) {
             System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
             System.out.println("Err code = 0003");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_012\\0003.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_012\\0003.png"));
         } catch (Exception e) {
             // This will catch any other exceptions
             System.out.println("Err\nNon common error, not registered.");
             System.out.println("Err code = 0000");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_012\\0000.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_012\\0000.png"));
         } finally{
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_012\\Succesful.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_012\\Succesful.png"));
             driver.quit();
         }
     }
@@ -372,7 +372,7 @@ public class AlertsFramesWindows extends Main {
         testId = "TC013_Modal_Dialogs";
         //
         try{
-            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml");
+            File inputFile = new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\data.xml");
             //
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -415,26 +415,26 @@ public class AlertsFramesWindows extends Main {
             System.out.println("XPath ID or other locator method empty.");
             System.out.println("Err code = 0001");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_013\\0001.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_013\\0001.png"));
         } catch (NoSuchElementException e) {
             System.out.println("The XPath or ID isn't assigned to an element.");
             System.out.println("Err code = 0002");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_013\\0002.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_013\\0002.png"));
         }catch (WebDriverException e) {
             System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
             System.out.println("Err code = 0003");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_013\\0003.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_013\\0003.png"));
         } catch (Exception e) {
             // This will catch any other exceptions
             System.out.println("Err\nNon common error, not registered.");
             System.out.println("Err code = 0000");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_013\\0000.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_013\\0000.png"));
         } finally{
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\ScrnShts\\TC_013\\Succesful.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\formacion\\assets\\ScrnShts\\TC_013\\Succesful.png"));
             driver.quit();
         }
     }

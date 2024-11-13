@@ -17,4 +17,9 @@
         <TC005_middleName>MiddleNameTest1</TC005_middleName>
         <TC005_lastName>LastNameTest1</TC005_lastName>
     </TC005>
+    <TC008>
+        <TC008_FromDate>2024-24-11</TC008_FromDate>
+        <TC008_ToDate>2025-15-01</TC008_ToDate>
+        <TC008_Comments>CommentsTest</TC008_Comments>
+    </TC008>
 </testData>

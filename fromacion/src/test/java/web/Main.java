@@ -55,7 +55,7 @@ public class Main {
     }
 
     private void setupConfig() {
-        String confFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.conf";
+        String confFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\fromacion\\assets\\data.conf";
         config = new Properties();
         try (InputStream input = new FileInputStream(confFilePath)) {
             config.load(input);
@@ -65,7 +65,7 @@ public class Main {
     }
 
     private void setupXML() {
-        String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.xml";
+        String xmlFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\fromacion\\assets\\data.xml";
         try {
             File inputFile = new File(xmlFilePath);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -78,7 +78,7 @@ public class Main {
     }
 
     private void setupCSV() {
-        String csvFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.csv";
+        String csvFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\fromacion\\assets\\data.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -94,7 +94,7 @@ public class Main {
     }
 
     private void setupJSON() {
-        String jsonFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.json";
+        String jsonFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\fromacion\\assets\\data.json";
         try {
             String jsonString = new String(Files.readAllBytes(Paths.get(jsonFilePath)));
             JSONObject jsonData = new JSONObject(jsonString);

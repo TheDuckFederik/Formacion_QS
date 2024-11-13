@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "fullNameText_JSON": "FullNameTest",
+      "emailText_JSON": "EmailTest@Test.com",
+      "currentAddressText_JSON": "CurrentAddressTest",
+      "permanentAddressText_JSON": "PermanentAddressTest"
+    },
+    {
+      "emailText4_TC_001": "EmailTest@Test.com",
+      "fullNameText_TC_001": "FullNameTest",
+      "currentAddressText_TC_001": "CurrentAddressTest",
+      "permanentAddressText_TC_001": "PermanentAddressTest"
+    },
+    {
+      "firstNameText_TC_004": "FirstNameTest",
+      "firstNameText1_TC_004": "FirstNameTest1",
+      "firstNameText2_TC_004": "FirstNameTest2",
+      "firstNameText3_TC_004": "FirstNameTest3",
+      "lastNameText_TC_004": "LastNameTest",
+      "lastNameText1_TC_004": "LastNameTest1",
+      "lastNameText2_TC_004": "LastNameTest2",
+      "lastNameText3_TC_004": "LastNameTest3",
+      "emailText01_TC_004": "EmailTest",
+      "emailText02_TC_004": "EmailTest@",
+      "emailText03_TC_004": "EmailTest@Test",
+      "emailText04_TC_004": "EmailTest@Test.com",
+      "emailText1_TC_004": "EmailTest1@Test.com",
+      "emailText2_TC_004": "EmailTest2@Test.com",
+      "emailText3_TC_004": "EmailTest3@Test.com",
+      "ageText01_TC_004": "ageTest",
+      "ageText02_TC_004": "00",
+      "ageText1_TC_004": "01",
+      "ageText2_TC_004": "02",
+      "ageText3_TC_004": "03",
+      "salaryText01_TC_004": "salaryTest",
+      "salaryText02_TC_004": "0000",
+      "salaryText1_TC_004": "0001",
+      "salaryText2_TC_004": "0002",
+      "salaryText3_TC_004": "0003",
+      "departmentText_TC_004": "departmentTest",
+      "departmentText1_TC_004": "departmentTest1",
+      "departmentText2_TC_004": "departmentTest2",
+      "departmentText3_TC_004": "departmentTest3"
+    },
+    {
+      "firstNameText_TC_008": "FristNameTest",
+      "lastNameText_TC_008": "LastNameTest",
+      "emailText1_TC_008": "EmailTest",
+      "emailText2_TC_008": "EmailTest@Test",
+      "emailText3_TC_008": "EmailTest@Test.com",
+      "dateOfBirthText_TC_008": "Jan 2000",
+      "numberText1_TC_008": "123456789",
+      "numberText2_TC_008": "1234567890",
+      "subjectText_TC_008": "Computer",
+      "picPath_TC_008": "C:\\Users\\unai.ovejero.ext\\Downloads\\sampleFile.jpeg",
+      "currentAddressText_TC_008": "CurrentAddressTest"
+    },
+    {
+      "alertText_TC_010": "TestText"
+    }
+  ]
+}

@@ -50,7 +50,7 @@ public class Main {
         setupConfig();
         setupXML();
         // setupCSV();
-        setupJSON();
+        // setupJSON();
         setupWebDriver();
     }
 
@@ -93,16 +93,16 @@ public class Main {
     //     }
     // }
 
-    private void setupJSON() {
-        String jsonFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.json";
-        try {
-            String jsonString = new String(Files.readAllBytes(Paths.get(jsonFilePath)));
-            JSONObject jsonData = new JSONObject(jsonString);
-            jsonDataArray = jsonData.getJSONArray("data");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // private void setupJSON() {
+    //     String jsonFilePath = "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\data.json";
+    //     try {
+    //         String jsonString = new String(Files.readAllBytes(Paths.get(jsonFilePath)));
+    //         JSONObject jsonData = new JSONObject(jsonString);
+    //         jsonDataArray = jsonData.getJSONArray("data");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
     private void setupWebDriver() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\fromacion\\src\\test\\resources\\chromedriver.exe");

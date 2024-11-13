@@ -1,0 +1,20 @@
+<testData>
+    <TC001>
+        <username>Admin</username>
+        <password>admin123</password>
+    </TC001>
+    <TC003>
+        <TC003_fistName>FirstNameTest</TC003_fistName>
+        <TC003_middleName>MiddleNameTest</TC003_middleName>
+        <TC003_lastName>LastNameTest</TC003_lastName>
+        <TC003_id>TestID</TC003_id>
+    </TC003>
+    <TC004>
+        <TC004_id>TestID</TC004_id>
+    </TC004>
+    <TC005>
+        <TC005_fistName>FirstNameTest1</TC005_fistName>
+        <TC005_middleName>MiddleNameTest1</TC005_middleName>
+        <TC005_lastName>LastNameTest1</TC005_lastName>
+    </TC005>
+</testData>

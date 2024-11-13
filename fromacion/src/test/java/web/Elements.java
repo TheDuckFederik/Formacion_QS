@@ -28,7 +28,6 @@ public class Elements extends Main {
     @Test(description = "Prueba DemoQA Elements Text Box")
     @Story("Elements")
     @Description("Rellenar textbox")
-    // @Category("Elemets")
     //
     public void TC001_Text_Box() throws InterruptedException, IOException {
         testId = "TC001_Text_Box";
@@ -721,7 +720,7 @@ public class Elements extends Main {
             submit3.click();
             action = 59;
             //
-            WebElement next = driver.findElement(By.xpath("//*[@id='app']/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[3]"));
+            WebElement next = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[2]/div[2]/div[3]/div[2]/div/div[3]"));
             next.click();
             action = 60;
             //

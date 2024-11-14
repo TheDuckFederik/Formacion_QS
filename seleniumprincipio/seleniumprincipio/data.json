@@ -1,7 +1,7 @@
 { 
-    "Entrar":{
-                "Usuario":"RFR1",
-                "Contraseña":"Tortazo9@@##",
+    "CP001":{
+                "fullname":"hola",
+                "correoMalo":"correoMalo",
                 "correoBueno":"correo@bueno.com",
                 "currAddress":"PruebaAddress",
                 "permAddress":"pruebaPermaAddress"

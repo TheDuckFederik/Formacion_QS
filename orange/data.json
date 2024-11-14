@@ -9,28 +9,47 @@
                 "lastName":"Last_Name_Prueba",
                 "employeeID":"434"
         },
-    "CP008":{
-                "firstName":"PruebaName",
-                "lastName":"PrebaLastName",
-                "emailbad":"PruebaEmail",
-                "emailgood":"Prueba@Email.com",
-                "mobilebad":"gshdretsgd",
-                "mobilesingle":"12345",
-                "mobilegood":"1234567890",
-                "dateofbirth":"01 Sept 2024",
-                "subject":"English",
-                "subject2":"Maths",
-                "addresscurrent":"Carrer Hola",
-                "statesel":"NCR",
-                "citysel":"Delhi"
+    "LEAVE":{
+                "AddEntitlementName":"a",
+                "AddEntitlement":"12",
+                "FromDate":"2024-10-12",
+                "ToDate":"2024-13-12",
+                "LeaveTypeName":"Prueba6",
+                "AssignLeaveName":"a"
         },
-    "CP010":{
-                "alertBox":"hola"
+    "RECRUITMENT":{
+                "firstName":"First_Name_Prueba",
+                "middleName":"Middle_Name_Prueba",
+                "lastName":"Last_Name_Prueba",
+                "email":"Prueba@Email.com",
+                "jobTitle":"jopTitlePruebaa",
+                "hiringManager":"a"
         },
-    "CP014":{
-                "selectdateMonth":"January",
-                "selectDateYear":"2004",
-                "selectDateGood":"3/3/2023",
-                "selectDateTimeGood":"3/3/2023 18:30"
+    "MYINFO":{
+                "firstName":"First_Name_Prueba",
+                "middleName":"Middle_Name_Prueba",
+                "lastName":"Last_Name_Prueba",
+                "company":"companyPrueba",
+                "jobTitle":"jobTitlePrueba",
+                "from":"2024-12-11",
+                "to":"2024-17-11"
+
+        },
+    "PERFORMANCE":{
+                "trackerName":"trackerName",
+                "employeeName":"a",
+                "reviewers":"a",
+                "keyPerformanceIndicator":"trackerName",
+                "minimumRating":"12",
+                "maximumRating":"80",
+                "log":"pruebaLog",
+                "comment":"pruebaComment"
+        },
+    "CLAIM":{
+                "employeeName":"a",
+                "eventname":"pruebaEventName1",
+                "eventDescription":"pruebaEventDescription",
+                "expenseTypeName":"pruebaExpenseTypeName1",
+                "expenseTypeDescription":"pruebaExpenseTypeDescription"
         }
 }

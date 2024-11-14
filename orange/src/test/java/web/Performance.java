@@ -381,13 +381,19 @@ public class Performance extends  PIM{
         Thread.sleep(1500);                                                                 
 
         // "- Click en el boton de acción correspondiente a la calificacion del empleado
-        driver.findElement(By.xpath(propiedades.getProperty("PERFORMANCE.Configure"))).click();
+        driver.findElement(By.xpath(propiedades.getProperty("PERFORMANCE.MyReviewsList"))).click();
         Thread.sleep(1500);                                                                 
 
         // - Se le da una calificacion entre 0 y 100 a cada uno de los KPIs correspondientes y un comentario
+        for (int i = 6; i <= 22; i+=4) {
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div/div[2]/div[2]/div["+i+"]/div/div[2]/input")).sendKeys(reader.dato("PERFORMANCE", "number"));
+        }
         // - Click en ""Save""
-        driver.findElement(By.xpath(propiedades.getProperty("PERFORMANCE.Configure"))).click();
-        Thread.sleep(1500);                                                                                                                               
+        driver.findElement(By.xpath(propiedades.getProperty("PERFORMANCE.MyReviewsComplete"))).click();
+        Thread.sleep(1500);   
+
+        driver.findElement(By.xpath(propiedades.getProperty("PERFORMANCE.MyReviewsOk"))).click();
+        Thread.sleep(5000);                                                                                                                             
 
     } catch(IllegalArgumentException e){
         System.out.println("El xpath es nulo. Es probable que hayas indicado mal la clave del properties");

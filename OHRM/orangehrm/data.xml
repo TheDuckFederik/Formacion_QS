@@ -41,10 +41,11 @@
         <TC016_fistName>FirstNameTest</TC016_fistName>
         <TC016_middleName>MiddleNameTest</TC016_middleName>
         <TC016_lastName>LastNameTest</TC016_lastName>
-        <TC016_Email>EmailTest</TC016_Email>
+        <TC016_Email>EmailTest@Test.com</TC016_Email>
         <TC016_Contact_Number>1234567890</TC016_Contact_Number>
         <TC016_Keywords>KeywordsTest</TC016_Keywords>
         <TC016_Date_Of_Application>2024-24-11</TC016_Date_Of_Application>
         <TC016_Notes>NotesTest</TC016_Notes>
+        <TC016_Resume>C:\Users\unai.ovejero.ext\Documents\F_QS\Resume.pdf</TC016_Resume>
     </TC016>
 </testData>

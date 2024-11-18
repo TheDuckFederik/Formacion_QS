@@ -1,9 +1,7 @@
 package web;
 //
 import java.io.IOException;
-
 import javax.swing.Action;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 // import org.openqa.selenium.JavascriptExecutor;
@@ -1473,70 +1471,151 @@ public class ORN extends Main {
     @Story("Ingreso la web de Orange")
     @Description("El objetivo es comprobar que al ingresar con un usuario y contraseña valido se visualice el Home de la Web")
     //
-    public void ORN_TC015() throws InterruptedException, IOException {
-        testId = "ORN_TC015";
+    public void ORN_TC016() throws InterruptedException, IOException {
+        testId = "ORN_TC016";
         try {
             //
-            ORN_TC001();
+            ORN_TC015();
             action = 0;
-            totalActions = 1;
+            totalActions = 9;
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|------------------------- Beginning TC_015 ------------------------|");
+            System.out.println("|------------------------- Beginning TC_016 ------------------------|");
             System.out.println("|-------------------------------------------------------------------|");
             //
-            String recruitmentP = config.getProperty("TC015_Recruitment");
+            String addP = config.getProperty("TC016_Add");
+            String fnP = config.getProperty("TC016_FirstName");
+            String mnP = config.getProperty("TC016_MiddleName");
+            String lnP = config.getProperty("TC016_LastName");
+            String vacancyP = config.getProperty("TC016_Vacancy");
+            String emailP = config.getProperty("TC016_Email");
+            String cnP = config.getProperty("TC016_Contact_Number");
+            String browseP = config.getProperty("TC016_Browse");
+            String keywordsP = config.getProperty("TC016_Keywords");
+            String doaP = config.getProperty("TC016_Date_Of_Application");
+            String notesP = config.getProperty("TC016_Notes");
+            String saveP = config.getProperty("TC016_Save");
+            String resumeP = getTagValue("TC016_Resume", doc);
             //
-            WebElement recruitment = driver.findElement(By.xpath(recruitmentP));
-            recruitment.click();
+            String fnT = getTagValue("TC016_fistName", doc);
+            String mnT = getTagValue("TC016_middleName", doc);
+            String lnT = getTagValue("TC016_lastName", doc);
+            String emailT = getTagValue("TC016_Email", doc);
+            String cnT = getTagValue("TC016_Contact_Number", doc);
+            String keywordsT = getTagValue("TC016_Keywords", doc);
+            String doaT = getTagValue("TC016_Date_Of_Application", doc);
+            String notesT = getTagValue("TC016_Notes", doc);
+            //
+            WebElement add = driver.findElement(By.xpath(addP));
+            add.click();
             Thread.sleep(1000);
             action = 1;
+            //
+            WebElement fn = driver.findElement(By.xpath(fnP));
+            fn.sendKeys(fnT);
+            Thread.sleep(500);
+            action = 2;
+            //
+            WebElement mn = driver.findElement(By.xpath(mnP));
+            mn.sendKeys(mnT);
+            Thread.sleep(500);
+            action = 3;
+            //
+            WebElement ln = driver.findElement(By.xpath(lnP));
+            ln.sendKeys(lnT);
+            Thread.sleep(500);
+            action = 4;
+            //
+            WebElement email = driver.findElement(By.xpath(emailP));
+            email.sendKeys(emailT);
+            Thread.sleep(500);
+            action = 4;
+            //
+            WebElement cn = driver.findElement(By.xpath(cnP));
+            cn.sendKeys(cnT);
+            Thread.sleep(500);
+            action = 5;
+            //
+            WebElement browse = driver.findElement(By.xpath(browseP));
+            browse.click();
+            browse.sendKeys(resumeP);
+            Thread.sleep(2000);
+            action = 6;
+            //
+            WebElement doa = driver.findElement(By.xpath(doaP));
+            doa.click();
+            int n = 10;
+            while (true) {
+                doa.sendKeys(Keys.BACK_SPACE);
+                Thread.sleep(5);
+                n--;
+                if (n == 0) {
+                    action += 1;
+                    break;
+                }
+            }
+            doa.sendKeys(doaT);
+            doa.sendKeys(Keys.ESCAPE);
+            Thread.sleep(500);
+            action = 7;
+            //
+            WebElement notes = driver.findElement(By.xpath(notesP));
+            notes.sendKeys(notesT);
+            Thread.sleep(500);
+            action = 8;
+            //
+            WebElement keywords = driver.findElement(By.xpath(keywordsP));
+            keywords.sendKeys(keywordsT);
+            Thread.sleep(500);
+            action = 9;
+            //
+            
             //
             System.out.println();
             //
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC015\\Succesfull.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC016\\Succesfull.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_015 stopped after performing action " + action + " of " + totalActions + " ----------|");
+            System.out.println("|---------- TC_016 stopped after performing action " + action + " of " + totalActions + " ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
             //
         } catch (IllegalArgumentException e) {
             System.out.println("XPath ID or other locator method empty.");
             System.out.println("Err code = 0001");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC015\\0001.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC016\\0001.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_015 stopped after performing action " + action + " of " + totalActions + " ----------|");
+            System.out.println("|---------- TC_016 stopped after performing action " + action + " of " + totalActions + " ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
         } catch (NoSuchElementException e) {
             System.out.println("The XPath or ID isn't assigned to an element.");
             System.out.println("Err code = 0002");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC015\\0002.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC016\\0002.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_015 stopped after performing action " + action + " of " + totalActions + " ----------|");
+            System.out.println("|---------- TC_016 stopped after performing action " + action + " of " + totalActions + " ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
         }catch (WebDriverException e) {
             System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
             System.out.println("Err code = 0003");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC015\\0003.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC016\\0003.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_015 stopped after performing action " + action + " of " + totalActions + " ----------|");
+            System.out.println("|---------- TC_016 stopped after performing action " + action + " of " + totalActions + " ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
         } catch (Exception e) {
             // This will catch any other exceptions
             System.out.println("Err\nNon common error, not registered.");
             System.out.println("Err code = 0000");
             File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC015\\0000.png"));
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC016\\0000.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_015 stopped after performing action " + action + " of " + totalActions + " ----------|");
+            System.out.println("|---------- TC_016 stopped after performing action " + action + " of " + totalActions + " ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
         }
     }

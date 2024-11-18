@@ -400,13 +400,15 @@ public class Elements extends Main{
 
             portero = reader.dato("Porteros", portero.length);
 
-
+            for (int j = 0; j < plantillaDelanteros.length; j++) {
+                driver.findElement(By.xpath("//div[@id='striker-area']/div["+(j+1)+"]/div[3]")).click();
+            }
 
             for (int i = 0; i < plantillaDelanteros.length; i++) {
 
-                driver.findElement(By.xpath("//div[@id='striker-area']/div["+(i+1)+"]")).click();
-                Thread.sleep(500);
-
+                    driver.findElement(By.xpath("//div[@id='striker-area']/div["+(i+1)+"]")).click();
+                    Thread.sleep(500);
+                
                 if (driver.findElement(By.xpath("//div[@class=\"ts_item_wrapper\"]/div[1]/div[2]/div/div/div[2]")).getText().equalsIgnoreCase(plantillaDelanteros[i])) {
                     driver.findElement(By.xpath("//*[@id=\"dataSelection\"]/div[3]/div[1]/div[3]")).click();
                     Thread.sleep(500);
@@ -421,6 +423,10 @@ public class Elements extends Main{
                     }
                 }
 
+            }
+            
+            for (int j = 0; j < plantillaCentro.length; j++) {
+                driver.findElement(By.xpath("//div[@id='midfielder-area']/div["+(j+1)+"]/div[3]")).click();
             }
 
             for (int i = 0; i < plantillaCentro.length; i++) {
@@ -455,6 +461,10 @@ public class Elements extends Main{
 
             }
 
+            for (int j = 0; j < plantillaDefensa.length; j++) {
+                driver.findElement(By.xpath("//div[@id='defender-area']/div["+(j+1)+"]/div[3]")).click();
+            }
+
             for (int i = 0; i < plantillaDefensa.length; i++) {
 
                 driver.findElement(By.xpath("//div[@id='defender-area']/div["+(i+1)+"]")).click();
@@ -484,6 +494,10 @@ public class Elements extends Main{
                         }
                     }
                 }
+            }
+
+            for (int j = 0; j < portero.length; j++) {
+                driver.findElement(By.xpath("//div[@id='keeper-area']/div["+(j+1)+"]/div[3]")).click();
             }
 
             for (int i = 0; i < portero.length; i++) {
@@ -567,4 +581,82 @@ public class Elements extends Main{
         }
     }
 
+    @Test(description = "Prueba DemoQA Elements Text box")
+    @Story("Elements")
+    @Description("Rellenar textbox")
+    public void buscar_Mejor_Defensa_Mercado() throws InterruptedException, IOException, CsvException {
+        FileInputStream input = new FileInputStream("C:\\Users\\ramon.fernandez-roig\\Downloads\\Formacion_QS\\Formacion_QS\\comunio\\src\\test\\resources\\properties.properties");
+        propiedades.load(input);
+
+        testId = "RellenarJson";
+        
+        //CASO DE Prueba 001
+        try{   
+            MyReader jsonReader = new MyReader();
+
+            // datosPrueba = gson.fromJson(reader, DatosPrueba.class);
+            CPD cpdList = new CPD();
+            List<String[]> datos = cpdList.Datos();
+            String[] datoRequerido = datos.get(1);
+            String[] datosIncorrectos = datos.get(2);
+
+
+            driver.get("https://www.comunio.es/");
+            Thread.sleep(500);
+            driver.findElement(By.xpath(propiedades.getProperty("alineacion.aceptarCockies"))).click();
+            Thread.sleep(500);
+            driver.findElement(By.xpath(propiedades.getProperty("alineacion.entrar"))).click();
+            Thread.sleep(500);
+            driver.findElement(By.id("input-login")).sendKeys(jsonReader.dato("Entrar", "Usuario"));
+            Thread.sleep(500);
+            driver.findElement(By.id("input-pass")).sendKeys(jsonReader.dato("Entrar", "Contraseña"));
+            Thread.sleep(500);
+
+            driver.findElement(By.id("input-pass")).sendKeys(Keys.ENTER);
+            Thread.sleep(3000);
+            //Hacer click en el mercado
+            driver.findElement(By.xpath(propiedades.getProperty("MERCADO.Entrar"))).click();
+
+
+
+        } catch(IllegalArgumentException e){
+            System.out.println("El xpath es nulo. Es probable que hayas indicado mal la clave del properties");
+            e.printStackTrace();
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("c:\\capturas\\CP001\\NullXpathKey.png"));
+        } catch(ElementClickInterceptedException e){
+            System.out.println("Otro elemento esta puesto encima del elemento que quieres cickar");
+            e.printStackTrace();
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("c:\\capturas\\CP001\\ElementOnTop.png"));
+        } catch (org.openqa.selenium.NoSuchElementException e){
+            System.out.println("El ID o Xpath especificado no es correcto");
+            e.printStackTrace();
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("c:\\capturas\\CP001\\NullIdOrXpath.png"));
+        } catch (WebDriverException e){
+            System.out.println("La URL especificada no existe");
+            e.printStackTrace();
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("c:\\capturas\\CP001\\URLError.png"));
+        } catch (FileNotFoundException e){
+            System.out.println("El archivo no esta bien especificado o no existe");
+            e.printStackTrace();
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("c:\\capturas\\CP001\\NoFile.png"));
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("El Array del Excel no contiene esa posición");
+            e.printStackTrace();
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("c:\\capturas\\CP001\\ArrayExcel.png"));
+        } catch (NullPointerException e){
+            System.out.println("El Json no contiene esa clave o valor");
+            e.printStackTrace();
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("c:\\capturas\\CP001\\JsonKeyValue.png"));
+        } finally{
+        driver.quit();
+        }    
+
+    }
 }

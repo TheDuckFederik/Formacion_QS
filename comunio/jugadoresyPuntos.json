@@ -1,25 +1,25 @@
 {
   "Defensas": {
-    "KUMBULLA": "50",
-    "SERGI GÓMEZ": "30",
+    "KUMBULLA": "54",
+    "SERGI GÓMEZ": "34",
     "JON MARTÍN": "6",
     "ALFONSO PEDRAZA": "-"
   },
   "Centrocampistas": {
-    "SAMU COSTA": "59",
-    "LUCAS TORRÓ": "46",
-    "MORLANES": "38",
-    "JOAN JORDÁN": "23",
-    "CAMAVINGA": "12",
-    "FRAN PÉREZ": "4"
+    "LUCAS TORRÓ": "65",
+    "SAMU COSTA": "61",
+    "MORLANES": "58",
+    "JOAN JORDÁN": "30",
+    "CAMAVINGA": "27",
+    "FRAN PÉREZ": "6"
   },
   "Delanteros": {
+    "CHEDDIRA": "38",
     "FERRAN TORRES": "32",
-    "CHEDDIRA": "30",
-    "ABDÓN PRATS": "27"
+    "ABDÓN PRATS": "32"
   },
   "Porteros": {
-    "OBLAK": "51",
+    "OBLAK": "74",
     "DIMITRIEVSKI": "-"
   }
 }

@@ -1021,18 +1021,8 @@ public class ORN extends Main {
             System.out.println("|------------------------- Beginning TC_011 ------------------------|");
             System.out.println("|-------------------------------------------------------------------|");
             //
-            String applyP = config.getProperty("TC008_Apply");
-            String ltP = config.getProperty("TC008_LeaveType");
-            String fdP = config.getProperty("TC008_FromDate");
-            String tdP = config.getProperty("TC008_ToDate");
-            String pdP = config.getProperty("TC008_PartialDays");
-            String edP = config.getProperty("TC008_EndDay");
-            String commentsP = config.getProperty("TC008_Comments");
-            String acP = config.getProperty("TC008_ApplyChanges");
-            //
-            String fdT = getTagValue("TC008_FromDate", doc);
-            String tdT = getTagValue("TC008_ToDate", doc);
-            String commentsT = getTagValue("TC008_Comments", doc);
+            String applyP = config.getProperty("TC011_Apply");
+            String acP = config.getProperty("TC011_ApplyChanges");
             //
             WebElement apply = driver.findElement(By.xpath(applyP));
             apply.click();
@@ -1042,7 +1032,7 @@ public class ORN extends Main {
             WebElement ac = driver.findElement(By.xpath(acP));
             ac.click();
             action = 8;
-            Thread.sleep(5000);
+            Thread.sleep(200);
             //
             System.out.println();
             //

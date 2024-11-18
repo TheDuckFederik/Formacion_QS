@@ -22,4 +22,8 @@
         <TC008_ToDate>2025-15-01</TC008_ToDate>
         <TC008_Comments>CommentsTest</TC008_Comments>
     </TC008>
+    <TC010>
+        <TC010_EmployeeName>LastNameTest</TC010_EmployeeName>
+        <TC010_EntitlementAmount>9999.99</TC010_EntitlementAmount>
+    </TC010>
 </testData>

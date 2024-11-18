@@ -26,4 +26,7 @@
         <TC010_EmployeeName>LastNameTest</TC010_EmployeeName>
         <TC010_EntitlementAmount>9999.99</TC010_EntitlementAmount>
     </TC010>
+    <TC012>
+        <TC012_Name>LeaveTypeTest</TC012_Name>
+    </TC012>
 </testData>

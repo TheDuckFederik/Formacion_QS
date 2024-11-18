@@ -1031,7 +1031,7 @@ public class ORN extends Main {
             //
             WebElement ac = driver.findElement(By.xpath(acP));
             ac.click();
-            action = 8;
+            action = 2;
             Thread.sleep(200);
             //
             System.out.println();
@@ -1040,7 +1040,7 @@ public class ORN extends Main {
             FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC011\\Succesfull.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 2 ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
             //
         } catch (IllegalArgumentException e) {
@@ -1050,7 +1050,7 @@ public class ORN extends Main {
             FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC011\\0001.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 2 ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
         } catch (NoSuchElementException e) {
             System.out.println("The XPath or ID isn't assigned to an element.");
@@ -1059,7 +1059,7 @@ public class ORN extends Main {
             FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC011\\0002.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 2 ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
         }catch (WebDriverException e) {
             System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
@@ -1068,7 +1068,7 @@ public class ORN extends Main {
             FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC011\\0003.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 2 ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
         } catch (Exception e) {
             // This will catch any other exceptions
@@ -1078,7 +1078,109 @@ public class ORN extends Main {
             FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC011\\0000.png"));
             //
             System.out.println("|-------------------------------------------------------------------|");
-            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|---------- TC_011 stopped after performing action " + action + " of 2 ----------|");
+            System.out.println("|-------------------------------------------------------------------|\n");
+        }
+    }
+    @Test(description = "Prueba Orange HRM Login")
+    @Story("Ingreso la web de Orange")
+    @Description("El objetivo es comprobar que al ingresar con un usuario y contraseña valido se visualice el Home de la Web")
+    //
+    public void ORN_TC012() throws InterruptedException, IOException {
+        testId = "ORN_TC012";
+        try {
+            //
+            ORN_TC007();
+            action = 0;
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|------------------------- Beginning TC_012 ------------------------|");
+            System.out.println("|-------------------------------------------------------------------|");
+            //
+            String configureP = config.getProperty("TC012_Configure");
+            String ltP = config.getProperty("TC012_Leave_Type");
+            String addP = config.getProperty("TC012_Add");
+            String nameP = config.getProperty("TC012_Name");
+            String iesP = config.getProperty("TC012_Is_Entitlement_Situational");
+            String saveP = config.getProperty("TC012_Save");
+            //
+            String nameT = getTagValue("TC012_Name", doc);
+            //
+            WebElement configure = driver.findElement(By.xpath(configureP));
+            configure.click();
+            action = 1;
+            Thread.sleep(500);
+            //
+            WebElement lt = driver.findElement(By.xpath(ltP));
+            lt.click();
+            action = 2;
+            Thread.sleep(1000);
+            //
+            WebElement add = driver.findElement(By.xpath(addP));
+            add.click();
+            action = 3;
+            Thread.sleep(1000);
+            //
+            WebElement name = driver.findElement(By.xpath(nameP));
+            name.sendKeys(nameT);
+            action = 4;
+            Thread.sleep(500);
+            //
+            WebElement ies = driver.findElement(By.xpath(iesP));
+            ies.click();
+            action = 5;
+            Thread.sleep(500);
+            //
+            WebElement save = driver.findElement(By.xpath(saveP));
+            save.click();
+            action = 6;
+            Thread.sleep(500);
+            //
+            System.out.println();
+            //
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC012\\Succesfull.png"));
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_012 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|-------------------------------------------------------------------|\n");
+            //
+        } catch (IllegalArgumentException e) {
+            System.out.println("XPath ID or other locator method empty.");
+            System.out.println("Err code = 0001");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC012\\0001.png"));
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_012 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|-------------------------------------------------------------------|\n");
+        } catch (NoSuchElementException e) {
+            System.out.println("The XPath or ID isn't assigned to an element.");
+            System.out.println("Err code = 0002");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC012\\0002.png"));
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_012 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|-------------------------------------------------------------------|\n");
+        }catch (WebDriverException e) {
+            System.out.println("Syntax Error on: URL, XPath, ID or other locator method.");
+            System.out.println("Err code = 0003");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC012\\0003.png"));
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_012 stopped after performing action " + action + " of 8 ----------|");
+            System.out.println("|-------------------------------------------------------------------|\n");
+        } catch (Exception e) {
+            // This will catch any other exceptions
+            System.out.println("Err\nNon common error, not registered.");
+            System.out.println("Err code = 0000");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\unai.ovejero.ext\\Documents\\F_QS\\Formacion_QS\\OHRM\\orangehrm\\ScrnShts\\TC012\\0000.png"));
+            //
+            System.out.println("|-------------------------------------------------------------------|");
+            System.out.println("|---------- TC_012 stopped after performing action " + action + " of 8 ----------|");
             System.out.println("|-------------------------------------------------------------------|\n");
         }
     }

@@ -1,9 +1,21 @@
 {
   "Defensas": {
+    "Diego Rico": "68",
     "Maffeo": "52",
+    "Gudelj": "46",
     "Sabaly": "26",
-    "Nahuel Tenaglia": "55",
-    "Sinkgraven": "7",
-    "Pica": "24"
+    "Jesús Vázquez": "32"
+  },
+  "Medios": {
+    "Suso": "16",
+    "Tchouaméni": "65",
+    "Kral": "51"
+  },
+  "Delanteros": {
+    "El Jebari": "0",
+    "Pau Víctor": "28"
+  },
+  "Porteros": {
+    "Alberto Flores": "0"
   }
 }

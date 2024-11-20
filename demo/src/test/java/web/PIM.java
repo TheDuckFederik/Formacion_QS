@@ -1292,18 +1292,35 @@ public class PIM extends Main {
         testId = "ORN_TC026";
          try{
 
+            String[] datosCorrectosCP26 = datosCsv().get(58);
+
             ORN_TC021();
 
-            driver.findElement(By.xpath(propiedades.getProperty("performance.configure"))).click();
+            driver.findElement(By.xpath(propiedades.getProperty("performance.managereviews"))).click();
             Thread.sleep(1000);
 
-            driver.findElement(By.xpath(propiedades.getProperty("performance.kpis"))).click();
+            driver.findElement(By.xpath(propiedades.getProperty("performance.myreviews"))).click();
             Thread.sleep(1000);
 
-            driver.findElement(By.xpath(propiedades.getProperty("performance.add"))).click();
+            driver.findElement(By.xpath(propiedades.getProperty("performance.evaluate"))).click();
             Thread.sleep(1000);
 
-            driver.findElement(By.xpath(propiedades.getProperty("performance.save"))).click();
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating1"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating2"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating3"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+            
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating4"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating5"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.save3"))).click();
             Thread.sleep(1000);
 
         } catch(IllegalArgumentException e){
@@ -1330,37 +1347,368 @@ public class PIM extends Main {
             driver.quit();
             
         }
-    }        
+    }
+    @Test(description = "Performance V")
+    @Story("Realizar una Review")
+    @Description("El objetivo  es validar la funcionalidad para realizar una review a un empleado")
+    public void ORN_TC027() throws InterruptedException, IOException, CsvException {
+        testId = "ORN_TC027";
+         try{
+
+            String[] datosCorrectosCP26 = datosCsv().get(58);
+
+            ORN_TC021();
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.managereviews"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.myreviews"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.evaluate"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating1"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating2"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating3"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+            
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating4"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.rating5"))).sendKeys(datosCorrectosCP26[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("performance.save3"))).click();
+            Thread.sleep(1000);
+
+        } catch(IllegalArgumentException e){
+            System.out.println("Xpath nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\NullXpath.png"));
+
+        } catch(ElementClickInterceptedException e){
+            System.out.println("No se puede hacer click en el botón");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\InterceptedButton.png"));
+
+        } catch(NullPointerException e){
+            System.out.println("El texto es nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\TextoNulo.png")); 
+
+        } catch(InvalidElementStateException e){
+            System.out.println("No se puede hacer esta acción es este tipo de objeto");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\AcciónInvalida.png"));
+
+        } finally{
+            driver.quit();
+            
+        }
+    }                
+    @Test(description = "Claim I")
+    @Story("Validar elementos de la sección Claim")
+    @Description("El objetivo  es validar los elementos que se deben mostrar en la sección Claim")
+    public void ORN_TC028() throws InterruptedException, IOException, CsvException {
+        testId = "ORN_TC028";
+         try{
+
+            ORN_TC001();
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.claim"))).click();
+            Thread.sleep(1000);
+
+            System.out.println("Aparecen los siguientes elementos: Assign Claim, Employee Claims, My CLaims, Submit Claim, Configuration y botones.");
 
 
+        } catch(IllegalArgumentException e){
+            System.out.println("Xpath nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\NullXpath.png"));
 
+        } catch(ElementClickInterceptedException e){
+            System.out.println("No se puede hacer click en el botón");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\InterceptedButton.png"));
 
+        } catch(NullPointerException e){
+            System.out.println("El texto es nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\TextoNulo.png")); 
 
+        } catch(InvalidElementStateException e){
+            System.out.println("No se puede hacer esta acción es este tipo de objeto");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\AcciónInvalida.png"));
 
+        } finally{
+            // driver.quit();
+            
+        }
+    }                
+    @Test(description = "Claim II")
+    @Story("Validar elementos de la sección Claim")
+    @Description("El objetivo  es validar los elementos que se deben mostrar en la sección Claim")
+    public void ORN_TC029() throws InterruptedException, IOException, CsvException {
+        testId = "ORN_TC029";
+         try{
 
+            String[] datosCorrectosCP29 = datosCsv().get(62);
 
+            ORN_TC028();
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.assignclaim"))).click();
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.employeename"))).sendKeys(datosCorrectosCP29[0]);
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.event"))).sendKeys(Keys.DOWN);
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.event"))).sendKeys(Keys.ENTER);
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.currency"))).sendKeys(Keys.DOWN);
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.currency"))).sendKeys(Keys.ENTER);
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.create"))).click();
+            Thread.sleep(1000);
 
+        } catch(IllegalArgumentException e){
+            System.out.println("Xpath nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\NullXpath.png"));
 
+        } catch(ElementClickInterceptedException e){
+            System.out.println("No se puede hacer click en el botón");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\InterceptedButton.png"));
 
+        } catch(NullPointerException e){
+            System.out.println("El texto es nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\TextoNulo.png")); 
 
+        } catch(InvalidElementStateException e){
+            System.out.println("No se puede hacer esta acción es este tipo de objeto");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\AcciónInvalida.png"));
 
+        } finally{
+            driver.quit();
+            
+        }
+    }                
+    @Test(description = "Claim II")
+    @Story("Validar elementos de la sección Claim")
+    @Description("El objetivo  es validar los elementos que se deben mostrar en la sección Claim")
+    public void ORN_TC030() throws InterruptedException, IOException, CsvException {
+        testId = "ORN_TC030";
+         try{
 
+            ORN_TC028();
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.configuration"))).click();
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.events"))).click();
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.add"))).click();
+            Thread.sleep(1000);
 
+            driver.findElement(By.xpath(propiedades.getProperty("claim.save"))).click();
+            Thread.sleep(1000);
 
+        } catch(IllegalArgumentException e){
+            System.out.println("Xpath nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\NullXpath.png"));
 
+        } catch(ElementClickInterceptedException e){
+            System.out.println("No se puede hacer click en el botón");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\InterceptedButton.png"));
 
+        } catch(NullPointerException e){
+            System.out.println("El texto es nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\TextoNulo.png")); 
 
+        } catch(InvalidElementStateException e){
+            System.out.println("No se puede hacer esta acción es este tipo de objeto");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\AcciónInvalida.png"));
 
+        } finally{
+            driver.quit();
+            
+        }
+    }                
+    @Test(description = "Claim III")
+    @Story("Validar elementos de la sección Claim")
+    @Description("El objetivo  es validar los elementos que se deben mostrar en la sección Claim")
+    public void ORN_TC031() throws InterruptedException, IOException, CsvException {
+        testId = "ORN_TC031";
+         try{
+
+            String[] datosCorrectosCP31 = datosCsv().get(66);
+
+            ORN_TC028();
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.configuration"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.events"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.add"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.eventname"))).sendKeys(datosCorrectosCP31[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.description"))).sendKeys(datosCorrectosCP31[1]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.save"))).click();
+            Thread.sleep(5000);
+
+        } catch(IllegalArgumentException e){
+            System.out.println("Xpath nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\NullXpath.png"));
+
+        } catch(ElementClickInterceptedException e){
+            System.out.println("No se puede hacer click en el botón");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\InterceptedButton.png"));
+
+        } catch(NullPointerException e){
+            System.out.println("El texto es nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\TextoNulo.png")); 
+
+        } catch(InvalidElementStateException e){
+            System.out.println("No se puede hacer esta acción es este tipo de objeto");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\AcciónInvalida.png"));
+
+        } finally{
+            driver.quit();
+            
+        }
+    }                
+    @Test(description = "Claim I")
+    @Story("Validar elementos de la sección Claim")
+    @Description("El objetivo  es validar los elementos que se deben mostrar en la sección Claim")
+    public void ORN_TC032() throws InterruptedException, IOException, CsvException {
+        testId = "ORN_TC032";
+         try{
+
+            String[] datosCorrectosCP31 = datosCsv().get(66);
+
+            ORN_TC028();
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.configuration"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.expensetypes"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.add"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.name"))).sendKeys(datosCorrectosCP31[0]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.description"))).sendKeys(datosCorrectosCP31[1]);
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.save"))).click();
+            Thread.sleep(5000);
+
+        } catch(IllegalArgumentException e){
+            System.out.println("Xpath nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\NullXpath.png"));
+
+        } catch(ElementClickInterceptedException e){
+            System.out.println("No se puede hacer click en el botón");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\InterceptedButton.png"));
+
+        } catch(NullPointerException e){
+            System.out.println("El texto es nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\TextoNulo.png")); 
+
+        } catch(InvalidElementStateException e){
+            System.out.println("No se puede hacer esta acción es este tipo de objeto");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\AcciónInvalida.png"));
+
+        } finally{
+            driver.quit();
+            
+        }
+    }    
+    @Test(description = "Claim I")
+    @Story("Validar elementos de la sección Claim")
+    @Description("El objetivo  es validar los elementos que se deben mostrar en la sección Claim")
+    public void ORN_TC033() throws InterruptedException, IOException, CsvException {
+        testId = "ORN_TC033";
+         try{
+
+            ORN_TC028();
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.myclaims"))).click();
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.viewdetails"))).click();
+            Thread.sleep(1000);
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0, 444);");  
+            Thread.sleep(100);
+
+            driver.findElement(By.xpath(propiedades.getProperty("claim.cancel"))).click();
+            Thread.sleep(1000);
+
+        } catch(IllegalArgumentException e){
+            System.out.println("Xpath nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\NullXpath.png"));
+
+        } catch(ElementClickInterceptedException e){
+            System.out.println("No se puede hacer click en el botón");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\InterceptedButton.png"));
+
+        } catch(NullPointerException e){
+            System.out.println("El texto es nulo");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\TextoNulo.png")); 
+
+        } catch(InvalidElementStateException e){
+            System.out.println("No se puede hacer esta acción es este tipo de objeto");
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\captura\\CP001\\AcciónInvalida.png"));
+
+        } finally{
+            driver.quit();
+            
+        }
+    }                            
     public List<String[]> datosCsv() throws IOException, CsvException{
         String file = "C:\\Users\\ricard.ferrando.ext\\OneDrive - GFI\\Documentos\\Orange Testing\\Orange\\demo\\datos.csv";
 

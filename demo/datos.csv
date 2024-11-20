@@ -46,8 +46,22 @@ ejemplo,ejemplo,ejemplo,ejemplo
 Company,JobTitle
 ejemplo,ejemplo
 
-#11.ORN_TC022
+#12.ORN_TC022
 TrackerName,EmployeeName,Reviewers
 ejemplo,Tala  1,Tony Aldridge
 
+#13.ORN_TC024
+KeyPerfomance
+ejemplo
 
+#14.ORN_TC026
+Rating1,Rating2,Rating3,Rating4,Rating5
+0,0,0,0,0
+
+#15.ORN_TC029
+EmployeeName
+abc  abc
+
+#16.ORN_TC031
+EventName,Descripcion
+ejemplo1,ejemplo
